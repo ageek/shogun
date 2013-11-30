@@ -7,3 +7,4 @@
 * Shashwat Lal Das <fraggerx@gmail.com>
 * Sebastian Henschel <shogun@kodeaffe.de>
 * Christian Widmer <cwidmer@tuebingen.mpg.de>
+* Björn Esser <besser82@fedoraproject.org>
