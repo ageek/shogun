@@ -133,3 +133,8 @@ CMakeCache.txt
 
 # protobuf
 src/shogun/io/protobuf/*.pb.*
+
+# Eclipse IDE
+.cproject
+.project
+.pydevproject
