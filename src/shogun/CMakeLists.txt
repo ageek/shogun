@@ -13,3 +13,16 @@
 #
 #   You should have received a copy of the GNU General Public License
 #   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+#####  Include subdirs for processing  #####
+GET_CMAKE_SUBDIRS( _SUBDIRS ${CMAKE_CURRENT_SOURCE_DIR} )
+
+FOREACH( _SUBDIR ${_SUBDIRS} )
+  ADD_SUBDIRECTORY( ${_SUBDIR} )
+ENDFOREACH( _SUBDIR ${_SUBDIRS} )
+
+
+#####  Add shogun and shogun-static libs  #####
+ADD_LIBRARY( ${PROJECT_NAME} SHARED ${${PROJECT_VAR_PREFIX}OBJECT_TARGETS} )
+ADD_LIBRARY( ${PROJECT_NAME}-static STATIC ${${PROJECT_VAR_PREFIX}OBJECT_TARGETS} )
