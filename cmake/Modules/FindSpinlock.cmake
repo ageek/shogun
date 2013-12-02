@@ -1,10 +1,10 @@
 IF (CMAKE_USE_PTHREADS_INIT)
 	SET(_bindir "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}")
 	IF (DARWIN)
-		TRY_COMPILE(HAVE_SPINLOCK "${_bindir}" "${CMAKE_MODULE_PATH}/spinlock-test-darwin.cpp")
+		TRY_COMPILE(HAVE_SPINLOCK "${_bindir}" "${CMAKE_MODULE_PATH}/FindSpinlock-Darwin.cpp")
 	ELSE ()
 		TRY_COMPILE(HAVE_SPINLOCK "${_bindir}"
-			"${CMAKE_MODULE_PATH}/spinlock-test.cpp"
+			"${CMAKE_MODULE_PATH}/FindSpinlock.cpp"
 			CMAKE_FLAGS "-DLINK_LIBRARIES:STRING=${CMAKE_THREAD_LIBS_INIT}"
 		)
 	ENDIF ()
