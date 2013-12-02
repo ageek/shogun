@@ -7,28 +7,28 @@
 #define TAPKEE_METHODS_H_
 
 /* Tapkee includes */
-#include <shogun/lib/tapkee/defines.hpp>
-#include <shogun/lib/tapkee/utils/naming.hpp>
-#include <shogun/lib/tapkee/utils/time.hpp>
-#include <shogun/lib/tapkee/utils/logging.hpp>
-#include <shogun/lib/tapkee/utils/conditional_select.hpp>
-#include <shogun/lib/tapkee/utils/features.hpp>
-#include <shogun/lib/tapkee/parameters/defaults.hpp>
-#include <shogun/lib/tapkee/parameters/context.hpp>
-#include <shogun/lib/tapkee/routines/locally_linear.hpp>
-#include <shogun/lib/tapkee/routines/eigendecomposition.hpp>
-#include <shogun/lib/tapkee/routines/generalized_eigendecomposition.hpp>
-#include <shogun/lib/tapkee/routines/multidimensional_scaling.hpp>
-#include <shogun/lib/tapkee/routines/diffusion_maps.hpp>
-#include <shogun/lib/tapkee/routines/laplacian_eigenmaps.hpp>
-#include <shogun/lib/tapkee/routines/isomap.hpp>
-#include <shogun/lib/tapkee/routines/pca.hpp>
-#include <shogun/lib/tapkee/routines/random_projection.hpp>
-#include <shogun/lib/tapkee/routines/spe.hpp>
-#include <shogun/lib/tapkee/routines/fa.hpp>
-#include <shogun/lib/tapkee/routines/manifold_sculpting.hpp>
-#include <shogun/lib/tapkee/neighbors/neighbors.hpp>
-#include <shogun/lib/tapkee/external/barnes_hut_sne/tsne.hpp>
+#include <tapkee/defines.hpp>
+#include <tapkee/utils/naming.hpp>
+#include <tapkee/utils/time.hpp>
+#include <tapkee/utils/logging.hpp>
+#include <tapkee/utils/conditional_select.hpp>
+#include <tapkee/utils/features.hpp>
+#include <tapkee/parameters/defaults.hpp>
+#include <tapkee/parameters/context.hpp>
+#include <tapkee/routines/locally_linear.hpp>
+#include <tapkee/routines/eigendecomposition.hpp>
+#include <tapkee/routines/generalized_eigendecomposition.hpp>
+#include <tapkee/routines/multidimensional_scaling.hpp>
+#include <tapkee/routines/diffusion_maps.hpp>
+#include <tapkee/routines/laplacian_eigenmaps.hpp>
+#include <tapkee/routines/isomap.hpp>
+#include <tapkee/routines/pca.hpp>
+#include <tapkee/routines/random_projection.hpp>
+#include <tapkee/routines/spe.hpp>
+#include <tapkee/routines/fa.hpp>
+#include <tapkee/routines/manifold_sculpting.hpp>
+#include <tapkee/neighbors/neighbors.hpp>
+#include <tapkee/external/barnes_hut_sne/tsne.hpp>
 /* End of Tapkee includes */
 
 namespace tapkee

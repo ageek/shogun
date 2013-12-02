@@ -7,8 +7,8 @@
 #define TAPKEE_MDS_H_
 
 /* Tapkee includes */
-#include <shogun/lib/tapkee/defines.hpp>
-#include <shogun/lib/tapkee/utils/time.hpp>
+#include <tapkee/defines.hpp>
+#include <tapkee/utils/time.hpp>
 /* End of Tapkee includes */
 
 namespace tapkee

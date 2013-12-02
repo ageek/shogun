@@ -7,11 +7,11 @@
 #define TAPKEE_LOCALLY_LINEAR_H_
 
 /* Tapkee includes */
-#include <shogun/lib/tapkee/routines/eigendecomposition.hpp>
-#include <shogun/lib/tapkee/defines.hpp>
-#include <shogun/lib/tapkee/utils/matrix.hpp>
-#include <shogun/lib/tapkee/utils/time.hpp>
-#include <shogun/lib/tapkee/utils/sparse.hpp>
+#include <tapkee/routines/eigendecomposition.hpp>
+#include <tapkee/defines.hpp>
+#include <tapkee/utils/matrix.hpp>
+#include <tapkee/utils/time.hpp>
+#include <tapkee/utils/sparse.hpp>
 /* End of Tapkee includes */
 
 namespace tapkee

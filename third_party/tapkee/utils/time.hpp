@@ -7,7 +7,7 @@
 #define TAPKEE_TIME_H_
 
 /* Tapkee includes */
-#include <shogun/lib/tapkee/utils/logging.hpp>
+#include <tapkee/utils/logging.hpp>
 /* End of Tapkee includes */
 
 #include <ctime>

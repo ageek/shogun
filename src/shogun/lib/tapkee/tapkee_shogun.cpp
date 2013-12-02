@@ -20,8 +20,8 @@
 	#define TAPKEE_WITH_ARPACK
 #endif
 #define TAPKEE_USE_LGPL_COVERTREE
-#include <shogun/lib/tapkee/tapkee.hpp>
-#include <shogun/lib/tapkee/callbacks/pimpl_callbacks.hpp>
+#include <tapkee/tapkee.hpp>
+#include <tapkee/callbacks/pimpl_callbacks.hpp>
 
 using namespace shogun;
 

@@ -14,10 +14,10 @@
 
 /* Tapkee includes */
 #ifdef TAPKEE_WITH_ARPACK
-	#include <shogun/lib/tapkee/utils/arpack_wrapper.hpp>
+	#include <tapkee/utils/arpack_wrapper.hpp>
 #endif
-#include <shogun/lib/tapkee/routines/matrix_operations.hpp>
-#include <shogun/lib/tapkee/defines.hpp>
+#include <tapkee/routines/matrix_operations.hpp>
+#include <tapkee/defines.hpp>
 /* End of Tapkee includes */
 
 namespace tapkee

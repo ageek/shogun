@@ -7,8 +7,8 @@
 #define TAPKEE_EMBED_H_
 
 /* Tapkee includes */
-#include <shogun/lib/tapkee/defines.hpp>
-#include <shogun/lib/tapkee/methods.hpp>
+#include <tapkee/defines.hpp>
+#include <tapkee/methods.hpp>
 /* End of Tapkee includes */
 
 namespace tapkee
