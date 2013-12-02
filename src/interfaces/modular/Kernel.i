@@ -7,14 +7,14 @@
  * Written (W) 2009 Soeren Sonnenburg
  * Copyright (C) 2009 Fraunhofer Institute FIRST and Max-Planck-Society
  */
-#ifdef HAVE_PYTHON
+#ifdef SHOGUN_HAVE_PYTHON
 %feature("autodoc", "get_kernel_matrix(self) -> numpy 2dim array of float") get_kernel_matrix;
 %feature("autodoc", "get_POIM2(self) -> [] of float") get_POIM2;
 #endif
 
 %ignore CWeightedDegreePositionStringKernel::set_position_weights(float64_t*);
 
-#if defined(USE_SWIG_DIRECTORS) && defined(SWIGPYTHON)
+#if defined(SHOGUN_USE_SWIG_DIRECTORS) && defined(SWIGPYTHON)
 %feature("director") shogun::CDirectorKernel;
 %feature("director:except") {
     if ($error != NULL) {
@@ -112,10 +112,10 @@ PROTOCOLS_CUSTOMKERNEL(CustomKernel, float32_t, "f\0", NPY_FLOAT32)
 %include <kernel/SparseKernel.h>
 namespace shogun
 {
-#ifdef USE_FLOAT64
+#ifdef SHOGUN_USE_FLOAT64
     %template(SparseRealKernel) CSparseKernel<float64_t>;
 #endif
-#ifdef USE_UINT16
+#ifdef SHOGUN_USE_UINT16
     %template(SparseWordKernel) CSparseKernel<uint16_t>;
 #endif
 }
@@ -124,25 +124,25 @@ namespace shogun
 %include <kernel/string/StringKernel.h>
 namespace shogun
 {
-#ifdef USE_FLOAT64
+#ifdef SHOGUN_USE_FLOAT64
     %template(StringRealKernel) CStringKernel<float64_t>;
 #endif
-#ifdef USE_UINT16
+#ifdef SHOGUN_USE_UINT16
     %template(StringWordKernel) CStringKernel<uint16_t>;
 #endif
-#ifdef USE_CHAR
+#ifdef SHOGUN_USE_CHAR
     %template(StringCharKernel) CStringKernel<char>;
 #endif
-#ifdef USE_UINT32
+#ifdef SHOGUN_USE_UINT32
     %template(StringIntKernel) CStringKernel<int32_t>;
 #endif
-#ifdef USE_UINT64
+#ifdef SHOGUN_USE_UINT64
     %template(StringUlongKernel) CStringKernel<uint64_t>;
 #endif
-#ifdef USE_UINT16
+#ifdef SHOGUN_USE_UINT16
     %template(StringShortKernel) CStringKernel<int16_t>;
 #endif
-#ifdef USE_UINT8
+#ifdef SHOGUN_USE_UINT8
     %template(StringByteKernel) CStringKernel<uint8_t>;
 #endif
 }

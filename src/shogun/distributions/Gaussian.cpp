@@ -9,7 +9,7 @@
  */
 #include <lib/config.h>
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 
 #include <distributions/Gaussian.h>
 #include <mathematics/Math.h>
@@ -319,4 +319,4 @@ CGaussian* CGaussian::obtain_from_generic(CDistribution* distribution)
 	return casted;
 }
 
-#endif // HAVE_LAPACK
+#endif // SHOGUN_HAVE_LAPACK

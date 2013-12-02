@@ -17,7 +17,7 @@
 
 using namespace shogun;
 
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 void test_svmlight()
 {
 	/* data is random length strings with only zeros (A) or ones (B) */

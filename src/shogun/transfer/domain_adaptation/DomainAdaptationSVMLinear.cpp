@@ -10,7 +10,7 @@
 
 #include <lib/config.h>
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 
 #include <transfer/domain_adaptation/DomainAdaptationSVMLinear.h>
 #include <io/SGIO.h>
@@ -237,5 +237,5 @@ CBinaryLabels* CDomainAdaptationSVMLinear::apply_binary(CFeatures* data)
 	return new CBinaryLabels(out_combined);
 }
 
-#endif //HAVE_LAPACK
+#endif //SHOGUN_HAVE_LAPACK
 

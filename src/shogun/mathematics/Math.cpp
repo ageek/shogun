@@ -21,16 +21,16 @@
 
 using namespace shogun;
 
-#ifdef USE_LOGCACHE
-#ifdef USE_HMMDEBUG
+#ifdef SHOGUN_USE_LOGCACHE
+#ifdef SHOGUN_USE_HMMDEBUG
 #define MAX_LOG_TABLE_SIZE 10*1024*1024
 #define LOG_TABLE_PRECISION 1e-6
-#else //USE_HMMDEBUG
+#else // SHOGUN_USE_HMMDEBUG
 #define MAX_LOG_TABLE_SIZE 123*1024*1024
 #define LOG_TABLE_PRECISION 1e-15
-#endif //USE_HMMDEBUG
+#endif // SHOGUN_USE_HMMDEBUG
 int32_t CMath::LOGACCURACY         = 0; // 100000 steps per integer
-#endif // USE_LOGCACHE
+#endif // SHOGUN_USE_LOGCACHE
 
 int32_t CMath::LOGRANGE            = 0; // range for logtable: log(1+exp(x))  -25 <= x <= 0
 
@@ -42,7 +42,7 @@ const float64_t CMath::MACHINE_EPSILON=5E-16;
 const float64_t CMath::MAX_REAL_NUMBER=1E300;
 const float64_t CMath::MIN_REAL_NUMBER=1E-300;
 
-#ifdef USE_LOGCACHE
+#ifdef SHOGUN_USE_LOGCACHE
 float64_t* CMath::logtable = NULL;
 #endif
 uint32_t CMath::seed = 0;
@@ -50,7 +50,7 @@ uint32_t CMath::seed = 0;
 CMath::CMath()
 : CSGObject()
 {
-#ifdef USE_LOGCACHE
+#ifdef SHOGUN_USE_LOGCACHE
     LOGRANGE=CMath::determine_logrange();
     LOGACCURACY=CMath::determine_logaccuracy(LOGRANGE);
     CMath::logtable=SG_MALLOC(float64_t, LOGRANGE*LOGACCURACY);
@@ -66,13 +66,13 @@ CMath::CMath()
 
 CMath::~CMath()
 {
-#ifdef USE_LOGCACHE
+#ifdef SHOGUN_USE_LOGCACHE
 	SG_FREE(CMath::logtable);
 	CMath::logtable=NULL;
 #endif
 }
 
-#ifdef USE_LOGCACHE
+#ifdef SHOGUN_USE_LOGCACHE
 int32_t CMath::determine_logrange()
 {
     int32_t i;
@@ -201,21 +201,21 @@ void CMath::linspace(float64_t* output, float64_t start, float64_t end, int32_t 
 
 int CMath::is_nan(double f)
 {
-#ifndef HAVE_STD_ISNAN
-#if (HAVE_DECL_ISNAN == 1) || defined(HAVE_ISNAN)
+#ifndef SHOGUN_HAVE_STD_ISNAN
+#if (SHOGUN_HAVE_DECL_ISNAN == 1) || defined(SHOGUN_HAVE_ISNAN)
   return ::isnan(f);
 #else
   return ((f != f) ? 1 : 0);
-#endif // #if (HAVE_DECL_ISNAN == 1) || defined(HAVE_ISNAN)
-#endif // #ifndef HAVE_STD_ISNAN
+#endif // #if (SHOGUN_HAVE_DECL_ISNAN == 1) || defined(SHOGUN_HAVE_ISNAN)
+#endif // #ifndef SHOGUN_HAVE_STD_ISNAN
 
 	return std::isnan(f);
 }
 
 int CMath::is_infinity(double f)
 {
-#ifndef HAVE_STD_ISINF
-#if (HAVE_DECL_ISINF == 1) || defined(HAVE_ISINF)
+#ifndef SHOGUN_HAVE_STD_ISINF
+#if (SHOGUN_HAVE_DECL_ISINF == 1) || defined(SHOGUN_HAVE_ISINF)
   return ::isinf(f);
 #elif defined(FPCLASS)
   if (::fpclass(f) == FP_NINF) return -1;
@@ -225,23 +225,23 @@ int CMath::is_infinity(double f)
   if ((f == f) && ((f - f) != 0.0)) return (f < 0.0 ? -1 : 1);
   else return 0;
 }
-#endif // #if (HAVE_DECL_ISINF == 1) || defined(HAVE_ISINF)
-#endif // #ifndef HAVE_STD_ISINF
+#endif // #if (SHOGUN_HAVE_DECL_ISINF == 1) || defined(SHOGUN_HAVE_ISINF)
+#endif // #ifndef SHOGUN_HAVE_STD_ISINF
 
 	return std::isinf(f);
 }
 
 int CMath::is_finite(double f)
 {
-#ifndef HAVE_STD_ISFINITE
-#if (HAVE_DECL_ISFINITE == 1) || defined(HAVE_ISFINITE)
+#ifndef SHOGUN_HAVE_STD_ISFINITE
+#if (SHOGUN_HAVE_DECL_ISFINITE == 1) || defined(SHOGUN_HAVE_ISFINITE)
   return ::isfinite(f);
-#elif defined(HAVE_FINITE)
+#elif defined(SHOGUN_HAVE_FINITE)
   return ::finite(f);
 #else
   return ((!std::isnan(f) && !std::isinf(f)) ? 1 : 0);
-#endif // #if (HAVE_DECL_ISFINITE == 1) || defined(HAVE_ISFINITE)
-#endif // #ifndef HAVE_STD_ISFINITE
+#endif // #if (SHOGUN_HAVE_DECL_ISFINITE == 1) || defined(SHOGUN_HAVE_ISFINITE)
+#endif // #ifndef SHOGUN_HAVE_STD_ISFINITE
 
   return std::isfinite(f);
 }

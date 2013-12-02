@@ -11,7 +11,7 @@
 
 #include <lib/config.h>
 
-#if defined(HAVE_HDF5) && defined( HAVE_CURL)
+#if defined(SHOGUN_HAVE_HDF5) && defined( SHOGUN_HAVE_CURL)
 #include <lib/common.h>
 #include <io/SGIO.h>
 #include <io/File.h>
@@ -481,6 +481,6 @@ protected:
 	char *mldata_url;
 };
 }
-#endif //  HAVE_CURL && HAVE_HDF5
+#endif //  SHOGUN_HAVE_CURL && SHOGUN_HAVE_HDF5
 #endif //__HDF5_FILE_H__
 

@@ -11,7 +11,7 @@
 
 using namespace shogun;
 
-#ifdef HAVE_HDF5
+#ifdef SHOGUN_HAVE_HDF5
 {% set ignores = ['IndividualJobResultAggregator',
 	'RationalApproximationCGMJob',
 	'RationalApproximationIndividualJob',
@@ -102,4 +102,4 @@ TEST(SerializationHDF5,{{class}}_{{type}})
 {% endfor %}
 {% endfor %}
 
-#endif /* HAVE_HDF5 */
+#endif /* SHOGUN_HAVE_HDF5 */

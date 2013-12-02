@@ -12,7 +12,7 @@
 
 #include <lib/config.h>
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 	//#define EIGEN_RUNTIME_NO_MALLOC
 	#include <Eigen/Eigen>
 	#include <Eigen/Dense>
@@ -84,6 +84,6 @@ template<typename T> class EigenSparseUtil
 
 }
 
-#endif	//HAVE_EIGEN3
+#endif	//SHOGUN_HAVE_EIGEN3
 
 #endif

@@ -918,7 +918,7 @@ bool CGUIKernel::clean_kernel()
 	return true;
 }
 
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 bool CGUIKernel::resize_kernel_cache(int32_t size)
 {
 	if (!kernel)
@@ -927,7 +927,7 @@ bool CGUIKernel::resize_kernel_cache(int32_t size)
 	kernel->resize_kernel_cache(size);
 	return true;
 }
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT
 
 bool CGUIKernel::set_optimization_type(char* opt_type)
 {

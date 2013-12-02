@@ -7,7 +7,7 @@
  * Written (W) 2013 Evgeniy Andreev (gsomix)
  */
 
-#ifdef HAVE_PROTOBUF
+#ifdef SHOGUN_HAVE_PROTOBUF
 
 #ifndef __PROTOBUFFILE_H__
 #define __PROTOBUFFILE_H__
@@ -621,4 +621,4 @@ private:
 
 #endif /** __PROTOBUFFILE_H__ */
 
-#endif /** HAVE_PROTOBUF */
+#endif /** SHOGUN_HAVE_PROTOBUF */

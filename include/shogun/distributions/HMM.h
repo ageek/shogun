@@ -22,8 +22,8 @@
 
 #include <stdio.h>
 
-#ifdef USE_HMMPARALLEL
-#define USE_HMMPARALLEL_STRUCTURES 1
+#ifdef SHOGUN_USE_HMMPARALLEL
+#define SHOGUN_USE_HMMPARALLEL_STRUCTURES 1
 #endif
 
 namespace shogun
@@ -58,7 +58,7 @@ struct T_ALPHA_BETA
  * Probably uint8_t is enough if you have at most 256 states,
  * however uint16_t/long/... is also possible although you might quickly run into memory problems
  */
-#ifdef USE_BIGSTATES
+#ifdef SHOGUN_USE_BIGSTATES
 typedef uint16_t T_STATES ;
 #else
 typedef uint8_t T_STATES ;
@@ -380,7 +380,7 @@ class CHMM : public CDistribution
 		T_STATES *trans_list_backward_cnt  ;
 		bool mem_initialized ;
 
-#ifdef USE_HMMPARALLEL_STRUCTURES
+#ifdef SHOGUN_USE_HMMPARALLEL_STRUCTURES
 
 		/// Datatype that is used in parrallel computation of viterbi
 		struct S_DIM_THREAD_PARAM
@@ -409,7 +409,7 @@ class CHMM : public CDistribution
 			return alpha_cache[dim%parallel->get_num_threads()] ; } ;
 		inline T_ALPHA_BETA & BETA_CACHE(int32_t dim) {
 			return beta_cache[dim%parallel->get_num_threads()] ; } ;
-#ifdef USE_LOGSUMARRAY
+#ifdef SHOGUN_USE_LOGSUMARRAY
 		inline float64_t* ARRAYS(int32_t dim) {
 			return arrayS[dim%parallel->get_num_threads()] ; } ;
 #endif
@@ -432,7 +432,7 @@ class CHMM : public CDistribution
 			return alpha_cache ; } ;
 		inline T_ALPHA_BETA & BETA_CACHE(int32_t /*dim*/) {
 			return beta_cache ; } ;
-#ifdef USE_LOGSUMARRAY
+#ifdef SHOGUN_USE_LOGSUMARRAY
 		inline float64_t* ARRAYS(int32_t dim) {
 			return arrayS ; } ;
 #endif
@@ -643,7 +643,7 @@ class CHMM : public CDistribution
 		void estimate_model_baum_welch(CHMM* train);
 		void estimate_model_baum_welch_trans(CHMM* train);
 
-#ifdef USE_HMMPARALLEL_STRUCTURES
+#ifdef SHOGUN_USE_HMMPARALLEL_STRUCTURES
 		void ab_buf_comp(
 			float64_t* p_buf, float64_t* q_buf, float64_t* a_buf,
 			float64_t* b_buf, int32_t dim) ;
@@ -762,7 +762,7 @@ class CHMM : public CDistribution
 			PSEUDO=pseudo ;
 		}
 
-#ifdef USE_HMMPARALLEL_STRUCTURES
+#ifdef SHOGUN_USE_HMMPARALLEL_STRUCTURES
 		static void* bw_dim_prefetch(void * params);
 		static void* bw_single_dim_prefetch(void * params);
 		static void* vit_dim_prefetch(void * params);
@@ -957,10 +957,10 @@ class CHMM : public CDistribution
 		 */
 		bool save_path_derivatives_bin(FILE* file);
 
-#ifdef USE_HMMDEBUG
+#ifdef SHOGUN_USE_HMMDEBUG
 		/// numerically check whether derivates were calculated right
 		bool check_path_derivatives() ;
-#endif //USE_HMMDEBUG
+#endif // SHOGUN_USE_HMMDEBUG
 
 		/** save model probability in binary format
 		 * @param file filehandle
@@ -1267,29 +1267,29 @@ class CHMM : public CDistribution
 		bool reused_caches;
 		//@}
 
-#ifdef USE_HMMPARALLEL_STRUCTURES
+#ifdef SHOGUN_USE_HMMPARALLEL_STRUCTURES
 		/** array of size N*parallel.get_num_threads() for temporary calculations */
 		float64_t** arrayN1 /*[parallel.get_num_threads()]*/ ;
 		/** array of size N*parallel.get_num_threads() for temporary calculations */
 		float64_t** arrayN2 /*[parallel.get_num_threads()]*/ ;
-#else //USE_HMMPARALLEL_STRUCTURES
+#else // SHOGUN_USE_HMMPARALLEL_STRUCTURES
 		/** array of size N for temporary calculations */
 		float64_t* arrayN1;
 		/** array of size N for temporary calculations */
 		float64_t* arrayN2;
-#endif //USE_HMMPARALLEL_STRUCTURES
+#endif // SHOGUN_USE_HMMPARALLEL_STRUCTURES
 
-#ifdef USE_LOGSUMARRAY
-#ifdef USE_HMMPARALLEL_STRUCTURES
+#ifdef SHOGUN_USE_LOGSUMARRAY
+#ifdef SHOGUN_USE_HMMPARALLEL_STRUCTURES
 		/** array for for temporary calculations of log_sum */
 		float64_t** arrayS /*[parallel.get_num_threads()]*/;
 #else
 		/** array for for temporary calculations of log_sum */
 		float64_t* arrayS;
-#endif // USE_HMMPARALLEL_STRUCTURES
-#endif // USE_LOGSUMARRAY
+#endif // SHOGUN_USE_HMMPARALLEL_STRUCTURES
+#endif // SHOGUN_USE_LOGSUMARRAY
 
-#ifdef USE_HMMPARALLEL_STRUCTURES
+#ifdef SHOGUN_USE_HMMPARALLEL_STRUCTURES
 
 		/// cache for forward variables can be terrible HUGE O(T*N)
 		T_ALPHA_BETA* alpha_cache /*[parallel.get_num_threads()]*/ ;
@@ -1308,7 +1308,7 @@ class CHMM : public CDistribution
 		/// dimension for which path_prob was calculated
 		int32_t* path_prob_dimension /*[parallel.get_num_threads()]*/ ;
 
-#else //USE_HMMPARALLEL_STRUCTURES
+#else // SHOGUN_USE_HMMPARALLEL_STRUCTURES
 		/// cache for forward variables can be terrible HUGE O(T*N)
 		T_ALPHA_BETA alpha_cache;
 		/// cache for backward variables can be terrible HUGE O(T*N)
@@ -1326,7 +1326,7 @@ class CHMM : public CDistribution
 		/// dimension for which path_prob was calculated
 		int32_t path_prob_dimension;
 
-#endif //USE_HMMPARALLEL_STRUCTURES
+#endif // SHOGUN_USE_HMMPARALLEL_STRUCTURES
 		//@}
 
 		/** GOTN */

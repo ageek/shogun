@@ -56,7 +56,7 @@ public:
 	/** Destructor */
 	virtual ~CMMDKernelSelectionCombOpt();
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 	/** Computes optimal kernel weights using the ratio of the squared MMD by its
 	 * standard deviation as a criterion, where both expressions are estimated
 	 * in linear time.

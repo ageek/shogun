@@ -38,7 +38,7 @@
 #include <unistd.h>
 #endif
 
-#ifdef HAVE_PTHREAD
+#ifdef SHOGUN_HAVE_PTHREAD
 #include <pthread.h>
 #endif
 
@@ -263,7 +263,7 @@ class CMath : public CSGObject
 		{
 			//fall back to double precision sqrt if sqrtl is not
 			//available
-#ifdef HAVE_SQRTL
+#ifdef SHOGUN_HAVE_SQRTL
 			return ::sqrtl(x);
 #else
 			return ::sqrt(x);
@@ -299,7 +299,7 @@ class CMath : public CSGObject
 		{
 			//fall back to double precision pow if powl is not
 			//available
-#ifdef HAVE_POWL
+#ifdef SHOGUN_HAVE_POWL
 			return ::powl((long double) x, (long double) n);
 #else
 			return ::pow((double) x, (double) n);
@@ -415,11 +415,11 @@ class CMath : public CSGObject
 
 		static inline float64_t log2(float64_t v)
 		{
-#ifdef HAVE_LOG2
+#ifdef SHOGUN_HAVE_LOG2
 			return ::log2(v);
 #else
 			return ::log(v)/::log(2.0);
-#endif //HAVE_LOG2
+#endif //SHOGUN_HAVE_LOG2
 		}
 
 		static inline float64_t log(float64_t v)
@@ -1221,7 +1221,7 @@ class CMath : public CSGObject
 			return CMath::LOGRANGE;
 		}
 
-#ifdef USE_LOGCACHE
+#ifdef SHOGUN_USE_LOGCACHE
 		/// returns range of logtable
 		inline static uint32_t get_log_accuracy()
 		{
@@ -1248,7 +1248,7 @@ class CMath : public CSGObject
 		 * log( exp(a) + exp(b)) = a + log (1 + exp (b-a)) where a = max(p,q)
 		 * and b min(p,q).
 		 */
-#ifdef USE_LOGCACHE
+#ifdef SHOGUN_USE_LOGCACHE
 		static inline float64_t logarithmic_sum(float64_t p, float64_t q)
 		{
 			float64_t diff;
@@ -1291,7 +1291,7 @@ class CMath : public CSGObject
 			return -diff > LOGRANGE? q : q + log(1 + exp(diff));
 		}
 #endif
-#ifdef USE_LOGSUMARRAY
+#ifdef SHOGUN_USE_LOGSUMARRAY
 				/** sum up a whole array of values in logspace.
 				 * This function addresses the numeric instabiliy caused by simply summing up N elements by adding
 				 * each of the elements to some variable. Instead array neighbours are summed up until one element remains.
@@ -1317,7 +1317,7 @@ class CMath : public CSGObject
 					}
 					return logarithmic_sum_array(p,len%2 + (len>>1)) ;
 				}
-#endif //USE_LOGSUMARRAY
+#endif // SHOGUN_USE_LOGSUMARRAY
 				//@}
 
 				/** @return object name */
@@ -1349,7 +1349,7 @@ class CMath : public CSGObject
 				/// random generator seed
 				static uint32_t seed;
 
-#ifdef USE_LOGCACHE
+#ifdef SHOGUN_USE_LOGCACHE
 
 				/// number of steps per integer
 				static int32_t LOGACCURACY;

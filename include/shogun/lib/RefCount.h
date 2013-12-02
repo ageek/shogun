@@ -1,4 +1,4 @@
-#ifdef HAVE_CXX11_ATOMIC
+#ifdef SHOGUN_HAVE_CXX11_ATOMIC
 #include <atomic>
 #endif
 
@@ -41,7 +41,7 @@ public:
 	int32_t ref_count();
 
 	/** reference count */
-#ifdef HAVE_CXX11_ATOMIC
+#ifdef SHOGUN_HAVE_CXX11_ATOMIC
     volatile std::atomic<int> rc;
 #else
 	int32_t rc;

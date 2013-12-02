@@ -12,7 +12,7 @@
 #define __INPUTPARSER_H__
 
 #include <lib/common.h>
-#ifdef HAVE_PTHREAD
+#ifdef SHOGUN_HAVE_PTHREAD
 
 #include <io/SGIO.h>
 #include <io/streaming/StreamingFile.h>
@@ -515,7 +515,7 @@ template <class T> void* CInputParser<T>::main_parse_loop(void* params)
 {
     // Read the examples into current_* objects
     // Instead of allocating mem for new objects each time
-#ifdef HAVE_PTHREAD
+#ifdef SHOGUN_HAVE_PTHREAD
     CInputParser* this_obj = (CInputParser *) params;
     this->input_source = this_obj->input_source;
 
@@ -561,7 +561,7 @@ template <class T> void* CInputParser<T>::main_parse_loop(void* params)
 		pthread_cond_signal(&examples_state_changed);
 		pthread_mutex_unlock(&examples_state_lock);
 	}
-#endif /* HAVE_PTHREAD */
+#endif /* SHOGUN_HAVE_PTHREAD */
     return NULL;
 }
 
@@ -673,6 +673,6 @@ template <class T> void CInputParser<T>::exit_parser()
 }
 }
 
-#endif /* HAVE_PTHREAD */
+#endif /* SHOGUN_HAVE_PTHREAD */
 
 #endif // __INPUTPARSER_H__

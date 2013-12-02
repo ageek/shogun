@@ -19,7 +19,7 @@
 
 #include <string.h>
 
-#ifdef HAVE_PTHREAD
+#ifdef SHOGUN_HAVE_PTHREAD
 #include <pthread.h>
 #endif
 

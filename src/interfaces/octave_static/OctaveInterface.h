@@ -6,10 +6,10 @@
 
 #include <ui/SGInterface.h>
 
-#undef HAVE_STAT
+#undef SHOGUN_HAVE_STAT
 #include <octave/config.h>
 
-#ifdef HAVE_MATLAB
+#ifdef SHOGUN_HAVE_MATLAB
 #define MXARRAY_H
 typedef struct mxArray_tag mxArray;
 #endif

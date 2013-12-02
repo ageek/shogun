@@ -10,7 +10,7 @@
 #ifndef _DIRECTORKERNELMACHINE_H___
 #define _DIRECTORKERNELMACHINE_H___
 
-#ifdef USE_SWIG_DIRECTORS
+#ifdef SHOGUN_USE_SWIG_DIRECTORS
 #include <lib/common.h>
 #include <lib/DataType.h>
 #include <machine/Machine.h>
@@ -239,5 +239,5 @@ IGNORE_IN_CLASSLIST class CDirectorKernelMachine : public CKernelMachine
 
 }
 
-#endif /* USE_SWIG_DIRECTORS */
+#endif /* SHOGUN_USE_SWIG_DIRECTORS */
 #endif /* _DIRECTORKERNELMACHINE_H___ */

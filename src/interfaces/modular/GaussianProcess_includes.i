@@ -1,5 +1,5 @@
 %{
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 
  #include <evaluation/DifferentiableFunction.h>
  #include <machine/gp/LikelihoodModel.h>
@@ -24,5 +24,5 @@
  #include <machine/GaussianProcessMachine.h>
  #include <classifier/GaussianProcessBinaryClassification.h>
  #include <regression/GaussianProcessRegression.h>
-#endif //HAVE_EIGEN3
+#endif //SHOGUN_HAVE_EIGEN3
 %}

@@ -32,9 +32,9 @@
 %rename(LibLinearMTL) CLibLinearMTL;
 
 /* Domain adaptation renames */
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 %rename(DomainAdaptationSVM) CDomainAdaptationSVM;
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT
 %rename(DomainAdaptationSVMLinear) CDomainAdaptationSVMLinear;
 %rename(DomainAdaptationMulticlassLibLinear) CDomainAdaptationMulticlassLibLinear;
 
@@ -62,12 +62,12 @@
 %include <transfer/multitask/LibLinearMTL.h>
 
 /* Domain adaptation includes */
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 %include <transfer/domain_adaptation/DomainAdaptationSVM.h>
-#endif // USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT
 %include <transfer/domain_adaptation/DomainAdaptationSVMLinear.h>
 %include <transfer/domain_adaptation/DomainAdaptationMulticlassLibLinear.h>
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 SERIALIZABLE_DUMMY(shogun::MappedSparseMatrix);
 #endif

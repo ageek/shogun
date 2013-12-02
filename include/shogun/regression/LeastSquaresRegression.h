@@ -14,7 +14,7 @@
 #include <regression/Regression.h>
 #include <regression/LinearRidgeRegression.h>
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 
 #include <machine/LinearMachine.h>
 
@@ -70,5 +70,5 @@ class CLeastSquaresRegression : public CLinearRidgeRegression
 		void init();
 };
 }
-#endif // HAVE_LAPACK
+#endif // SHOGUN_HAVE_LAPACK
 #endif // _LEASTSQUARESREGRESSION_H__

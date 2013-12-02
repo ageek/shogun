@@ -10,7 +10,7 @@
 
 %include <java/enumtypeunsafe.swg>
 
-#ifdef HAVE_JBLAS
+#ifdef SHOGUN_HAVE_JBLAS
 %pragma(java) jniclassimports=%{
 import org.jblas.*;
 %}
@@ -19,7 +19,7 @@ import java.io.Serializable;
 import org.jblas.*;
 %}
 #else
-#ifdef HAVE_UJMP
+#ifdef SHOGUN_HAVE_UJMP
 %pragma(java) jniclassimports=%{
 import org.ujmp.core.*;
 import org.ujmp.core.doublematrix.impl.DefaultDenseDoubleMatrix2D;
@@ -43,7 +43,7 @@ import org.ujmp.core.booleanmatrix.impl.DefaultDenseBooleanMatrix2D;
 #endif
 #endif
 /* One dimensional input/output arrays */
-#ifdef HAVE_JBLAS
+#ifdef SHOGUN_HAVE_JBLAS
 /* Two dimensional input/output arrays */
 %define TYPEMAP_SGVECTOR(SGTYPE, JTYPE, JAVATYPE, JNITYPE, TOARRAY, CLASSDESC, CONSTRUCTOR)
 
@@ -164,7 +164,7 @@ TYPEMAP_SGVECTOR(float64_t, double, Double, jdouble, "()[D", "org/jblas/DoubleMa
 #undef TYPEMAP_SGVECTOR
 
 #else
-#ifdef HAVE_UJMP
+#ifdef SHOGUN_HAVE_UJMP
 /* Two dimensional input/output arrays */
 %define TYPEMAP_SGVECTOR(SGTYPE, JTYPE, JAVATYPE, JNITYPE, TOARRAYMETHOD, TOARRAYDESC, CLASSDESC, CONSTRUCTOR)
 
@@ -395,7 +395,7 @@ TYPEMAP_SGVECTOR_REF(float64_t, double, Double, jdouble, "toDoubleArray", "()[[D
 #endif
 #endif
 
-#ifdef HAVE_JBLAS
+#ifdef SHOGUN_HAVE_JBLAS
 /* Two dimensional input/output arrays */
 %define TYPEMAP_SGMATRIX(SGTYPE, JTYPE, JAVATYPE, JNITYPE, TOARRAY, CLASSDESC, CONSTRUCTOR)
 
@@ -507,7 +507,7 @@ TYPEMAP_SGMATRIX(float64_t, double, Double, jdouble, "()[D", "org/jblas/DoubleMa
 #undef TYPEMAP_SGMATRIX
 
 #else
-#ifdef HAVE_UJMP
+#ifdef SHOGUN_HAVE_UJMP
 /* Two dimensional input/output arrays */
 %define TYPEMAP_SGMATRIX(SGTYPE, JTYPE, JAVATYPE, JNITYPE, TOARRAYMETHOD, TOARRAYDESC, CLASSDESC, CONSTRUCTOR)
 

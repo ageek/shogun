@@ -9,7 +9,7 @@
  */
 
 #include <lib/slep/slep_mc_plain_lr.h>
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 #include <lib/slep/q1/eppMatrix.h>
 #include <mathematics/Math.h>
 #include <mathematics/eigen3.h>

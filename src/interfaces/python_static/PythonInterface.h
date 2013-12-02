@@ -2,7 +2,7 @@
 #define __PYTHONINTERFACE__H_
 
 #undef _POSIX_C_SOURCE
-#undef HAVE_STAT
+#undef SHOGUN_HAVE_STAT
 
 extern "C" {
 #include <Python.h>

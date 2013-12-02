@@ -73,7 +73,7 @@ bool CMultitaskL12LogisticRegression::train_locked_implementation(SGVector<index
 	options.max_iter = m_max_iter;
 	options.n_tasks = ((CTaskGroup*)m_task_relation)->get_num_tasks();
 	options.tasks_indices = tasks;
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 	malsar_result_t model = malsar_joint_feature_learning(
 		features, y.vector, m_rho1, m_rho2, options);
 
@@ -108,7 +108,7 @@ bool CMultitaskL12LogisticRegression::train_machine(CFeatures* data)
 	options.n_tasks = ((CTaskGroup*)m_task_relation)->get_num_tasks();
 	options.tasks_indices = ((CTaskGroup*)m_task_relation)->get_tasks_indices();
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 	malsar_result_t model = malsar_joint_feature_learning(
 		features, y.vector, m_rho1, m_rho2, options);
 

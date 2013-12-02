@@ -182,17 +182,17 @@ float64_t CQuadraticTimeMMD::compute_p_value(float64_t statistic)
 	{
 	case MMD2_SPECTRUM:
 	{
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 		/* get samples from null-distribution and compute p-value of statistic */
 		SGVector<float64_t> null_samples=sample_null_spectrum(
 				m_num_samples_spectrum, m_num_eigenvalues_spectrum);
 		null_samples.qsort();
 		index_t pos=null_samples.find_position_to_insert(statistic);
 		result=1.0-((float64_t)pos)/null_samples.vlen;
-#else // HAVE_LAPACK
+#else // SHOGUN_HAVE_LAPACK
 		SG_ERROR("CQuadraticTimeMMD::compute_p_value(): Only possible if "
 				"shogun is compiled with LAPACK enabled\n");
-#endif // HAVE_LAPACK
+#endif // SHOGUN_HAVE_LAPACK
 		break;
 	}
 
@@ -261,16 +261,16 @@ float64_t CQuadraticTimeMMD::compute_threshold(float64_t alpha)
 	{
 	case MMD2_SPECTRUM:
 	{
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 		/* get samples from null-distribution and compute threshold */
 		SGVector<float64_t> null_samples=sample_null_spectrum(
 				m_num_samples_spectrum, m_num_eigenvalues_spectrum);
 		null_samples.qsort();
 		result=null_samples[index_t(CMath::floor(null_samples.vlen*(1-alpha)))];
-#else // HAVE_LAPACK
+#else // SHOGUN_HAVE_LAPACK
 		SG_ERROR("CQuadraticTimeMMD::compute_threshold(): Only possible if "
 				"shogun is compiled with LAPACK enabled\n");
-#endif // HAVE_LAPACK
+#endif // SHOGUN_HAVE_LAPACK
 		break;
 	}
 
@@ -292,7 +292,7 @@ float64_t CQuadraticTimeMMD::compute_threshold(float64_t alpha)
 }
 
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 SGVector<float64_t> CQuadraticTimeMMD::sample_null_spectrum(index_t num_samples,
 		index_t num_eigenvalues)
 {
@@ -374,7 +374,7 @@ SGVector<float64_t> CQuadraticTimeMMD::sample_null_spectrum(index_t num_samples,
 
 	return null_samples;
 }
-#endif // HAVE_LAPACK
+#endif // SHOGUN_HAVE_LAPACK
 
 SGVector<float64_t> CQuadraticTimeMMD::fit_null_gamma()
 {

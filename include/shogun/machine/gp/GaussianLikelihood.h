@@ -14,7 +14,7 @@
 
 #include <lib/config.h>
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 
 #include <machine/gp/LikelihoodModel.h>
 
@@ -247,5 +247,5 @@ private:
 	float64_t m_sigma;
 };
 }
-#endif /* HAVE_EIGEN3 */
+#endif /* SHOGUN_HAVE_EIGEN3 */
 #endif /* CGAUSSIANLIKELIHOOD_H_ */

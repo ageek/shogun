@@ -12,7 +12,7 @@
 #define DIFFUSIONMAPS_H_
 #include <lib/config.h>
 #include <converter/EmbeddingConverter.h>
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 #include <features/Features.h>
 #include <kernel/Kernel.h>
 
@@ -97,5 +97,5 @@ protected:
 };
 }
 
-#endif /* HAVE_LAPACK */
+#endif /* SHOGUN_HAVE_LAPACK */
 #endif /* DIFFUSIONMAPS_H_ */

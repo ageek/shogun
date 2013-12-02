@@ -9,7 +9,7 @@
 
 #include <lib/config.h>
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 #include <lib/SGVector.h>
 #include <lib/SGMatrix.h>
 #include <mathematics/eigen3.h>
@@ -87,4 +87,4 @@ SGVector<complex128_t> CDirectLinearSolverComplex::solve(
 }
 
 }
-#endif // HAVE_EIGEN3
+#endif // SHOGUN_HAVE_EIGEN3

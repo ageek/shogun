@@ -16,7 +16,7 @@
 
 using namespace shogun;
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 
 #include <features/DenseFeatures.h>
 #include <mathematics/Math.h>
@@ -100,15 +100,15 @@ void test()
 	return;
 }
 
-#endif // HAVE_EIGEN3
+#endif // SHOGUN_HAVE_EIGEN3
 
 int main(int argc, char ** argv)
 {
 	init_shogun_with_defaults();
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 	test();
-#endif // HAVE_EIGEN3
+#endif // SHOGUN_HAVE_EIGEN3
 	exit_shogun();
 
 	return 0;

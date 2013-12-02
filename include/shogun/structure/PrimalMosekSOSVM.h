@@ -11,7 +11,7 @@
 #ifndef _PRIMAL_MOSEK_SOSVM__H__
 #define _PRIMAL_MOSEK_SOSVM__H__
 
-#ifdef USE_MOSEK
+#ifdef SHOGUN_USE_MOSEK
 
 #include <machine/LinearStructuredOutputMachine.h>
 #include <mathematics/Mosek.h>
@@ -145,5 +145,5 @@ class CPrimalMosekSOSVM : public CLinearStructuredOutputMachine
 
 } /* namespace shogun */
 
-#endif /* USE_MOSEK */
+#endif /* SHOGUN_USE_MOSEK */
 #endif /* _PRIMAL_MOSEK_SOSVM__H__ */

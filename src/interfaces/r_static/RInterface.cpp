@@ -19,11 +19,11 @@ extern "C" {
 #include <io/SGIO.h>
 #include <base/init.h>
 
-#ifdef HAVE_PYTHON
+#ifdef SHOGUN_HAVE_PYTHON
 #include "../python_static/PythonInterface.h"
 #endif
 
-#ifdef HAVE_OCTAVE
+#ifdef SHOGUN_HAVE_OCTAVE
 #include "../octave_static/OctaveInterface.h"
 #endif
 
@@ -531,7 +531,7 @@ void CRInterface::set_attribute_struct(const CDynamicArray<T_ATTRIBUTE>* attrs)
 
 bool CRInterface::cmd_run_python()
 {
-#ifdef HAVE_PYTHON
+#ifdef SHOGUN_HAVE_PYTHON
 	return CPythonInterface::run_python_helper(this);
 #else
 	return false;
@@ -540,7 +540,7 @@ bool CRInterface::cmd_run_python()
 
 bool CRInterface::cmd_run_octave()
 {
-#ifdef HAVE_OCTAVE
+#ifdef SHOGUN_HAVE_OCTAVE
 	return COctaveInterface::run_octave_helper(this);
 #else
 	return false;
@@ -682,7 +682,7 @@ extern "C" {
 
 SEXP Rsg(SEXP args);
 
-#ifdef HAVE_ELWMS
+#ifdef SHOGUN_HAVE_ELWMS
 void R_init_elwms(DllInfo *info)
 #else
 void R_init_sg(DllInfo *info)
@@ -699,7 +699,7 @@ void R_init_sg(DllInfo *info)
    R_CMethodDef cMethods[] = { {NULL, NULL, 0} };
    R_FortranMethodDef fortranMethods[] = { {NULL, NULL, 0} };
 
-#ifdef HAVE_ELWMS
+#ifdef SHOGUN_HAVE_ELWMS
    R_ExternalMethodDef externalMethods[] = { {"elwms", (void*(*)()) &Rsg, -1}, {NULL, NULL, 0} };
 #else
    R_ExternalMethodDef externalMethods[] = { {"sg", (void*(*)()) &Rsg, -1}, {NULL, NULL, 0} };
@@ -727,10 +727,10 @@ SEXP Rsg(SEXP args)
 			init_shogun(&r_print_message, &r_print_warning,
 					&r_print_error, &r_cancel_computations);
 			interface=new CRInterface(args);
-#ifdef HAVE_PYTHON
+#ifdef SHOGUN_HAVE_PYTHON
 	CPythonInterface::run_python_init();
 #endif
-#ifdef HAVE_OCTAVE
+#ifdef SHOGUN_HAVE_OCTAVE
 	COctaveInterface::run_octave_init();
 #endif
 		}
@@ -762,16 +762,16 @@ SEXP Rsg(SEXP args)
 /* This method is called form within R when the current module is unregistered.
  * Note that R does not allow unregistering of single symbols. */
 
-#ifdef HAVE_ELWMS
+#ifdef SHOGUN_HAVE_ELWMS
 void R_unload_elwms(DllInfo *info)
 #else
 void R_unload_sg(DllInfo *info)
 #endif
 {
-#ifdef HAVE_PYTHON
+#ifdef SHOGUN_HAVE_PYTHON
 	CPythonInterface::run_python_exit();
 #endif
-#ifdef HAVE_OCTAVE
+#ifdef SHOGUN_HAVE_OCTAVE
 	COctaveInterface::run_octave_exit();
 #endif
 

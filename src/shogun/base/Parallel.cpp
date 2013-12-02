@@ -53,7 +53,7 @@ int32_t Parallel::get_num_cpus() const
 
 void Parallel::set_num_threads(int32_t n)
 {
-#ifndef HAVE_PTHREAD
+#ifndef SHOGUN_HAVE_PTHREAD
 	ASSERT(n==1)
 #endif
 	num_threads=n;

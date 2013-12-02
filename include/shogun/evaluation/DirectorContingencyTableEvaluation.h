@@ -12,7 +12,7 @@
 
 #include <evaluation/ContingencyTableEvaluation.h>
 #include <lib/config.h>
-#ifdef USE_SWIG_DIRECTORS
+#ifdef SHOGUN_USE_SWIG_DIRECTORS
 namespace shogun
 {
 
@@ -71,5 +71,5 @@ public:
 };
 
 }
-#endif /* USE_SWIG_DIRECTORS */
+#endif /* SHOGUN_USE_SWIG_DIRECTORS */
 #endif /* DIRECTORCONTINGENCYTABLEEVALUATION_H_ */

@@ -17,7 +17,7 @@
 
 #include <lib/config.h>
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 
 #include <machine/gp/InferenceMethod.h>
 
@@ -296,5 +296,5 @@ private:
 	SGMatrix<float64_t> m_W;
 };
 }
-#endif /* HAVE_EIGEN3 */
+#endif /* SHOGUN_HAVE_EIGEN3 */
 #endif /* CFITCINFERENCEMETHOD_H_ */

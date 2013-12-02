@@ -9,7 +9,7 @@
  */
 #include <lib/config.h>
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 
 #include <clustering/GMM.h>
 #include <clustering/KMeans.h>

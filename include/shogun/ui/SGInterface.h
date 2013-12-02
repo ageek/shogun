@@ -211,10 +211,10 @@ class CSGInterface : public CSGObject
 		bool cmd_set_prior_probs();
 		/** set Salzberg prior probs from labels */
 		bool cmd_set_prior_probs_from_labels();
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 		/** resize kernel cache */
 		bool cmd_resize_kernel_cache();
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT
 
 
 		/** set distance */

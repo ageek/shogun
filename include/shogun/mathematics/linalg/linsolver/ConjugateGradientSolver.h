@@ -12,7 +12,7 @@
 
 #include <lib/config.h>
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 #include <mathematics/linalg/linsolver/IterativeLinearSolver.h>
 
 namespace shogun
@@ -58,5 +58,5 @@ public:
 
 }
 
-#endif // HAVE_EIGEN3
+#endif // SHOGUN_HAVE_EIGEN3
 #endif // CONJUGATE_GRADIENT_SOLVER_H_

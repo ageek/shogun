@@ -10,7 +10,7 @@
 
 #include <lib/config.h>
 
-#ifdef USE_CPLEX
+#ifdef SHOGUN_USE_CPLEX
 
 #include <classifier/LPBoost.h>
 #include <labels/Labels.h>

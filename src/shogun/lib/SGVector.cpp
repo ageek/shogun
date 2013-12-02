@@ -127,7 +127,7 @@ void SGVector<T>::set_const(T const_elem)
 		vector[i]=const_elem ;
 }
 
-#if HAVE_CATLAS
+#if SHOGUN_HAVE_CATLAS
 template<>
 void SGVector<float64_t>::set_const(float64_t const_elem)
 {
@@ -139,7 +139,7 @@ void SGVector<float32_t>::set_const(float32_t const_elem)
 {
 	catlas_sset(vlen, const_elem, vector, 1);
 }
-#endif // HAVE_CATLAS
+#endif // SHOGUN_HAVE_CATLAS
 
 template<class T>
 void SGVector<T>::range_fill(T start)
@@ -588,7 +588,7 @@ template <>
 void SGVector<float64_t>::vec1_plus_scalar_times_vec2(float64_t* vec1,
 		float64_t scalar, const float64_t* vec2, int32_t n)
 {
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 	int32_t skip=1;
 	cblas_daxpy(n, scalar, vec2, skip, vec1, skip);
 #else
@@ -601,7 +601,7 @@ template <>
 void SGVector<float32_t>::vec1_plus_scalar_times_vec2(float32_t* vec1,
 		float32_t scalar, const float32_t* vec2, int32_t n)
 {
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 	int32_t skip=1;
 	cblas_saxpy(n, scalar, vec2, skip, vec1, skip);
 #else
@@ -614,11 +614,11 @@ template <class T>
 float64_t SGVector<T>::dot(const float64_t* v1, const float64_t* v2, int32_t n)
 {
 	float64_t r=0;
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 	Eigen::Map<const Eigen::VectorXd> ev1(v1,n);
 	Eigen::Map<const Eigen::VectorXd> ev2(v2,n);
 	r = ev1.dot(ev2);
-#elif HAVE_LAPACK
+#elif SHOGUN_HAVE_LAPACK
 	int32_t skip=1;
 	r = cblas_ddot(n, v1, skip, v2, skip);
 #else
@@ -632,11 +632,11 @@ template <class T>
 float32_t SGVector<T>::dot(const float32_t* v1, const float32_t* v2, int32_t n)
 {
 	float32_t r=0;
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 	Eigen::Map<const Eigen::VectorXf> ev1(v1,n);
 	Eigen::Map<const Eigen::VectorXf> ev2(v2,n);
 	r = ev1.dot(ev2);
-#elif HAVE_LAPACK
+#elif SHOGUN_HAVE_LAPACK
 	int32_t skip=1;
 	r = cblas_sdot(n, v1, skip, v2, skip);
 #else
@@ -850,7 +850,7 @@ template <>
 float64_t SGVector<float64_t>::twonorm(const float64_t* v, int32_t n)
 {
 	float64_t norm = 0.0;
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 	norm = cblas_dnrm2(n, v, 1);
 #else
 	norm = CMath::sqrt(SGVector::dot(v, v, n));
@@ -934,7 +934,7 @@ template <class T>
 		return minv;
 	}
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 template <>
 float64_t SGVector<float64_t>::max_abs(float64_t* vec, int32_t len)
 {
@@ -989,7 +989,7 @@ T SGVector<T>::max(T* vec, int32_t len)
 	return maxv;
 }
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 template <>
 int32_t SGVector<float64_t>::arg_max_abs(float64_t* vec, int32_t inc, int32_t len, float64_t* maxv_ptr)
 {
@@ -1115,7 +1115,7 @@ T SGVector<T>::sum_abs(T* vec, int32_t len)
 	return result;
 }
 
-#if HAVE_LAPACK
+#if SHOGUN_HAVE_LAPACK
 template <>
 float64_t SGVector<float64_t>::sum_abs(float64_t* vec, int32_t len)
 {
@@ -1182,7 +1182,7 @@ void SGVector<T>::scale_vector(T alpha, T* vec, int32_t len)
 		vec[i]*=alpha;
 }
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 template<>
 void SGVector<float64_t>::scale_vector(float64_t alpha, float64_t* vec, int32_t len)
 {

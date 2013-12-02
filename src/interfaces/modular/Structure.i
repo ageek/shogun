@@ -8,7 +8,7 @@
  * Copyright (C) 2009 Fraunhofer Institute FIRST and Max-Planck-Society
  */
 
-#if defined(USE_SWIG_DIRECTORS) && defined(SWIGPYTHON)
+#if defined(SHOGUN_USE_SWIG_DIRECTORS) && defined(SWIGPYTHON)
 %feature("director") shogun::CDirectorStructuredModel;
 #endif
 
@@ -51,9 +51,9 @@
 %rename(KernelStructuredOutputMachine) CKernelStructuredOutputMachine;
 %rename(DualLibQPBMSOSVM) CDualLibQPBMSOSVM;
 
-#ifdef USE_MOSEK
+#ifdef SHOGUN_USE_MOSEK
 %rename(PrimalMosekSOSVM) CPrimalMosekSOSVM;
-#endif /* USE_MOSEK */
+#endif /* SHOGUN_USE_MOSEK */
 
 %rename(StochasticSOSVM) CStochasticSOSVM;
 
@@ -93,8 +93,8 @@
 
 %include <structure/DualLibQPBMSOSVM.h>
 
-#ifdef USE_MOSEK
+#ifdef SHOGUN_USE_MOSEK
 %include <structure/PrimalMosekSOSVM.h>
-#endif /* USE_MOSEK */
+#endif /* SHOGUN_USE_MOSEK */
 
 %include <structure/StochasticSOSVM.h>

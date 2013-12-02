@@ -114,7 +114,7 @@ class CQPBSVMLib: public CSGObject
 		int32_t qpbsvm_gradient_descent(
 			float64_t *x, float64_t *Nabla, int32_t *ptr_t,
 			float64_t **ptr_History, int32_t verb);
-#ifdef USE_CPLEX
+#ifdef SHOGUN_USE_CPLEX
 		/** Usage: exitflag = qpbsvm_cplex(UB, dim, tmax,
 		tolabs, tolrel, tolKKT, x, Nabla, &t, &History, verb ) */
 		int32_t qpbsvm_cplex(

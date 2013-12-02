@@ -8,8 +8,8 @@
  * Copyright (C) 2013 Fernando J. Iglesias Garcia
  */
 
-#ifdef HAVE_EIGEN3
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_LAPACK
 
 #include <metric/LMNNImpl.h>
 #include <multiclass/KNN.h>
@@ -545,5 +545,5 @@ CEuclideanDistance* CLMNNImpl::setup_distance(CDenseFeatures<float64_t>* x,
 	return euclidean;
 }
 
-#endif /* HAVE_LAPACK */
-#endif /* HAVE_EIGEN3 */
+#endif /* SHOGUN_HAVE_LAPACK */
+#endif /* SHOGUN_HAVE_EIGEN3 */

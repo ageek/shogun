@@ -11,7 +11,7 @@
 #define __PARSEBUFFER_H__
 
 #include <lib/common.h>
-#ifdef HAVE_PTHREAD
+#ifdef SHOGUN_HAVE_PTHREAD
 
 #include <lib/DataType.h>
 #include <pthread.h>
@@ -362,5 +362,5 @@ void CParseBuffer<T>::finalize_example(bool free_after_release)
 }
 
 }
-#endif // HAVE_PTHREAD
+#endif // SHOGUN_HAVE_PTHREAD
 #endif // __PARSEBUFFER_H__

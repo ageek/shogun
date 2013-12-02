@@ -14,7 +14,7 @@
 
 #include <regression/GaussianProcessRegression.h>
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 
 #include <io/SGIO.h>
 #include <machine/gp/FITCInferenceMethod.h>

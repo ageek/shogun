@@ -8,7 +8,7 @@
  * Copyright (C) 2009 Fraunhofer Institute FIRST and Max-Planck-Society
  */
 
-#ifdef HAVE_PYTHON
+#ifdef SHOGUN_HAVE_PYTHON
 %feature("autodoc", "get_radi(self) -> numpy 1dim array of float") get_radi;
 %feature("autodoc", "get_centers(self) -> numpy 2dim array of float") get_centers;
 %feature("autodoc", "get_merge_distance(self) -> [] of float") get_merge_distance;

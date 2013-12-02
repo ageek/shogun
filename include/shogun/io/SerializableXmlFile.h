@@ -11,7 +11,7 @@
 #define __SERIALIZABLE_XML_FILE_H__
 
 #include <lib/config.h>
-#ifdef HAVE_XML
+#ifdef SHOGUN_HAVE_XML
 
 #include <io/SerializableFile.h>
 #include <base/DynArray.h>
@@ -129,5 +129,5 @@ public:
 	virtual bool is_opened();
 };
 }
-#endif /* HAVE_XML  */
+#endif /* SHOGUN_HAVE_XML  */
 #endif /* __SERIALIZABLE_XML_FILE_H__  */

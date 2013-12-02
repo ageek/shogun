@@ -12,7 +12,7 @@
 
 #include <lib/config.h>
 
-#ifdef USE_SWIG_DIRECTORS
+#ifdef SHOGUN_USE_SWIG_DIRECTORS
 #include <lib/common.h>
 #include <features/Features.h>
 #include <features/DotFeatures.h>
@@ -363,5 +363,5 @@ IGNORE_IN_CLASSLIST class CDirectorDotFeatures : public CDotFeatures
 		virtual const char* get_name() const { return "DirectorDotFeatures"; }
 };
 }
-#endif // USE_SWIG_DIRECTORS
+#endif // SHOGUN_USE_SWIG_DIRECTORS
 #endif // _DIRECTORDOTFEATURES_H___

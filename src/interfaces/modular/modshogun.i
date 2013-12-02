@@ -11,7 +11,7 @@
 "The `modshogun` module gathers all modules available in the SHOGUN toolkit."
 %enddef
 
-#if defined(USE_SWIG_DIRECTORS) && defined(SWIGPYTHON)
+#if defined(SHOGUN_USE_SWIG_DIRECTORS) && defined(SWIGPYTHON)
 %module(directors="1", docstring=DOCSTR) modshogun
 #else
 %module(docstring=DOCSTR) modshogun
@@ -36,7 +36,7 @@
 %feature("python:slot", "bf_getbuffer", functype="getbufferproc") shogun::SGObject::getbuffer;*/
 #endif
 
-#ifdef HAVE_DOXYGEN
+#ifdef SHOGUN_HAVE_DOXYGEN
 #ifndef SWIGRUBY
 %include "modshogun_doxygen.i"
 #endif

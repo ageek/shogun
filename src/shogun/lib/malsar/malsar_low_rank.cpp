@@ -9,7 +9,7 @@
  */
 
 #include <lib/malsar/malsar_low_rank.h>
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 #include <mathematics/eigen3.h>
 #include <mathematics/Math.h>
 #include <iostream>

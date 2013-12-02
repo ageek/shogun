@@ -13,11 +13,11 @@
 
 #include <lib/config.h>
 
-#ifdef USE_GLPK
+#ifdef SHOGUN_USE_GLPK
 #include <glpk.h>
 #endif
 
-#ifdef USE_CPLEX
+#ifdef SHOGUN_USE_CPLEX
 extern "C" {
 #include <ilcplex/cplex.h>
 }
@@ -409,7 +409,7 @@ class CMKL : public CSVM
 		/** initialize solver such as glpk or cplex */
 		void init_solver();
 
-#ifdef USE_CPLEX
+#ifdef SHOGUN_USE_CPLEX
 		/** init cplex
 		 *
 		 * @return if init was successful
@@ -426,7 +426,7 @@ class CMKL : public CSVM
 		bool cleanup_cplex();
 #endif
 
-#ifdef USE_GLPK
+#ifdef SHOGUN_USE_GLPK
 		/** init glpk
 		 *
 		 * @return if init was successful
@@ -484,14 +484,14 @@ class CMKL : public CSVM
 		/** measures training time for use with get_max_train_time() */
 		CTime training_time_clock;
 
-#ifdef USE_CPLEX
+#ifdef SHOGUN_USE_CPLEX
 		/** env */
 		CPXENVptr     env;
 		/** lp */
 		CPXLPptr      lp_cplex;
 #endif
 
-#ifdef USE_GLPK
+#ifdef SHOGUN_USE_GLPK
 		/** lp */
 		glp_prob* lp_glpk;
 

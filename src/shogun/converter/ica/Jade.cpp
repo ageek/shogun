@@ -11,7 +11,7 @@
 
 #include <features/DenseFeatures.h>
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 
 #include <mathematics/Math.h>
 #include <mathematics/eigen3.h>
@@ -201,4 +201,4 @@ CFeatures* CJade::apply(CFeatures* features)
 	return features;
 }
 
-#endif // HAVE_EIGEN3
+#endif // SHOGUN_HAVE_EIGEN3

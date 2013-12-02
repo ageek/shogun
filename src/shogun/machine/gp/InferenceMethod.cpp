@@ -12,7 +12,7 @@
 
 #include <lib/config.h>
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 
 #include <machine/gp/InferenceMethod.h>
 #include <distributions/classical/GaussianDistribution.h>
@@ -155,10 +155,10 @@ get_negative_log_marginal_likelihood_derivatives(CMap<TParameter*, CSGObject*>* 
 	// create lock object
 	CLock lock;
 
-#ifdef HAVE_PTHREAD
+#ifdef SHOGUN_HAVE_PTHREAD
 	if (num_deriv<2)
 	{
-#endif /* HAVE_PTHREAD */
+#endif /* SHOGUN_HAVE_PTHREAD */
 		for (index_t i=0; i<num_deriv; i++)
 		{
 			CMapNode<TParameter*, CSGObject*>* node=params->get_node_ptr(i);
@@ -173,7 +173,7 @@ get_negative_log_marginal_likelihood_derivatives(CMap<TParameter*, CSGObject*>* 
 
 			get_derivative_helper((void*) &thread_params);
 		}
-#ifdef HAVE_PTHREAD
+#ifdef SHOGUN_HAVE_PTHREAD
 	}
 	else
 	{
@@ -201,7 +201,7 @@ get_negative_log_marginal_likelihood_derivatives(CMap<TParameter*, CSGObject*>* 
 		SG_FREE(thread_params);
 		SG_FREE(threads);
 	}
-#endif /* HAVE_PTHREAD */
+#endif /* SHOGUN_HAVE_PTHREAD */
 
 	return result;
 }
@@ -283,4 +283,4 @@ void CInferenceMethod::update_train_kernel()
 	m_ktrtr=m_kernel->get_kernel_matrix();
 }
 
-#endif /* HAVE_EIGEN3 */
+#endif /* SHOGUN_HAVE_EIGEN3 */

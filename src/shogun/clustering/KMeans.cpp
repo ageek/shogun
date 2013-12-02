@@ -16,7 +16,7 @@
 #include <mathematics/Math.h>
 #include <base/Parallel.h>
 
-#ifdef HAVE_PTHREAD
+#ifdef SHOGUN_HAVE_PTHREAD
 #include <pthread.h>
 #endif
 

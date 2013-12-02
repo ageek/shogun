@@ -54,7 +54,7 @@ public:
 	/** Destructor */
 	virtual ~CMMDKernelSelectionCombMaxL2();
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 	/** Computes kernel weights which maximise the MMD of the underlying
 	 * combined kernel using L2-regularization.
 	 *

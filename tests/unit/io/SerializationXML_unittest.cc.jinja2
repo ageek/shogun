@@ -11,7 +11,7 @@
 
 using namespace shogun;
 
-#ifdef HAVE_XML
+#ifdef SHOGUN_HAVE_XML
 
 {% set ignores = ['ScalarResult', 'StoreScalarAggregator'] %}
 
@@ -99,4 +99,4 @@ TEST(SerializationXML,{{class}}_{{type}})
 {% endfor %}
 {% endfor %}
 
-#endif /* HAVE_XML */
+#endif /* SHOGUN_HAVE_XML */

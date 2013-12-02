@@ -15,7 +15,7 @@
 #include <lib/config.h>
 #include <regression/Regression.h>
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 
 #include <machine/KernelMachine.h>
 
@@ -158,5 +158,5 @@ class CKernelRidgeRegression : public CKernelMachine
 };
 }
 
-#endif // HAVE_LAPACK
+#endif // SHOGUN_HAVE_LAPACK
 #endif // _KERNELRIDGEREGRESSION_H__

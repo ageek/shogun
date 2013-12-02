@@ -17,19 +17,19 @@
 #include <lib/config.h>
 #include <lib/common.h>
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 
 extern "C" {
 
-#ifdef HAVE_MKL
+#ifdef SHOGUN_HAVE_MKL
 #include <mkl_cblas.h>
 #include <mkl_lapack.h>
-#elif defined(HAVE_MVEC)
+#elif defined(SHOGUN_HAVE_MVEC)
 //FIXME: Accelerate framework's vForce.h forward declares
 // std::complex<> classes that causes major errors
 // in c++11 mode and Eigen3
 // this define basically disables the include of vForce.h
-#ifdef HAVE_CXX11
+#ifdef SHOGUN_HAVE_CXX11
 #define __VFORCE_H 1
 #endif
 #include <Accelerate/Accelerate.h>
@@ -37,11 +37,11 @@ extern "C" {
 #include <cblas.h>
 #endif
 
-#ifdef HAVE_ACML
+#ifdef SHOGUN_HAVE_ACML
 #include <acml.h>
 #endif
 
-#ifdef HAVE_ATLAS
+#ifdef SHOGUN_HAVE_ATLAS
 #include <clapack.h>
 #else
 // ACML and MKL do not provide clapack_* routines
@@ -87,7 +87,7 @@ void wrap_dstemr(char jobz, char range, int n, double* d__, double *e, double vl
 }
 
 // only MKL, ACML and Mac OS vector library provide a header file for the lapack routines
-#if !defined(HAVE_ACML) && !defined(HAVE_MKL) && !defined(HAVE_MVEC)
+#if !defined(SHOGUN_HAVE_ACML) && !defined(SHOGUN_HAVE_MKL) && !defined(SHOGUN_HAVE_MVEC)
 // double precision
 int dsyev_(char*, char*, int*, double*, int*, double*, double*, int*, int*);
 int dgesvd_(char* jobu, char* jobvt, int* m, int* n, double* a, int* lda,
@@ -114,5 +114,5 @@ int dstemr_(char*, char*, int*, double*, double*, double*, double*, int*,
 #endif
 }
 
-#endif //HAVE_LAPACK
+#endif //SHOGUN_HAVE_LAPACK
 #endif //_LAPACK_H__

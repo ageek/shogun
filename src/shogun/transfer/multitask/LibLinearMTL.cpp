@@ -14,7 +14,7 @@
 
 #include <lib/config.h>
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 #include <io/SGIO.h>
 #include <lib/Signal.h>
 #include <lib/Time.h>
@@ -565,4 +565,4 @@ float64_t CLibLinearMTL::compute_duality_gap()
 }
 
 
-#endif //HAVE_LAPACK
+#endif //SHOGUN_HAVE_LAPACK

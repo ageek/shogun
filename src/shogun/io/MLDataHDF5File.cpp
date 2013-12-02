@@ -9,7 +9,7 @@
 
 #include <lib/config.h>
 
-#if defined(HAVE_HDF5) && defined( HAVE_CURL)
+#if defined(SHOGUN_HAVE_HDF5) && defined( SHOGUN_HAVE_CURL)
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -380,4 +380,4 @@ void CMLDataHDF5File::create_group_hierarchy()
 	}
 	SG_FREE(vname);
 }
-#endif //  HAVE_CURL && HAVE_HDF5
+#endif //  SHOGUN_HAVE_CURL && SHOGUN_HAVE_HDF5

@@ -9,7 +9,7 @@
  */
 
 #include <lib/config.h>
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 #include <transfer/domain_adaptation/DomainAdaptationMulticlassLibLinear.h>
 #include <labels/MulticlassLabels.h>
 
@@ -120,4 +120,4 @@ CBinaryLabels* CDomainAdaptationMulticlassLibLinear::get_submachine_outputs(int3
 
 	return new CBinaryLabels(result);
 }
-#endif /* HAVE_LAPACK */
+#endif /* SHOGUN_HAVE_LAPACK */

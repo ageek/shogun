@@ -10,7 +10,7 @@ using namespace shogun;
 int main(int argc, char ** argv)
 {
 	init_shogun_with_defaults();
-#ifdef USE_MOSEK
+#ifdef SHOGUN_USE_MOSEK
 
 	// Create structured labels
 	CSequenceLabels* labels = new CSequenceLabels(5, 2);
@@ -60,7 +60,7 @@ int main(int argc, char ** argv)
 	SG_UNREF(sosvm);
 	SG_UNREF(model);
 
-#endif /* USE_MOSEK */
+#endif /* SHOGUN_USE_MOSEK */
 	exit_shogun();
 
 	return 0;

@@ -10,7 +10,7 @@ using namespace shogun;
 int main(int argc, char** argv)
 {
 	init_shogun_with_defaults();
-#if defined(HAVE_HDF5) && defined( HAVE_CURL)
+#if defined(SHOGUN_HAVE_HDF5) && defined( SHOGUN_HAVE_CURL)
 	CMLDataHDF5File* hdf = new CMLDataHDF5File((char *)"australian", "/data/data");
 	float64_t* mat=NULL;
 	int32_t num_feat;
@@ -27,7 +27,7 @@ int main(int argc, char** argv)
 
 	SG_FREE(mat);
 	SG_UNREF(hdf);
-#endif // HAVE_CURL && HAVE_HDF5
+#endif // SHOGUN_HAVE_CURL && SHOGUN_HAVE_HDF5
 	exit_shogun();
 	return 0;
 }

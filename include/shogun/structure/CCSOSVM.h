@@ -15,7 +15,7 @@
 #include <machine/LinearStructuredOutputMachine.h>
 #include <base/DynArray.h>
 
-#ifdef USE_MOSEK
+#ifdef SHOGUN_USE_MOSEK
 #include <mosek.h>
 #endif
 
@@ -214,7 +214,7 @@ namespace shogun
 
 			/** QP solver type */
 			EQPType m_qp_type;
-#ifdef USE_MOSEK
+#ifdef SHOGUN_USE_MOSEK
 			/** Mosek environment */
 			MSKenv_t m_msk_env;
 #endif

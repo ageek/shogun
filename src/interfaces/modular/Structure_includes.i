@@ -34,9 +34,9 @@
 
  #include <structure/DualLibQPBMSOSVM.h>
 
-#ifdef USE_MOSEK
+#ifdef SHOGUN_USE_MOSEK
  #include <structure/PrimalMosekSOSVM.h>
-#endif /* USE_MOSEK */
+#endif /* SHOGUN_USE_MOSEK */
 
  #include <structure/StochasticSOSVM.h>
 %}

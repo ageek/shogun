@@ -23,12 +23,12 @@ CMKL::CMKL(CSVM* s) : CSVM(), svm(NULL), C_mkl(0), mkl_norm(1), ent_lambda(0),
 		interleaved_optimization(true), w_gap(1.0), rho(0)
 {
 	set_constraint_generator(s);
-#ifdef USE_CPLEX
+#ifdef SHOGUN_USE_CPLEX
 	lp_cplex = NULL ;
 	env = NULL ;
 #endif
 
-#ifdef USE_GLPK
+#ifdef SHOGUN_USE_GLPK
 	lp_glpk = NULL;
 	lp_glpk_parm = NULL;
 #endif
@@ -50,14 +50,14 @@ CMKL::~CMKL()
 
 void CMKL::init_solver()
 {
-#ifdef USE_CPLEX
+#ifdef SHOGUN_USE_CPLEX
 	cleanup_cplex();
 
 	if (get_solver_type()==ST_CPLEX)
 		init_cplex();
 #endif
 
-#ifdef USE_GLPK
+#ifdef SHOGUN_USE_GLPK
 	cleanup_glpk();
 
 	if (get_solver_type() == ST_GLPK)
@@ -65,7 +65,7 @@ void CMKL::init_solver()
 #endif
 }
 
-#ifdef USE_CPLEX
+#ifdef SHOGUN_USE_CPLEX
 bool CMKL::init_cplex()
 {
 	while (env==NULL)
@@ -150,7 +150,7 @@ bool CMKL::cleanup_cplex()
 }
 #endif
 
-#ifdef USE_GLPK
+#ifdef SHOGUN_USE_GLPK
 bool CMKL::init_glpk()
 {
 	lp_glpk = glp_create_prob();
@@ -191,7 +191,7 @@ bool CMKL::check_glp_status(glp_prob *lp)
 	}
 	return true;
 }
-#endif // USE_GLPK
+#endif // SHOGUN_USE_GLPK
 
 bool CMKL::train_machine(CFeatures* data)
 {
@@ -275,14 +275,14 @@ bool CMKL::train_machine(CFeatures* data)
 	svm->set_labels(m_labels);
 	svm->set_kernel(kernel);
 
-#ifdef USE_CPLEX
+#ifdef SHOGUN_USE_CPLEX
 	cleanup_cplex();
 
 	if (get_solver_type()==ST_CPLEX)
 		init_cplex();
 #endif
 
-#ifdef USE_GLPK
+#ifdef SHOGUN_USE_GLPK
 	if (get_solver_type()==ST_GLPK)
 		init_glpk();
 #endif
@@ -310,14 +310,14 @@ bool CMKL::train_machine(CFeatures* data)
 		//but if we don't actually unref() the object we might leak memory...
 		//So as a workaround we only unref when the reference count was >1
 		//before.
-#ifdef USE_REFERENCE_COUNTING
+#ifdef SHOGUN_USE_REFERENCE_COUNTING
 		int32_t refs=this->ref();
 #endif
 		svm->set_callback_function(this, perform_mkl_step_helper);
 		svm->train();
 		SG_DONE()
 		svm->set_callback_function(NULL, NULL);
-#ifdef USE_REFERENCE_COUNTING
+#ifdef SHOGUN_USE_REFERENCE_COUNTING
 		if (refs>1)
 			this->unref();
 #endif
@@ -349,10 +349,10 @@ bool CMKL::train_machine(CFeatures* data)
 
 		SG_FREE(sumw);
 	}
-#ifdef USE_CPLEX
+#ifdef SHOGUN_USE_CPLEX
 	cleanup_cplex();
 #endif
-#ifdef USE_GLPK
+#ifdef SHOGUN_USE_GLPK
 	cleanup_glpk();
 #endif
 
@@ -414,7 +414,7 @@ bool CMKL::perform_mkl_step(
 	ASSERT(nweights==num_kernels)
 	float64_t* beta = SG_MALLOC(float64_t, num_kernels);
 
-#if defined(USE_CPLEX) || defined(USE_GLPK)
+#if defined(SHOGUN_USE_CPLEX) || defined(SHOGUN_USE_GLPK)
 	int32_t inner_iters=0;
 #endif
 	float64_t mkl_objective=0;
@@ -448,11 +448,11 @@ bool CMKL::perform_mkl_step(
 		}
 		else if (get_solver_type()==ST_NEWTON)
 			rho=compute_optimal_betas_newton(beta, old_beta, num_kernels, sumw, suma, mkl_objective);
-#ifdef USE_CPLEX
+#ifdef SHOGUN_USE_CPLEX
 		else if (get_solver_type()==ST_CPLEX)
 			rho=compute_optimal_betas_via_cplex(beta, old_beta, num_kernels, sumw, suma, inner_iters);
 #endif
-#ifdef USE_GLPK
+#ifdef SHOGUN_USE_GLPK
 		else if (get_solver_type()==ST_GLPK)
 			rho=compute_optimal_betas_via_glpk(beta, old_beta, num_kernels, sumw, suma, inner_iters);
 #endif
@@ -984,7 +984,7 @@ float64_t CMKL::compute_optimal_betas_via_cplex(float64_t* new_beta, const float
 {
 	SG_DEBUG("MKL via CPLEX\n")
 
-#ifdef USE_CPLEX
+#ifdef SHOGUN_USE_CPLEX
 	ASSERT(new_beta)
 	ASSERT(old_beta)
 
@@ -1331,7 +1331,7 @@ float64_t CMKL::compute_optimal_betas_via_glpk(float64_t* beta, const float64_t*
 		SG_ERROR("MKL via GLPK works only for norm=1\n")
 
 	float64_t obj=1.0;
-#ifdef USE_GLPK
+#ifdef SHOGUN_USE_GLPK
 	int32_t NUMCOLS = 2*num_kernels + 1 ;
 	if (!lp_initialized)
 	{
@@ -1570,7 +1570,7 @@ float64_t CMKL::compute_mkl_dual_objective()
 	return -mkl_obj;
 }
 
-#ifdef USE_CPLEX
+#ifdef SHOGUN_USE_CPLEX
 void CMKL::set_qnorm_constraints(float64_t* beta, int32_t num_kernels)
 {
 	ASSERT(num_kernels>0)
@@ -1619,4 +1619,4 @@ void CMKL::set_qnorm_constraints(float64_t* beta, int32_t num_kernels)
 	SG_FREE(lin_term);
 	SG_FREE(ind);
 }
-#endif // USE_CPLEX
+#endif // SHOGUN_USE_CPLEX

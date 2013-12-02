@@ -139,7 +139,7 @@ uint64_t CRandom::random_64() const
 
 void CRandom::fill_array(uint32_t* array, int32_t size) const
 {
-#if defined(USE_ALIGNED_MEMORY) || defined(DARWIN)
+#if defined(SHOGUN_USE_ALIGNED_MEMORY) || defined(DARWIN)
 	if ((size >= sfmt_get_min_array_size32(m_sfmt_32)) && (size % 4) == 0)
 	{
 		sfmt_fill_array32(m_sfmt_32, array, size);
@@ -152,7 +152,7 @@ void CRandom::fill_array(uint32_t* array, int32_t size) const
 
 void CRandom::fill_array(uint64_t* array, int32_t size) const
 {
-#if defined(USE_ALIGNED_MEMORY) || defined(DARWIN)
+#if defined(SHOGUN_USE_ALIGNED_MEMORY) || defined(DARWIN)
 	if ((size >= sfmt_get_min_array_size64(m_sfmt_64)) && (size % 2) == 0)
 	{
 		sfmt_fill_array64(m_sfmt_64, array, size);
@@ -165,7 +165,7 @@ void CRandom::fill_array(uint64_t* array, int32_t size) const
 
 void CRandom::fill_array_oc(float64_t* array, int32_t size) const
 {
-#if defined(USE_ALIGNED_MEMORY) || defined(DARWIN)
+#if defined(SHOGUN_USE_ALIGNED_MEMORY) || defined(DARWIN)
 	if ((size >= dsfmt_get_min_array_size()) && (size % 2) == 0)
 	{
 		dsfmt_fill_array_open_close(m_dsfmt, array, size);
@@ -178,7 +178,7 @@ void CRandom::fill_array_oc(float64_t* array, int32_t size) const
 
 void CRandom::fill_array_co(float64_t* array, int32_t size) const
 {
-#if defined(USE_ALIGNED_MEMORY) || defined(DARWIN)
+#if defined(SHOGUN_USE_ALIGNED_MEMORY) || defined(DARWIN)
 	if ((size >= dsfmt_get_min_array_size()) && (size % 2) == 0)
 	{
 		dsfmt_fill_array_close_open(m_dsfmt, array, size);
@@ -191,7 +191,7 @@ void CRandom::fill_array_co(float64_t* array, int32_t size) const
 
 void CRandom::fill_array_oo(float64_t* array, int32_t size) const
 {
-#if defined(USE_ALIGNED_MEMORY) || defined(DARWIN)
+#if defined(SHOGUN_USE_ALIGNED_MEMORY) || defined(DARWIN)
 	if ((size >= dsfmt_get_min_array_size()) && (size % 2) == 0)
 	{
 		dsfmt_fill_array_open_open(m_dsfmt, array, size);
@@ -204,7 +204,7 @@ void CRandom::fill_array_oo(float64_t* array, int32_t size) const
 
 void CRandom::fill_array_c1o2(float64_t* array, int32_t size) const
 {
-#if defined(USE_ALIGNED_MEMORY) || defined(DARWIN)
+#if defined(SHOGUN_USE_ALIGNED_MEMORY) || defined(DARWIN)
 	if ((size >= dsfmt_get_min_array_size()) && (size % 2) == 0)
 	{
 		dsfmt_fill_array_close1_open2(m_dsfmt, array, size);
@@ -317,7 +317,7 @@ uint32_t CRandom::generate_seed()
 	uint32_t seed;
 #if defined(_WIN32)
 	rand_s(&seed);
-#elif defined(HAVE_ARC4RANDOM)
+#elif defined(SHOGUN_HAVE_ARC4RANDOM)
 	seed = arc4random();
 #elif defined(DEV_RANDOM)
 	int fd = open(DEV_RANDOM, O_RDONLY);

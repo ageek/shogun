@@ -163,10 +163,10 @@ CHMM::CHMM()
 	observation_matrix_b=NULL;
 	initial_state_distribution_p=NULL;
 	end_state_distribution_q=NULL;
-#ifdef USE_LOGSUMARRAY
+#ifdef SHOGUN_USE_LOGSUMARRAY
 	arrayS = NULL;
 #endif
-#ifdef USE_HMMPARALLEL_STRUCTURES
+#ifdef SHOGUN_USE_HMMPARALLEL_STRUCTURES
 	this->alpha_cache=NULL;
 	this->beta_cache=NULL;
 	path_prob_updated = NULL;
@@ -184,7 +184,7 @@ CHMM::CHMM()
 CHMM::CHMM(CHMM* h)
 : CDistribution(), iterations(150), epsilon(1e-4), conv_it(5)
 {
-#ifdef USE_HMMPARALLEL_STRUCTURES
+#ifdef SHOGUN_USE_HMMPARALLEL_STRUCTURES
 	SG_INFO("hmm is using %i separate tables\n",  parallel->get_num_threads())
 #endif
 
@@ -202,7 +202,7 @@ CHMM::CHMM(int32_t p_N, int32_t p_M, Model* p_model, float64_t p_PSEUDO)
 	this->M=p_M;
 	model=NULL ;
 
-#ifdef USE_HMMPARALLEL_STRUCTURES
+#ifdef SHOGUN_USE_HMMPARALLEL_STRUCTURES
 	SG_INFO("hmm is using %i separate tables\n",  parallel->get_num_threads())
 #endif
 
@@ -218,7 +218,7 @@ CHMM::CHMM(
 	this->M=p_M;
 	model=NULL ;
 
-#ifdef USE_HMMPARALLEL_STRUCTURES
+#ifdef SHOGUN_USE_HMMPARALLEL_STRUCTURES
 	SG_INFO("hmm is using %i separate tables\n",  parallel->get_num_threads())
 #endif
 
@@ -248,7 +248,7 @@ CHMM::CHMM(int32_t p_N, float64_t* p, float64_t* q, float64_t* a)
 	this->p_observations=NULL;
 	this->reused_caches=false;
 
-#ifdef USE_HMMPARALLEL_STRUCTURES
+#ifdef SHOGUN_USE_HMMPARALLEL_STRUCTURES
 	this->alpha_cache=NULL;
 	this->beta_cache=NULL;
 #else
@@ -301,7 +301,7 @@ CHMM::CHMM(
 	this->p_observations=NULL;
 	this->reused_caches=false;
 
-#ifdef USE_HMMPARALLEL_STRUCTURES
+#ifdef SHOGUN_USE_HMMPARALLEL_STRUCTURES
 	this->alpha_cache=NULL;
 	this->beta_cache=NULL;
 #else
@@ -389,7 +389,7 @@ CHMM::CHMM(
 CHMM::CHMM(FILE* model_file, float64_t p_PSEUDO)
 : CDistribution(), iterations(150), epsilon(1e-4), conv_it(5)
 {
-#ifdef USE_HMMPARALLEL_STRUCTURES
+#ifdef SHOGUN_USE_HMMPARALLEL_STRUCTURES
 	SG_INFO("hmm is using %i separate tables\n",  parallel->get_num_threads())
 #endif
 
@@ -430,7 +430,7 @@ CHMM::~CHMM()
 
 	if (!reused_caches)
 	{
-#ifdef USE_HMMPARALLEL_STRUCTURES
+#ifdef SHOGUN_USE_HMMPARALLEL_STRUCTURES
 		if (mem_initialized)
 		{
 			for (int32_t i=0; i<parallel->get_num_threads(); i++)
@@ -445,19 +445,19 @@ CHMM::~CHMM()
 		SG_FREE(beta_cache);
 		alpha_cache=NULL;
 		beta_cache=NULL;
-#else // USE_HMMPARALLEL_STRUCTURES
+#else // SHOGUN_USE_HMMPARALLEL_STRUCTURES
 		SG_FREE(alpha_cache.table);
 		SG_FREE(beta_cache.table);
 		alpha_cache.table=NULL;
 		beta_cache.table=NULL;
-#endif // USE_HMMPARALLEL_STRUCTURES
+#endif // SHOGUN_USE_HMMPARALLEL_STRUCTURES
 
 		SG_FREE(states_per_observation_psi);
 		states_per_observation_psi=NULL;
 	}
 
-#ifdef USE_LOGSUMARRAY
-#ifdef USE_HMMPARALLEL_STRUCTURES
+#ifdef SHOGUN_USE_LOGSUMARRAY
+#ifdef SHOGUN_USE_HMMPARALLEL_STRUCTURES
 	{
 		if (mem_initialized)
 		{
@@ -466,14 +466,14 @@ CHMM::~CHMM()
 		}
 		SG_FREE(arrayS);
 	} ;
-#else //USE_HMMPARALLEL_STRUCTURES
+#else // SHOGUN_USE_HMMPARALLEL_STRUCTURES
 	SG_FREE(arrayS);
-#endif //USE_HMMPARALLEL_STRUCTURES
-#endif //USE_LOGSUMARRAY
+#endif // SHOGUN_USE_HMMPARALLEL_STRUCTURES
+#endif // SHOGUN_USE_LOGSUMARRAY
 
 	if (!reused_caches)
 	{
-#ifdef USE_HMMPARALLEL_STRUCTURES
+#ifdef SHOGUN_USE_HMMPARALLEL_STRUCTURES
 		if (mem_initialized)
 		{
 			SG_FREE(path_prob_updated);
@@ -481,7 +481,7 @@ CHMM::~CHMM()
 			for (int32_t i=0; i<parallel->get_num_threads(); i++)
 				SG_FREE(path[i]);
 		}
-#endif //USE_HMMPARALLEL_STRUCTURES
+#endif // SHOGUN_USE_HMMPARALLEL_STRUCTURES
 		SG_FREE(path);
 	}
 }
@@ -514,35 +514,35 @@ bool CHMM::alloc_state_dependend_arrays()
 		convert_to_log();
 	}
 
-#ifdef USE_HMMPARALLEL_STRUCTURES
+#ifdef SHOGUN_USE_HMMPARALLEL_STRUCTURES
 	for (int32_t i=0; i<parallel->get_num_threads(); i++)
 	{
 		arrayN1[i]=SG_MALLOC(float64_t, N);
 		arrayN2[i]=SG_MALLOC(float64_t, N);
 	}
-#else //USE_HMMPARALLEL_STRUCTURES
+#else // SHOGUN_USE_HMMPARALLEL_STRUCTURES
 	arrayN1=SG_MALLOC(float64_t, N);
 	arrayN2=SG_MALLOC(float64_t, N);
-#endif //USE_HMMPARALLEL_STRUCTURES
+#endif // SHOGUN_USE_HMMPARALLEL_STRUCTURES
 
 #ifdef LOG_SUMARRAY
-#ifdef USE_HMMPARALLEL_STRUCTURES
+#ifdef SHOGUN_USE_HMMPARALLEL_STRUCTURES
 	for (int32_t i=0; i<parallel->get_num_threads(); i++)
 		arrayS[i]=SG_MALLOC(float64_t, (int32_t)(this->N/2+1));
-#else //USE_HMMPARALLEL_STRUCTURES
+#else // SHOGUN_USE_HMMPARALLEL_STRUCTURES
 	arrayS=SG_MALLOC(float64_t, (int32_t)(this->N/2+1));
-#endif //USE_HMMPARALLEL_STRUCTURES
+#endif // SHOGUN_USE_HMMPARALLEL_STRUCTURES
 #endif //LOG_SUMARRAY
 	transition_matrix_A=SG_MALLOC(float64_t, this->N*this->N);
 	observation_matrix_B=SG_MALLOC(float64_t, this->N*this->M);
 
 	if (p_observations)
 	{
-#ifdef USE_HMMPARALLEL_STRUCTURES
+#ifdef SHOGUN_USE_HMMPARALLEL_STRUCTURES
 		if (alpha_cache[0].table!=NULL)
-#else //USE_HMMPARALLEL_STRUCTURES
+#else // SHOGUN_USE_HMMPARALLEL_STRUCTURES
 		if (alpha_cache.table!=NULL)
-#endif //USE_HMMPARALLEL_STRUCTURES
+#endif // SHOGUN_USE_HMMPARALLEL_STRUCTURES
 			set_observations(p_observations);
 		else
 			set_observation_nocache(p_observations);
@@ -559,7 +559,7 @@ bool CHMM::alloc_state_dependend_arrays()
 
 void CHMM::free_state_dependend_arrays()
 {
-#ifdef USE_HMMPARALLEL_STRUCTURES
+#ifdef SHOGUN_USE_HMMPARALLEL_STRUCTURES
 	if (arrayN1 && arrayN2)
 	{
 		for (int32_t i=0; i<parallel->get_num_threads(); i++)
@@ -617,7 +617,7 @@ bool CHMM::initialize(Model* m, float64_t pseudo, FILE* modelfile)
 	this->p_observations=NULL;
 	this->reused_caches=false;
 
-#ifdef USE_HMMPARALLEL_STRUCTURES
+#ifdef SHOGUN_USE_HMMPARALLEL_STRUCTURES
 	alpha_cache=SG_MALLOC(T_ALPHA_BETA, parallel->get_num_threads());
 	beta_cache=SG_MALLOC(T_ALPHA_BETA, parallel->get_num_threads());
 	states_per_observation_psi=SG_MALLOC(P_STATES, parallel->get_num_threads());
@@ -631,18 +631,18 @@ bool CHMM::initialize(Model* m, float64_t pseudo, FILE* modelfile)
 		this->states_per_observation_psi[i]=NULL ;
 	}
 
-#else // USE_HMMPARALLEL_STRUCTURES
+#else // SHOGUN_USE_HMMPARALLEL_STRUCTURES
 	this->alpha_cache.table=NULL;
 	this->beta_cache.table=NULL;
 	this->alpha_cache.dimension=0;
 	this->beta_cache.dimension=0;
 	this->states_per_observation_psi=NULL ;
-#endif //USE_HMMPARALLEL_STRUCTURES
+#endif // SHOGUN_USE_HMMPARALLEL_STRUCTURES
 
 	if (modelfile)
 		files_ok= files_ok && load_model(modelfile);
 
-#ifdef USE_HMMPARALLEL_STRUCTURES
+#ifdef SHOGUN_USE_HMMPARALLEL_STRUCTURES
 	path_prob_updated=SG_MALLOC(bool, parallel->get_num_threads());
 	path_prob_dimension=SG_MALLOC(int, parallel->get_num_threads());
 
@@ -651,20 +651,20 @@ bool CHMM::initialize(Model* m, float64_t pseudo, FILE* modelfile)
 	for (int32_t i=0; i<parallel->get_num_threads(); i++)
 		this->path[i]=NULL;
 
-#else // USE_HMMPARALLEL_STRUCTURES
+#else // SHOGUN_USE_HMMPARALLEL_STRUCTURES
 	this->path=NULL;
 
-#endif //USE_HMMPARALLEL_STRUCTURES
+#endif // SHOGUN_USE_HMMPARALLEL_STRUCTURES
 
-#ifdef USE_HMMPARALLEL_STRUCTURES
+#ifdef SHOGUN_USE_HMMPARALLEL_STRUCTURES
 	arrayN1=SG_MALLOC(float64_t*, parallel->get_num_threads());
 	arrayN2=SG_MALLOC(float64_t*, parallel->get_num_threads());
-#endif //USE_HMMPARALLEL_STRUCTURES
+#endif // SHOGUN_USE_HMMPARALLEL_STRUCTURES
 
 #ifdef LOG_SUMARRAY
-#ifdef USE_HMMPARALLEL_STRUCTURES
+#ifdef SHOGUN_USE_HMMPARALLEL_STRUCTURES
 	arrayS=SG_MALLOC(float64_t*, parallel->get_num_threads());
-#endif // USE_HMMPARALLEL_STRUCTURES
+#endif // SHOGUN_USE_HMMPARALLEL_STRUCTURES
 #endif //LOG_SUMARRAY
 
 	alloc_state_dependend_arrays();
@@ -825,7 +825,7 @@ float64_t CHMM::forward_comp_old(int32_t time, int32_t state, int32_t dimension)
 			for (int32_t j=0; j<N; j++)
 			{
 				register int32_t i ;
-#ifdef USE_LOGSUMARRAY
+#ifdef SHOGUN_USE_LOGSUMARRAY
 				for (i=0; i<(N>>1); i++)
 					ARRAYS(dimension)[i]=CMath::logarithmic_sum(alpha[i<<1] + get_a(i<<1,j),
 							alpha[(i<<1)+1] + get_a((i<<1)+1,j));
@@ -835,13 +835,13 @@ float64_t CHMM::forward_comp_old(int32_t time, int32_t state, int32_t dimension)
 								CMath::logarithmic_sum_array(ARRAYS(dimension), N>>1)) ;
 				else
 					alpha_new[j]=get_b(j, p_observations->get_feature(dimension,t))+CMath::logarithmic_sum_array(ARRAYS(dimension), N>>1) ;
-#else //USE_LOGSUMARRAY
+#else // SHOGUN_USE_LOGSUMARRAY
 				float64_t sum=-CMath::INFTY;
 				for (i=0; i<N; i++)
 					sum= CMath::logarithmic_sum(sum, alpha[i] + get_a(i,j));
 
 				alpha_new[j]= sum + get_b(j, p_observations->get_feature(dimension,t));
-#endif //USE_LOGSUMARRAY
+#endif // SHOGUN_USE_LOGSUMARRAY
 			}
 
 			if (!ALPHA_CACHE(dimension).table)
@@ -861,7 +861,7 @@ float64_t CHMM::forward_comp_old(int32_t time, int32_t state, int32_t dimension)
 		if (time<p_observations->get_vector_length(dimension))
 		{
 			register int32_t i;
-#ifdef USE_LOGSUMARRAY
+#ifdef SHOGUN_USE_LOGSUMARRAY
 			for (i=0; i<(N>>1); i++)
 				ARRAYS(dimension)[i]=CMath::logarithmic_sum(alpha[i<<1] + get_a(i<<1,state),
 						alpha[(i<<1)+1] + get_a((i<<1)+1,state));
@@ -871,20 +871,20 @@ float64_t CHMM::forward_comp_old(int32_t time, int32_t state, int32_t dimension)
 							CMath::logarithmic_sum_array(ARRAYS(dimension), N>>1)) ;
 			else
 				return get_b(state, p_observations->get_feature(dimension,time))+CMath::logarithmic_sum_array(ARRAYS(dimension), N>>1) ;
-#else //USE_LOGSUMARRAY
+#else // SHOGUN_USE_LOGSUMARRAY
 			register float64_t sum=-CMath::INFTY;
 			for (i=0; i<N; i++)
 				sum= CMath::logarithmic_sum(sum, alpha[i] + get_a(i, state));
 
 			return sum + get_b(state, p_observations->get_feature(dimension,time));
-#endif //USE_LOGSUMARRAY
+#endif // SHOGUN_USE_LOGSUMARRAY
 		}
 		else
 		{
 			// termination
 			register int32_t i ;
 			float64_t sum ;
-#ifdef USE_LOGSUMARRAY
+#ifdef SHOGUN_USE_LOGSUMARRAY
 			for (i=0; i<(N>>1); i++)
 				ARRAYS(dimension)[i]=CMath::logarithmic_sum(alpha[i<<1] + get_q(i<<1),
 						alpha[(i<<1)+1] + get_q((i<<1)+1));
@@ -893,11 +893,11 @@ float64_t CHMM::forward_comp_old(int32_t time, int32_t state, int32_t dimension)
 						CMath::logarithmic_sum_array(ARRAYS(dimension), N>>1)) ;
 			else
 				sum=CMath::logarithmic_sum_array(ARRAYS(dimension), N>>1) ;
-#else //USE_LOGSUMARRAY
+#else // SHOGUN_USE_LOGSUMARRAY
 			sum=-CMath::INFTY;
 			for (i=0; i<N; i++)			                      //sum over all paths
 				sum=CMath::logarithmic_sum(sum, alpha[i] + get_q(i));     //to get model probability
-#endif //USE_LOGSUMARRAY
+#endif // SHOGUN_USE_LOGSUMARRAY
 
 			if (!ALPHA_CACHE(dimension).table)
 				return sum;
@@ -1058,7 +1058,7 @@ float64_t CHMM::backward_comp_old(
 			for (register int32_t i=0; i<N; i++)
 			{
 				register int32_t j ;
-#ifdef USE_LOGSUMARRAY
+#ifdef SHOGUN_USE_LOGSUMARRAY
 				for (j=0; j<(N>>1); j++)
 					ARRAYS(dimension)[j]=CMath::logarithmic_sum(
 							get_a(i, j<<1) + get_b(j<<1, p_observations->get_feature(dimension,t)) + beta[j<<1],
@@ -1068,13 +1068,13 @@ float64_t CHMM::backward_comp_old(
 							CMath::logarithmic_sum_array(ARRAYS(dimension), N>>1)) ;
 				else
 					beta_new[i]=CMath::logarithmic_sum_array(ARRAYS(dimension), N>>1) ;
-#else //USE_LOGSUMARRAY
+#else // SHOGUN_USE_LOGSUMARRAY
 				float64_t sum=-CMath::INFTY;
 				for (j=0; j<N; j++)
 					sum= CMath::logarithmic_sum(sum, get_a(i, j) + get_b(j, p_observations->get_feature(dimension,t)) + beta[j]);
 
 				beta_new[i]=sum;
-#endif //USE_LOGSUMARRAY
+#endif // SHOGUN_USE_LOGSUMARRAY
 			}
 
 			if (!BETA_CACHE(dimension).table)
@@ -1093,7 +1093,7 @@ float64_t CHMM::backward_comp_old(
 		if (time>=0)
 		{
 			register int32_t j ;
-#ifdef USE_LOGSUMARRAY
+#ifdef SHOGUN_USE_LOGSUMARRAY
 			for (j=0; j<(N>>1); j++)
 				ARRAYS(dimension)[j]=CMath::logarithmic_sum(
 						get_a(state, j<<1) + get_b(j<<1, p_observations->get_feature(dimension,time+1)) + beta[j<<1],
@@ -1103,19 +1103,19 @@ float64_t CHMM::backward_comp_old(
 						CMath::logarithmic_sum_array(ARRAYS(dimension), N>>1)) ;
 			else
 				return CMath::logarithmic_sum_array(ARRAYS(dimension), N>>1) ;
-#else //USE_LOGSUMARRAY
+#else // SHOGUN_USE_LOGSUMARRAY
 			float64_t sum=-CMath::INFTY;
 			for (j=0; j<N; j++)
 				sum= CMath::logarithmic_sum(sum, get_a(state, j) + get_b(j, p_observations->get_feature(dimension,time+1))+beta[j]);
 
 			return sum;
-#endif //USE_LOGSUMARRAY
+#endif // SHOGUN_USE_LOGSUMARRAY
 		}
 		else // time<0
 		{
 			if (BETA_CACHE(dimension).table)
 			{
-#ifdef USE_LOGSUMARRAY//AAA
+#ifdef SHOGUN_USE_LOGSUMARRAY//AAA
 				for (int32_t j=0; j<(N>>1); j++)
 					ARRAYS(dimension)[j]=CMath::logarithmic_sum(get_p(j<<1) + get_b(j<<1, p_observations->get_feature(dimension,0))+beta[j<<1],
 							get_p((j<<1)+1) + get_b((j<<1)+1, p_observations->get_feature(dimension,0))+beta[(j<<1)+1]) ;
@@ -1124,12 +1124,12 @@ float64_t CHMM::backward_comp_old(
 							CMath::logarithmic_sum_array(ARRAYS(dimension), N>>1)) ;
 				else
 					BETA_CACHE(dimension).sum=CMath::logarithmic_sum_array(ARRAYS(dimension), N>>1) ;
-#else //USE_LOGSUMARRAY
+#else // SHOGUN_USE_LOGSUMARRAY
 				float64_t sum=-CMath::INFTY;
 				for (register int32_t j=0; j<N; j++)
 					sum= CMath::logarithmic_sum(sum, get_p(j) + get_b(j, p_observations->get_feature(dimension,0))+beta[j]);
 				BETA_CACHE(dimension).sum=sum;
-#endif //USE_LOGSUMARRAY
+#endif // SHOGUN_USE_LOGSUMARRAY
 				BETA_CACHE(dimension).dimension=dimension;
 				BETA_CACHE(dimension).updated=true;
 
@@ -1193,7 +1193,7 @@ float64_t CHMM::best_path(int32_t dimension)
 			}
 		}
 
-#ifdef USE_PATHDEBUG
+#ifdef SHOGUN_USE_PATHDEBUG
 		float64_t worst=-CMath::INFTY/4 ;
 #endif
 		//recursion
@@ -1228,7 +1228,7 @@ float64_t CHMM::best_path(int32_t dimension)
 				set_psi(t, j, argmax, dimension);
 			}
 
-#ifdef USE_PATHDEBUG
+#ifdef SHOGUN_USE_PATHDEBUG
 			float64_t best=log(0) ;
 			for (int32_t jj=0; jj<N; jj++)
 				if (delta_new[jj]>best)
@@ -1278,7 +1278,7 @@ float64_t CHMM::best_path(int32_t dimension)
 	}
 }
 
-#ifndef USE_HMMPARALLEL
+#ifndef SHOGUN_USE_HMMPARALLEL
 float64_t CHMM::model_probability_comp()
 {
 	//for faster calculation cache model probability
@@ -1371,10 +1371,10 @@ void* CHMM::vit_dim_prefetch(void * params)
 	return NULL ;
 }
 
-#endif //USE_HMMPARALLEL
+#endif // SHOGUN_USE_HMMPARALLEL
 
 
-#ifdef USE_HMMPARALLEL
+#ifdef SHOGUN_USE_HMMPARALLEL
 
 void CHMM::ab_buf_comp(
 	float64_t* p_buf, float64_t* q_buf, float64_t *a_buf, float64_t* b_buf,
@@ -1524,7 +1524,7 @@ void CHMM::estimate_model_baum_welch(CHMM* hmm)
 	invalidate_model();
 }
 
-#else // USE_HMMPARALLEL
+#else // SHOGUN_USE_HMMPARALLEL
 
 //estimates new model lambda out of lambda_estimate using baum welch algorithm
 void CHMM::estimate_model_baum_welch(CHMM* estimate)
@@ -1694,7 +1694,7 @@ void CHMM::estimate_model_baum_welch_old(CHMM* estimate)
 	normalize();
 	invalidate_model();
 }
-#endif // USE_HMMPARALLEL
+#endif // SHOGUN_USE_HMMPARALLEL
 
 //estimates new model lambda out of lambda_estimate using baum welch algorithm
 // optimize only p, q, a but not b
@@ -1804,7 +1804,7 @@ void CHMM::estimate_model_baum_welch_defined(CHMM* estimate)
 		B[i]=log(PSEUDO);
 	}
 
-#ifdef USE_HMMPARALLEL
+#ifdef SHOGUN_USE_HMMPARALLEL
 	int32_t num_threads = parallel->get_num_threads();
 	pthread_t *threads=SG_MALLOC(pthread_t, num_threads);
 	S_DIM_THREAD_PARAM *params=SG_MALLOC(S_DIM_THREAD_PARAM, num_threads);
@@ -1816,7 +1816,7 @@ void CHMM::estimate_model_baum_welch_defined(CHMM* estimate)
 	//change summation order to make use of alpha/beta caches
 	for (dim=0; dim<p_observations->get_num_vectors(); dim++)
 	{
-#ifdef USE_HMMPARALLEL
+#ifdef SHOGUN_USE_HMMPARALLEL
 		if (dim%num_threads==0)
 		{
 			for (i=0; i<num_threads; i++)
@@ -1839,7 +1839,7 @@ void CHMM::estimate_model_baum_welch_defined(CHMM* estimate)
 		}
 #else
 		dimmodprob=estimate->model_probability(dim);
-#endif // USE_HMMPARALLEL
+#endif // SHOGUN_USE_HMMPARALLEL
 
 		//and denominator
 		fullmodprob+= dimmodprob;
@@ -1909,7 +1909,7 @@ void CHMM::estimate_model_baum_welch_defined(CHMM* estimate)
 			set_b(i,j, CMath::logarithmic_sum(get_b(i,j), b_sum_num-dimmodprob));
 		}
 	}
-#ifdef USE_HMMPARALLEL
+#ifdef SHOGUN_USE_HMMPARALLEL
 	SG_FREE(threads);
 	SG_FREE(params);
 #endif
@@ -1968,7 +1968,7 @@ void CHMM::estimate_model_viterbi(CHMM* estimate)
 
 	float64_t allpatprob=0 ;
 
-#ifdef USE_HMMPARALLEL
+#ifdef SHOGUN_USE_HMMPARALLEL
 	int32_t num_threads = parallel->get_num_threads();
 	pthread_t *threads=SG_MALLOC(pthread_t, num_threads);
 	S_DIM_THREAD_PARAM *params=SG_MALLOC(S_DIM_THREAD_PARAM, num_threads);
@@ -1980,7 +1980,7 @@ void CHMM::estimate_model_viterbi(CHMM* estimate)
 	for (int32_t dim=0; dim<p_observations->get_num_vectors(); dim++)
 	{
 
-#ifdef USE_HMMPARALLEL
+#ifdef SHOGUN_USE_HMMPARALLEL
 		if (dim%num_threads==0)
 		{
 			for (i=0; i<num_threads; i++)
@@ -2004,7 +2004,7 @@ void CHMM::estimate_model_viterbi(CHMM* estimate)
 #else
 		//using viterbi to find best path
 		allpatprob += estimate->best_path(dim);
-#endif // USE_HMMPARALLEL
+#endif // SHOGUN_USE_HMMPARALLEL
 
 		//counting occurences for A and B
 		for (t=0; t<p_observations->get_vector_length(dim)-1; t++)
@@ -2019,7 +2019,7 @@ void CHMM::estimate_model_viterbi(CHMM* estimate)
 		Q[estimate->PATH(dim)[p_observations->get_vector_length(dim)-1]]++;
 	}
 
-#ifdef USE_HMMPARALLEL
+#ifdef SHOGUN_USE_HMMPARALLEL
 	SG_FREE(threads);
 	SG_FREE(params);
 #endif
@@ -2093,7 +2093,7 @@ void CHMM::estimate_model_viterbi_defined(CHMM* estimate)
 		Q[i]=PSEUDO;
 	}
 
-#ifdef USE_HMMPARALLEL
+#ifdef SHOGUN_USE_HMMPARALLEL
 	int32_t num_threads = parallel->get_num_threads();
 	pthread_t *threads=SG_MALLOC(pthread_t, num_threads);
 	S_DIM_THREAD_PARAM *params=SG_MALLOC(S_DIM_THREAD_PARAM, num_threads);
@@ -2103,7 +2103,7 @@ void CHMM::estimate_model_viterbi_defined(CHMM* estimate)
 	for (int32_t dim=0; dim<p_observations->get_num_vectors(); dim++)
 	{
 
-#ifdef USE_HMMPARALLEL
+#ifdef SHOGUN_USE_HMMPARALLEL
 		if (dim%num_threads==0)
 		{
 			for (i=0; i<num_threads; i++)
@@ -2124,10 +2124,10 @@ void CHMM::estimate_model_viterbi_defined(CHMM* estimate)
 				}
 			}
 		}
-#else // USE_HMMPARALLEL
+#else // SHOGUN_USE_HMMPARALLEL
 		//using viterbi to find best path
 		allpatprob += estimate->best_path(dim);
-#endif // USE_HMMPARALLEL
+#endif // SHOGUN_USE_HMMPARALLEL
 
 
 		//counting occurences for A and B
@@ -2143,7 +2143,7 @@ void CHMM::estimate_model_viterbi_defined(CHMM* estimate)
 		Q[estimate->PATH(dim)[p_observations->get_vector_length(dim)-1]]++;
 	}
 
-#ifdef USE_HMMPARALLEL
+#ifdef SHOGUN_USE_HMMPARALLEL
 	SG_FREE(threads);
 	SG_FREE(params);
 #endif
@@ -2782,7 +2782,7 @@ void CHMM::invalidate_model()
 	this->path_deriv_dimension=-1 ;
 	this->all_path_prob_updated=false;
 
-#ifdef USE_HMMPARALLEL_STRUCTURES
+#ifdef SHOGUN_USE_HMMPARALLEL_STRUCTURES
 	{
 		for (int32_t i=0; i<parallel->get_num_threads(); i++)
 		{
@@ -2792,13 +2792,13 @@ void CHMM::invalidate_model()
 			path_prob_dimension[i]=-1 ;
 		} ;
 	}
-#else // USE_HMMPARALLEL_STRUCTURES
+#else // SHOGUN_USE_HMMPARALLEL_STRUCTURES
 	this->alpha_cache.updated=false;
 	this->beta_cache.updated=false;
 	this->path_prob_dimension=-1;
 	this->path_prob_updated=false;
 
-#endif // USE_HMMPARALLEL_STRUCTURES
+#endif // SHOGUN_USE_HMMPARALLEL_STRUCTURES
 }
 
 void CHMM::open_bracket(FILE* file)
@@ -3590,7 +3590,7 @@ bool CHMM::load_definitions(FILE* file, bool verbose, bool _initialize)
 						int32_t i=0;
 
 						if (verbose)
-#ifdef USE_HMMDEBUG
+#ifdef SHOGUN_USE_HMMDEBUG
 							SG_DEBUG("\nconst for transition matrix: \n")
 #else
 						SG_DEBUG("\nconst for transition matrix: ")
@@ -3654,7 +3654,7 @@ bool CHMM::load_definitions(FILE* file, bool verbose, bool _initialize)
 								else
 									model->set_const_a_val((int32_t)i/2 - 1, 1.0);
 
-#ifdef USE_HMMDEBUG
+#ifdef SHOGUN_USE_HMMDEBUG
 							if (verbose)
 								SG_ERROR("const_a(%i,%i)=%e\n", model->get_const_a((int32_t)i/2-1,0),model->get_const_a((int32_t)i/2-1,1),model->get_const_a_val((int32_t)i/2-1))
 #endif
@@ -3682,7 +3682,7 @@ bool CHMM::load_definitions(FILE* file, bool verbose, bool _initialize)
 						int32_t i=0;
 
 						if (verbose)
-#ifdef USE_HMMDEBUG
+#ifdef SHOGUN_USE_HMMDEBUG
 							SG_DEBUG("\nconst for emission matrix:   \n")
 #else
 						SG_DEBUG("\nconst for emission matrix:   ")
@@ -3745,7 +3745,7 @@ bool CHMM::load_definitions(FILE* file, bool verbose, bool _initialize)
 							model->set_const_b(i++, combine);
 							if (combine>=M)
 								SG_ERROR("invalid value for const_b(%i,1): %i\n",i/2-1, combine)
-#ifdef USE_HMMDEBUG
+#ifdef SHOGUN_USE_HMMDEBUG
 							if (verbose && !finished)
 								SG_ERROR("const_b(%i,%i)=%e\n", model->get_const_b((int32_t)i/2-1,0),model->get_const_b((int32_t)i/2-1,1),model->get_const_b_val((int32_t)i/2-1))
 #endif
@@ -3771,7 +3771,7 @@ bool CHMM::load_definitions(FILE* file, bool verbose, bool _initialize)
 						int32_t i=0;
 
 						if (verbose)
-#ifdef USE_HMMDEBUG
+#ifdef SHOGUN_USE_HMMDEBUG
 							SG_DEBUG("\nconst for start states:     \n")
 #else
 						SG_DEBUG("\nconst for start states:     ")
@@ -3818,7 +3818,7 @@ bool CHMM::load_definitions(FILE* file, bool verbose, bool _initialize)
 
 							close_bracket(file);
 
-#ifdef USE_HMMDEBUG
+#ifdef SHOGUN_USE_HMMDEBUG
 							if (verbose)
 								SG_DEBUG("const_p(%i)=%e\n", model->get_const_p(i-1),model->get_const_p_val(i-1))
 #endif
@@ -3843,7 +3843,7 @@ bool CHMM::load_definitions(FILE* file, bool verbose, bool _initialize)
 						open_bracket(file);
 						bool finished=false;
 						if (verbose)
-#ifdef USE_HMMDEBUG
+#ifdef SHOGUN_USE_HMMDEBUG
 							SG_DEBUG("\nconst for terminal states: \n")
 #else
 						SG_DEBUG("\nconst for terminal states: ")
@@ -3888,7 +3888,7 @@ bool CHMM::load_definitions(FILE* file, bool verbose, bool _initialize)
 									model->set_const_q_val(i++, 1.0);
 
 							close_bracket(file);
-#ifdef USE_HMMDEBUG
+#ifdef SHOGUN_USE_HMMDEBUG
 							if (verbose)
 								SG_DEBUG("const_q(%i)=%e\n", model->get_const_q(i-1),model->get_const_q_val(i-1))
 #endif
@@ -4388,7 +4388,7 @@ bool CHMM::save_model_derivatives_bin(FILE* file)
 	else
 		SG_INFO("writing derivatives of changed weights only\n")
 
-#ifdef USE_HMMPARALLEL
+#ifdef SHOGUN_USE_HMMPARALLEL
 	int32_t num_threads = parallel->get_num_threads();
 	pthread_t *threads=SG_MALLOC(pthread_t, num_threads);
 	S_DIM_THREAD_PARAM *params=SG_MALLOC(S_DIM_THREAD_PARAM, num_threads);
@@ -4405,7 +4405,7 @@ bool CHMM::save_model_derivatives_bin(FILE* file)
 
 		} ;
 
-#ifdef USE_HMMPARALLEL
+#ifdef SHOGUN_USE_HMMPARALLEL
 		if (dim%num_threads==0)
 		{
 			for (i=0; i<num_threads; i++)
@@ -4488,7 +4488,7 @@ bool CHMM::save_model_derivatives_bin(FILE* file)
 	}
 	save_model_bin(file) ;
 
-#ifdef USE_HMMPARALLEL
+#ifdef SHOGUN_USE_HMMPARALLEL
 	SG_FREE(threads);
 	SG_FREE(params);
 #endif
@@ -4720,7 +4720,7 @@ bool CHMM::check_model_derivatives()
 	return result;
 }
 
-#ifdef USE_HMMDEBUG
+#ifdef SHOGUN_USE_HMMDEBUG
 bool CHMM::check_path_derivatives()
 {
 	bool result=false;
@@ -4821,7 +4821,7 @@ bool CHMM::check_path_derivatives()
 	}
 	return result;
 }
-#endif // USE_HMMDEBUG
+#endif // SHOGUN_USE_HMMDEBUG
 
 //normalize model (sum to one constraint)
 void CHMM::normalize(bool keep_dead_states)
@@ -5276,7 +5276,7 @@ void CHMM::set_observation_nocache(CStringFeatures<uint16_t>* obs)
 
 	if (!reused_caches)
 	{
-#ifdef USE_HMMPARALLEL_STRUCTURES
+#ifdef SHOGUN_USE_HMMPARALLEL_STRUCTURES
 		for (int32_t i=0; i<parallel->get_num_threads(); i++)
 		{
 			SG_FREE(alpha_cache[i].table);
@@ -5300,7 +5300,7 @@ void CHMM::set_observation_nocache(CStringFeatures<uint16_t>* obs)
 		states_per_observation_psi=NULL;
 		path=NULL;
 
-#endif //USE_HMMPARALLEL_STRUCTURES
+#endif // SHOGUN_USE_HMMPARALLEL_STRUCTURES
 	}
 
 	invalidate_model();
@@ -5332,7 +5332,7 @@ void CHMM::set_observations(CStringFeatures<uint16_t>* obs, CHMM* lambda)
 
 	if (!reused_caches)
 	{
-#ifdef USE_HMMPARALLEL_STRUCTURES
+#ifdef SHOGUN_USE_HMMPARALLEL_STRUCTURES
 		for (int32_t i=0; i<parallel->get_num_threads(); i++)
 		{
 			SG_FREE(alpha_cache[i].table);
@@ -5356,7 +5356,7 @@ void CHMM::set_observations(CStringFeatures<uint16_t>* obs, CHMM* lambda)
 		states_per_observation_psi=NULL;
 		path=NULL;
 
-#endif //USE_HMMPARALLEL_STRUCTURES
+#endif // SHOGUN_USE_HMMPARALLEL_STRUCTURES
 	}
 
 	if (obs!=NULL)
@@ -5365,7 +5365,7 @@ void CHMM::set_observations(CStringFeatures<uint16_t>* obs, CHMM* lambda)
 
 		if (lambda)
 		{
-#ifdef USE_HMMPARALLEL_STRUCTURES
+#ifdef SHOGUN_USE_HMMPARALLEL_STRUCTURES
 			for (int32_t i=0; i<parallel->get_num_threads(); i++)
 			{
 				this->alpha_cache[i].table= lambda->alpha_cache[i].table;
@@ -5378,14 +5378,14 @@ void CHMM::set_observations(CStringFeatures<uint16_t>* obs, CHMM* lambda)
 			this->beta_cache.table= lambda->beta_cache.table;
 			this->states_per_observation_psi= lambda->states_per_observation_psi;
 			this->path=lambda->path;
-#endif //USE_HMMPARALLEL_STRUCTURES
+#endif // SHOGUN_USE_HMMPARALLEL_STRUCTURES
 
 			this->reused_caches=true;
 		}
 		else
 		{
 			this->reused_caches=false;
-#ifdef USE_HMMPARALLEL_STRUCTURES
+#ifdef SHOGUN_USE_HMMPARALLEL_STRUCTURES
 			SG_INFO("allocating mem for path-table of size %.2f Megabytes (%d*%d) each:\n", ((float32_t)max_T)*N*sizeof(T_STATES)/(1024*1024), max_T, N)
 			for (int32_t i=0; i<parallel->get_num_threads(); i++)
 			{
@@ -5395,7 +5395,7 @@ void CHMM::set_observations(CStringFeatures<uint16_t>* obs, CHMM* lambda)
 					SG_ERROR("failed allocating memory for path_table[%i].\n",i)
 				path[i]=SG_MALLOC(T_STATES, max_T);
 			}
-#else // no USE_HMMPARALLEL_STRUCTURES
+#else // no SHOGUN_USE_HMMPARALLEL_STRUCTURES
 			SG_INFO("allocating mem of size %.2f Megabytes (%d*%d) for path-table ....", ((float32_t)max_T)*N*sizeof(T_STATES)/(1024*1024), max_T, N)
 			if ((states_per_observation_psi=SG_MALLOC(T_STATES,max_T*N)) != NULL)
 				SG_DONE()
@@ -5403,11 +5403,11 @@ void CHMM::set_observations(CStringFeatures<uint16_t>* obs, CHMM* lambda)
 				SG_ERROR("failed.\n")
 
 			path=SG_MALLOC(T_STATES, max_T);
-#endif // USE_HMMPARALLEL_STRUCTURES
-#ifdef USE_HMMCACHE
+#endif // SHOGUN_USE_HMMPARALLEL_STRUCTURES
+#ifdef SHOGUN_USE_HMMCACHE
 			SG_INFO("allocating mem for caches each of size %.2f Megabytes (%d*%d) ....\n", ((float32_t)max_T)*N*sizeof(T_ALPHA_BETA_TABLE)/(1024*1024), max_T, N)
 
-#ifdef USE_HMMPARALLEL_STRUCTURES
+#ifdef SHOGUN_USE_HMMPARALLEL_STRUCTURES
 			for (int32_t i=0; i<parallel->get_num_threads(); i++)
 			{
 				if ((alpha_cache[i].table=SG_MALLOC(T_ALPHA_BETA_TABLE, max_T*N))!=NULL)
@@ -5420,7 +5420,7 @@ void CHMM::set_observations(CStringFeatures<uint16_t>* obs, CHMM* lambda)
 				else
 					SG_ERROR("allocation of beta_cache[%i].table failed\n",i)
 			} ;
-#else // USE_HMMPARALLEL_STRUCTURES
+#else // SHOGUN_USE_HMMPARALLEL_STRUCTURES
 			if ((alpha_cache.table=SG_MALLOC(T_ALPHA_BETA_TABLE, max_T*N)) != NULL)
 				SG_DEBUG("alpha_cache.table successfully allocated\n")
 			else
@@ -5431,19 +5431,19 @@ void CHMM::set_observations(CStringFeatures<uint16_t>* obs, CHMM* lambda)
 			else
 				SG_ERROR("allocation of beta_cache.table failed\n")
 
-#endif // USE_HMMPARALLEL_STRUCTURES
-#else // USE_HMMCACHE
-#ifdef USE_HMMPARALLEL_STRUCTURES
+#endif // SHOGUN_USE_HMMPARALLEL_STRUCTURES
+#else // SHOGUN_USE_HMMCACHE
+#ifdef SHOGUN_USE_HMMPARALLEL_STRUCTURES
 			for (int32_t i=0; i<parallel->get_num_threads(); i++)
 			{
 				alpha_cache[i].table=NULL ;
 				beta_cache[i].table=NULL ;
 			} ;
-#else //USE_HMMPARALLEL_STRUCTURES
+#else // SHOGUN_USE_HMMPARALLEL_STRUCTURES
 			alpha_cache.table=NULL ;
 			beta_cache.table=NULL ;
-#endif //USE_HMMPARALLEL_STRUCTURES
-#endif //USE_HMMCACHE
+#endif // SHOGUN_USE_HMMPARALLEL_STRUCTURES
+#endif // SHOGUN_USE_HMMCACHE
 		}
 	}
 

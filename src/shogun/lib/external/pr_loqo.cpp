@@ -50,7 +50,7 @@ void nrerror(char error_text[])
    leaves upper right triangle intact (rows first order)
    ***************************************************************/
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 bool choldc(float64_t* a, int32_t n, float64_t* p)
 {
 	if (n<=0)

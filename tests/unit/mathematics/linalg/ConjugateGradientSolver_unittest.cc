@@ -9,7 +9,7 @@
 
 #include <lib/common.h>
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 #include <lib/SGVector.h>
 #include <lib/SGMatrix.h>
 #include <features/SparseFeatures.h>
@@ -51,4 +51,4 @@ TEST(ConjugateGradientSolver, solve)
 
 	SG_UNREF(A);
 }
-#endif //HAVE_EIGEN3
+#endif //SHOGUN_HAVE_EIGEN3

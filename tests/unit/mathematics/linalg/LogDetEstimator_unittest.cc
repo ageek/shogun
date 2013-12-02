@@ -9,7 +9,7 @@
 
 #include <lib/common.h>
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 #include <mathematics/eigen3.h>
 #include <mathematics/Math.h>
 #include <mathematics/Random.h>
@@ -129,8 +129,8 @@ TEST(LogDetEstimator, sample_ratapp_dense)
 	SG_UNREF(e);
 }
 
-#ifdef HAVE_COLPACK
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_COLPACK
+#ifdef SHOGUN_HAVE_LAPACK
 TEST(LogDetEstimator, sample_ratapp_probing_sampler)
 {
 	CSerialComputationEngine* e=new CSerialComputationEngine;
@@ -426,6 +426,6 @@ TEST(LogDetEstimator, sample_ratapp_big_matrix)
 	SG_UNREF(op);
 	SG_UNREF(e);
 }
-#endif // HAVE_LAPACK
-#endif // HAVE_COLPACK
-#endif // HAVE_EIGEN3
+#endif // SHOGUN_HAVE_LAPACK
+#endif // SHOGUN_HAVE_COLPACK
+#endif // SHOGUN_HAVE_EIGEN3

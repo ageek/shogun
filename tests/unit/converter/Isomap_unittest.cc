@@ -12,9 +12,9 @@
 
 using namespace shogun;
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 TEST(IsomapTest,DISABLED_distance_preserving_max_k)
 {
 	const index_t n_samples = 5;
@@ -60,7 +60,7 @@ TEST(IsomapTest,DISABLED_distance_preserving_max_k)
 	SG_UNREF(euclidean_distance);
 	SG_UNREF(euclidean_distance_for_embedding);
 }
-#endif // HAVE_LAPACK
+#endif // SHOGUN_HAVE_LAPACK
 
 struct index_and_distance_struct
 {

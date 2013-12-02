@@ -24,7 +24,7 @@ int main(int, char*[])
 {
 	init_shogun_with_defaults();
 
-#ifdef HAVE_LAPACK /* because of CDataGenerator::generate_gaussians */
+#ifdef SHOGUN_HAVE_LAPACK /* because of CDataGenerator::generate_gaussians */
 
 	// Labels and features containers
 	SGVector<float64_t> lab(CLASSES*NUM);
@@ -53,7 +53,7 @@ int main(int, char*[])
 	SG_UNREF(knn)
 	SG_UNREF(output)
 
-#endif /* HAVE_LAPACK */
+#endif /* SHOGUN_HAVE_LAPACK */
 
 	exit_shogun();
 	return 0;

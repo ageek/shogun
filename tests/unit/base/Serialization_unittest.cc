@@ -72,7 +72,7 @@ TEST(Serialization,multiclass_labels)
 	SG_UNREF(labels);
 }
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 TEST(Serialization, liblinear)
 {
 	index_t num_samples = 50;

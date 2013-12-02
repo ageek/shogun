@@ -10,7 +10,7 @@ using namespace shogun;
 int main(int argc, char** argv)
 {
 	init_shogun_with_defaults();
-#ifdef HAVE_HDF5
+#ifdef SHOGUN_HAVE_HDF5
 	CHDF5File* hdf = new CHDF5File((char*) "../data/australian.libsvm.h5",'r', "/data/data");
 	float64_t* mat;
 	int32_t num_feat;

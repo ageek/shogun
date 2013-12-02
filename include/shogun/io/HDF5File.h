@@ -12,7 +12,7 @@
 
 #include <lib/config.h>
 
-#ifdef HAVE_HDF5
+#ifdef SHOGUN_HAVE_HDF5
 #include <lib/common.h>
 #include <io/SGIO.h>
 #include <io/File.h>
@@ -408,6 +408,6 @@ protected:
 	hid_t boolean_type;
 };
 }
-#endif //  HAVE_HDF5
+#endif //  SHOGUN_HAVE_HDF5
 #endif //__HDF5_FILE_H__
 

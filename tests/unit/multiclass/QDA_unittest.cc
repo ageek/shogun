@@ -3,7 +3,7 @@
 #include <features/DataGenerator.h>
 #include <multiclass/QDA.h>
 #include <gtest/gtest.h>
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 
 #define NUM  50
 #define DIMS 2
@@ -11,7 +11,7 @@
 
 using namespace shogun;
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 TEST(QDA, train_and_apply)
 {
 	SGVector< float64_t > lab(CLASSES*NUM);
@@ -39,5 +39,5 @@ TEST(QDA, train_and_apply)
 	SG_UNREF(output);
 	SG_UNREF(qda);
 }
-#endif // HAVE_LAPACK
-#endif // HAVE_EIGEN3
+#endif // SHOGUN_HAVE_LAPACK
+#endif // SHOGUN_HAVE_EIGEN3

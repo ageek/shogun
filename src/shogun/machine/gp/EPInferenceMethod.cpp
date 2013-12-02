@@ -14,7 +14,7 @@
 
 #include <machine/gp/EPInferenceMethod.h>
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 
 #include <mathematics/Math.h>
 #include <labels/RegressionLabels.h>
@@ -479,4 +479,4 @@ SGVector<float64_t> CEPInferenceMethod::get_derivative_wrt_mean(
 	return SGVector<float64_t>();
 }
 
-#endif /* HAVE_EIGEN3 */
+#endif /* SHOGUN_HAVE_EIGEN3 */

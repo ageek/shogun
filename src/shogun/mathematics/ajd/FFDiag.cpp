@@ -1,4 +1,4 @@
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 
 #include <mathematics/ajd/FFDiag.h>
 
@@ -131,4 +131,4 @@ void getW(float64_t *C, int *ptN, int *ptK, float64_t *W)
 
 	return;
 }
-#endif //HAVE_EIGEN3
+#endif //SHOGUN_HAVE_EIGEN3

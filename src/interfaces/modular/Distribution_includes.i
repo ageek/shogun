@@ -7,8 +7,8 @@
 #include <distributions/PositionalPWM.h>
 #include <distributions/Gaussian.h>
 #include <clustering/GMM.h>
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 #include <distributions/classical/ProbabilityDistribution.h>
 #include <distributions/classical/GaussianDistribution.h>
-#endif // HAVE_EIGEN3
+#endif // SHOGUN_HAVE_EIGEN3
 %}

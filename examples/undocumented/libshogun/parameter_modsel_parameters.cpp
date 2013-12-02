@@ -52,7 +52,7 @@ int main(int argc, char** argv)
 {
 	init_shogun(&print_message);
 
-#ifndef HAVE_LAPACK
+#ifndef SHOGUN_HAVE_LAPACK
 	CSGObject* object;
 
 	object=new CLibSVM();
@@ -78,7 +78,7 @@ int main(int argc, char** argv)
 	object=new CMinkowskiMetric();
 	print_modsel_parameters(object);
 	SG_UNREF(object);
-#endif // HAVE_LAPACK
+#endif // SHOGUN_HAVE_LAPACK
 
 	exit_shogun();
 	return 0;

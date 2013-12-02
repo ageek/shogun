@@ -26,10 +26,10 @@ namespace shogun
 	{
 		/// no bias w/ libsvm
 		NO_BIAS_LIBSVM,
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 		/// no bias w/ svmlight
 		NO_BIAS_SVMLIGHT,
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT
 		/// training with bias using test rule 1
 		TEST_RULE1,
 		/// training with bias using test rule 2
@@ -106,9 +106,9 @@ class CScatterSVM : public CMulticlassSVM
 	private:
 		void compute_norm_wc();
 		virtual bool train_no_bias_libsvm();
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 		virtual bool train_no_bias_svmlight();
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT
 		virtual bool train_testrule12();
 
 	protected:

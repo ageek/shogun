@@ -311,7 +311,7 @@ void test_inverse_gamma_cdf()
 	ASSERT(difference<=10E-16);
 }
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 void test_covariance_matrix()
 {
 	SGMatrix<float64_t> X(2,3);
@@ -327,7 +327,7 @@ void test_covariance_matrix()
 		ASSERT(cov.matrix[i]==0.5);
 
 }
-#endif //HAVE_LAPACK
+#endif //SHOGUN_HAVE_LAPACK
 
 int main(int argc, char **argv)
 {
@@ -346,9 +346,9 @@ int main(int argc, char **argv)
 	test_error_function();
 	test_error_function_complement();
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 	test_covariance_matrix();
-#endif //HAVE_LAPACK
+#endif //SHOGUN_HAVE_LAPACK
 
 	exit_shogun();
 

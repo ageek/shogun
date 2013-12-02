@@ -63,7 +63,7 @@ bool CMultitaskTraceLogisticRegression::train_locked_implementation(SGVector<ind
 	options.n_tasks = ((CTaskGroup*)m_task_relation)->get_num_tasks();
 	options.tasks_indices = tasks;
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 	malsar_result_t model = malsar_low_rank(
 		features, y.vector, m_rho, options);
 
@@ -97,7 +97,7 @@ bool CMultitaskTraceLogisticRegression::train_machine(CFeatures* data)
 	options.n_tasks = ((CTaskGroup*)m_task_relation)->get_num_tasks();
 	options.tasks_indices = ((CTaskGroup*)m_task_relation)->get_tasks_indices();
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 	malsar_result_t model = malsar_low_rank(
 		features, y.vector, m_rho, options);
 

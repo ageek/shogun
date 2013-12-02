@@ -17,7 +17,7 @@
 
 #include <lib/config.h>
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 
 #include <machine/gp/InferenceMethod.h>
 
@@ -325,5 +325,5 @@ private:
 	SGVector<float64_t> m_g;
 };
 }
-#endif /* HAVE_EIGEN3 */
+#endif /* SHOGUN_HAVE_EIGEN3 */
 #endif /* CLAPLACIANINFERENCEMETHOD_H_ */

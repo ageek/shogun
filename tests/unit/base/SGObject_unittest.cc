@@ -9,7 +9,7 @@
 
 #include <labels/BinaryLabels.h>
 #include <labels/RegressionLabels.h>
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 #include <features/DenseFeatures.h>
 #include <kernel/GaussianKernel.h>
 #include <regression/GaussianProcessRegression.h>
@@ -24,7 +24,7 @@
 
 using namespace shogun;
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 TEST(SGObject,equals_same)
 {
 	CGaussianKernel* kernel=new CGaussianKernel();
@@ -48,7 +48,7 @@ TEST(SGObject,equals_NULL_parameter)
 	SG_UNREF(mmd);
 	SG_UNREF(mmd2);
 }
-#endif //HAVE_EIGEN3
+#endif //SHOGUN_HAVE_EIGEN3
 
 void* stress_test(void* args)
 {
@@ -65,7 +65,7 @@ void* stress_test(void* args)
 	pthread_exit(0);
 }
 
-#ifdef USE_REFERENCE_COUNTING
+#ifdef SHOGUN_USE_REFERENCE_COUNTING
 TEST(SGObject,ref_unref)
 {
 	CBinaryLabels* labs = new CBinaryLabels(10);
@@ -120,7 +120,7 @@ TEST(SGObject,equals_DynamicObjectArray_equal)
 	SG_UNREF(array2);
 }
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 TEST(SGObject,equals_DynamicObjectArray_equal_after_resize)
 {
 	CDynamicObjectArray* array1=new CDynamicObjectArray();
@@ -228,4 +228,4 @@ TEST(SGObject,equals_complex_equal)
 	SG_UNREF(gpr);
 	SG_UNREF(gpr_copy);
 }
-#endif //HAVE_EIGEN3
+#endif //SHOGUN_HAVE_EIGEN3

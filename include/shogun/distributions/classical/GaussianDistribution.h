@@ -6,7 +6,7 @@
  *
  * Written (W) 2013 Heiko Strathmann
  */
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 
 #ifndef GAUSSIANDISTRIBUTION_H
 #define GAUSSIANDISTRIBUTION_H
@@ -104,4 +104,4 @@ protected:
 }
 
 #endif // GAUSSIANDISTRIBUTION_H
-#endif // HAVE_EIGEN3
+#endif // SHOGUN_HAVE_EIGEN3

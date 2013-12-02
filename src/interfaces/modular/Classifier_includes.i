@@ -30,10 +30,10 @@
  #include <classifier/vw/VowpalWabbit.h>
  #include <classifier/svm/NewtonSVM.h>
 
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
  #include <classifier/svm/SVMLight.h>
  #include <classifier/svm/SVMLightOneClass.h>
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT
  #include <classifier/FeatureBlockLogisticRegression.h>
  #include <machine/DirectorLinearMachine.h>
  #include <machine/DirectorKernelMachine.h>

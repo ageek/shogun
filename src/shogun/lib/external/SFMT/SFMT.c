@@ -52,7 +52,7 @@ static void period_certification(sfmt_t * sfmt);
 inline static void swap(w128_t *array, int size);
 #endif
 
-#if defined(HAVE_SSE2)
+#if defined(SHOGUN_HAVE_SSE2)
   #include <lib/external/SFMT/SFMT-sse2.h>
 #endif
 
@@ -70,7 +70,7 @@ inline static int idxof(int i) {
 }
 #endif
 
-#if !defined(HAVE_SSE2)
+#if !defined(SHOGUN_HAVE_SSE2)
 /**
  * This function fills the user-specified array with pseudorandom
  * integers.
@@ -221,7 +221,7 @@ int sfmt_get_min_array_size64(sfmt_t * sfmt) {
     return SFMT_N64;
 }
 
-#if !defined(HAVE_SSE2)
+#if !defined(SHOGUN_HAVE_SSE2)
 /**
  * This function fills the internal state array with pseudorandom
  * integers.

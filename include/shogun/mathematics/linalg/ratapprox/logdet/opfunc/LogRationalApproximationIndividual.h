@@ -13,7 +13,7 @@
 #include <lib/config.h>
 #include <mathematics/linalg/ratapprox/opfunc/RationalApproximation.h>
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 
 namespace shogun
 {
@@ -86,5 +86,5 @@ private:
 
 }
 
-#endif // HAVE_EIGEN3
+#endif // SHOGUN_HAVE_EIGEN3
 #endif // LOG_RATIONAL_APPROXIMATION_INDIVIDUAL_H_

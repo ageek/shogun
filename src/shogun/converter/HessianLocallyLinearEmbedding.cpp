@@ -9,7 +9,7 @@
  */
 
 #include <converter/HessianLocallyLinearEmbedding.h>
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 #include <kernel/LinearKernel.h>
 #include <io/SGIO.h>
 #include <lib/tapkee/tapkee_shogun.hpp>
@@ -44,4 +44,4 @@ CFeatures* CHessianLocallyLinearEmbedding::apply(CFeatures* features)
 	return embedding;
 }
 
-#endif /* HAVE_EIGEN3 */
+#endif /* SHOGUN_HAVE_EIGEN3 */

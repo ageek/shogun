@@ -15,7 +15,7 @@
 
 #include <lib/config.h>
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 
 #include <base/SGObject.h>
 #include <kernel/Kernel.h>
@@ -450,5 +450,5 @@ protected:
 	SGMatrix<float64_t> m_ktrtr;
 };
 }
-#endif /* HAVE_EIGEN3 */
+#endif /* SHOGUN_HAVE_EIGEN3 */
 #endif /* CINFERENCEMETHOD_H_ */

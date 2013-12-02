@@ -9,7 +9,7 @@
  */
 
 #include <lib/config.h>
-#ifdef HAVE_XML
+#ifdef SHOGUN_HAVE_XML
 
 #include <lib/common.h>
 #include <io/SerializableXmlReader00.h>
@@ -96,7 +96,7 @@ SerializableXmlReader00::read_scalar_wrapped(
 		float64_t c_real, c_imag;
 		if (sscanf(buf, "(%lg,%lg)", &c_real, &c_imag) != 2)
 			result = false;
-#if defined(HAVE_CXX11) || defined(_LIBCPP_VERSION)
+#if defined(SHOGUN_HAVE_CXX11) || defined(_LIBCPP_VERSION)
 		((complex128_t*) param)->real(c_real);
 		((complex128_t*) param)->imag(c_imag);
 #else
@@ -360,4 +360,4 @@ SerializableXmlReader00::read_type_end_wrapped(
 	return true;
 }
 
-#endif /* HAVE_XML  */
+#endif /* SHOGUN_HAVE_XML  */

@@ -16,7 +16,7 @@
 
 /* Log-det framework */
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 /* Trace samplers */
 %rename(TraceSampler) CTraceSampler;
 %rename(NormalSampler) CNormalSampler;
@@ -26,10 +26,10 @@
 %include <mathematics/linalg/linop/LinearOperator.h>
 namespace shogun
 {
-#ifdef USE_FLOAT64
+#ifdef SHOGUN_USE_FLOAT64
     %template(RealLinearOperator) CLinearOperator<float64_t>;
 #endif
-#ifdef USE_COMPLEX128
+#ifdef SHOGUN_USE_COMPLEX128
     %template(ComplexLinearOperator) CLinearOperator<complex128_t>;
 #endif
 }
@@ -37,10 +37,10 @@ namespace shogun
 %include <mathematics/linalg/linop/MatrixOperator.h>
 namespace shogun
 {
-#ifdef USE_FLOAT64
+#ifdef SHOGUN_USE_FLOAT64
     %template(RealMatrixOperator) CMatrixOperator<float64_t>;
 #endif
-#ifdef USE_COMPLEX128
+#ifdef SHOGUN_USE_COMPLEX128
     %template(ComplexMatrixOperator) CMatrixOperator<complex128_t>;
 #endif
 }
@@ -48,10 +48,10 @@ namespace shogun
 %include <mathematics/linalg/linop/SparseMatrixOperator.h>
 namespace shogun
 {
-#ifdef USE_FLOAT64
+#ifdef SHOGUN_USE_FLOAT64
     %template(RealSparseMatrixOperator) CSparseMatrixOperator<float64_t>;
 #endif
-#ifdef USE_COMPLEX128
+#ifdef SHOGUN_USE_COMPLEX128
     %template(ComplexSparseMatrixOperator) CSparseMatrixOperator<complex128_t>;
 #endif
 }
@@ -59,10 +59,10 @@ namespace shogun
 %include <mathematics/linalg/linop/DenseMatrixOperator.h>
 namespace shogun
 {
-#ifdef USE_FLOAT64
+#ifdef SHOGUN_USE_FLOAT64
     %template(RealDenseMatrixOperator) CDenseMatrixOperator<float64_t>;
 #endif
-#ifdef USE_COMPLEX128
+#ifdef SHOGUN_USE_COMPLEX128
     %template(ComplexDenseMatrixOperator) CDenseMatrixOperator<complex128_t>;
 #endif
 }
@@ -71,7 +71,7 @@ namespace shogun
 %include <mathematics/linalg/ratapprox/opfunc/OperatorFunction.h>
 namespace shogun
 {
-#ifdef USE_FLOAT64
+#ifdef SHOGUN_USE_FLOAT64
     %template(RealOperatorFunction) COperatorFunction<float64_t>;
 #endif
 }
@@ -84,26 +84,26 @@ namespace shogun
 %include <mathematics/linalg/linsolver/LinearSolver.h>
 namespace shogun
 {
-#if defined(USE_FLOAT64)
+#if defined(SHOGUN_USE_FLOAT64)
     %template(RealLinearSolver) CLinearSolver<float64_t,float64_t>;
 #endif
-#if defined(USE_FLOAT64) && defined(USE_COMPLEX128)
+#if defined(SHOGUN_USE_FLOAT64) && defined(SHOGUN_USE_COMPLEX128)
     %template(ComplexRealLinearSolver) CLinearSolver<complex128_t,float64_t>;
 #endif
 }
 
 %rename(DirectSparseLinearSolver) CDirectSparseLinearSolver;
-#ifdef USE_COMPLEX128
+#ifdef SHOGUN_USE_COMPLEX128
   %rename(DirectLinearSolverComplex) CDirectLinearSolverComplex;
 #endif
 
 %include <mathematics/linalg/linsolver/IterativeLinearSolver.h>
 namespace shogun
 {
-#if defined(USE_FLOAT64)
+#if defined(SHOGUN_USE_FLOAT64)
     %template(RealIterativeLinearSolver) CIterativeLinearSolver<float64_t,float64_t>;
 #endif
-#if defined(USE_FLOAT64) && defined(USE_COMPLEX128)
+#if defined(SHOGUN_USE_FLOAT64) && defined(SHOGUN_USE_COMPLEX128)
     %template(ComplexRealIterativeLinearSolver) CIterativeLinearSolver<complex128_t,float64_t>;
 #endif
 }
@@ -114,7 +114,7 @@ namespace shogun
 %include <mathematics/linalg/linsolver/IterativeShiftedLinearFamilySolver.h>
 namespace shogun
 {
-#if defined(USE_FLOAT64) && defined(USE_COMPLEX128)
+#if defined(SHOGUN_USE_FLOAT64) && defined(SHOGUN_USE_COMPLEX128)
     %template(RealComplexIterativeShiftedLinearSolver) CIterativeShiftedLinearFamilySolver<float64_t,complex128_t>;
 #endif
 }
@@ -125,7 +125,7 @@ namespace shogun
 %rename(LanczosEigenSolver) CLanczosEigenSolver;
 
 %rename(LogDetEstimator) CLogDetEstimator;
-#endif // HAVE_EIGEN3
+#endif // SHOGUN_HAVE_EIGEN3
 
 /* Include Class Headers to make them visible from within the target language */
 %include <mathematics/Math.h>

@@ -55,10 +55,10 @@ class CGUIKernel : public CSGObject
 	bool save_kernel(char* filename);
 	/** clean/r kernel */
 	bool clean_kernel();
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 	/** resize kernel cache */
 	bool resize_kernel_cache(int32_t size);
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT
 	/** set optimization type */
 	bool set_optimization_type(char* opt_type);
 	/** precompute subkernels */

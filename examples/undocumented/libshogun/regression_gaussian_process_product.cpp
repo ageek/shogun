@@ -8,7 +8,7 @@
  */
 
 #include <lib/config.h>
-#if defined(HAVE_EIGEN3) && defined(HAVE_NLOPT)
+#if defined(SHOGUN_HAVE_EIGEN3) && defined(SHOGUN_HAVE_NLOPT)
 #include <base/init.h>
 #include <labels/RegressionLabels.h>
 #include <features/DenseFeatures.h>

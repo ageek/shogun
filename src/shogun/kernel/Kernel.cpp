@@ -32,7 +32,7 @@
 #include <unistd.h>
 #include <math.h>
 
-#ifdef HAVE_PTHREAD
+#ifdef SHOGUN_HAVE_PTHREAD
 #include <pthread.h>
 #endif
 
@@ -81,7 +81,7 @@ CKernel::~CKernel()
 	SG_INFO("Kernel deleted (%p).\n", this)
 }
 
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 void CKernel::resize_kernel_cache(KERNELCACHE_IDX size, bool regression_hack)
 {
 	if (size<10)
@@ -93,7 +93,7 @@ void CKernel::resize_kernel_cache(KERNELCACHE_IDX size, bool regression_hack)
 	if (has_features() && get_num_vec_lhs())
 		kernel_cache_init(cache_size, regression_hack);
 }
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT
 
 bool CKernel::init(CFeatures* l, CFeatures* r)
 {
@@ -164,7 +164,7 @@ void CKernel::cleanup()
 	remove_lhs_and_rhs();
 }
 
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 /****************************** Cache handling *******************************/
 
 void CKernel::kernel_cache_init(int32_t buffsize, bool regression_hack)
@@ -364,7 +364,7 @@ void* CKernel::cache_multiple_kernel_row_helper(void* p)
 // Fills cache for the rows in key
 void CKernel::cache_multiple_kernel_rows(int32_t* rows, int32_t num_rows)
 {
-#ifdef HAVE_PTHREAD
+#ifdef SHOGUN_HAVE_PTHREAD
 	int32_t nthreads=parallel->get_num_threads();
 
 	if (nthreads<2)
@@ -372,7 +372,7 @@ void CKernel::cache_multiple_kernel_rows(int32_t* rows, int32_t num_rows)
 #endif
 		for(int32_t i=0;i<num_rows;i++)
 			cache_kernel_row(rows[i]);
-#ifdef HAVE_PTHREAD
+#ifdef SHOGUN_HAVE_PTHREAD
 	}
 	else
 	{
@@ -630,7 +630,7 @@ KERNELCACHE_ELEM* CKernel::kernel_cache_clean_and_malloc(int32_t cacheidx)
 	kernel_cache.lru[kernel_cache.index[cacheidx]]=kernel_cache.time; // lru
 	return &kernel_cache.buffer[((KERNELCACHE_IDX) kernel_cache.activenum)*kernel_cache.index[cacheidx]];
 }
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT
 
 void CKernel::load(CFile* loader)
 {
@@ -659,9 +659,9 @@ void CKernel::remove_lhs_and_rhs()
 	num_lhs=0;
 	lhs_equals_rhs=false;
 
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 	cache_reset();
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT
 	SG_DEBUG("leaving CKernel::remove_lhs_and_rhs\n")
 }
 
@@ -673,9 +673,9 @@ void CKernel::remove_lhs()
 	lhs = NULL;
 	num_lhs=0;
 	lhs_equals_rhs=false;
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 	cache_reset();
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT
 }
 
 /// takes all necessary steps if the rhs is removed from kernel
@@ -687,9 +687,9 @@ void CKernel::remove_rhs()
 	num_rhs=0;
 	lhs_equals_rhs=false;
 
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 	cache_reset();
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT
 }
 
 #define ENUM_CASE(n) case n: SG_INFO(#n " ") break;
@@ -973,9 +973,9 @@ void CKernel::init()
 	properties=KP_NONE;
 	normalizer=NULL;
 
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 	memset(&kernel_cache, 0x0, sizeof(KERNEL_CACHE));
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT
 
 	set_normalizer(new CIdentityKernelNormalizer());
 }

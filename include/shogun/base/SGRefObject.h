@@ -26,7 +26,7 @@ namespace shogun
 
 // define reference counter macros
 //
-#ifdef USE_REFERENCE_COUNTING
+#ifdef SHOGUN_USE_REFERENCE_COUNTING
 #define SG_REF(x) { if (x) (x)->ref(); }
 #define SG_UNREF(x) { if (x) { if ((x)->unref()==0) (x)=NULL; } }
 #define SG_UNREF_NO_NULL(x) { if (x) { (x)->unref(); } }
@@ -55,7 +55,7 @@ public:
 	/** destructor */
 	virtual ~SGRefObject();
 
-#ifdef USE_REFERENCE_COUNTING
+#ifdef SHOGUN_USE_REFERENCE_COUNTING
 	/** increase reference counter
 	 *
 	 * @return reference count
@@ -74,7 +74,7 @@ public:
 	 * @return reference count
 	 */
 	int32_t unref();
-#endif //USE_REFERENCE_COUNTING
+#endif // SHOGUN_USE_REFERENCE_COUNTING
 
 	/** Returns the name of the SGSerializable instance.  It MUST BE
 	 *  the CLASS NAME without the prefixed `C'.

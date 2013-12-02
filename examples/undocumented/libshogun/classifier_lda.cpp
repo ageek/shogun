@@ -29,8 +29,8 @@ using namespace shogun;
 
 void test()
 {
-#ifdef HAVE_LAPACK
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_LAPACK
+#ifdef SHOGUN_HAVE_EIGEN3
 	SGVector< float64_t > lab(CLASSES*NUM);
 	SGMatrix< float64_t > feat(DIMS, CLASSES*NUM);
 

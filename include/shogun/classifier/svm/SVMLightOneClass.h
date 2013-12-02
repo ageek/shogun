@@ -14,11 +14,11 @@
 #include <lib/config.h>
 #include <machine/Machine.h>
 
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 #include <classifier/svm/SVMLight.h>
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT
 
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 namespace shogun
 {
 /** @brief Trains a one class C SVM
@@ -65,5 +65,5 @@ class CSVMLightOneClass: public CSVMLight
 		virtual bool train_machine(CFeatures* data=NULL);
 };
 }
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT
 #endif // _SVMLIGHTONECLASS_H___

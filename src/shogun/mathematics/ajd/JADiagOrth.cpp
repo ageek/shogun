@@ -1,4 +1,4 @@
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 
 #include <mathematics/ajd/JADiagOrth.h>
 
@@ -152,4 +152,4 @@ void left_rot_simple(float64_t *A, int m, int n, int p, int q, float64_t c, floa
 		A[iy] = s*nx + c*ny;
 	}
 }
-#endif //HAVE_EIGEN3
+#endif //SHOGUN_HAVE_EIGEN3

@@ -12,7 +12,7 @@
 #define _CPLEXSVM_H___
 #include <lib/common.h>
 
-#ifdef USE_CPLEX
+#ifdef SHOGUN_USE_CPLEX
 #include <classifier/svm/SVM.h>
 #include <lib/Cache.h>
 

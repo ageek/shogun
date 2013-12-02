@@ -12,7 +12,7 @@
 #define _LPBOOST_H___
 
 #include <lib/config.h>
-#ifdef USE_CPLEX
+#ifdef SHOGUN_USE_CPLEX
 
 #include <stdio.h>
 #include <lib/common.h>
@@ -122,5 +122,5 @@ class CLPBoost : public CLinearMachine
 
 };
 }
-#endif //USE_CPLEX
+#endif // SHOGUN_USE_CPLEX
 #endif //_LPBOOST_H___

@@ -11,7 +11,7 @@
 #include <classifier/svm/CPLEXSVM.h>
 #include <lib/common.h>
 
-#ifdef USE_CPLEX
+#ifdef SHOGUN_USE_CPLEX
 #include <io/SGIO.h>
 #include <mathematics/Math.h>
 #include <mathematics/Cplex.h>

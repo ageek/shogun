@@ -345,7 +345,7 @@ SGVector<float64_t> CKernelMachine::apply_get_outputs(CFeatures* data)
 				params.indices_len = 0;
 				apply_helper((void*) &params);
 			}
-#ifdef HAVE_PTHREAD
+#ifdef SHOGUN_HAVE_PTHREAD
 			else
 			{
 				pthread_t* threads = SG_MALLOC(pthread_t, num_threads-1);
@@ -563,7 +563,7 @@ SGVector<float64_t> CKernelMachine::apply_locked_get_output(
 		params.verbose=true;
 		apply_helper((void*) &params);
 	}
-#ifdef HAVE_PTHREAD
+#ifdef SHOGUN_HAVE_PTHREAD
 	else
 	{
 		pthread_t* threads = SG_MALLOC(pthread_t, num_threads-1);

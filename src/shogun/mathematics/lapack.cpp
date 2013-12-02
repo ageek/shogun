@@ -14,7 +14,7 @@
 
 #include <lib/config.h>
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 #include <lib/common.h>
 #include <mathematics/lapack.h>
 #include <base/Parallel.h>
@@ -24,7 +24,7 @@
 
 using namespace shogun;
 
-#if defined(HAVE_MKL) || defined(HAVE_ACML)
+#if defined(SHOGUN_HAVE_MKL) || defined(SHOGUN_HAVE_ACML)
 #define DSYEV dsyev
 #define DGESVD dgesvd
 #define DPOSV dposv
@@ -56,7 +56,7 @@ using namespace shogun;
 #define DSTEMR dstemr_
 #endif
 
-#ifndef HAVE_ATLAS
+#ifndef SHOGUN_HAVE_ATLAS
 int clapack_dpotrf(const CBLAS_ORDER Order, const CBLAS_UPLO Uplo,
 		const int N, double *A, const int LDA)
 {
@@ -71,7 +71,7 @@ int clapack_dpotrf(const CBLAS_ORDER Order, const CBLAS_UPLO Uplo,
 	{
 		uplo='L';
 	}
-#ifdef HAVE_ACML
+#ifdef SHOGUN_HAVE_ACML
 	DPOTRF(uplo, N, A, LDA, &info);
 #else
 	int n=N;
@@ -96,7 +96,7 @@ int clapack_dpotri(const CBLAS_ORDER Order, const CBLAS_UPLO Uplo,
 	{
 		uplo='L';
 	}
-#ifdef HAVE_ACML
+#ifdef SHOGUN_HAVE_ACML
 	DPOTRI(uplo, N, A, LDA, &info);
 #else
 	int n=N;
@@ -127,7 +127,7 @@ int clapack_dposv(const CBLAS_ORDER Order, const CBLAS_UPLO Uplo,
 	{
 		uplo='L';
 	}
-#ifdef HAVE_ACML
+#ifdef SHOGUN_HAVE_ACML
 	DPOSV(uplo,N,NRHS,A,lda,B,ldb,&info);
 #else
 	int n=N;
@@ -145,7 +145,7 @@ int clapack_dgetrf(const CBLAS_ORDER Order, const int M, const int N,
 {
 	// no rowmajor?
 	int info=0;
-#ifdef HAVE_ACML
+#ifdef SHOGUN_HAVE_ACML
 	DGETRF(M,N,A,lda,ipiv,&info);
 #else
 	int m=M;
@@ -162,7 +162,7 @@ int clapack_dgetri(const CBLAS_ORDER Order, const int N, double *A,
                    const int lda, int* ipiv)
 {
 	int info=0;
-#ifdef HAVE_ACML
+#ifdef SHOGUN_HAVE_ACML
 	DGETRI(N,A,lda,ipiv,&info);
 #else
 	double* work;
@@ -191,7 +191,7 @@ int clapack_dgetrs(const CBLAS_ORDER Order, const CBLAS_TRANSPOSE Transpose,
 	{
 		trans = 'T';
 	}
-#ifdef HAVE_ACML
+#ifdef SHOGUN_HAVE_ACML
 	DGETRS(trans,N,NRHS,A,lda,ipiv,B,ldb,info);
 #else
 	int n=N;
@@ -215,7 +215,7 @@ int clapack_dpotrs(const CBLAS_ORDER Order, const CBLAS_UPLO Uplo,
 	{
 		uplo = 'L';
 	}
-#ifdef HAVE_ACML
+#ifdef SHOGUN_HAVE_ACML
 	DPOTRS(uplo,N,NRHS,A,lda,B,ldb,info);
 #else
 	int n=N;
@@ -227,14 +227,14 @@ int clapack_dpotrs(const CBLAS_ORDER Order, const CBLAS_UPLO Uplo,
 	return info;
 }
 #undef DPOTRS
-#endif //HAVE_ATLAS
+#endif //SHOGUN_HAVE_ATLAS
 
 namespace shogun
 {
 
 void wrap_dsyev(char jobz, char uplo, int n, double *a, int lda, double *w, int *info)
 {
-#ifdef HAVE_ACML
+#ifdef SHOGUN_HAVE_ACML
 	DSYEV(jobz, uplo, n, a, lda, w, info);
 #else
 	int lwork=-1;
@@ -253,7 +253,7 @@ void wrap_dsyev(char jobz, char uplo, int n, double *a, int lda, double *w, int 
 void wrap_dgesvd(char jobu, char jobvt, int m, int n, double *a, int lda, double *sing,
 		double *u, int ldu, double *vt, int ldvt, int *info)
 {
-#ifdef HAVE_ACML
+#ifdef SHOGUN_HAVE_ACML
 	DGESVD(jobu, jobvt, m, n, a, lda, sing, u, ldu, vt, ldvt, info);
 #else
 	double work1 = 0;
@@ -270,7 +270,7 @@ void wrap_dgesvd(char jobu, char jobvt, int m, int n, double *a, int lda, double
 
 void wrap_dgeqrf(int m, int n, double *a, int lda, double *tau, int *info)
 {
-#ifdef HAVE_ACML
+#ifdef SHOGUN_HAVE_ACML
 	DGEQRF(m, n, a, lda, tau, info);
 #else
 	int lwork = -1;
@@ -288,7 +288,7 @@ void wrap_dgeqrf(int m, int n, double *a, int lda, double *tau, int *info)
 
 void wrap_dorgqr(int m, int n, int k, double *a, int lda, double *tau, int *info)
 {
-#ifdef HAVE_ACML
+#ifdef SHOGUN_HAVE_ACML
 	DORGQR(m, n, k, a, lda, tau, info);
 #else
 	int lwork = -1;
@@ -312,7 +312,7 @@ void wrap_dsyevr(char jobz, char uplo, int n, double *a, int lda, int il, int iu
 	double abstol = 0.0;
 	char I = 'I';
 	int* isuppz = SG_MALLOC(int, n);
-#ifdef HAVE_ACML
+#ifdef SHOGUN_HAVE_ACML
 	DSYEVR(jobz,I,uplo,n,a,lda,vl,vu,il,iu,abstol,m,
 	       eigenvalues,eigenvectors,n,isuppz,info);
 #else
@@ -347,7 +347,7 @@ void wrap_dsygvx(int itype, char jobz, char uplo, int n, double *a, int lda, dou
 	double vl,vu;
 	int* ifail = SG_MALLOC(int, n);
 	char I = 'I';
-#ifdef HAVE_ACML
+#ifdef SHOGUN_HAVE_ACML
 	DSYGVX(itype,jobz,I,uplo,n,a,lda,b,ldb,vl,vu,
                il,iu,abstol,m,eigenvalues,
                eigenvectors,n,ifail,info);
@@ -374,7 +374,7 @@ void wrap_dstemr(char jobz, char range, int n, double* diag, double *subdiag,
 		double vl, double vu, int il, int iu, int* m, double* w, double* z__,
 		int ldz, int nzc, int *isuppz, int tryrac, int *info)
 {
-#ifdef HAVE_ACML
+#ifdef SHOGUN_HAVE_ACML
 	SG_SNOTIMPLEMENTED
 #else
 	int lwork=-1;
@@ -399,4 +399,4 @@ void wrap_dstemr(char jobz, char range, int n, double* diag, double *subdiag,
 #undef DSTEMR
 
 }
-#endif //HAVE_LAPACK
+#endif //SHOGUN_HAVE_LAPACK

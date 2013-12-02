@@ -9,8 +9,8 @@
  */
 
 #include <lib/malsar/malsar_clustered.h>
-#ifdef HAVE_EIGEN3
-#ifndef HAVE_CXX11
+#ifdef SHOGUN_HAVE_EIGEN3
+#ifndef SHOGUN_HAVE_CXX11
 #include <mathematics/Math.h>
 #include <mathematics/eigen3.h>
 #include <iostream>

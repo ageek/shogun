@@ -37,7 +37,7 @@ TEST(LatentModel, argmax_h)
 	SG_UNREF(data);
 }
 
-#ifdef USE_REFERENCE_COUNTING
+#ifdef SHOGUN_USE_REFERENCE_COUNTING
 
 #ifdef FREEBSD
 TEST(LatentSVM, DISABLED_ctor)

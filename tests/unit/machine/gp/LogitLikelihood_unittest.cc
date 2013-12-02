@@ -9,7 +9,7 @@
 
 #include <lib/config.h>
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 
 #include <labels/BinaryLabels.h>
 #include <machine/gp/LogitLikelihood.h>
@@ -486,4 +486,4 @@ TEST(LogitLikelihood,get_second_moments)
 	SG_UNREF(labels);
 }
 
-#endif /* HAVE_EIGEN3 */
+#endif /* SHOGUN_HAVE_EIGEN3 */

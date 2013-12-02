@@ -12,15 +12,15 @@
 #include <lib/config.h>
 #include <base/init.h>
 
-#ifdef HAVE_PYTHON
+#ifdef SHOGUN_HAVE_PYTHON
 #include "../python/PythonInterface.h"
 #endif
 
-#ifdef HAVE_OCTAVE
+#ifdef SHOGUN_HAVE_OCTAVE
 #include "../octave/OctaveInterface.h"
 #endif
 
-#ifdef HAVE_R
+#ifdef SHOGUN_HAVE_R
 #include "../r/RInterface.h"
 #endif
 
@@ -628,7 +628,7 @@ void CMatlabInterface::set_arg_increment(mxArray* mx_arg)
 //
 bool CMatlabInterface::cmd_run_python()
 {
-#ifdef HAVE_PYTHON
+#ifdef SHOGUN_HAVE_PYTHON
 	return CPythonInterface::run_python_helper(this);
 #else
 	return false;
@@ -637,7 +637,7 @@ bool CMatlabInterface::cmd_run_python()
 
 bool CMatlabInterface::cmd_run_octave()
 {
-#ifdef HAVE_OCTAVE
+#ifdef SHOGUN_HAVE_OCTAVE
 	return COctaveInterface::run_octave_helper(this);
 #else
 	return false;
@@ -646,7 +646,7 @@ bool CMatlabInterface::cmd_run_octave()
 
 bool CMatlabInterface::cmd_run_r()
 {
-#ifdef HAVE_R
+#ifdef SHOGUN_HAVE_R
 	return CRInterface::run_r_helper(this);
 #else
 	return false;
@@ -666,13 +666,13 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 					&matlab_print_error, &matlab_cancel_computations);
 			interface=new CMatlabInterface(nlhs, plhs, nrhs, prhs);
 
-#ifdef HAVE_PYTHON
+#ifdef SHOGUN_HAVE_PYTHON
 			CPythonInterface::run_python_init();
 #endif
-#ifdef HAVE_OCTAVE
+#ifdef SHOGUN_HAVE_OCTAVE
 			COctaveInterface::run_octave_init();
 #endif
-#ifdef HAVE_R
+#ifdef SHOGUN_HAVE_R
 			CRInterface::run_r_init();
 #endif
 		}

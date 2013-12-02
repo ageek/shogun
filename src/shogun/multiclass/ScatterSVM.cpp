@@ -10,9 +10,9 @@
  */
 #include <multiclass/ScatterSVM.h>
 
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 #include <classifier/svm/SVMLightOneClass.h>
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT
 
 #include <kernel/Kernel.h>
 #include <kernel/normalizer/ScatterKernelNormalizer.h>
@@ -87,12 +87,12 @@ bool CScatterSVM::train_machine(CFeatures* data)
 	{
 		result=train_no_bias_libsvm();
 	}
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 	else if (scatter_type==NO_BIAS_SVMLIGHT)
 	{
 		result=train_no_bias_svmlight();
 	}
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT
 	else if (scatter_type==TEST_RULE1 || scatter_type==TEST_RULE2)
 	{
 		float64_t nu_min=((float64_t) Nc)/num_vectors;
@@ -216,7 +216,7 @@ bool CScatterSVM::train_no_bias_libsvm()
 		return false;
 }
 
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 bool CScatterSVM::train_no_bias_svmlight()
 {
 	CKernelNormalizer* prev_normalizer=m_kernel->get_normalizer();
@@ -244,7 +244,7 @@ bool CScatterSVM::train_no_bias_svmlight()
 	m_kernel->set_normalizer(prev_normalizer);
 	return true;
 }
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT
 
 bool CScatterSVM::train_testrule12()
 {
@@ -398,7 +398,7 @@ CLabels* CScatterSVM::classify_one_vs_rest()
 		for (int32_t i=0; i<num_vectors; i++)
 			output->set_label(i, apply_one(i));
 	}
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 	else if (scatter_type == NO_BIAS_SVMLIGHT)
 	{
 		float64_t* outputs=SG_MALLOC(float64_t, num_vectors*m_num_classes);
@@ -439,7 +439,7 @@ CLabels* CScatterSVM::classify_one_vs_rest()
 
 		SG_FREE(outputs);
 	}
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT
 	else
 	{
 		ASSERT(m_machines->get_num_elements()>0)
@@ -525,12 +525,12 @@ float64_t CScatterSVM::apply_one(int32_t num)
 			}
 		}
 	}
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 	else if (scatter_type == NO_BIAS_SVMLIGHT)
 	{
 		SG_ERROR("Use classify...\n")
 	}
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT
 	else
 	{
 		float64_t max_out=get_svm(0)->apply_one(num)/norm_wc[0];

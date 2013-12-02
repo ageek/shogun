@@ -48,7 +48,7 @@ void CMMDKernelSelectionCombOpt::init()
 			MS_NOT_AVAILABLE);
 }
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 SGVector<float64_t> CMMDKernelSelectionCombOpt::compute_measures()
 {
 	/* cast is safe due to assertion in constructor */

@@ -86,27 +86,27 @@ APPLY_BINARY(CLinearMachine);
 APPLY_BINARY(CKernelMachine);
 APPLY_BINARY(CWDSVMOcas);
 APPLY_BINARY(CPluginEstimate);
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 APPLY_BINARY(CGaussianProcessBinaryClassification);
-#endif //HAVE_EIGEN3
+#endif //SHOGUN_HAVE_EIGEN3
 
 APPLY_REGRESSION(CLibSVR);
 APPLY_REGRESSION(CSVRLight);
 APPLY_REGRESSION(CMKLRegression);
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 APPLY_REGRESSION(CKernelRidgeRegression);
 APPLY_REGRESSION(CLinearRidgeRegression);
 APPLY_REGRESSION(CLeastSquaresRegression);
 APPLY_REGRESSION(CLeastAngleRegression);
 #endif
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 APPLY_REGRESSION(CGaussianProcessRegression);
-#endif //HAVE_EIGEN3
+#endif //SHOGUN_HAVE_EIGEN3
 
 APPLY_STRUCTURED(CStructuredOutputMachine);
 APPLY_STRUCTURED(CLinearStructuredOutputMachine);
 APPLY_STRUCTURED(CKernelStructuredOutputMachine);
-#ifdef USE_MOSEK
+#ifdef SHOGUN_USE_MOSEK
 APPLY_STRUCTURED(CPrimalMosekSOSVM);
 #endif
 APPLY_STRUCTURED(CDualLibQPBMSOSVM);
@@ -127,7 +127,7 @@ APPLY_LATENT(CLatentSVM);
 %rename(apply_generic) CSVRLight::apply(CFeatures* data=NULL);
 %rename(apply_generic) CLibSVR::apply(CFeatures* data=NULL);
 %rename(apply_generic) CMKLRegression::apply(CFeatures* data=NULL);
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 %rename(apply_generic) CKernelRidgeRegression::apply(CFeatures* data=NULL);
 %rename(apply_generic) CLinearRidgeRegression::apply(CFeatures* data=NULL);
 %rename(apply_generic) CLeastSquaresRegression::apply(CFeatures* data=NULL);
@@ -138,7 +138,7 @@ APPLY_LATENT(CLatentSVM);
 %rename(apply_generic) CStructuredOutputMachine::apply(CFeatures* data=NULL);
 %rename(apply_generic) CLinearStructuredOutputMachine::apply(CFeatures* data=NULL);
 %rename(apply_generic) CKernelStructuredOutputMachine::apply(CFeatures* data=NULL);
-#ifdef USE_MOSEK
+#ifdef SHOGUN_USE_MOSEK
 %rename(apply_generic) CPrimalMosekSOSVM::apply(CFeatures* data=NULL);
 #endif
 

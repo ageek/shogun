@@ -10,9 +10,9 @@
 #include <lib/memory.h>
 #include <lib/Lock.h>
 
-#ifdef HAVE_PTHREAD
+#ifdef SHOGUN_HAVE_PTHREAD
 #include <pthread.h>
-#ifdef USE_SPINLOCKS
+#ifdef SHOGUN_USE_SPINLOCKS
 #ifdef DARWIN
 #include <libkern/OSAtomic.h>
 	#define PTHREAD_LOCK_T OSSpinLock
@@ -40,7 +40,7 @@ using namespace shogun;
 
 CLock::CLock()
 {
-#ifdef HAVE_PTHREAD
+#ifdef SHOGUN_HAVE_PTHREAD
 	lock_object=(void*) SG_MALLOC(PTHREAD_LOCK_T, 1);
 	PTHREAD_LOCK_INIT((PTHREAD_LOCK_T*) lock_object);
 #endif
@@ -48,7 +48,7 @@ CLock::CLock()
 
 CLock::~CLock()
 {
-#ifdef HAVE_PTHREAD
+#ifdef SHOGUN_HAVE_PTHREAD
 	PTHREAD_LOCK_DESTROY((PTHREAD_LOCK_T*) lock_object);
 	SG_FREE(lock_object);
 #endif
@@ -56,14 +56,14 @@ CLock::~CLock()
 
 void CLock::lock()
 {
-#ifdef HAVE_PTHREAD
+#ifdef SHOGUN_HAVE_PTHREAD
 	PTHREAD_LOCK((PTHREAD_LOCK_T*) lock_object);
 #endif
 }
 
 void CLock::unlock()
 {
-#ifdef HAVE_PTHREAD
+#ifdef SHOGUN_HAVE_PTHREAD
 	PTHREAD_UNLOCK((PTHREAD_LOCK_T*) lock_object);
 #endif
 }

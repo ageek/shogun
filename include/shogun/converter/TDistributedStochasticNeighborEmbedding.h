@@ -11,7 +11,7 @@
 #ifndef TDISTRIBUTEDSTOCHASTICNEIGHBOREMBEDDING_H_
 #define TDISTRIBUTEDSTOCHASTICNEIGHBOREMBEDDING_H_
 #include <lib/config.h>
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 #include <converter/EmbeddingConverter.h>
 #include <features/Features.h>
 
@@ -85,5 +85,5 @@ private:
 
 } /* namespace shogun */
 
-#endif /* HAVE_EIGEN3 */
+#endif /* SHOGUN_HAVE_EIGEN3 */
 #endif /* TDISTRIBUTEDSTOCHASTICNEIGHBOREMBEDDING_H_ */

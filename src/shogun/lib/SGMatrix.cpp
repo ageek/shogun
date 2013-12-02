@@ -727,7 +727,7 @@ SGMatrix<float64_t> SGMatrix<T>::create_centering_matrix(index_t size)
 //The pseudo inverse A+ can be constructed from the singular value
 //decomposition A = UDV^T , by  A^+ = V(D+)U^T.
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 template <class T>
 float64_t* SGMatrix<T>::pinv(
 		float64_t* matrix, int32_t rows, int32_t cols, float64_t* target)
@@ -827,7 +827,7 @@ void SGMatrix<T>::compute_few_eigenvectors(double* matrix_, double*& eigenvalues
 	ASSERT(status==0)
 }
 
-#endif //HAVE_LAPACK
+#endif //SHOGUN_HAVE_LAPACK
 
 template <class T>
 SGMatrix<float64_t> SGMatrix<T>::matrix_multiply(
@@ -850,7 +850,7 @@ SGMatrix<float64_t> SGMatrix<T>::matrix_multiply(
 	/* allocate result matrix */
 	SGMatrix<float64_t> C(rows_A, cols_B);
 	C.zero();
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 	/* multiply */
 	cblas_dgemm(CblasColMajor,
 			transpose_A ? CblasTrans : CblasNoTrans,
@@ -867,7 +867,7 @@ SGMatrix<float64_t> SGMatrix<T>::matrix_multiply(
 				C(i,j) += A(i,k)*B(k,j);
 		}
 	}
-#endif //HAVE_LAPACK
+#endif //SHOGUN_HAVE_LAPACK
 
 	return C;
 }

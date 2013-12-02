@@ -12,7 +12,7 @@
 #define FASTICA_H_
 
 #include <lib/config.h>
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 #include <converter/ica/ICAConverter.h>
 #include <features/Features.h>
 
@@ -71,5 +71,5 @@ class CFastICA: public CICAConverter
 
 };
 }
-#endif // HAVE_EIGEN3
+#endif // SHOGUN_HAVE_EIGEN3
 #endif // FASTICA

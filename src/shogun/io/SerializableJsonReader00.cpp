@@ -9,7 +9,7 @@
  */
 
 #include <lib/config.h>
-#ifdef HAVE_JSON
+#ifdef SHOGUN_HAVE_JSON
 
 #include <io/SerializableJsonReader00.h>
 
@@ -326,4 +326,4 @@ SerializableJsonReader00::read_type_end_wrapped(
 	return true;
 }
 
-#endif /* HAVE_JSON  */
+#endif /* SHOGUN_HAVE_JSON  */

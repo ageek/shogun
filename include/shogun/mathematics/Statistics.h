@@ -153,7 +153,7 @@ public:
 	static SGVector<float64_t> matrix_std_deviation(
 			SGMatrix<float64_t> values, bool col_wise=true);
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 	/** Computes the empirical estimate of the covariance matrix of the given
 	 * data which is organized as num_cols variables with num_rows observations.
 	 *
@@ -173,7 +173,7 @@ public:
 	 */
 	static SGMatrix<float64_t> covariance_matrix(
 			SGMatrix<float64_t> observations, bool in_place=false);
-#endif //HAVE_LAPACK
+#endif //SHOGUN_HAVE_LAPACK
 
 	/** Calculates the sample mean of a given set of samples and also computes
 	 * the confidence interval for the actual mean for a given p-value,
@@ -271,11 +271,11 @@ public:
 	 * numbers */
 	static inline floatmax_t lgammal(floatmax_t x)
 	{
-#ifdef HAVE_LGAMMAL
+#ifdef SHOGUN_HAVE_LGAMMAL
 		return ::lgammal((long double) x);
 #else
 		return ::lgamma((double) x);
-#endif // HAVE_LGAMMAL
+#endif // SHOGUN_HAVE_LGAMMAL
 	}
 
 	/** @return gamma function of input */
@@ -493,7 +493,7 @@ public:
 	 */
 	static SigmoidParamters fit_sigmoid(SGVector<float64_t> scores);
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 	/** The log determinant of a dense matrix
 	 *
 	 * The log determinant of a positive definite symmetric real valued
@@ -562,7 +562,7 @@ public:
 	 */
 	static SGMatrix<float64_t> sample_from_gaussian(SGVector<float64_t> mean,
 	SGSparseMatrix<float64_t> cov, int32_t N=1, bool precision_matrix=false);
-#endif //HAVE_EIGEN3
+#endif //SHOGUN_HAVE_EIGEN3
 
 
 protected:

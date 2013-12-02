@@ -13,7 +13,7 @@
 
 #include <lib/config.h>
 
-#ifdef USE_SWIG_DIRECTORS
+#ifdef SHOGUN_USE_SWIG_DIRECTORS
 #include <lib/common.h>
 #include <lib/DataType.h>
 #include <kernel/Kernel.h>
@@ -468,5 +468,5 @@ IGNORE_IN_CLASSLIST class CDirectorKernel: public CKernel
 		bool external_features;
 };
 }
-#endif /* USE_SWIG_DIRECTORS */
+#endif /* SHOGUN_USE_SWIG_DIRECTORS */
 #endif /* _DIRECTORKERNEL_H__ */

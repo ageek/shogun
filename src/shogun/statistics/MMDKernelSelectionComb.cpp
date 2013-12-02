@@ -31,7 +31,7 @@ CMMDKernelSelectionComb::~CMMDKernelSelectionComb()
 
 void CMMDKernelSelectionComb::init()
 {
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 	SG_ADD(&m_opt_max_iterations, "opt_max_iterations", "Maximum number of "
 			"iterations for qp solver", MS_NOT_AVAILABLE);
 	SG_ADD(&m_opt_epsilon, "opt_epsilon", "Stopping criterion for qp solver",
@@ -46,7 +46,7 @@ void CMMDKernelSelectionComb::init()
 #endif
 }
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 /* no reference counting, use the static context constructor of SGMatrix */
 SGMatrix<float64_t> CMMDKernelSelectionComb::m_Q=SGMatrix<float64_t>(false);
 

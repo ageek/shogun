@@ -360,7 +360,7 @@ int CWDSVMOcas::add_new_cut(
 	float32_t** cuts=o->cuts;
 	float32_t* new_a=SG_MALLOC(float32_t, nDim);
 	memset(new_a, 0, sizeof(float32_t)*nDim);
-#ifdef HAVE_PTHREAD
+#ifdef SHOGUN_HAVE_PTHREAD
 
 	wdocas_thread_params_add* params_add=SG_MALLOC(wdocas_thread_params_add, o->parallel->get_num_threads());
 	pthread_t* threads=SG_MALLOC(pthread_t, o->parallel->get_num_threads());
@@ -416,7 +416,7 @@ int CWDSVMOcas::add_new_cut(
 	}
 	SG_FREE(threads);
 	SG_FREE(params_add);
-#endif /* HAVE_PTHREAD */
+#endif /* SHOGUN_HAVE_PTHREAD */
 	for(i=0; i < cut_length; i++)
 	{
 		if (o->use_bias)
@@ -541,7 +541,7 @@ void* CWDSVMOcas::compute_output_helper(void* ptr)
 
 int CWDSVMOcas::compute_output( float64_t *output, void* ptr )
 {
-#ifdef HAVE_PTHREAD
+#ifdef SHOGUN_HAVE_PTHREAD
 	CWDSVMOcas* o = (CWDSVMOcas*) ptr;
 	int32_t nData=o->num_vec;
 	wdocas_thread_params_output* params_output=SG_MALLOC(wdocas_thread_params_output, o->parallel->get_num_threads());
@@ -597,7 +597,7 @@ int CWDSVMOcas::compute_output( float64_t *output, void* ptr )
 	SG_FREE(params_output);
 	SG_FREE(val);
 	SG_FREE(out);
-#endif /* HAVE_PTHREAD */
+#endif /* SHOGUN_HAVE_PTHREAD */
 	return 0;
 }
 /*----------------------------------------------------------------------

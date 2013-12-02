@@ -9,7 +9,7 @@
  */
 
 #include <preprocessor/KernelPCA.h>
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 #include <lib/config.h>
 #include <mathematics/Math.h>
 

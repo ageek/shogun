@@ -150,9 +150,9 @@
 #define N_DEL_LAST_KERNEL				"del_last_kernel"
 #define N_CLEAN_KERNEL					"clean_kernel"
 
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 #define N_RESIZE_KERNEL_CACHE			"resize_kernel_cache"
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT
 
 #define N_SET_KERNEL_OPTIMIZATION_TYPE	"set_kernel_optimization_type"
 #define N_SET_PRIOR_PROBS				"set_prior_probs"

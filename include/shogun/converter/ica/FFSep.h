@@ -11,7 +11,7 @@
 #define FFSEP_H_
 
 #include <lib/config.h>
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 #include <lib/SGNDArray.h>
 #include <features/Features.h>
 #include <converter/ica/ICAConverter.h>
@@ -80,5 +80,5 @@ class CFFSep: public CICAConverter
 		SGNDArray<float64_t> m_covs;
 };
 }
-#endif // HAVE_EIGEN3
+#endif // SHOGUN_HAVE_EIGEN3
 #endif // FFSEP

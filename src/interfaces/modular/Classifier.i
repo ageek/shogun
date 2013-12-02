@@ -9,13 +9,13 @@
  * Copyright (C) 2009 Fraunhofer Institute FIRST and Max-Planck-Society
  */
 
-#ifdef HAVE_PYTHON
+#ifdef SHOGUN_HAVE_PYTHON
 %feature("autodoc", "get_w(self) -> [] of float") get_w;
 %feature("autodoc", "get_support_vectors(self) -> [] of int") get_support_vectors;
 %feature("autodoc", "get_alphas(self) -> [] of float") get_alphas;
 #endif
 
-#if defined(USE_SWIG_DIRECTORS) && defined(SWIGPYTHON)
+#if defined(SHOGUN_USE_SWIG_DIRECTORS) && defined(SWIGPYTHON)
 %feature("director") shogun::CDirectorLinearMachine;
 %feature("director") shogun::CDirectorKernelMachine;
 %feature("director:except") {
@@ -44,7 +44,7 @@
 %rename(Perceptron) CPerceptron;
 %rename(AveragedPerceptron) CAveragedPerceptron;
 %rename(NewtonSVM) CNewtonSVM;
-#ifndef HAVE_PYTHON
+#ifndef SHOGUN_HAVE_PYTHON
 %rename(SVM) CSVM;
 #endif
 %rename(SVMLin) CSVMLin;
@@ -57,10 +57,10 @@
 %rename(MKLClassification) CMKLClassification;
 %rename(MKLOneClass) CMKLOneClass;
 %rename(VowpalWabbit) CVowpalWabbit;
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 %rename(SVMLight) CSVMLight;
 %rename(SVMLightOneClass) CSVMLightOneClass;
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT
 %rename(FeatureBlockLogisticRegression) CFeatureBlockLogisticRegression;
 %rename(DirectorLinearMachine) CDirectorLinearMachine;
 %rename(DirectorKernelMachine) CDirectorKernelMachine;
@@ -109,7 +109,7 @@
 %include <machine/DirectorKernelMachine.h>
 %include <machine/BaggingMachine.h>
 
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 
 %ignore VERSION;
 %ignore VERSION_DATE;
@@ -122,4 +122,4 @@
 %include <classifier/svm/SVMLight.h>
 %include <classifier/svm/SVMLightOneClass.h>
 
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT

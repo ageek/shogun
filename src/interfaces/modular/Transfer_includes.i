@@ -20,9 +20,9 @@
 
  #include <transfer/multitask/MultitaskROCEvaluation.h>
 
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
  #include <transfer/domain_adaptation/DomainAdaptationSVM.h>
-#endif /* USE_SVMLIGHT */
+#endif /* SHOGUN_USE_SVMLIGHT */
  #include <transfer/domain_adaptation/DomainAdaptationSVMLinear.h>
  #include <transfer/domain_adaptation/DomainAdaptationMulticlassLibLinear.h>
 %}

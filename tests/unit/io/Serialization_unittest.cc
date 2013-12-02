@@ -559,7 +559,7 @@ TEST(Serialization, Ascii_matrix_equal_COMPLEX128)
 	delete param2;
 }
 
-#ifdef HAVE_JSON
+#ifdef SHOGUN_HAVE_JSON
 TEST(Serialization, Json_scalar_equal_BOOL)
 {
 	bool a=true;
@@ -744,9 +744,9 @@ TEST(Serialization, Json_matrix_equal_FLOAT64)
 	delete param1;
 	delete param2;
 }
-#endif // HAVE_JSON
+#endif // SHOGUN_HAVE_JSON
 
-#ifdef HAVE_XML
+#ifdef SHOGUN_HAVE_XML
 TEST(Serialization, Xml_scalar_equal_BOOL)
 {
 	bool a=true;
@@ -1289,9 +1289,9 @@ TEST(Serialization, Xml_matrix_equal_COMPLEX128)
 	delete param2;
 }
 
-#endif // HAVE_XML
+#endif // SHOGUN_HAVE_XML
 
-#ifdef HAVE_HDF5
+#ifdef SHOGUN_HAVE_HDF5
 TEST(Serialization, Hdf5_scalar_equal_BOOL)
 {
 	bool a=true;
@@ -1738,4 +1738,4 @@ TEST(Serialization, Hdf5_matrix_equal_FLOAT64)
 	delete param2;
 }
 
-#endif // HAVE_HDF5
+#endif // SHOGUN_HAVE_HDF5

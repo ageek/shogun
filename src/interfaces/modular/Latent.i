@@ -8,7 +8,7 @@
  * Copyright (C) 2009 Fraunhofer Institute FIRST and Max-Planck-Society
  */
 
-#if defined(USE_SWIG_DIRECTORS) && defined(SWIGPYTHON)
+#if defined(SHOGUN_USE_SWIG_DIRECTORS) && defined(SWIGPYTHON)
 %feature("director") shogun::CDirectorLatentModel;
 #endif
 

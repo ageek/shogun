@@ -13,7 +13,7 @@
 #include <mathematics/Math.h>
 #include <features/Features.h>
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 #include <mathematics/lapack.h>
 #endif
 

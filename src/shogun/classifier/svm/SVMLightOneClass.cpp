@@ -10,7 +10,7 @@
 
 #include <lib/config.h>
 
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 
 #include <io/SGIO.h>
 #include <mathematics/lapack.h>
@@ -23,7 +23,7 @@
 
 #include <unistd.h>
 
-#ifdef USE_CPLEX
+#ifdef SHOGUN_USE_CPLEX
 extern "C" {
 #include <ilcplex/cplex.h>
 }
@@ -31,7 +31,7 @@ extern "C" {
 
 #include <base/Parallel.h>
 
-#ifdef HAVE_PTHREAD
+#ifdef SHOGUN_HAVE_PTHREAD
 #include <pthread.h>
 #endif
 
@@ -154,4 +154,4 @@ bool CSVMLightOneClass::train_machine(CFeatures* data)
 
 	return true ;
 }
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT

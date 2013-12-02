@@ -423,9 +423,9 @@ class CCombinedKernel : public CKernel
 				if (!get_num_subkernels())
 				{
 					initialized=true;
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 					cache_reset();
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT
 				}
 			}
 			else
@@ -440,9 +440,9 @@ class CCombinedKernel : public CKernel
 				if (!get_num_subkernels())
 				{
 					initialized=true;
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 					cache_reset();
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT
 				}
 			}
 			else

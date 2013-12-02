@@ -11,7 +11,7 @@
 #define __SERIALIZABLE_JSON_READER_00_H__
 
 #include <lib/config.h>
-#ifdef HAVE_JSON
+#ifdef SHOGUN_HAVE_JSON
 
 #include <io/SerializableJsonFile.h>
 
@@ -84,5 +84,5 @@ public:
 };
 }
 
-#endif /* HAVE_JSON  */
+#endif /* SHOGUN_HAVE_JSON  */
 #endif /* __SERIALIZABLE_JSON_READER_00_H__  */

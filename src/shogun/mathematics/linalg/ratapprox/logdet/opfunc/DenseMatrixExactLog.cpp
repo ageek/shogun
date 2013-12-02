@@ -9,7 +9,7 @@
 
 #include <lib/common.h>
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 #include <mathematics/eigen3.h>
 
 #if EIGEN_VERSION_AT_LEAST(3,1,0)
@@ -103,4 +103,4 @@ CJobResultAggregator* CDenseMatrixExactLog::submit_jobs(SGVector<float64_t>
 }
 
 }
-#endif // HAVE_EIGEN3
+#endif // SHOGUN_HAVE_EIGEN3

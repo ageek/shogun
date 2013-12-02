@@ -45,14 +45,14 @@ using namespace shogun;
 CSGInterface* interface=NULL;
 CSyntaxHighLight hilight;
 
-#if defined(HAVE_CMDLINE)
+#if defined(SHOGUN_HAVE_CMDLINE)
 #define USAGE(method) "", ""
 #define USAGE_I(method, in) "", " " in ""
 #define USAGE_O(method, out) "" out " = ", ""
 #define USAGE_IO(method, in, out) "" out " = ", " " in ""
 #define USAGE_COMMA " "
 #define USAGE_STR ""
-#elif defined(HAVE_R)
+#elif defined(SHOGUN_HAVE_R)
 #define USAGE(method) "sg('", "')"
 #define USAGE_I(method, in) "sg('", "', " in ")"
 #define USAGE_O(method, out) "[" out "] <- sg('", "')"
@@ -316,13 +316,13 @@ CSGInterfaceMethod sg_methods[]=
 		(&CSGInterface::cmd_set_prior_probs_from_labels),
 		USAGE_I(N_SET_PRIOR_PROBS_FROM_LABELS, USAGE_STR "labels" USAGE_STR)
 	},
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 	{
 		N_RESIZE_KERNEL_CACHE,
 		(&CSGInterface::cmd_resize_kernel_cache),
 		USAGE_I(N_RESIZE_KERNEL_CACHE, "size")
 	},
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT
 
 
 	{ "Distance", NULL, NULL },
@@ -1212,7 +1212,7 @@ CSGInterface::CSGInterface(bool print_copyright)
 		version->print_version();
 		SG_PRINT("( seeding random number generator with %u (seed size %d))\n",
 				CMath::get_seed(), RNG_SEED_SIZE);
-#ifdef USE_LOGCACHE
+#ifdef SHOGUN_USE_LOGCACHE
 		SG_PRINT("initializing log-table (size=%i*%i*%i=%2.1fMB) ... ) ",
 				CMath::get_log_range(),CMath::get_log_accuracy(),sizeof(float64_t),
 				CMath::get_log_range()*CMath::get_log_accuracy()*sizeof(float64_t)/(1024.0*1024.0));
@@ -4212,7 +4212,7 @@ bool CSGInterface::cmd_set_prior_probs_from_labels()
 	return true;
 }
 
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 bool CSGInterface::cmd_resize_kernel_cache()
 {
 	if (m_nrhs<2 || !create_return_values(0))
@@ -4221,7 +4221,7 @@ bool CSGInterface::cmd_resize_kernel_cache()
 	int32_t size=get_int_from_int_or_str();
 	return ui_kernel->resize_kernel_cache(size);
 }
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT
 
 
 /** Distance */
@@ -5246,7 +5246,7 @@ bool CSGInterface::cmd_add_preproc()
 		preproc=ui_preproc->create_prunevarsubmean(divide_by_std);
 	}
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 	else if (strmatch(type, "PCA") && m_nrhs==4)
 	{
 		bool do_whitening=get_bool_from_bool_or_str();

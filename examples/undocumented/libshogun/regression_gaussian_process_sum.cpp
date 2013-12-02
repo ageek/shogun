@@ -8,7 +8,7 @@
  */
 
 #include <lib/config.h>
-#if defined(HAVE_EIGEN3) && defined(HAVE_NLOPT)
+#if defined(SHOGUN_HAVE_EIGEN3) && defined(SHOGUN_HAVE_NLOPT)
 #include <base/init.h>
 #include <labels/RegressionLabels.h>
 #include <features/DenseFeatures.h>
@@ -303,9 +303,9 @@ int main(int argc, char **argv)
 	return 0;
 
 }
-#else // HAVE_EIGEN3 && HAVE_NLOPT
+#else // SHOGUN_HAVE_EIGEN3 && SHOGUN_HAVE_NLOPT
 int main(int argc, char **argv)
 {
 	return 0;
 }
-#endif // HAVE_EIGEN3 && HAVE_NLOPT
+#endif // SHOGUN_HAVE_EIGEN3 && SHOGUN_HAVE_NLOPT

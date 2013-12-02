@@ -27,11 +27,11 @@
 #include <lib/memory.h>
 #include <base/init.h>
 
-#ifdef HAVE_PYTHON
+#ifdef SHOGUN_HAVE_PYTHON
 #include "../python_static/PythonInterface.h"
 #endif
 
-#ifdef HAVE_R
+#ifdef SHOGUN_HAVE_R
 #include "../r_static/RInterface.h"
 #undef length
 #endif
@@ -583,7 +583,7 @@ void COctaveInterface::set_attribute_struct(const CDynamicArray<T_ATTRIBUTE>* at
 
 bool COctaveInterface::cmd_run_python()
 {
-#ifdef HAVE_PYTHON
+#ifdef SHOGUN_HAVE_PYTHON
 	return CPythonInterface::run_python_helper(this);
 #else
 	return false;
@@ -592,7 +592,7 @@ bool COctaveInterface::cmd_run_python()
 
 bool COctaveInterface::cmd_run_r()
 {
-#ifdef HAVE_R
+#ifdef SHOGUN_HAVE_R
 	return CRInterface::run_r_helper(this);
 #else
 	return false;
@@ -783,7 +783,7 @@ bool COctaveInterface::run_octave_helper(CSGInterface* from_if)
 	return true;
 }
 
-#ifdef HAVE_ELWMS
+#ifdef SHOGUN_HAVE_ELWMS
 DEFUN_DLD (elwms, prhs, nlhs, "shogun.")
 #else
 DEFUN_DLD (sg, prhs, nlhs, "shogun.")
@@ -799,10 +799,10 @@ DEFUN_DLD (sg, prhs, nlhs, "shogun.")
 			init_shogun(&octave_print_message, &octave_print_warning,
 					&octave_print_error, &octave_cancel_computations);
 			interface=new COctaveInterface(prhs, nlhs);
-#ifdef HAVE_PYTHON
+#ifdef SHOGUN_HAVE_PYTHON
 			CPythonInterface::run_python_init();
 #endif
-#ifdef HAVE_R
+#ifdef SHOGUN_HAVE_R
 			CRInterface::run_r_init();
 #endif
 		}

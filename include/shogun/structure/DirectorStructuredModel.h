@@ -10,7 +10,7 @@
 #ifndef DIRECTOR_STRUCTURED_MODEL_H_
 #define DIRECTOR_STRUCTURED_MODEL_H_
 
-#ifdef USE_SWIG_DIRECTORS
+#ifdef SHOGUN_USE_SWIG_DIRECTORS
 #include <structure/StructuredModel.h>
 #include <lib/config.h>
 namespace shogun
@@ -113,5 +113,5 @@ IGNORE_IN_CLASSLIST class CDirectorStructuredModel : public CStructuredModel
 
 }; /* class CDirectorStructuredModel */
 } /* namespace shogun */
-#endif /* USE_SWIG_DIRECTORS */
+#endif /* SHOGUN_USE_SWIG_DIRECTORS */
 #endif /* DIRECTOR_STRUCTURED_MODEL_H_ */

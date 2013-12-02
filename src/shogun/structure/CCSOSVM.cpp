@@ -37,14 +37,14 @@ CCCSOSVM::CCCSOSVM(CStructuredModel* model, SGVector<float64_t> w)
 
 CCCSOSVM::~CCCSOSVM()
 {
-#ifdef USE_MOSEK
+#ifdef SHOGUN_USE_MOSEK
 	MSK_deleteenv(&m_msk_env);
 #endif
 }
 
 int32_t CCCSOSVM::mosek_qp_optimize(float64_t** G, float64_t* delta, float64_t* alpha, int32_t k, float64_t* dual_obj, float64_t rho)
 {
-#ifdef USE_MOSEK
+#ifdef SHOGUN_USE_MOSEK
 	int32_t t;
 	index_t Q_size = k*(k+1)/2;
 	SGVector<float64_t> c(k);
@@ -668,7 +668,7 @@ void CCCSOSVM::init()
 	m_primal_obj = CMath::INFTY;
 	m_qp_type = MOSEK;
 
-#ifdef USE_MOSEK
+#ifdef SHOGUN_USE_MOSEK
 	MSKrescodee r = MSK_RES_OK;
 
 	/* create mosek environment */

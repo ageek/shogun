@@ -11,7 +11,7 @@
 #ifndef CUSTOM_MAHALANOBIS_DISTANCE_
 #define CUSTOM_MAHALANOBIS_DISTANCE_
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 
 #include <distance/RealDistance.h>
 #include <features/DenseFeatures.h>
@@ -80,6 +80,6 @@ class CCustomMahalanobisDistance : public CRealDistance
 
 } /* namespace shogun */
 
-#endif /* HAVE_EIGEN3 */
+#endif /* SHOGUN_HAVE_EIGEN3 */
 
 #endif /* CUSTOM_MAHALANOBIS_DISTANCE_ */

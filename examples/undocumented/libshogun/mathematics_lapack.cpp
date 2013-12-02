@@ -18,7 +18,7 @@
 
 using namespace shogun;
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 
 bool is_equal(float64_t a, float64_t b, float64_t eps)
 {
@@ -189,13 +189,13 @@ void test_lapack()
 	delete[] double_eigenvalues;
 	delete[] double_matrix;
 }
-#endif // HAVE_LAPACK
+#endif // SHOGUN_HAVE_LAPACK
 
 int main(int argc, char** argv)
 {
 	init_shogun_with_defaults();
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 	SG_SPRINT("checking lapack\n");
 	test_lapack();
 
@@ -204,7 +204,7 @@ int main(int argc, char** argv)
 
 	SG_SPRINT("matrix_multiply\n");
 	test_matrix_multiply();
-#endif // HAVE_LAPACK
+#endif // SHOGUN_HAVE_LAPACK
 
 	exit_shogun();
 	return 0;

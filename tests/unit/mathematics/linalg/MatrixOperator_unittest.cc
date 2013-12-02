@@ -9,7 +9,7 @@
 
 #include <lib/common.h>
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 #include <lib/SGMatrix.h>
 #include <lib/SGSparseMatrix.h>
 #include <mathematics/eigen3.h>
@@ -72,4 +72,4 @@ TEST(MatrixOperator, cast_sparse_double_complex)
 	SG_UNREF(orig_op);
 	SG_UNREF(casted_op);
 }
-#endif // HAVE_EIGEN3
+#endif // SHOGUN_HAVE_EIGEN3

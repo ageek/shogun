@@ -10,7 +10,7 @@
 
 #include <lib/config.h>
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 
 #include <multiclass/ecoc/ECOCIHDDecoder.h>
 #include <multiclass/ecoc/ECOCUtil.h>
@@ -71,4 +71,4 @@ void CECOCIHDDecoder::update_delta_cache(const SGMatrix<int32_t> codebook)
     clapack_dgetri(CblasColMajor, m_delta.num_cols, m_delta.matrix, m_delta.num_cols, IPIV.vector);
 }
 
-#endif // HAVE_LAPACK
+#endif // SHOGUN_HAVE_LAPACK

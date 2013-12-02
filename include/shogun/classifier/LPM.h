@@ -12,7 +12,7 @@
 #define _LPM_H___
 
 #include <lib/config.h>
-#ifdef USE_CPLEX
+#ifdef SHOGUN_USE_CPLEX
 
 #include <stdio.h>
 #include <lib/common.h>
@@ -104,5 +104,5 @@ class CLPM : public CLinearMachine
 		float64_t epsilon;
 };
 }
-#endif //USE_CPLEX
+#endif // SHOGUN_USE_CPLEX
 #endif //_LPM_H___

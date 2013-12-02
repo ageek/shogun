@@ -34,7 +34,7 @@ CMMDKernelSelectionCombMaxL2::~CMMDKernelSelectionCombMaxL2()
 {
 }
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 SGVector<float64_t> CMMDKernelSelectionCombMaxL2::compute_measures()
 {
 	/* cast is safe due to assertion in constructor */

@@ -11,7 +11,7 @@
 #ifndef MULTICLASSLOGISTICREGRESSION_H_
 #define MULTICLASSLOGISTICREGRESSION_H_
 #include <lib/config.h>
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 #include <lib/common.h>
 #include <features/DotFeatures.h>
 #include <machine/LinearMulticlassMachine.h>
@@ -111,5 +111,5 @@ protected:
 
 };
 }
-#endif /* HAVE_EIGEN3 */
+#endif /* SHOGUN_HAVE_EIGEN3 */
 #endif

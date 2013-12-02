@@ -14,7 +14,7 @@
 
 using namespace shogun;
 
-#if defined(HAVE_EIGEN3) && defined(HAVE_LAPACK)
+#if defined(SHOGUN_HAVE_EIGEN3) && defined(SHOGUN_HAVE_LAPACK)
 TEST(LMNN,train_identity_init)
 {
 	// create features, each column is a feature vector
@@ -157,4 +157,4 @@ TEST(LMNN,train_diagonal)
 
 	SG_UNREF(lmnn)
 }
-#endif /* HAVE_LAPACK && HAVE_EIGEN3 */
+#endif /* SHOGUN_HAVE_LAPACK && SHOGUN_HAVE_EIGEN3 */

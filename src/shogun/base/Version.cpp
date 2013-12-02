@@ -41,23 +41,23 @@ Version::~Version()
 
 void Version::print_version()
 {
-	SG_SPRINT("libshogun (%s/%s%d)\n\n", MACHINE, VERSION_RELEASE, version_revision)
+	SG_SPRINT("libshogun (%s/%s%d)\n\n", SHOGUN_MACHINE_TYPE, VERSION_RELEASE, version_revision)
 	SG_SPRINT("Copyright (C) 1999-2009 Fraunhofer Institute FIRST\n")
 	SG_SPRINT("Copyright (C) 1999-2011 Max Planck Society\n")
 	SG_SPRINT("Copyright (C) 2009-2011 Berlin Institute of Technology\n")
 	SG_SPRINT("Copyright (C) 2012 Soeren Sonnenburg, Sergey Lisitsyn, Heiko Strathmann\n")
 	SG_SPRINT("Written   (W) 1999-2012 Soeren Sonnenburg, Gunnar Raetsch et al.\n\n")
-#ifndef USE_SVMLIGHT
+#ifndef SHOGUN_USE_SVMLIGHT
 	SG_SPRINT("This is free software; see the source for copying conditions.  There is NO\n")
 	SG_SPRINT("warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n")
 #endif
 
 #ifdef LINKFLAGS
 	SG_SPRINT("( configure options: \"%s\" compile flags: \"%s\" link flags: \"%s\" )\n",
-		CONFIGURE_OPTIONS, COMPFLAGS_CPP, LINKFLAGS)
+		SHOGUN_CONFIGURE_OPTIONS, SHOGUN_COMPFLAGS_CPP, SHOGUN_LINKFLAGS)
 #else
 	SG_SPRINT("( configure options: \"%s\" compile flags: \"%s\" link flags: None )\n",
-		CONFIGURE_OPTIONS, COMPFLAGS_CPP)
+			SHOGUN_CONFIGURE_OPTIONS, SHOGUN_COMPFLAGS_CPP)
 #endif
 }
 

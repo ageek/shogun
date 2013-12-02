@@ -1,8 +1,8 @@
 #include <regression/svr/MKLRegression.h>
 #include <regression/svr/LibSVR.h>
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 #include <regression/svr/SVRLight.h>
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT
 
 using namespace shogun;
 
@@ -10,9 +10,9 @@ CMKLRegression::CMKLRegression(CSVM* s) : CMKL(s)
 {
 	if (!s)
 	{
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 		s=new CSVRLight();
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT
 		if (!s)
 			s=new CLibSVR();
 		set_svm(s);

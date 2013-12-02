@@ -10,7 +10,7 @@
 
 #include <lib/common.h>
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 #include <machine/Machine.h>
 #include <machine/LinearMachine.h>
 #include <classifier/LDA.h>

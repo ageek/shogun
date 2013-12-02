@@ -42,7 +42,7 @@ public:
 	/** Destructor */
 	virtual ~CMMDKernelSelectionComb();
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 	/** Abstract method that computes weights of the selected combined kernel.
 	 *
 	 * @return weights of the selected kernel
@@ -82,7 +82,7 @@ protected:
 	 */
 	virtual SGVector<float64_t> solve_optimization(SGVector<float64_t> mmds);
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 	/** return pointer to i-th column of m_Q. Helper for libqp */
 	static const float64_t* get_Q_col(uint32_t i);
 

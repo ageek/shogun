@@ -9,7 +9,7 @@
  */
 
 #include <lib/config.h>
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 #include <regression/svr/LibLinearRegression.h>
 #include <mathematics/Math.h>
 #include <labels/RegressionLabels.h>
@@ -345,4 +345,4 @@ void CLibLinearRegression::solve_l2r_l1l2_svr(const liblinear_problem *prob)
 	delete [] index;
 }
 
-#endif /* HAVE_LAPACK */
+#endif /* SHOGUN_HAVE_LAPACK */

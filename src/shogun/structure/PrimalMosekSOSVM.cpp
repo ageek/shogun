@@ -8,7 +8,7 @@
  * Copyright (C) 2012 Fernando José Iglesias García
  */
 
-#ifdef USE_MOSEK
+#ifdef SHOGUN_USE_MOSEK
 
 #include <lib/DynamicObjectArray.h>
 #include <lib/List.h>
@@ -270,4 +270,4 @@ void CPrimalMosekSOSVM::set_epsilon(float64_t epsilon)
 	m_epsilon = epsilon;
 }
 
-#endif /* USE_MOSEK */
+#endif /* SHOGUN_USE_MOSEK */

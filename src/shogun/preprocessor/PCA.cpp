@@ -10,7 +10,7 @@
  * Copyright (C) 2011 Berlin Institute of Technology
  */
 #include <preprocessor/PCA.h>
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 #include <mathematics/lapack.h>
 #include <lib/config.h>
 #include <mathematics/Math.h>
@@ -251,4 +251,4 @@ SGVector<float64_t> CPCA::get_mean()
 	return m_mean_vector;
 }
 
-#endif /* HAVE_LAPACK */
+#endif /* SHOGUN_HAVE_LAPACK */

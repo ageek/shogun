@@ -11,7 +11,7 @@
 #ifndef LINEARLOCALTANGENTSPACEALIGNMENT_H_
 #define LINEARLOCALTANGENTSPACEALIGNMENT_H_
 #include <lib/config.h>
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 #include <converter/LocalTangentSpaceAlignment.h>
 #include <features/Features.h>
 #include <features/DenseFeatures.h>
@@ -59,5 +59,5 @@ public:
 };
 }
 
-#endif /* HAVE_EIGEN3 */
+#endif /* SHOGUN_HAVE_EIGEN3 */
 #endif /* LINEARLOCALTANGENTSPACEALIGNMENT_H_ */

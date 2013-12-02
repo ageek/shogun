@@ -9,7 +9,7 @@
 
 #include <lib/common.h>
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 #include <lib/SGSparseMatrix.h>
 #include <lib/SGSparseVector.h>
 #include <mathematics/eigen3.h>
@@ -70,4 +70,4 @@ template class EigenSparseUtil<bool>;
 template class EigenSparseUtil<float64_t>;
 template class EigenSparseUtil<complex128_t>;
 }
-#endif //HAVE_EIGEN3
+#endif //SHOGUN_HAVE_EIGEN3

@@ -10,7 +10,7 @@
 
 #include <lib/config.h>
 
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 
 #include <io/SGIO.h>
 #include <mathematics/lapack.h>
@@ -23,7 +23,7 @@
 
 #include <unistd.h>
 
-#ifdef USE_CPLEX
+#ifdef SHOGUN_USE_CPLEX
 extern "C" {
 #include <ilcplex/cplex.h>
 }
@@ -31,7 +31,7 @@ extern "C" {
 
 #include <base/Parallel.h>
 
-#ifdef HAVE_PTHREAD
+#ifdef SHOGUN_HAVE_PTHREAD
 #include <pthread.h>
 #endif
 
@@ -432,7 +432,7 @@ void CSVRLight::update_linear_component(
 						lin[j]+=kernel->compute_optimized(regression_fix_index(docs[j]));
 					}
 				}
-#ifdef HAVE_PTHREAD
+#ifdef SHOGUN_HAVE_PTHREAD
 				else
 				{
 					int32_t num_elem = 0 ;
@@ -618,7 +618,7 @@ void CSVRLight::call_mkl_callback(float64_t* a, int32_t* label, float64_t* lin, 
 	for (int32_t i=0; i<num; i++)
 		sumalpha-=a[i]*(learn_parm->eps[i]-label[i]*c[i]);
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 	int nk = (int) num_kernels; // calling external lib
 	double* alphay  = SG_MALLOC(double, num);
 	for (int32_t i=0; i<num; i++)
@@ -646,7 +646,7 @@ void CSVRLight::call_mkl_callback(float64_t* a, int32_t* label, float64_t* lin, 
 	const float64_t* new_beta   = kernel->get_subkernel_weights(num_kernels);
 
 	// update lin
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 	cblas_dgemv(CblasColMajor, CblasTrans, nk, (int) num, 1.0, (double*) W,
 		nk, (double*) new_beta, 1, 0.0, (double*) lin, 1);
 #else
@@ -771,4 +771,4 @@ void CSVRLight::reactivate_inactive_examples(
 	  }
   }
 }
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT

@@ -67,7 +67,7 @@ void CDistanceMachine::distances_lhs(float64_t* result,int32_t idx_a1,int32_t id
 
         run_distance_thread_lhs((void*) &param);
     }
-#ifdef HAVE_PTHREAD
+#ifdef SHOGUN_HAVE_PTHREAD
     else
     {
         pthread_t* threads = SG_MALLOC(pthread_t, num_threads-1);

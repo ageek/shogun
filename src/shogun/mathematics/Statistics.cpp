@@ -20,14 +20,14 @@
 #include <lib/SGSparseMatrix.h>
 #include <lib/SGSparseVector.h>
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 #include <mathematics/lapack.h>
-#endif //HAVE_LAPACK
+#endif //SHOGUN_HAVE_LAPACK
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 #include <mathematics/eigen3.h>
 using namespace Eigen;
-#endif //HAVE_EIGEN3
+#endif //SHOGUN_HAVE_EIGEN3
 
 using namespace shogun;
 
@@ -313,7 +313,7 @@ SGVector<float64_t> CStatistics::matrix_std_deviation(
 	return var;
 }
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 SGMatrix<float64_t> CStatistics::covariance_matrix(
 		SGMatrix<float64_t> observations, bool in_place)
 {
@@ -336,7 +336,7 @@ SGMatrix<float64_t> CStatistics::covariance_matrix(
 
 	return cov;
 }
-#endif //HAVE_LAPACK
+#endif //SHOGUN_HAVE_LAPACK
 
 float64_t CStatistics::confidence_intervals_mean(SGVector<float64_t> values,
 		float64_t alpha, float64_t& conf_int_low, float64_t& conf_int_up)
@@ -2015,7 +2015,7 @@ float64_t CStatistics::dlgamma(float64_t x)
 	return result;
 }
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 float64_t CStatistics::log_det(SGMatrix<float64_t> m)
 {
 	/* map the matrix to eigen3 to perform cholesky */
@@ -2186,7 +2186,7 @@ SGMatrix<float64_t> CStatistics::sample_from_gaussian(SGVector<float64_t> mean,
 	return S;
 }
 
-#endif //HAVE_EIGEN3
+#endif //SHOGUN_HAVE_EIGEN3
 
 CStatistics::SigmoidParamters CStatistics::fit_sigmoid(SGVector<float64_t> scores)
 {

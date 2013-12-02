@@ -10,7 +10,7 @@
 #include <lib/config.h>
 
 // Eigen3 is required for working with this example
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 
 #include <base/init.h>
 #include <labels/BinaryLabels.h>
@@ -126,4 +126,4 @@ int main(int argc, char **argv)
 	return 0;
 }
 
-#endif /* HAVE_EIGEN3 */
+#endif /* SHOGUN_HAVE_EIGEN3 */

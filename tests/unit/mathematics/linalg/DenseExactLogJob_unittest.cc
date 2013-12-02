@@ -9,7 +9,7 @@
 
 #include <lib/common.h>
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 #include <mathematics/eigen3.h>
 
 #if EIGEN_VERSION_AT_LEAST(3,1,0)
@@ -71,4 +71,4 @@ TEST(DenseExactLogJob, log_det)
 	SG_UNREF(agg);
 }
 #endif // EIGEN_VERSION_AT_LEAST(3,1,0)
-#endif // HAVE_EIGEN3
+#endif // SHOGUN_HAVE_EIGEN3

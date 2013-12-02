@@ -12,7 +12,7 @@
  */
 
 #include <classifier/mkl/MKLMulticlassGLPK.h>
-#ifdef USE_GLPK
+#ifdef SHOGUN_USE_GLPK
 #include <glpk.h>
 #endif
 
@@ -22,7 +22,7 @@ using namespace shogun;
 MKLMulticlassGLPK::MKLMulticlassGLPK()
 {
 	numkernels = 0;
-#ifdef USE_GLPK
+#ifdef SHOGUN_USE_GLPK
 	//makes glpk quiet
 	glp_term_out(GLP_OFF);
 	linearproblem=NULL;
@@ -30,7 +30,7 @@ MKLMulticlassGLPK::MKLMulticlassGLPK()
 }
 MKLMulticlassGLPK::~MKLMulticlassGLPK()
 {
-#if defined(USE_GLPK)
+#if defined(SHOGUN_USE_GLPK)
 	if (linearproblem)
 	{
       glp_delete_prob((glp_prob*) linearproblem);
@@ -58,7 +58,7 @@ MKLMulticlassGLPK::MKLMulticlassGLPK(MKLMulticlassGLPK & gl)
 
 void MKLMulticlassGLPK::setup(const int32_t numkernels2)
 {
-#if defined(USE_GLPK)
+#if defined(SHOGUN_USE_GLPK)
 	numkernels=numkernels2;
 	if (numkernels<=1)
 	{
@@ -125,7 +125,7 @@ void MKLMulticlassGLPK::setup(const int32_t numkernels2)
 void MKLMulticlassGLPK::addconstraint(const ::std::vector<float64_t> & normw2,
 		const float64_t sumofpositivealphas)
 {
-#if defined(USE_GLPK)
+#if defined(SHOGUN_USE_GLPK)
 
 	ASSERT ((int)normw2.size()==numkernels)
 	ASSERT (sumofpositivealphas>=0)
@@ -173,7 +173,7 @@ void MKLMulticlassGLPK::addconstraint(const ::std::vector<float64_t> & normw2,
 
 void MKLMulticlassGLPK::computeweights(std::vector<float64_t> & weights2)
 {
-#if defined(USE_GLPK)
+#if defined(SHOGUN_USE_GLPK)
 	weights2.resize(numkernels);
 
    glp_simplex((glp_prob*) linearproblem,NULL);

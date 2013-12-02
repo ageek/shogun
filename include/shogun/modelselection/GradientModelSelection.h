@@ -13,7 +13,7 @@
 
 #include <lib/config.h>
 
-#ifdef HAVE_NLOPT
+#ifdef SHOGUN_HAVE_NLOPT
 
 #include <modelselection/ModelSelection.h>
 #include <modelselection/ParameterCombination.h>
@@ -101,5 +101,5 @@ protected:
 	float64_t m_grad_tolerance;
 };
 }
-#endif /* HAVE_NLOPT */
+#endif /* SHOGUN_HAVE_NLOPT */
 #endif /* CGRADIENTMODELSELECTION_H_ */

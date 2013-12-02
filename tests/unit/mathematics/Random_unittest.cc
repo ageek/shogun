@@ -45,7 +45,7 @@ TEST(Random, fill_array_uint32)
 	EXPECT_EQ(t, rv[SFMT_N32]);
 }
 
-#ifdef HAVE_SSE2
+#ifdef SHOGUN_HAVE_SSE2
 TEST(Random, fill_array_uint32_simd)
 {
 	CRandom* prng = new CRandom(12345);
@@ -69,7 +69,7 @@ TEST(Random, fill_array_uint64)
 	EXPECT_EQ(t, rv[SFMT_N64]);
 }
 
-#ifdef HAVE_SSE2
+#ifdef SHOGUN_HAVE_SSE2
 TEST(Random, fill_array_uint64_simd)
 {
 	CRandom* prng = new CRandom(12345);
@@ -93,7 +93,7 @@ TEST(Random, fill_array_oc)
 	EXPECT_DOUBLE_EQ(t, rv[dsfmt_get_min_array_size()]);
 }
 
-#ifdef HAVE_SSE2
+#ifdef SHOGUN_HAVE_SSE2
 TEST(Random, fill_array_oc_simd)
 {
 	CRandom* prng = new CRandom(12345);

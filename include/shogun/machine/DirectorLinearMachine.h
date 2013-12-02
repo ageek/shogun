@@ -10,7 +10,7 @@
 #ifndef _DIRECTORLINEARMACHINE_H___
 #define _DIRECTORLINEARMACHINE_H___
 
-#ifdef USE_SWIG_DIRECTORS
+#ifdef SHOGUN_USE_SWIG_DIRECTORS
 #include <lib/common.h>
 #include <lib/DataType.h>
 #include <machine/Machine.h>
@@ -227,5 +227,5 @@ IGNORE_IN_CLASSLIST class CDirectorLinearMachine : public CLinearMachine
 
 }
 
-#endif /* USE_SWIG_DIRECTORS */
+#endif /* SHOGUN_USE_SWIG_DIRECTORS */
 #endif /* _DIRECTORLINEARMACHINE_H___ */

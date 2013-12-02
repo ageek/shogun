@@ -11,7 +11,7 @@
 #define __SERIALIZABLE_XML_READER_00_H__
 
 #include <lib/config.h>
-#ifdef HAVE_XML
+#ifdef SHOGUN_HAVE_XML
 
 #include <io/SerializableXmlFile.h>
 
@@ -84,5 +84,5 @@ public:
 };
 }
 
-#endif /* HAVE_XML  */
+#endif /* SHOGUN_HAVE_XML  */
 #endif /* __SERIALIZABLE_XML_READER_00_H__  */

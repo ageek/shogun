@@ -85,7 +85,7 @@ SGSparseMatrix<T> CSparseMatrixOperator<T>::get_matrix_operator() const
 		return m_operator;
 	}
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 template<class T>
 SparsityStructure* CSparseMatrixOperator<T>::get_sparsity_structure(
 	int64_t power) const
@@ -146,7 +146,7 @@ SparsityStructure* CSparseMatrixOperator<T>::get_sparsity_structure(
 		SG_SWARNING("Eigen3 required\n");
 		return new SparsityStructure();
 	}
-#endif // HAVE_EIGEN3
+#endif // SHOGUN_HAVE_EIGEN3
 
 template<> \
 SparsityStructure* CSparseMatrixOperator<complex128_t>

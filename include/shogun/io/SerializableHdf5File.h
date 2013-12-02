@@ -11,7 +11,7 @@
 #define __SERIALIZABLE_HDF5_FILE_H__
 
 #include <lib/config.h>
-#ifdef HAVE_HDF5
+#ifdef SHOGUN_HAVE_HDF5
 
 #include <hdf5.h>
 
@@ -165,5 +165,5 @@ public:
 	virtual bool is_opened();
 };
 }
-#endif /* HAVE_HDF5  */
+#endif /* SHOGUN_HAVE_HDF5  */
 #endif /* __SERIALIZABLE_HDF5_FILE_H__  */

@@ -35,9 +35,9 @@ define DSFMT_PCV2	UINT64_C(0x00000000)
 #define DSFMT_SR	12
 
 /* for sse2 */
-#if defined(HAVE_SSE2)
+#if defined(SHOGUN_HAVE_SSE2)
   #define SSE2_SHUFF 0x1b
-#elif defined(HAVE_ALTIVEC)
+#elif defined(SHOGUN_HAVE_ALTIVEC)
   #if defined(__APPLE__)  /* For OSX */
     #define ALTI_SR (vector unsigned char)(4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4)
     #define ALTI_SR_PERM \

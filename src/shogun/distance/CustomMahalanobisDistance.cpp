@@ -8,7 +8,7 @@
  * Copyright (C) 2013 Fernando J. Iglesias Garcia
  */
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 
 #include <distance/CustomMahalanobisDistance.h>
 #include <Eigen/Dense>
@@ -74,4 +74,4 @@ float64_t CCustomMahalanobisDistance::compute(int32_t idx_a, int32_t idx_b)
 	return dvec.transpose()*M*dvec;
 }
 
-#endif /* HAVE_EIGEN3 */
+#endif /* SHOGUN_HAVE_EIGEN3 */

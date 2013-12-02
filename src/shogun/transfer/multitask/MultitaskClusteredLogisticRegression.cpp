@@ -78,8 +78,8 @@ bool CMultitaskClusteredLogisticRegression::train_locked_implementation(SGVector
 	options.tasks_indices = tasks;
 	options.n_clusters = m_num_clusters;
 
-#ifdef HAVE_EIGEN3
-#ifndef HAVE_CXX11
+#ifdef SHOGUN_HAVE_EIGEN3
+#ifndef SHOGUN_HAVE_CXX11
 	malsar_result_t model = malsar_clustered(
 		features, y.vector, m_rho1, m_rho2, options);
 
@@ -119,8 +119,8 @@ bool CMultitaskClusteredLogisticRegression::train_machine(CFeatures* data)
 	options.tasks_indices = ((CTaskGroup*)m_task_relation)->get_tasks_indices();
 	options.n_clusters = m_num_clusters;
 
-#ifdef HAVE_EIGEN3
-#ifndef HAVE_CXX11
+#ifdef SHOGUN_HAVE_EIGEN3
+#ifndef SHOGUN_HAVE_CXX11
 	malsar_result_t model = malsar_clustered(
 		features, y.vector, m_rho1, m_rho2, options);
 

@@ -11,7 +11,7 @@
 #define __SERIALIZABLE_HDF5_READER_00_H__
 
 #include <lib/config.h>
-#ifdef HAVE_HDF5
+#ifdef SHOGUN_HAVE_HDF5
 
 #include <io/SerializableHdf5File.h>
 
@@ -84,5 +84,5 @@ public:
 };
 }
 
-#endif /* HAVE_HDF5  */
+#endif /* SHOGUN_HAVE_HDF5  */
 #endif /* __SERIALIZABLE_HDF5_READER_00_H__  */

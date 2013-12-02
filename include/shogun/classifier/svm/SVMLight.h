@@ -24,7 +24,7 @@
 
 #include <lib/config.h>
 
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 #include <classifier/svm/SVM.h>
 #include <kernel/Kernel.h>
 #include <mathematics/Math.h>
@@ -693,5 +693,5 @@ protected:
   bool mkl_converged;
 };
 }
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT
 #endif //_SVMLight_H___

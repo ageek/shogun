@@ -23,7 +23,7 @@
 
 #include <lib/external/dSFMT/dSFMT.h>
 
-#if defined(HAVE_SSE2)
+#if defined(SHOGUN_HAVE_SSE2)
 #  include <emmintrin.h>
 union X128I_T {
     uint64_t u[2];
@@ -37,7 +37,7 @@ union X128D_T {
 static const union X128I_T sse2_param_mask = {{DSFMT_MSK1, DSFMT_MSK2}};
 #endif
 
-#if defined(HAVE_ALTIVEC)
+#if defined(SHOGUN_HAVE_ALTIVEC)
 inline static void do_recursion(dw128_t *r, dw128_t *a, dw128_t * b,
 				dw128_t *lung) {
     const vector unsigned char sl1 = ALTI_SL1;
@@ -66,7 +66,7 @@ inline static void do_recursion(dw128_t *r, dw128_t *a, dw128_t * b,
     r->s = vec_xor(z, x);
     lung->s = w;
 }
-#elif defined(HAVE_SSE2)
+#elif defined(SHOGUN_HAVE_SSE2)
 /**
  * This function represents the recursion formula.
  * @param r output 128-bit

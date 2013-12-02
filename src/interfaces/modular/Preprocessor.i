@@ -37,22 +37,22 @@
 %include <preprocessor/DensePreprocessor.h>
 namespace shogun
 {
-#ifdef USE_FLOAT64
+#ifdef SHOGUN_USE_FLOAT64
     %template(RealPreprocessor) CDensePreprocessor<float64_t>;
 #endif
-#ifdef USE_UINT64
+#ifdef SHOGUN_USE_UINT64
     %template(UlongPreprocessor) CDensePreprocessor<uint64_t>;
 #endif
-#ifdef USE_UINT16
+#ifdef SHOGUN_USE_UINT16
     %template(WordPreprocessor) CDensePreprocessor<uint16_t>;
 #endif
-#ifdef USE_INT16
+#ifdef SHOGUN_USE_INT16
     %template(ShortPreprocessor) CDensePreprocessor<int16_t>;
 #endif
-#ifdef USE_UINT8
+#ifdef SHOGUN_USE_UINT8
     %template(BytePreprocessor) CDensePreprocessor<uint8_t>;
 #endif
-#ifdef USE_CHAR
+#ifdef SHOGUN_USE_CHAR
     %template(CharPreprocessor) CDensePreprocessor<char>;
 #endif
 }
@@ -64,16 +64,16 @@ namespace shogun
 %include <preprocessor/StringPreprocessor.h>
 namespace shogun
 {
-#ifdef USE_UINT64
+#ifdef SHOGUN_USE_UINT64
     %template(StringUlongPreprocessor) CStringPreprocessor<uint64_t>;
 #endif
-#ifdef USE_UINT16
+#ifdef SHOGUN_USE_UINT16
     %template(StringWordPreprocessor) CStringPreprocessor<uint16_t>;
 #endif
-#ifdef USE_UINT8
+#ifdef SHOGUN_USE_UINT8
     %template(StringBytePreprocessor) CStringPreprocessor<uint8_t>;
 #endif
-#ifdef USE_CHAR
+#ifdef SHOGUN_USE_CHAR
     %template(StringCharPreprocessor) CStringPreprocessor<char>;
 #endif
 }
@@ -82,16 +82,16 @@ namespace shogun
 %include <preprocessor/DecompressString.h>
 namespace shogun
 {
-#ifdef USE_UINT64
+#ifdef SHOGUN_USE_UINT64
     %template(DecompressUlongString) CDecompressString<uint64_t>;
 #endif
-#ifdef USE_UINT16
+#ifdef SHOGUN_USE_UINT16
     %template(DecompressWordString) CDecompressString<uint16_t>;
 #endif
-#ifdef USE_UINT8
+#ifdef SHOGUN_USE_UINT8
     %template(DecompressByteString) CDecompressString<uint8_t>;
 #endif
-#ifdef USE_CHAR
+#ifdef SHOGUN_USE_CHAR
     %template(DecompressCharString) CDecompressString<char>;
 #endif
 }

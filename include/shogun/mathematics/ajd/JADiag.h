@@ -14,7 +14,7 @@
 
 #include <lib/config.h>
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 
 #include <mathematics/ajd/ApproxJointDiagonalizer.h>
 #include <mathematics/Math.h>
@@ -78,5 +78,5 @@ class CJADiag : public CApproxJointDiagonalizer
 		virtual const char* get_name() const { return "JADiag"; }
 };
 }
-#endif //HAVE_EIGEN3
+#endif //SHOGUN_HAVE_EIGEN3
 #endif //JADIAG_H_

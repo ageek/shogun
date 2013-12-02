@@ -6,9 +6,9 @@
 
 using namespace shogun;
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 TEST(MultidimensionaScalingTest,distance_preserving)
 {
 	const index_t n_samples = 10;
@@ -51,6 +51,6 @@ TEST(MultidimensionaScalingTest,distance_preserving)
 	SG_UNREF(euclidean_distance);
 	SG_UNREF(euclidean_distance_for_embedding);
 }
-#endif // HAVE_LAPACK
+#endif // SHOGUN_HAVE_LAPACK
 
 #endif

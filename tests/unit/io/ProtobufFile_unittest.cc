@@ -11,7 +11,7 @@
 
 using namespace shogun;
 
-#ifdef HAVE_PROTOBUF
+#ifdef SHOGUN_HAVE_PROTOBUF
 #include <io/ProtobufFile.h>
 
 TEST(ProtobufFileTest, vector_int32)
@@ -306,4 +306,4 @@ TEST(ProtobufFileTest, DISABLED_string_list_char)
 	unlink("ProtobufFileTest_string_list_char_output.txt");
 }
 
-#endif /* HAVE_PROTOBUF */
+#endif /* SHOGUN_HAVE_PROTOBUF */

@@ -8,11 +8,11 @@
 #include <ui/SGInterface.h>
 #include <base/init.h>
 
-#ifdef HAVE_OCTAVE
+#ifdef SHOGUN_HAVE_OCTAVE
 #include "../octave_static/OctaveInterface.h"
 #endif
 
-#ifdef HAVE_R
+#ifdef SHOGUN_HAVE_R
 #include "../r_static/RInterface.h"
 #endif
 
@@ -879,7 +879,7 @@ bool CPythonInterface::run_python_helper(CSGInterface* from_if)
 
 bool CPythonInterface::cmd_run_octave()
 {
-#ifdef HAVE_OCTAVE
+#ifdef SHOGUN_HAVE_OCTAVE
 	return COctaveInterface::run_octave_helper(this);
 #else
 	return false;
@@ -888,7 +888,7 @@ bool CPythonInterface::cmd_run_octave()
 
 bool CPythonInterface::cmd_run_r()
 {
-#ifdef HAVE_R
+#ifdef SHOGUN_HAVE_R
 	return CRInterface::run_r_helper(this);
 #else
 	return false;
@@ -896,7 +896,7 @@ bool CPythonInterface::cmd_run_r()
 }
 
 
-#ifdef HAVE_ELWMS
+#ifdef SHOGUN_HAVE_ELWMS
 PyObject* elwms(PyObject* self, PyObject* args)
 #else
 PyObject* sg(PyObject* self, PyObject* args)
@@ -933,10 +933,10 @@ PyObject* sg(PyObject* self, PyObject* args)
 void exitsg(void)
 {
 	SG_SINFO("Quitting...\n");
-#ifdef HAVE_OCTAVE
+#ifdef SHOGUN_HAVE_OCTAVE
 	COctaveInterface::run_octave_exit();
 #endif
-#ifdef HAVE_R
+#ifdef SHOGUN_HAVE_R
 	CRInterface::run_r_exit();
 #endif
 	exit_shogun();
@@ -944,7 +944,7 @@ void exitsg(void)
 
 static PyMethodDef sg_pythonmethods[] = {
 	{(char*)
-#ifdef HAVE_ELWMS
+#ifdef SHOGUN_HAVE_ELWMS
 	"elwms", elwms, METH_VARARGS, (char*) "Shogun."},
 #else
     "sg", sg, METH_VARARGS, (char*) "Shogun."},
@@ -952,7 +952,7 @@ static PyMethodDef sg_pythonmethods[] = {
     {NULL, NULL, 0, NULL}        /* Sentinel */
 };
 
-#ifdef HAVE_ELWMS
+#ifdef SHOGUN_HAVE_ELWMS
 MOD_INIT(elwms)
 #else
 MOD_INIT(sg)
@@ -970,7 +970,7 @@ MOD_INIT(sg)
 	Py_AtExit(exitsg);
 
 	// initialize callbacks
-#ifdef HAVE_ELWMS
+#ifdef SHOGUN_HAVE_ELWMS
     MOD_DEF(module, (char*) "elwms", sg_pythonmethods);
 #else
     MOD_DEF(module, (char*) "sg", sg_pythonmethods);
@@ -979,10 +979,10 @@ MOD_INIT(sg)
     if (module == NULL)
         return MOD_ERROR_VAL;
 
-#ifdef HAVE_OCTAVE
+#ifdef SHOGUN_HAVE_OCTAVE
 	COctaveInterface::run_octave_init();
 #endif
-#ifdef HAVE_R
+#ifdef SHOGUN_HAVE_R
 	CRInterface::run_r_init();
 #endif
     init_numpy();

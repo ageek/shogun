@@ -13,7 +13,7 @@
 #ifndef PCA_H_
 #define PCA_H_
 #include <lib/config.h>
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 #include <mathematics/lapack.h>
 #include <stdio.h>
 #include <preprocessor/DimensionReductionPreprocessor.h>

@@ -5,7 +5,7 @@
 
 using namespace shogun;
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 TEST(MulticlassOCASTest,train)
 {
   float64_t C = 1.0;
@@ -51,4 +51,4 @@ TEST(MulticlassOCASTest,train)
   SG_UNREF(test_feats);
   SG_UNREF(pred);
 }
-#endif // HAVE_LAPACK
+#endif // SHOGUN_HAVE_LAPACK

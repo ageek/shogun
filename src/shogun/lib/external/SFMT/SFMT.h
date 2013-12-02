@@ -70,7 +70,7 @@ extern "C" {
 /*------------------------------------------
   128-bit SIMD like data type for standard C
   ------------------------------------------*/
-#if defined(HAVE_SSE2)
+#if defined(SHOGUN_HAVE_SSE2)
   #include <emmintrin.h>
 
 /** 128-bit data structure */

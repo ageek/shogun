@@ -2,7 +2,7 @@
 #include <lib/common.h>
 #include <gtest/gtest.h>
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 
 #include <lib/SGVector.h>
 #include <lib/SGMatrix.h>
@@ -72,4 +72,4 @@ TEST(CJediDiag, diagonalize)
 	EXPECT_EQ(isperm,true);
 }
 
-#endif //HAVE_EIGEN3
+#endif //SHOGUN_HAVE_EIGEN3

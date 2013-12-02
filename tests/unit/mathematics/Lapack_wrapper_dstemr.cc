@@ -9,9 +9,9 @@
 
 #include <lib/common.h>
 
-#ifdef HAVE_LAPACK
-#ifdef HAVE_EIGEN3
-#ifdef HAVE_ATLAS
+#ifdef SHOGUN_HAVE_LAPACK
+#ifdef SHOGUN_HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_ATLAS
 #include <lib/SGVector.h>
 #include <mathematics/lapack.h>
 #include <mathematics/eigen3.h>
@@ -59,6 +59,6 @@ TEST(Lapack_wrapper, dstemr)
 
 	EXPECT_NEAR((map.cast<complex128_t>()-eigenvals).norm(), 0.0, 1E-10);
 }
-#endif // HAVE_ATLAS
-#endif // HAVE_EIGEN3
-#endif // HAVE_LAPACK
+#endif // SHOGUN_HAVE_ATLAS
+#endif // SHOGUN_HAVE_EIGEN3
+#endif // SHOGUN_HAVE_LAPACK

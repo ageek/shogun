@@ -9,11 +9,11 @@
  */
 
 #include <converter/KernelLocallyLinearEmbedding.h>
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 #include <io/SGIO.h>
 #include <lib/tapkee/tapkee_shogun.hpp>
 
-#ifdef HAVE_PTHREAD
+#ifdef SHOGUN_HAVE_PTHREAD
 #include <pthread.h>
 #endif
 
@@ -71,4 +71,4 @@ CDenseFeatures<float64_t>* CKernelLocallyLinearEmbedding::embed_kernel(CKernel* 
 	return embedding;
 }
 
-#endif /* HAVE_EIGEN3 */
+#endif /* SHOGUN_HAVE_EIGEN3 */

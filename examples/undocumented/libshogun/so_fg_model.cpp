@@ -108,7 +108,7 @@ void test(int32_t num_samples)
 	factortype->set_w(w);
 	model->add_factor_type(factortype);
 
-#ifdef USE_MOSEK
+#ifdef SHOGUN_USE_MOSEK
 	// create primal mosek solver
 	CPrimalMosekSOSVM* primcp = new CPrimalMosekSOSVM(model, labels);
 	SG_REF(primcp);
@@ -152,7 +152,7 @@ void test(int32_t num_samples)
 	sgd->get_w().display_vector("w_sgd");
 	w_truth.display_vector("w_truth");
 
-#ifdef USE_MOSEK
+#ifdef SHOGUN_USE_MOSEK
 	// Evaluation PrimalMosek
 	CStructuredLabels* labels_primcp = CLabelsFactory::to_structured(primcp->apply());
 	SG_REF(labels_primcp);
@@ -211,7 +211,7 @@ void test(int32_t num_samples)
 	ave_loss_sgd = acc_loss_sgd / static_cast<float64_t>(num_samples);
 	SG_SPRINT("sgd solver: average training loss = %f\n", ave_loss_sgd);
 
-#ifdef USE_MOSEK
+#ifdef SHOGUN_USE_MOSEK
 	SG_UNREF(labels_primcp);
 	SG_UNREF(primcp);
 #endif

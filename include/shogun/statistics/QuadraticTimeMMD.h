@@ -179,7 +179,7 @@ class CQuadraticTimeMMD : public CKernelTwoSampleTestStatistic
 			return S_QUADRATIC_TIME_MMD;
 		}
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 		/** Returns a set of samples of an estimate of the null distribution
 		 * using the Eigen-spectrum of the centered kernel matrix of the merged
 		 * samples of p and q. May be used to compute p_value (easy)
@@ -204,7 +204,7 @@ class CQuadraticTimeMMD : public CKernelTwoSampleTestStatistic
 		 */
 		SGVector<float64_t> sample_null_spectrum(index_t num_samples,
 				index_t num_eigenvalues);
-#endif // HAVE_LAPACK
+#endif // SHOGUN_HAVE_LAPACK
 
 		/** setter for number of samples to use in spectrum based p-value
 		 * computation.

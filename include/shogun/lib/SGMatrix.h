@@ -167,7 +167,7 @@ template<class T> class SGMatrix : public SGReferencedData
 		 */
 		static SGMatrix<float64_t> create_centering_matrix(index_t size);
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 		/** compute eigenvalues and eigenvectors of symmetric matrix using
 		 * LAPACK
 		 *
@@ -213,7 +213,7 @@ template<class T> class SGMatrix : public SGReferencedData
 				SGMatrix<float64_t> A, SGMatrix<float64_t> B,
 				bool transpose_A=false, bool transpose_B=false,
 				float64_t scale=1.0);
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 		/** inverses square matrix in-place */
 		static void inverse(SGMatrix<float64_t> matrix);
 

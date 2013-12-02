@@ -9,7 +9,7 @@
 
 #include <lib/config.h>
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 #include <lib/SGMatrix.h>
 #include <mathematics/eigen3.h>
 #include <mathematics/linalg/linop/DenseMatrixOperator.h>
@@ -63,4 +63,4 @@ void CDirectEigenSolver::compute()
 }
 
 }
-#endif // HAVE_EIGEN3
+#endif // SHOGUN_HAVE_EIGEN3

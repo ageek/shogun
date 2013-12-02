@@ -9,7 +9,7 @@
 
 #include <lib/config.h>
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 #include <lib/SGMatrix.h>
 #include <lib/SGVector.h>
 #include <lib/computation/jobresult/ScalarResult.h>
@@ -60,4 +60,4 @@ TEST(IndividualJobResultAggregator, finalize)
 	SG_UNREF(agg);
 	SG_UNREF(op);
 }
-#endif // HAVE_EIGEN3
+#endif // SHOGUN_HAVE_EIGEN3

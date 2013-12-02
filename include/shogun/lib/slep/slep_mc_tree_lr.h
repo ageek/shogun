@@ -10,7 +10,7 @@
 #ifndef SLEP_MC_TREE_LR_H_
 #define SLEP_MC_TREE_LR_H_
 #include <lib/config.h>
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 #include <lib/slep/slep_options.h>
 #include <features/DotFeatures.h>
 #include <labels/MulticlassLabels.h>
@@ -33,5 +33,5 @@ slep_result_t slep_mc_tree_lr(
 		const slep_options& options);
 
 };
-#endif /* HAVE_EIGEN3 */
+#endif /* SHOGUN_HAVE_EIGEN3 */
 #endif /* SLEP_MC_TREE_LR_H_ */

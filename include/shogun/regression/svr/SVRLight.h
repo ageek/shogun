@@ -14,11 +14,11 @@
 #include <lib/config.h>
 #include <regression/Regression.h>
 
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 #include <classifier/svm/SVMLight.h>
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT
 
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 namespace shogun
 {
 /** @brief Class SVRLight, performs support vector regression using SVMLight.
@@ -237,5 +237,5 @@ class CSVRLight: public CSVMLight
 		int32_t num_vectors;
 };
 }
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT
 #endif

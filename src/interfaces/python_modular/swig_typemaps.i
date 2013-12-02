@@ -22,7 +22,7 @@
 %include "DenseLabels_protocols.i"
 %include "SGVector_protocols.i"
 
-#ifdef HAVE_PYTHON
+#ifdef SHOGUN_HAVE_PYTHON
 %{
 #include <stdio.h>
 #include <lib/DataType.h>
@@ -1269,4 +1269,4 @@ TYPEMAP_SPARSEFEATURES_OUT(complex128_t,  NPY_CDOUBLE)
 TYPEMAP_SPARSEFEATURES_OUT(floatmax_t,    NPY_LONGDOUBLE)
 TYPEMAP_SPARSEFEATURES_OUT(PyObject,      NPY_OBJECT)
 #undef TYPEMAP_SPARSEFEATURES_OUT
-#endif /* HAVE_PYTHON */
+#endif /* SHOGUN_HAVE_PYTHON */

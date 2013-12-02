@@ -9,7 +9,7 @@
  */
 
 #include <lib/config.h>
-#ifdef HAVE_HDF5
+#ifdef SHOGUN_HAVE_HDF5
 
 #include <io/SerializableHdf5Reader00.h>
 
@@ -410,4 +410,4 @@ SerializableHdf5Reader00::read_type_end_wrapped(
 	return true;
 }
 
-#endif /* HAVE_HDF5  */
+#endif /* SHOGUN_HAVE_HDF5  */

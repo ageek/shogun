@@ -9,7 +9,7 @@
 
 #include <lib/common.h>
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 #include <lib/SGVector.h>
 #include <lib/SGMatrix.h>
 #include <lib/SGSparseMatrix.h>
@@ -88,7 +88,7 @@ TEST(RationalApproximation, precompute)
 	ref_weights[4]=complex128_t(0.03177788684575824640, -0.05246446606420653719);
 	Map<VectorXcd> map_ref_weights(ref_weights.vector, ref_weights.vlen);
 
-#ifdef HAVE_ARPREC
+#ifdef SHOGUN_HAVE_ARPREC
 	EXPECT_NEAR(const_multiplier, -10.02791094628079981987, 1E-19);
 	EXPECT_NEAR(map_shifts.norm(), map_ref_shifts.norm(), 1E-14);
 	EXPECT_NEAR(map_weights.norm(), map_ref_weights.norm(), 1E-14);
@@ -190,7 +190,7 @@ TEST(RationalApproximation, trace_accuracy)
 	float64_t trace_log_m=-11.51292546497021618279;
 #endif // EIGEN_VERSION_AT_LEAST(3,1,0)
 
-#ifdef HAVE_ARPREC
+#ifdef SHOGUN_HAVE_ARPREC
 	EXPECT_NEAR(result, trace_log_m, 1E-13);
 #else
 	EXPECT_NEAR(result, trace_log_m, 1E-07);
@@ -372,7 +372,7 @@ TEST(RationalApproximation, trace_accuracy_cg_m)
 	float64_t trace_log_m=-11.51292546497021618279;
 #endif // EIGEN_VERSION_AT_LEAST(3,1,0)
 
-#ifdef HAVE_ARPREC
+#ifdef SHOGUN_HAVE_ARPREC
 	EXPECT_NEAR(result, trace_log_m, 1E-13);
 #else
 	EXPECT_NEAR(result, trace_log_m, 1E-07);
@@ -384,4 +384,4 @@ TEST(RationalApproximation, trace_accuracy_cg_m)
 	SG_UNREF(e);
 	SG_UNREF(op);
 }
-#endif // HAVE_EIGEN3
+#endif // SHOGUN_HAVE_EIGEN3

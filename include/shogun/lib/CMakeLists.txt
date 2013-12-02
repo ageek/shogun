@@ -14,6 +14,10 @@
 #   You should have received a copy of the GNU General Public License
 #   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+SET( SHOGUN_MACHINE_TYPE "a-fast-one" )
+SET( SHOGUN_CONFIGURE_OPTIONS "a-lot" )
+SET( SHOGUN_COMPFLAGS_CPP "really-much" )
+SET( SHOGUN_LINKFLAGS "some" )
 
 #####  Autogenerate headers  #####
 FILE( GLOB _AUTOGEN_FILES "*.in" )

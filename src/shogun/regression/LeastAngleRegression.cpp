@@ -10,7 +10,7 @@
 
 #include <lib/config.h>
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 
 #include <vector>
 #include <limits>
@@ -407,4 +407,4 @@ SGMatrix<float64_t> CLeastAngleRegression::cholesky_delete(SGMatrix<float64_t> R
 	return nR;
 }
 
-#endif // HAVE_LAPACK
+#endif // SHOGUN_HAVE_LAPACK

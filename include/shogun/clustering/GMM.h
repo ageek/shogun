@@ -12,7 +12,7 @@
 
 #include <lib/config.h>
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 
 #include <distributions/Distribution.h>
 #include <distributions/Gaussian.h>
@@ -251,5 +251,5 @@ class CGMM : public CDistribution
 		SGVector<float64_t> m_coefficients;
 };
 }
-#endif //HAVE_LAPACK
+#endif //SHOGUN_HAVE_LAPACK
 #endif //_GMM_H__

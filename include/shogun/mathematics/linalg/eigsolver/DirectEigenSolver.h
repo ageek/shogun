@@ -12,7 +12,7 @@
 
 #include <lib/config.h>
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 #include <mathematics/linalg/eigsolver/EigenSolver.h>
 
 namespace shogun
@@ -54,5 +54,5 @@ public:
 
 }
 
-#endif // HAVE_EIGEN3
+#endif // SHOGUN_HAVE_EIGEN3
 #endif // DIRECT_EIGEN_SOLVER_H_

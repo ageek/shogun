@@ -1,7 +1,7 @@
 #include <lib/config.h>
 #include <gtest/gtest.h>
 
-#if defined(HAVE_HDF5) && defined( HAVE_CURL)
+#if defined(SHOGUN_HAVE_HDF5) && defined( SHOGUN_HAVE_CURL)
 #include <io/MLDataHDF5File.h>
 #include <io/HDF5File.h>
 #include <lib/SGVector.h>

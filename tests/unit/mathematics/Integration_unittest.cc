@@ -9,7 +9,7 @@
 
 #include <lib/config.h>
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 
 #include <mathematics/Math.h>
 #include <mathematics/Statistics.h>
@@ -565,4 +565,4 @@ TEST(Integration,integrate_quadgh_product_students_t_pdf_normal_pdf)
 	SG_UNREF(g);
 }
 
-#endif /* HAVE_EIGEN3 */
+#endif /* SHOGUN_HAVE_EIGEN3 */

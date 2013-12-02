@@ -9,7 +9,7 @@
  */
 
 #include <multiclass/MulticlassLogisticRegression.h>
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 #include <multiclass/MulticlassOneVsRestStrategy.h>
 #include <io/SGIO.h>
 #include <mathematics/Math.h>
@@ -100,4 +100,4 @@ bool CMulticlassLogisticRegression::train_machine(CFeatures* data)
 	}
 	return true;
 }
-#endif /* HAVE_EIGEN3 */
+#endif /* SHOGUN_HAVE_EIGEN3 */

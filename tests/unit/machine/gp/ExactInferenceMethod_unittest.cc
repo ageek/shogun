@@ -9,7 +9,7 @@
 
 #include <lib/config.h>
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 
 #include <labels/RegressionLabels.h>
 #include <features/DenseFeatures.h>
@@ -370,4 +370,4 @@ TEST(ExactInferenceMethod,get_posterior_covariance)
 	SG_UNREF(inf);
 }
 
-#endif /* HAVE_EIGEN3 */
+#endif /* SHOGUN_HAVE_EIGEN3 */

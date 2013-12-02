@@ -6,7 +6,7 @@
  *
  * Written (W) 2013 Evgeniy Andreev (gsomix)
  */
-#ifdef HAVE_PROTOBUF
+#ifdef SHOGUN_HAVE_PROTOBUF
 
 #include <io/ProtobufFile.h>
 
@@ -693,4 +693,4 @@ WRITE_STRING_LIST(Int32Chunk, int16_t)
 WRITE_STRING_LIST(UInt32Chunk, uint16_t)
 #undef WRITE_STRING_LIST
 
-#endif /* HAVE_PROTOBUF */
+#endif /* SHOGUN_HAVE_PROTOBUF */

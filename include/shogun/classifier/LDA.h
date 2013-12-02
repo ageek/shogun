@@ -13,7 +13,7 @@
 
 #include <lib/config.h>
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 #include <lib/common.h>
 #include <features/Features.h>
 #include <features/DenseFeatures.h>

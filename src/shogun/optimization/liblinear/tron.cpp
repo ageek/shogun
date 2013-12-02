@@ -15,7 +15,7 @@ using namespace shogun;
 
 double tron_ddot(const int N, const double *X, const int incX, const double *Y, const int incY)
 {
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 	return cblas_ddot(N,X,incX,Y,incY);
 #else
 	double dot = 0.0;
@@ -27,7 +27,7 @@ double tron_ddot(const int N, const double *X, const int incX, const double *Y, 
 
 double tron_dnrm2(const int N, const double *X, const int incX)
 {
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 	return cblas_dnrm2(N,X,incX);
 #else
 	double dot = 0.0;
@@ -39,7 +39,7 @@ double tron_dnrm2(const int N, const double *X, const int incX)
 
 void tron_dscal(const int N, const double alpha, double *X, const int incX)
 {
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 	return cblas_dscal(N,alpha,X,incX);
 #else
 	for (int32_t i=0; i<N; i++)
@@ -49,7 +49,7 @@ void tron_dscal(const int N, const double alpha, double *X, const int incX)
 
 void tron_daxpy(const int N, const double alpha, const double *X, const int incX, double *Y, const int incY)
 {
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 	cblas_daxpy(N,alpha,X,incX,Y,incY);
 #else
 	for (int32_t i=0; i<N; i++)

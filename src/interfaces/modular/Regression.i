@@ -20,9 +20,9 @@
 %rename(MKL) CMKL;
 %rename(MKLRegression) CMKLRegression;
 
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 %rename(SVRLight) CSVRLight;
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT
 
 
 /* Include Class Headers to make them visible from within the target language */
@@ -35,6 +35,6 @@
 %include <regression/svr/LibLinearRegression.h>
 %include <classifier/mkl/MKL.h>
 %include <regression/svr/MKLRegression.h>
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 %include <regression/svr/SVRLight.h>
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT

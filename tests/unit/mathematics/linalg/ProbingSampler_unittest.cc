@@ -9,8 +9,8 @@
 
 #include <lib/config.h>
 
-#ifdef HAVE_COLPACK
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_COLPACK
+#ifdef SHOGUN_HAVE_EIGEN3
 
 #include <vector>
 #include <lib/SGSparseMatrix.h>
@@ -152,5 +152,5 @@ TEST(ProbingSampler, mean_variance)
 	SG_UNREF(trace_sampler);
 	SG_UNREF(A);
 }
-#endif // HAVE_EIGEN3
-#endif // HAVE_COLPACK
+#endif // SHOGUN_HAVE_EIGEN3
+#endif // SHOGUN_HAVE_COLPACK

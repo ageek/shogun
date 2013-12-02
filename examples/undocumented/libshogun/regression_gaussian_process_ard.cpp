@@ -10,7 +10,7 @@
 #include <lib/config.h>
 
 // temporally disabled, since API was changed
-#if defined(HAVE_EIGEN3) && defined(HAVE_NLOPT) && 0
+#if defined(SHOGUN_HAVE_EIGEN3) && defined(SHOGUN_HAVE_NLOPT) && 0
 
 #include <base/init.h>
 #include <labels/RegressionLabels.h>

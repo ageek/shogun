@@ -8,7 +8,7 @@
  * Copyright (C) 2007-2011 Max-Planck-Society
  */
 
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 
 #ifndef _DomainAdaptation_SVM_H___
 #define _DomainAdaptation_SVM_H___
@@ -122,4 +122,4 @@ class CDomainAdaptationSVM : public CSVMLight
 };
 }
 #endif //_DomainAdaptation_SVM_H___
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT

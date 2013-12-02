@@ -11,7 +11,7 @@
 #define __SERIALIZABLE_JSON_FILE_H__
 
 #include <lib/config.h>
-#ifdef HAVE_JSON
+#ifdef SHOGUN_HAVE_JSON
 
 #include <json.h>
 
@@ -124,5 +124,5 @@ public:
 	virtual bool is_opened();
 };
 }
-#endif /* HAVE_JSON  */
+#endif /* SHOGUN_HAVE_JSON  */
 #endif /* __SERIALIZABLE_JSON_FILE_H__  */

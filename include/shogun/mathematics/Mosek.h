@@ -11,7 +11,7 @@
 #ifndef _CMOSEK__H__
 #define _CMOSEK__H__
 
-#ifdef USE_MOSEK
+#ifdef SHOGUN_USE_MOSEK
 
 #include <base/SGObject.h>
 #include <lib/SGMatrix.h>
@@ -181,5 +181,5 @@ class CMosek : public CSGObject
 
 } /* namespace shogun */
 
-#endif /* USE_MOSEK */
+#endif /* SHOGUN_USE_MOSEK */
 #endif /* _CMOSEK__H__ */

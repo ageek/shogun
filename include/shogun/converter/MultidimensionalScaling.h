@@ -11,7 +11,7 @@
 #ifndef MULTIDIMENSIONALSCALING_H_
 #define MULTIDIMENSIONALSCALING_H_
 #include <lib/config.h>
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 #include <converter/EmbeddingConverter.h>
 #include <features/Features.h>
 #include <distance/Distance.h>
@@ -132,5 +132,5 @@ protected:
 };
 
 }
-#endif /* HAVE_EIGEN3 */
+#endif /* SHOGUN_HAVE_EIGEN3 */
 #endif /* MULTIDIMENSIONALSCALING_H_ */

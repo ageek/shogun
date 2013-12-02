@@ -13,8 +13,8 @@
  #include <regression/svr/LibLinearRegression.h>
  #include <classifier/mkl/MKL.h>
  #include <regression/svr/MKLRegression.h>
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
  #include <classifier/svm/SVMLight.h>
  #include <regression/svr/SVRLight.h>
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT
 %}

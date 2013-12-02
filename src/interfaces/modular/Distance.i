@@ -8,11 +8,11 @@
  * Copyright (C) 2009 Fraunhofer Institute FIRST and Max-Planck-Society
  */
 
-#ifdef HAVE_PYTHON
+#ifdef SHOGUN_HAVE_PYTHON
 %feature("autodoc", "get_distance_matrix(self) -> numpy 2dim array of float") get_distance_matrix;
 #endif
 
-#if defined(USE_SWIG_DIRECTORS) && defined(SWIGPYTHON)
+#if defined(SHOGUN_USE_SWIG_DIRECTORS) && defined(SWIGPYTHON)
 %feature("director") shogun::CDirectorDistance;
 %feature("director:except") {
     if ($error != NULL) {
@@ -54,16 +54,16 @@
 %include <distance/DenseDistance.h>
 namespace shogun
 {
-#ifdef USE_CHAR
+#ifdef SHOGUN_USE_CHAR
     %template(DenseCharDistance) CDenseDistance<char>;
 #endif
-#ifdef USE_UINT16
+#ifdef SHOGUN_USE_UINT16
     %template(DenseWordDistance) CDenseDistance<uint16_t>;
 #endif
-#ifdef USE_INT32
+#ifdef SHOGUN_USE_INT32
     %template(DenseIntDistance) CDenseDistance<int32_t>;
 #endif
-#ifdef USE_FLOAT64
+#ifdef SHOGUN_USE_FLOAT64
     %template(DenseRealDistance) CDenseDistance<float64_t>;
 #endif
 
@@ -73,16 +73,16 @@ namespace shogun
 %include <distance/SparseDistance.h>
 namespace shogun
 {
-#ifdef USE_CHAR
+#ifdef SHOGUN_USE_CHAR
     %template(SparseCharDistance) CSparseDistance<char>;
 #endif
-#ifdef USE_UINT16
+#ifdef SHOGUN_USE_UINT16
     %template(SparseWordDistance) CSparseDistance<uint16_t>;
 #endif
-#ifdef USE_INT32
+#ifdef SHOGUN_USE_INT32
     %template(SparseIntDistance) CSparseDistance<int32_t>;
 #endif
-#ifdef USE_FLOAT64
+#ifdef SHOGUN_USE_FLOAT64
     %template(SparseRealDistance) CSparseDistance<float64_t>;
 #endif
 }
@@ -91,19 +91,19 @@ namespace shogun
 %include <distance/StringDistance.h>
 namespace shogun
 {
-#ifdef USE_CHAR
+#ifdef SHOGUN_USE_CHAR
     %template(StringCharDistance) CStringDistance<char>;
 #endif
-#ifdef USE_UINT16
+#ifdef SHOGUN_USE_UINT16
     %template(StringWordDistance) CStringDistance<uint16_t>;
 #endif
-#ifdef USE_INT32
+#ifdef SHOGUN_USE_INT32
     %template(StringIntDistance) CStringDistance<int32_t>;
 #endif
-#ifdef USE_UINT64
+#ifdef SHOGUN_USE_UINT64
     %template(StringUlongDistance) CStringDistance<uint64_t>;
 #endif
-#ifdef USE_FLOAT64
+#ifdef SHOGUN_USE_FLOAT64
     %template(StringRealDistance) CStringDistance<float64_t>;
 #endif
 }

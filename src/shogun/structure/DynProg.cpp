@@ -26,7 +26,7 @@
 
 using namespace shogun;
 
-//#define USE_TMP_ARRAYCLASS
+//#define SHOGUN_USE_TMP_ARRAYCLASS
 //#define DYNPROG_DEBUG
 
 int32_t CDynProg::word_degree_default[4]={3,4,5,6} ;
@@ -1365,7 +1365,7 @@ void CDynProg::compute_nbest_paths(int32_t max_num_signals, bool use_orf,
 		path_ends.set_array_name("path_ends") ;
 		ktable_end.set_array_name("ktable_end") ;
 
-#ifdef USE_TMP_ARRAYCLASS
+#ifdef SHOGUN_USE_TMP_ARRAYCLASS
 		fixedtempvv.set_array_name("fixedtempvv") ;
 		fixedtempii.set_array_name("fixedtempvv") ;
 #endif
@@ -1405,7 +1405,7 @@ void CDynProg::compute_nbest_paths(int32_t max_num_signals, bool use_orf,
 		path_ends.display_size() ;
 		ktable_end.display_size() ;
 
-#ifdef USE_TMP_ARRAYCLASS
+#ifdef SHOGUN_USE_TMP_ARRAYCLASS
 		fixedtempvv.display_size() ;
 		fixedtempii.display_size() ;
 #endif

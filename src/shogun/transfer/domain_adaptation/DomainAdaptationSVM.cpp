@@ -10,7 +10,7 @@
 
 #include <lib/config.h>
 
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 
 #include <transfer/domain_adaptation/DomainAdaptationSVM.h>
 #include <io/SGIO.h>
@@ -190,4 +190,4 @@ void CDomainAdaptationSVM::init()
 			"flag to switch off regularization in training.", MS_AVAILABLE);
 }
 
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT

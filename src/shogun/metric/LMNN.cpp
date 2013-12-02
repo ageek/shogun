@@ -8,8 +8,8 @@
  * Copyright (C) 2013 Fernando J. Iglesias Garcia
  */
 
-#ifdef HAVE_EIGEN3
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_LAPACK
 
 #include <metric/LMNN.h>
 #include <metric/LMNNImpl.h>
@@ -351,5 +351,5 @@ void CLMNNStatistics::init()
 			MS_NOT_AVAILABLE);
 }
 
-#endif /* HAVE_LAPACK */
-#endif /* HAVE_EIGEN3 */
+#endif /* SHOGUN_HAVE_LAPACK */
+#endif /* SHOGUN_HAVE_EIGEN3 */

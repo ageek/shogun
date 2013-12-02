@@ -20,7 +20,7 @@
 
 #include <lib/config.h>
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 
 #include <base/SGObject.h>
 #include <lib/DynamicArray.h>
@@ -183,5 +183,5 @@ private:
 	static float64_t evaluate_quadgh64(CFunction* f);
 };
 }
-#endif /* HAVE_EIGEN3 */
+#endif /* SHOGUN_HAVE_EIGEN3 */
 #endif /* _INTEGRATION_H_ */

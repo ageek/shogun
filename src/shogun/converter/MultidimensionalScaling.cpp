@@ -9,7 +9,7 @@
  */
 
 #include <converter/MultidimensionalScaling.h>
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 #include <converter/EmbeddingConverter.h>
 #include <mathematics/lapack.h>
 #include <distance/CustomDistance.h>
@@ -113,4 +113,4 @@ CFeatures* CMultidimensionalScaling::apply(CFeatures* features)
 	return (CFeatures*)embedding;
 }
 
-#endif /* HAVE_EIGEN3 */
+#endif /* SHOGUN_HAVE_EIGEN3 */

@@ -8,7 +8,7 @@
  * Copyright (C) 2012 Fernando José Iglesias García
  */
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 
 #include <lib/common.h>
 #include <io/SGIO.h>
@@ -110,4 +110,4 @@ void CMahalanobisDistance::init()
 	m_parameters->add(&use_mean, "use_mean", "If distance shall be computed between mean vector and vector from rhs or between lhs and rhs.");
 }
 
-#endif /* HAVE_LAPACK */
+#endif /* SHOGUN_HAVE_LAPACK */

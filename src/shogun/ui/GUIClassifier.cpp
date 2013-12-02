@@ -32,11 +32,11 @@
 
 #include <machine/LinearMachine.h>
 
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 #include <classifier/svm/SVMLight.h>
 #include <classifier/svm/SVMLightOneClass.h>
 #include <regression/svr/SVRLight.h>
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT
 
 #include <classifier/mkl/MKLClassification.h>
 #include <regression/svr/MKLRegression.h>
@@ -131,14 +131,14 @@ bool CGUIClassifier::new_classifier(char* name, int32_t d, int32_t from_d)
 		classifier= new CMulticlassLibSVM(LIBSVM_NU_SVC);
 		SG_INFO("created SVMlibsvm object for multiclass\n")
 	}
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 	else if (strcmp(name,"SCATTERSVM_NO_BIAS_SVMLIGHT")==0)
 	{
 		SG_UNREF(classifier);
 		classifier= new CScatterSVM(NO_BIAS_SVMLIGHT);
 		SG_INFO("created ScatterSVM NO BIAS SVMLIGHT object\n")
 	}
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT
 	else if (strcmp(name,"SCATTERSVM_NO_BIAS_LIBSVM")==0)
 	{
 		SG_UNREF(classifier);
@@ -175,7 +175,7 @@ bool CGUIClassifier::new_classifier(char* name, int32_t d, int32_t from_d)
 		classifier= new CLaRank();
 		SG_INFO("created LaRank object\n")
 	}
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 	else if ((strcmp(name,"LIGHT")==0) || (strcmp(name,"SVMLIGHT")==0))
 	{
 		SG_UNREF(classifier);
@@ -194,7 +194,7 @@ bool CGUIClassifier::new_classifier(char* name, int32_t d, int32_t from_d)
 		classifier= new CSVRLight();
 		SG_INFO("created SVRLight object\n")
 	}
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT
 	else if (strcmp(name,"GPBTSVM")==0)
 	{
 		SG_UNREF(classifier);
@@ -225,7 +225,7 @@ bool CGUIClassifier::new_classifier(char* name, int32_t d, int32_t from_d)
 		classifier= new CLibSVR();
 		SG_INFO("created SVRlibsvm object\n")
 	}
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 	else if (strcmp(name, "KERNELRIDGEREGRESSION")==0)
 	{
 		SG_UNREF(classifier);
@@ -233,14 +233,14 @@ bool CGUIClassifier::new_classifier(char* name, int32_t d, int32_t from_d)
 			ui->ui_labels->get_train_labels());
 		SG_INFO("created KernelRidgeRegression object %p\n", classifier)
 	}
-#endif //HAVE_LAPACK
+#endif //SHOGUN_HAVE_LAPACK
 	else if (strcmp(name,"PERCEPTRON")==0)
 	{
 		SG_UNREF(classifier);
 		classifier= new CPerceptron();
 		SG_INFO("created Perceptron object\n")
 	}
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 	else if (strncmp(name,"LIBLINEAR",9)==0)
 	{
 		LIBLINEAR_SOLVER_TYPE st=L2R_LR;
@@ -285,8 +285,8 @@ bool CGUIClassifier::new_classifier(char* name, int32_t d, int32_t from_d)
 		classifier= new CLDA();
 		SG_INFO("created LDA object\n")
 	}
-#endif //HAVE_LAPACK
-#ifdef USE_CPLEX
+#endif //SHOGUN_HAVE_LAPACK
+#ifdef SHOGUN_USE_CPLEX
 	else if (strcmp(name,"LPM")==0)
 	{
 		SG_UNREF(classifier);
@@ -307,7 +307,7 @@ bool CGUIClassifier::new_classifier(char* name, int32_t d, int32_t from_d)
 		((CLPBoost*) classifier)->set_max_train_time(max_train_time);
 		SG_INFO("created LPBoost object\n")
 	}
-#endif //USE_CPLEX
+#endif // SHOGUN_USE_CPLEX
 	else if (strncmp(name,"KNN", strlen("KNN"))==0)
 	{
 		SG_UNREF(classifier);
@@ -682,7 +682,7 @@ bool CGUIClassifier::train_knn(int32_t k)
 
 bool CGUIClassifier::train_krr()
 {
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 	CKernelRidgeRegression* krr= (CKernelRidgeRegression*) classifier;
 	if (!krr)
 		SG_ERROR("No SVM available.\n")
@@ -740,7 +740,7 @@ bool CGUIClassifier::train_linear(float64_t gamma)
 		((CPerceptron*) classifier)->set_max_iter(perceptron_maxiter);
 	}
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 	if (ctype==CT_LDA)
 	{
 		if (trainfeatures->get_feature_type()!=F_DREAL ||
@@ -752,7 +752,7 @@ bool CGUIClassifier::train_linear(float64_t gamma)
 
 	if (ctype==CT_SVMOCAS)
 		((CSVMOcas*) classifier)->set_C(svm_C1, svm_C2);
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 	else if (ctype==CT_LIBLINEAR)
 		((CLibLinear*) classifier)->set_C(svm_C1, svm_C2);
 #endif
@@ -1492,7 +1492,7 @@ bool CGUIClassifier::classify_example(int32_t idx, float64_t &result)
 
 bool CGUIClassifier::set_krr_tau(float64_t tau)
 {
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 	krr_tau=tau;
 	((CKernelRidgeRegression*) classifier)->set_tau(krr_tau);
 	SG_INFO("Set to krr_tau=%f.\n", krr_tau)
@@ -1532,14 +1532,14 @@ bool CGUIClassifier::set_solver(char* solver)
 		SG_INFO("Automagically determining solver.\n")
 		s=ST_AUTO;
 	}
-#ifdef USE_CPLEX
+#ifdef SHOGUN_USE_CPLEX
 	else if (strncmp(solver, "CPLEX", 5)==0)
 	{
 		SG_INFO("USING CPLEX METHOD selected\n")
 		s=ST_CPLEX;
 	}
 #endif
-#ifdef USE_GLPK
+#ifdef SHOGUN_USE_GLPK
 	else if (strncmp(solver,"GLPK", 4)==0)
 	{
 		SG_INFO("Using GLPK solver\n")
@@ -1574,7 +1574,7 @@ bool CGUIClassifier::set_constraint_generator(char* name)
 		constraint_generator= new CLibSVM();
 		SG_INFO("created SVMlibsvm object\n")
 	}
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 	else if ((strcmp(name,"LIGHT")==0) || (strcmp(name,"SVMLIGHT")==0))
 	{
 		SG_UNREF(constraint_generator);
@@ -1593,7 +1593,7 @@ bool CGUIClassifier::set_constraint_generator(char* name)
 		constraint_generator= new CSVRLight();
 		SG_INFO("created SVRLight object\n")
 	}
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT
 	else if (strcmp(name,"GPBTSVM")==0)
 	{
 		SG_UNREF(constraint_generator);

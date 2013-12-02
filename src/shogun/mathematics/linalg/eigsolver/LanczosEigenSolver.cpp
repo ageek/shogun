@@ -9,8 +9,8 @@
 
 #include <lib/common.h>
 
-#ifdef HAVE_LAPACK
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_LAPACK
+#ifdef SHOGUN_HAVE_EIGEN3
 
 #include <base/Parameter.h>
 #include <mathematics/lapack.h>
@@ -168,5 +168,5 @@ void CLanczosEigenSolver::compute()
 }
 
 }
-#endif // HAVE_EIGEN3
-#endif // HAVE_LAPACK
+#endif // SHOGUN_HAVE_EIGEN3
+#endif // SHOGUN_HAVE_LAPACK

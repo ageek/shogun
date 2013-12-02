@@ -84,7 +84,7 @@ public void readExternal(java.io.ObjectInput in) throws java.io.IOException, jav
  VALUE cNArray;
  #include <dlfcn.h>
 #endif
-#if defined(SWIGPERL) && defined(HAVE_PDL)
+#if defined(SWIGPERL) && defined(SHOGUN_HAVE_PDL)
 #ifdef __cplusplus
   extern "C" {
 #endif
@@ -134,7 +134,7 @@ public void readExternal(java.io.ObjectInput in) throws java.io.IOException, jav
  using namespace shogun;
 %}
 
-#if  defined (SWIGPERL) && defined(HAVE_PDL)
+#if  defined (SWIGPERL) && defined(SHOGUN_HAVE_PDL)
 %header %{
   SV* CoreSV;
   Core* PDL;
@@ -143,7 +143,7 @@ public void readExternal(java.io.ObjectInput in) throws java.io.IOException, jav
 
 %init %{
 
-#if  defined (SWIGPERL) && defined(HAVE_PDL)
+#if  defined (SWIGPERL) && defined(SHOGUN_HAVE_PDL)
   //check Core.xs //Core* PDL_p = pdl__Core_get_Core();
   //PDL_COMMENT("Get pointer to structure of core shared C routines")
   //PDL_COMMENT("make sure PDL::Core is loaded")
@@ -275,7 +275,7 @@ public void readExternal(java.io.ObjectInput in) throws java.io.IOException, jav
     {
         $action
     }
-#if defined(SWIGPYTHON) && defined(USE_SWIG_DIRECTORS)
+#if defined(SWIGPYTHON) && defined(SHOGUN_USE_SWIG_DIRECTORS)
     catch (Swig::DirectorException &e)
     {
         SWIG_fail;
@@ -357,7 +357,7 @@ namespace shogun
             char* fname=tmpnam(NULL);
             FILE* tmpf=fopen(fname, "w");
             CSerializableFile* fstream=NULL;
-#ifdef HAVE_HDF5
+#ifdef SHOGUN_HAVE_HDF5
             if (pickle_ascii)
                 fstream = new CSerializableAsciiFile(fname, 'w');
             else
@@ -408,7 +408,7 @@ namespace shogun
             ASSERT(total==len);
 
             CSerializableFile* fstream=NULL;
-#ifdef HAVE_HDF5
+#ifdef SHOGUN_HAVE_HDF5
             if (pickle_ascii)
                 fstream = new CSerializableAsciiFile(fname, 'r');
             else

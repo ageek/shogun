@@ -12,7 +12,7 @@
 
 #include <latent/LatentModel.h>
 #include <lib/config.h>
-#ifdef USE_SWIG_DIRECTORS
+#ifdef SHOGUN_USE_SWIG_DIRECTORS
 namespace shogun
 {
 
@@ -69,6 +69,6 @@ IGNORE_IN_CLASSLIST class CDirectorLatentModel : public CLatentModel
 
 }; /* class CDirectorLatentModel */
 } /* namespace shogun */
-#endif /* USE_SWIG_DIRECTORS */
+#endif /* SHOGUN_USE_SWIG_DIRECTORS */
 #endif /* _DIRECTOR_LATENT_MODEL_H_ */
 

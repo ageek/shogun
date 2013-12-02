@@ -31,7 +31,7 @@ namespace shogun
 	class CFeatures;
 	class CKernelNormalizer;
 
-#ifdef USE_SHORTREAL_KERNELCACHE
+#ifdef SHOGUN_USE_SHORTREAL_KERNELCACHE
 	/** kernel cache element */
 	typedef float32_t KERNELCACHE_ELEM;
 #else
@@ -428,9 +428,9 @@ class CKernel : public CSGObject
 		inline void set_cache_size(int32_t size)
 		{
 			cache_size = size;
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 			cache_reset();
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT
 		}
 
 		/** return the size of the kernel cache
@@ -439,7 +439,7 @@ class CKernel : public CSGObject
 		 */
 		inline int32_t get_cache_size() { return cache_size; }
 
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 		/** cache reset */
 		inline void cache_reset() { resize_kernel_cache(cache_size); }
 
@@ -552,7 +552,7 @@ class CKernel : public CSGObject
 		/** cleanup kernel cache */
 		void kernel_cache_cleanup();
 
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT
 
 		/** list kernel */
 		void list_kernel();
@@ -805,7 +805,7 @@ class CKernel : public CSGObject
 		void init();
 
 
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 #ifndef DOXYGEN_SHOULD_SKIP_THIS
 		/**@ cache kernel evalutations to improve speed */
 		struct KERNEL_CACHE {
@@ -868,17 +868,17 @@ class CKernel : public CSGObject
 		int32_t   kernel_cache_malloc();
 		int32_t   kernel_cache_free_lru();
 		KERNELCACHE_ELEM *kernel_cache_clean_and_malloc(int32_t cacheidx);
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT
 		//@}
 
 	protected:
 		/// cache_size in MB
 		int32_t cache_size;
 
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 		/// kernel cache
 		KERNEL_CACHE kernel_cache;
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT
 
 		/// this *COULD* store the whole kernel matrix
 		/// usually not applicable / necessary to compute the whole matrix

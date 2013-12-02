@@ -3,7 +3,7 @@
 #include <features/DenseFeatures.h>
 #include <gtest/gtest.h>
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 
 #include <mathematics/Math.h>
 #include <mathematics/eigen3.h>
@@ -65,4 +65,4 @@ TEST(CUWedgeSep, blind_source_separation)
 	SG_UNREF(signals);
 }
 
-#endif //HAVE_EIGEN3
+#endif //SHOGUN_HAVE_EIGEN3

@@ -1,6 +1,6 @@
 #include <latent/DirectorLatentModel.h>
 
-#ifdef USE_SWIG_DIRECTORS
+#ifdef SHOGUN_USE_SWIG_DIRECTORS
 
 using namespace shogun;
 
@@ -37,4 +37,4 @@ void CDirectorLatentModel::argmax_h(const SGVector<float64_t>& w)
 	SG_ERROR("Please implemement argmax_h(w) in your target language before use\n")
 }
 
-#endif /* USE_SWIG_DIRECTORS */
+#endif /* SHOGUN_USE_SWIG_DIRECTORS */

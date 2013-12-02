@@ -9,7 +9,7 @@ using namespace shogun;
 int main(int argc, char ** argv)
 {
 	init_shogun_with_defaults();
-#ifdef USE_MOSEK
+#ifdef SHOGUN_USE_MOSEK
 
 	int32_t num_examples = 10;
 	int32_t example_length = 250;
@@ -43,7 +43,7 @@ int main(int argc, char ** argv)
 	SG_UNREF(labels);   // because model->get_labels() increased the count
 	SG_UNREF(sosvm);
 
-#endif /* USE_MOSEK */
+#endif /* SHOGUN_USE_MOSEK */
 	exit_shogun();
 
 	return 0;

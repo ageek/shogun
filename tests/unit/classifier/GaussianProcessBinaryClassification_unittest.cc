@@ -9,7 +9,7 @@
 
 #include <lib/config.h>
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 
 #include <labels/BinaryLabels.h>
 #include <features/DenseFeatures.h>
@@ -331,4 +331,4 @@ TEST(GaussianProcessBinaryClassification,get_probabilities)
 	SG_UNREF(gpc);
 }
 
-#endif /* HAVE_EIGEN3 */
+#endif /* SHOGUN_HAVE_EIGEN3 */

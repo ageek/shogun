@@ -9,7 +9,7 @@
  */
 
 #include <lib/slep/slep_mc_tree_lr.h>
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 #include <lib/slep/tree/general_altra.h>
 #include <lib/slep/tree/altra.h>
 #include <lib/slep/q1/eppMatrix.h>

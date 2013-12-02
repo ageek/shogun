@@ -9,7 +9,7 @@
  * Written (W) 2012 Christian Montanari
  */
 
-#ifdef HAVE_PDL
+#ifdef SHOGUN_HAVE_PDL
 
 %include pdl.i
 
@@ -883,4 +883,4 @@ TYPEMAP_SPARSEFEATURES_OUT(floatmax_t,    PDL_LONGDOUBLE)
 TYPEMAP_SPARSEFEATURES_OUT(SV*,		  PDL_OBJECT)
 
 #undef TYPEMAP_SPARSEFEATURES_OUT
-#endif /* HAVE_PDL */
+#endif /* SHOGUN_HAVE_PDL */

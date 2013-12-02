@@ -44,7 +44,7 @@ namespace shogun
 
 //#define DYNPROG_TIMING
 
-#ifdef USE_BIGSTATES
+#ifdef SHOGUN_USE_BIGSTATES
 typedef uint16_t T_STATES ;
 #else
 typedef uint8_t T_STATES ;

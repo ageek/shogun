@@ -10,7 +10,7 @@
 
 #include <lib/common.h>
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 
 #include <multiclass/QDA.h>
 #include <machine/NativeMulticlassMachine.h>
@@ -333,4 +333,4 @@ bool CQDA::train_machine(CFeatures* data)
 	return true;
 }
 
-#endif /* HAVE_EIGEN3 */
+#endif /* SHOGUN_HAVE_EIGEN3 */

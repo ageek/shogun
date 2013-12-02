@@ -2,7 +2,7 @@
 #include <lib/common.h>
 #include <gtest/gtest.h>
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 
 #include <evaluation/ica/AmariIndex.h>
 
@@ -19,4 +19,4 @@ TEST(AmariIndex, amari_zero)
 	EXPECT_NEAR(error, 0.0, 1e-5);
 }
 
-#endif //HAVE_EIGEN3
+#endif //SHOGUN_HAVE_EIGEN3

@@ -9,7 +9,7 @@
 
 #include <lib/config.h>
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 
 #include <labels/RegressionLabels.h>
 #include <labels/BinaryLabels.h>
@@ -1204,4 +1204,4 @@ TEST(LaplacianInferenceMethod,get_posterior_covariance_probit_likelihood)
 	SG_UNREF(inf);
 }
 
-#endif /* HAVE_EIGEN3 */
+#endif /* SHOGUN_HAVE_EIGEN3 */

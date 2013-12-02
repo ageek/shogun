@@ -13,7 +13,7 @@
 
 #include <lib/config.h>
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 
 #include <distributions/Distribution.h>
 #include <features/DotFeatures.h>
@@ -233,5 +233,5 @@ class CGaussian : public CDistribution
 		ECovType m_cov_type;
 };
 }
-#endif //HAVE_LAPACK
+#endif //SHOGUN_HAVE_LAPACK
 #endif //_GAUSSIAN_H__

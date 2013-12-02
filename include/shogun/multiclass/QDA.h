@@ -13,7 +13,7 @@
 
 #include <lib/config.h>
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 
 #include <features/DotFeatures.h>
 #include <features/DenseFeatures.h>
@@ -189,5 +189,5 @@ class CQDA : public CNativeMulticlassMachine
 }; /* class QDA */
 }  /* namespace shogun */
 
-#endif /* HAVE_EIGEN3 */
+#endif /* SHOGUN_HAVE_EIGEN3 */
 #endif /* _QDA_H__ */

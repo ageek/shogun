@@ -11,7 +11,7 @@
 #ifndef  MALSAR_JOINT_FEATURE_LEARNING_H_
 #define  MALSAR_JOINT_FEATURE_LEARNING_H_
 #include <lib/config.h>
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 #include <lib/malsar/malsar_options.h>
 #include <features/DotFeatures.h>
 

@@ -6,7 +6,7 @@
 #include <ensemble/MajorityVote.h>
 #include <gtest/gtest.h>
 
-#ifdef USE_REFERENCE_COUNTING
+#ifdef SHOGUN_USE_REFERENCE_COUNTING
 using namespace shogun;
 using ::testing::Return;
 

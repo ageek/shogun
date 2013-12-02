@@ -10,7 +10,7 @@
 
 #include <lib/config.h>
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 #include <base/init.h>
 #include <features/DenseFeatures.h>
 #include <converter/MultidimensionalScaling.h>

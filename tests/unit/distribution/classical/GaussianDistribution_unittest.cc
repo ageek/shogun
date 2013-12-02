@@ -7,7 +7,7 @@
  * Written (W) 2013 Heiko Strathmann
  */
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 
 #include <distributions/classical/GaussianDistribution.h>
 #include <mathematics/Math.h>
@@ -157,4 +157,4 @@ TEST(GaussianDistribution,sample_2d)
 	SG_UNREF(gauss);
 }
 
-#endif // HAVE_EIGEN3
+#endif // SHOGUN_HAVE_EIGEN3

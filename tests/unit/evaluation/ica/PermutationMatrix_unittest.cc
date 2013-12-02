@@ -2,7 +2,7 @@
 #include <lib/common.h>
 #include <gtest/gtest.h>
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 
 #include <evaluation/ica/PermutationMatrix.h>
 
@@ -28,4 +28,4 @@ TEST(PermutationMatrix, is_not_perm)
 	EXPECT_FALSE(isperm);
 }
 
-#endif //HAVE_EIGEN3
+#endif //SHOGUN_HAVE_EIGEN3

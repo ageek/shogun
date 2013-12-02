@@ -49,7 +49,7 @@ CFactorGraph::~CFactorGraph()
 	SG_UNREF(m_datasources);
 	SG_UNREF(m_dset);
 
-#ifdef USE_REFERENCE_COUNTING
+#ifdef SHOGUN_USE_REFERENCE_COUNTING
 	if (m_factors != NULL)
 		SG_DEBUG("CFactorGraph::~CFactorGraph(): m_factors->ref_count() = %d.\n", m_factors->ref_count());
 
@@ -79,7 +79,7 @@ void CFactorGraph::init()
 	m_factors = new CDynamicObjectArray();
 	m_datasources = new CDynamicObjectArray();
 
-#ifdef USE_REFERENCE_COUNTING
+#ifdef SHOGUN_USE_REFERENCE_COUNTING
 	if (m_factors != NULL)
 		SG_DEBUG("CFactorGraph::init(): m_factors->ref_count() = %d.\n", m_factors->ref_count());
 #endif

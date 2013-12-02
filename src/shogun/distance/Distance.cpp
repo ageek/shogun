@@ -24,7 +24,7 @@
 #include <string.h>
 #include <unistd.h>
 
-#ifdef HAVE_PTHREAD
+#ifdef SHOGUN_HAVE_PTHREAD
 #include <pthread.h>
 #endif
 

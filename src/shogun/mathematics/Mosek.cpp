@@ -8,7 +8,7 @@
  * Copyright (C) 2012 Fernando José Iglesias García
  */
 
-#ifdef USE_MOSEK
+#ifdef SHOGUN_USE_MOSEK
 
 //#define DEBUG_MOSEK
 //#define DEBUG_SOLUTION
@@ -503,4 +503,4 @@ float64_t CMosek::get_primal_objective_value() const
 	return po;
 }
 
-#endif /* USE_MOSEK */
+#endif /* SHOGUN_USE_MOSEK */

@@ -1,7 +1,7 @@
 #include <classifier/mkl/MKLClassification.h>
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 #include <classifier/svm/SVMLight.h>
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT
 #include <classifier/svm/LibSVM.h>
 
 using namespace shogun;
@@ -10,9 +10,9 @@ CMKLClassification::CMKLClassification(CSVM* s) : CMKL(s)
 {
 	if (!s)
 	{
-#ifdef USE_SVMLIGHT
+#ifdef SHOGUN_USE_SVMLIGHT
 		s=new CSVMLight();
-#endif //USE_SVMLIGHT
+#endif // SHOGUN_USE_SVMLIGHT
 		if (!s)
 			s=new CLibSVM();
 		set_svm(s);

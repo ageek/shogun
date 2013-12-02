@@ -9,7 +9,7 @@
  */
 #include <lib/config.h>
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 #include <classifier/svm/NewtonSVM.h>
 #include <mathematics/Math.h>
 #include <machine/LinearMachine.h>
@@ -395,4 +395,4 @@ void CNewtonSVM::obj_fun_linear(float64_t* weights, float64_t* out,
 	SG_FREE(temp1);
 	SG_FREE(p2);
 }
-#endif //HAVE_LAPACK
+#endif //SHOGUN_HAVE_LAPACK

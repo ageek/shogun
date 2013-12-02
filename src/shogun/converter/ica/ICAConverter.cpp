@@ -9,7 +9,7 @@
 
 #include <converter/ica/ICAConverter.h>
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 
 using namespace shogun;
 
@@ -63,4 +63,4 @@ float64_t CICAConverter::get_tol() const
 	return tol;
 }
 
-#endif // HAVE_EIGEN3
+#endif // SHOGUN_HAVE_EIGEN3

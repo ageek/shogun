@@ -7,7 +7,7 @@
  * Written (W) 2013 Heiko Strathmann
  */
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 
 #include <distributions/classical/GaussianDistribution.h>
 #include <base/Parameter.h>
@@ -172,4 +172,4 @@ void CGaussianDistribution::init()
 			"depending on the factorization type.", MS_NOT_AVAILABLE);
 }
 
-#endif // HAVE_EIGEN3
+#endif // SHOGUN_HAVE_EIGEN3

@@ -12,7 +12,7 @@
 
 #include <lib/config.h>
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 
 #include <machine/gp/LikelihoodModel.h>
 
@@ -166,5 +166,5 @@ public:
 	virtual bool supports_binary() const { return true; }
 };
 }
-#endif /* HAVE_EIGEN3 */
+#endif /* SHOGUN_HAVE_EIGEN3 */
 #endif /* _LOGITLIKELIHOOD_H_ */

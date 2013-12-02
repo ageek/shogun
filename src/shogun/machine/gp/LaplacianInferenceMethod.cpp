@@ -15,7 +15,7 @@
 
 #include <machine/gp/LaplacianInferenceMethod.h>
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 
 #include <machine/gp/StudentsTLikelihood.h>
 #include <mathematics/Math.h>
@@ -605,4 +605,4 @@ SGVector<float64_t> CLaplacianInferenceMethod::get_derivative_wrt_mean(
 }
 }
 
-#endif /* HAVE_EIGEN3 */
+#endif /* SHOGUN_HAVE_EIGEN3 */

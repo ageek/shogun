@@ -9,7 +9,7 @@
  */
 
 #include <converter/ManifoldSculpting.h>
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 #include <lib/tapkee/tapkee_shogun.hpp>
 #include <features/DenseFeatures.h>
 #include <distance/EuclideanDistance.h>
@@ -100,4 +100,4 @@ CFeatures* CManifoldSculpting::apply(CFeatures* features)
 	return embedding;
 }
 
-#endif /* HAVE_EIGEN */
+#endif /* SHOGUN_HAVE_EIGEN */

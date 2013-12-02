@@ -10,7 +10,7 @@
 #ifndef _DIRECTORDISTANCE_H___
 #define _DIRECTORDISTANCE_H___
 
-#ifdef USE_SWIG_DIRECTORS
+#ifdef SHOGUN_USE_SWIG_DIRECTORS
 #include <lib/common.h>
 #include <lib/DataType.h>
 #include <distance/Distance.h>
@@ -218,5 +218,5 @@ IGNORE_IN_CLASSLIST class CDirectorDistance : public CDistance
 
 }
 
-#endif /* USE_SWIG_DIRECTORS */
+#endif /* SHOGUN_USE_SWIG_DIRECTORS */
 #endif /* _DIRECTORDISTANCE_H___ */

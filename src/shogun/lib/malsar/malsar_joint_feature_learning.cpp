@@ -9,7 +9,7 @@
  */
 
 #include <lib/malsar/malsar_joint_feature_learning.h>
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 #include <lib/Signal.h>
 #include <mathematics/Math.h>
 #include <mathematics/eigen3.h>

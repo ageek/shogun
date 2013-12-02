@@ -9,7 +9,7 @@
  */
 
 #include <converter/LinearLocalTangentSpaceAlignment.h>
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 #include <io/SGIO.h>
 #include <kernel/LinearKernel.h>
 #include <lib/tapkee/tapkee_shogun.hpp>
@@ -45,4 +45,4 @@ CFeatures* CLinearLocalTangentSpaceAlignment::apply(CFeatures* features)
 	return embedding;
 }
 
-#endif /* HAVE_EIGEN3 */
+#endif /* SHOGUN_HAVE_EIGEN3 */

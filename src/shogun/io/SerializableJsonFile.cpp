@@ -9,7 +9,7 @@
  */
 
 #include <lib/config.h>
-#ifdef HAVE_JSON
+#ifdef SHOGUN_HAVE_JSON
 
 #include <io/SerializableJsonFile.h>
 #include <io/SerializableJsonReader00.h>
@@ -438,4 +438,4 @@ CSerializableJsonFile::write_type_end_wrapped(
 	return true;
 }
 
-#endif /* HAVE_JSON  */
+#endif /* SHOGUN_HAVE_JSON  */

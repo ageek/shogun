@@ -26,7 +26,7 @@
 namespace shogun
 {
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 
 
 /** @brief mapped sparse matrix for
@@ -350,7 +350,7 @@ class CLibLinearMTL : public CLinearMachine
 
 };
 
-#endif //HAVE_LAPACK
+#endif //SHOGUN_HAVE_LAPACK
 
 } /* namespace shogun  */
 

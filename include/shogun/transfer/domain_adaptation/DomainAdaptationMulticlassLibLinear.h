@@ -11,7 +11,7 @@
 #ifndef _DOMAINADAPTATIONMULTICLASSLIBLINEAR_H___
 #define _DOMAINADAPTATIONMULTICLASSLIBLINEAR_H___
 #include <lib/config.h>
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 #include <multiclass/MulticlassLibLinear.h>
 
 namespace shogun
@@ -100,5 +100,5 @@ protected:
 		CLinearMulticlassMachine* m_source_machine;
 };
 }
-#endif /* HAVE_LAPACK */
+#endif /* SHOGUN_HAVE_LAPACK */
 #endif

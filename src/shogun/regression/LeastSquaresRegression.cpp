@@ -9,7 +9,7 @@
 
 #include <lib/config.h>
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 #include <regression/LeastSquaresRegression.h>
 #include <regression/LinearRidgeRegression.h>
 #include <mathematics/lapack.h>

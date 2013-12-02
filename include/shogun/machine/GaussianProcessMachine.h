@@ -14,7 +14,7 @@
 #include <machine/Machine.h>
 #include <machine/gp/InferenceMethod.h>
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 
 namespace shogun
 {
@@ -116,5 +116,5 @@ protected:
 	CInferenceMethod* m_method;
 };
 }
-#endif /* HAVE_EIGEN3 */
+#endif /* SHOGUN_HAVE_EIGEN3 */
 #endif /* _GAUSSIANPROCESSMACHINE_H_ */

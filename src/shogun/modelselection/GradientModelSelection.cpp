@@ -10,7 +10,7 @@
 
 #include <modelselection/GradientModelSelection.h>
 
-#ifdef HAVE_NLOPT
+#ifdef SHOGUN_HAVE_NLOPT
 
 #include <evaluation/GradientResult.h>
 #include <modelselection/ParameterCombination.h>
@@ -294,4 +294,4 @@ CParameterCombination* CGradientModelSelection::select_model(bool print_state)
 	}
 }
 
-#endif /* HAVE_NLOPT */
+#endif /* SHOGUN_HAVE_NLOPT */

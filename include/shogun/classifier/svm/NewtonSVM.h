@@ -18,7 +18,7 @@
 
 namespace shogun
 {
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 /** @brief NewtonSVM,
  *  In this Implementation linear SVM is trained in its primal form using Newton-like iterations.
  *  This Implementation is ported from the Olivier Chapelles fast newton based SVM solver, Which could be found here :http://mloss.org/software/view/30/
@@ -121,6 +121,6 @@ class CNewtonSVM : public CLinearMachine
 		/** if bias is used */
 		bool use_bias;
 };
-#endif //HAVE_LAPACK
+#endif //SHOGUN_HAVE_LAPACK
 }
 #endif //_NEWTONSVM_H___

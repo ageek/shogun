@@ -8,7 +8,7 @@
  */
 
 #include <lib/config.h>
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 #include <lib/SGVector.h>
 #include <lib/SGMatrix.h>
 #include <mathematics/linalg/linop/DenseMatrixOperator.h>
@@ -124,4 +124,4 @@ TEST(RationalApproximationIndividualJob, compute_cocg)
 
 	EXPECT_NEAR(result, -0.73170731707317049, 1E-15);
 }
-#endif //HAVE_EIGEN3
+#endif //SHOGUN_HAVE_EIGEN3

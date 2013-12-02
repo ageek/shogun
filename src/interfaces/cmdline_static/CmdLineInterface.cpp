@@ -7,7 +7,7 @@
 #include <io/LibSVMFile.h>
 #include <ui/SGInterface.h>
 
-#ifdef HAVE_READLINE
+#ifdef SHOGUN_HAVE_READLINE
 #include <readline/readline.h>
 #include <readline/history.h>
 #endif
@@ -548,7 +548,7 @@ char* CCmdLineInterface::get_line(FILE* infile, bool interactive_mode)
 	if (feof(infile))
 		return NULL;
 
-#ifdef HAVE_READLINE
+#ifdef SHOGUN_HAVE_READLINE
 	if (interactive_mode)
 	{
 		in=readline("\033[1;34mshogun\033[0m >> ");
@@ -593,7 +593,7 @@ bool CCmdLineInterface::parse_line(char* line)
 	}
 }
 
-#ifdef HAVE_READLINE
+#ifdef SHOGUN_HAVE_READLINE
 char* command_generator(const char *text, int state)
 {
 	static int list_index, len;
@@ -643,14 +643,14 @@ char** shogun_completion (const char *text, int start, int end)
 
 	return (matches);
 }
-#endif //HAVE_READLINE
+#endif //SHOGUN_HAVE_READLINE
 
 int main(int argc, char* argv[])
 {
-#ifdef HAVE_READLINE
+#ifdef SHOGUN_HAVE_READLINE
 	rl_readline_name = "shogun";
 	rl_attempted_completion_function = shogun_completion;
-#endif //HAVE_READLINE
+#endif //SHOGUN_HAVE_READLINE
 
 	init_shogun(&cmdline_print_message, &cmdline_print_warning,
 			&cmdline_print_error, &cmdline_cancel_computations);

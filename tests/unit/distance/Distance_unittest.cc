@@ -8,7 +8,7 @@
  * Copyright (C) 2013 Fernando J. Iglesias Garcia
  */
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 
 #include <gtest/gtest.h>
 
@@ -44,4 +44,4 @@ TEST(Distance, custom_mahalanobis)
 	SG_UNREF(distance)
 }
 
-#endif /* HAVE_EIGEN3 */
+#endif /* SHOGUN_HAVE_EIGEN3 */

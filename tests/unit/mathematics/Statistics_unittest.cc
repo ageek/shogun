@@ -1,5 +1,5 @@
 #include <lib/config.h>
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 
 #include <lib/SGMatrix.h>
 #include <lib/SGVector.h>
@@ -142,17 +142,17 @@ TEST(Statistics, sample_from_gaussian_dense1)
 
 	// calculate the sample mean and covariance
 	SGVector<float64_t> s_mean=CStatistics::matrix_mean(samples);
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 	SGMatrix<float64_t> s_cov=CStatistics::covariance_matrix(samples);
 	Map<MatrixXd> s_c(s_cov.matrix, s_cov.num_rows, s_cov.num_cols);
-#endif // HAVE_LAPACK
+#endif // SHOGUN_HAVE_LAPACK
 	Map<VectorXd> s_mu(s_mean.vector, s_mean.vlen);
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 	ASSERT_EQ(c.rows(), s_c.rows());
 	ASSERT_EQ(c.cols(), s_c.cols());
 	EXPECT_NEAR((s_c-c).norm(), 0.0, 1.0);
-#endif // HAVE_LAPACK
+#endif // SHOGUN_HAVE_LAPACK
 	ASSERT_EQ(mu.rows(), s_mu.rows());
 	EXPECT_NEAR((s_mu-mu).norm(), 0.0, 0.5);
 
@@ -182,17 +182,17 @@ TEST(Statistics, sample_from_gaussian_dense2)
 
 	// calculate the sample mean and covariance
 	SGVector<float64_t> s_mean=CStatistics::matrix_mean(samples);
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 	SGMatrix<float64_t> s_cov=CStatistics::covariance_matrix(samples);
 	Map<MatrixXd> s_c(s_cov.matrix, s_cov.num_rows, s_cov.num_cols);
-#endif // HAVE_LAPACK
+#endif // SHOGUN_HAVE_LAPACK
 	Map<VectorXd> s_mu(s_mean.vector, s_mean.vlen);
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 	ASSERT_EQ(c.rows(), s_c.rows());
 	ASSERT_EQ(c.cols(), s_c.cols());
 	EXPECT_NEAR((s_c-c.inverse()).norm(), 0.0, 5.0);
-#endif // HAVE_LAPACK
+#endif // SHOGUN_HAVE_LAPACK
 	ASSERT_EQ(mu.rows(), s_mu.rows());
 	EXPECT_NEAR((s_mu-mu).norm(), 0.0, 0.5);
 
@@ -247,10 +247,10 @@ TEST(Statistics, sample_from_gaussian_sparse1)
 
 	// calculate the sample mean and covariance
 	SGVector<float64_t> s_mean=CStatistics::matrix_mean(samples);
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 	SGMatrix<float64_t> s_cov=CStatistics::covariance_matrix(samples);
 	Map<MatrixXd> s_c(s_cov.matrix, s_cov.num_rows, s_cov.num_cols);
-#endif // HAVE_LAPACK
+#endif // SHOGUN_HAVE_LAPACK
 	Map<VectorXd> s_mu(s_mean.vector, s_mean.vlen);
 
 	// create a similar dense cov matrix as of the original one
@@ -263,9 +263,9 @@ TEST(Statistics, sample_from_gaussian_sparse1)
 	}
 
 	EXPECT_NEAR((s_mu-mu).norm(), 0.0, 0.5);
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 	EXPECT_NEAR((d_cov-s_c).norm(), 0.0, 2.5);
-#endif // HAVE_LAPACK
+#endif // SHOGUN_HAVE_LAPACK
 
 	SG_FREE(vec);
 	SG_FREE(rest);
@@ -330,4 +330,4 @@ TEST(Statistics, lnormal_cdf)
 	EXPECT_NEAR(lphi, 0.0, 1e-6);
 }
 
-#endif // HAVE_EIGEN3
+#endif // SHOGUN_HAVE_EIGEN3

@@ -5,9 +5,9 @@
 
 using namespace shogun;
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 
-#ifdef HAVE_LAPACK
+#ifdef SHOGUN_HAVE_LAPACK
 /* Basic test for t-SNE, that just checks that it works anyhow */
 TEST(TDistributedStochasticNeighborEmbeddingTest,basic)
 {
@@ -38,6 +38,6 @@ TEST(TDistributedStochasticNeighborEmbeddingTest,basic)
 	SG_UNREF(high_dimensional_features);
 	SG_UNREF(low_dimensional_features);
 }
-#endif // HAVE_LAPACK
+#endif // SHOGUN_HAVE_LAPACK
 
 #endif

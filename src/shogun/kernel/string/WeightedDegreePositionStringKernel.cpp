@@ -22,7 +22,7 @@
 
 #include <classifier/svm/SVM.h>
 
-#ifdef HAVE_PTHREAD
+#ifdef SHOGUN_HAVE_PTHREAD
 #include <pthread.h>
 #endif
 
@@ -1277,7 +1277,7 @@ void CWeightedDegreePositionStringKernel::compute_batch(
 				SG_PROGRESS(j,0,num_feat)
 			}
 	}
-#ifdef HAVE_PTHREAD
+#ifdef SHOGUN_HAVE_PTHREAD
 	else
 	{
 

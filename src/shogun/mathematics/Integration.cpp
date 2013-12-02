@@ -17,7 +17,7 @@
 
 #include <mathematics/Integration.h>
 
-#ifdef HAVE_EIGEN3
+#ifdef SHOGUN_HAVE_EIGEN3
 
 #include <mathematics/eigen3.h>
 
@@ -783,4 +783,4 @@ float64_t CIntegration::evaluate_quadgh64(CFunction* f)
 }
 }
 
-#endif /* HAVE_EIGEN3 */
+#endif /* SHOGUN_HAVE_EIGEN3 */

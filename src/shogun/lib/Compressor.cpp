@@ -12,25 +12,25 @@
 #include <mathematics/Math.h>
 #include <string.h>
 
-#ifdef USE_LZO
+#ifdef SHOGUN_USE_LZO
 #include <lzo/lzoconf.h>
 #include <lzo/lzoutil.h>
 #include <lzo/lzo1x.h>
 #endif
 
-#ifdef USE_GZIP
+#ifdef SHOGUN_USE_GZIP
 #include <zlib.h>
 #endif
 
-#ifdef USE_BZIP2
+#ifdef SHOGUN_USE_BZIP2
 #include <bzlib.h>
 #endif
 
-#ifdef USE_LZMA
+#ifdef SHOGUN_USE_LZMA
 #include <lzma.h>
 #endif
 
-#ifdef USE_SNAPPY
+#ifdef SHOGUN_USE_SNAPPY
 #include <snappy.h>
 #endif
 
@@ -64,7 +64,7 @@ void CCompressor::compress(uint8_t* uncompressed, uint64_t uncompressed_size,
 				memcpy(compressed, uncompressed, uncompressed_size);
 				break;
 			}
-#ifdef USE_LZO
+#ifdef SHOGUN_USE_LZO
 		case LZO:
 			{
 				if (lzo_init() != LZO_E_OK)
@@ -103,7 +103,7 @@ void CCompressor::compress(uint8_t* uncompressed, uint64_t uncompressed_size,
 				break;
 			}
 #endif
-#ifdef USE_GZIP
+#ifdef SHOGUN_USE_GZIP
 		case GZIP:
 			{
 				initial_buffer_size=1.001*uncompressed_size + 12;
@@ -120,7 +120,7 @@ void CCompressor::compress(uint8_t* uncompressed, uint64_t uncompressed_size,
 				break;
 			}
 #endif
-#ifdef USE_BZIP2
+#ifdef SHOGUN_USE_BZIP2
 		case BZIP2:
 			{
 				bz_stream strm;
@@ -156,7 +156,7 @@ void CCompressor::compress(uint8_t* uncompressed, uint64_t uncompressed_size,
 				break;
 			}
 #endif
-#ifdef USE_LZMA
+#ifdef SHOGUN_USE_LZMA
 		case LZMA:
 			{
 				lzma_stream strm = LZMA_STREAM_INIT;
@@ -189,7 +189,7 @@ void CCompressor::compress(uint8_t* uncompressed, uint64_t uncompressed_size,
 				break;
 			}
 #endif
-#ifdef USE_SNAPPY
+#ifdef SHOGUN_USE_SNAPPY
 		case SNAPPY:
 			{
 				compressed=SG_MALLOC(uint8_t, snappy::MaxCompressedLength((size_t) uncompressed_size));
@@ -225,7 +225,7 @@ void CCompressor::decompress(uint8_t* compressed, uint64_t compressed_size,
 				memcpy(uncompressed, compressed, uncompressed_size);
 				break;
 			}
-#ifdef USE_LZO
+#ifdef SHOGUN_USE_LZO
 		case LZO:
 			{
 				if (lzo_init() != LZO_E_OK)
@@ -247,7 +247,7 @@ void CCompressor::decompress(uint8_t* compressed, uint64_t compressed_size,
 				break;
 			}
 #endif
-#ifdef USE_GZIP
+#ifdef SHOGUN_USE_GZIP
 		case GZIP:
 			{
 				uLongf gz_size=uncompressed_size;
@@ -260,7 +260,7 @@ void CCompressor::decompress(uint8_t* compressed, uint64_t compressed_size,
 				break;
 			}
 #endif
-#ifdef USE_BZIP2
+#ifdef SHOGUN_USE_BZIP2
 		case BZIP2:
 			{
 				bz_stream strm;
@@ -279,7 +279,7 @@ void CCompressor::decompress(uint8_t* compressed, uint64_t compressed_size,
 				break;
 			}
 #endif
-#ifdef USE_LZMA
+#ifdef SHOGUN_USE_LZMA
 		case LZMA:
 			{
 				lzma_stream strm = LZMA_STREAM_INIT;
@@ -298,7 +298,7 @@ void CCompressor::decompress(uint8_t* compressed, uint64_t compressed_size,
 				break;
 			}
 #endif
-#ifdef USE_SNAPPY
+#ifdef SHOGUN_USE_SNAPPY
 		case SNAPPY:
 			{
 				size_t uncompressed_length;

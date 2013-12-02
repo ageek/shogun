@@ -10,7 +10,7 @@
 
 #include <lib/config.h>
 
-#ifdef HAVE_HDF5
+#ifdef SHOGUN_HAVE_HDF5
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

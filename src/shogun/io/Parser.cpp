@@ -127,7 +127,7 @@ READ_REAL_METHOD(read_uint, strtod, uint32_t)
 
 READ_REAL_METHOD(read_short_real, strtod, float32_t)
 READ_REAL_METHOD(read_real, strtod, float64_t)
-#ifdef HAVE_STRTOLD
+#ifdef SHOGUN_HAVE_STRTOLD
 READ_REAL_METHOD(read_long_real, strtold, floatmax_t)
 #else
 READ_REAL_METHOD(read_long_real, strtod, floatmax_t)

@@ -9,7 +9,7 @@
 
 #include <structure/DirectorStructuredModel.h>
 
-#ifdef USE_SWIG_DIRECTORS
+#ifdef SHOGUN_USE_SWIG_DIRECTORS
 
 using namespace shogun;
 
@@ -71,4 +71,4 @@ void CDirectorStructuredModel::init_training()
 	SG_ERROR("Please implemement init_training() in your target language before use\n")
 }
 
-#endif /* USE_SWIG_DIRECTORS */
+#endif /* SHOGUN_USE_SWIG_DIRECTORS */

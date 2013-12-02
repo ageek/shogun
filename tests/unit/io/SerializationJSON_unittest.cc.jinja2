@@ -11,7 +11,7 @@
 
 using namespace shogun;
 
-#ifdef HAVE_JSON
+#ifdef SHOGUN_HAVE_JSON
 {% set ignores = ['RationalApproximationIndividualJob',
 	'CCSOSVM',
 	'TwoStateModel'] %}
@@ -100,4 +100,4 @@ TEST(SerializationJSON,{{class}}_{{type}})
 {% endfor %}
 {% endfor %}
 
-#endif /* HAVE_JSON */
+#endif /* SHOGUN_HAVE_JSON */

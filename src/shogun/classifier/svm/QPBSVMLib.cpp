@@ -142,7 +142,7 @@ int32_t CQPBSVMLib::solve_qp(float64_t* result, int32_t len)
 		case QPB_SOLVER_PRLOQO:
 			status = qpbsvm_prloqo(result, Nabla, &t, &History, verb );
 			break;
-#ifdef USE_CPLEX
+#ifdef SHOGUN_USE_CPLEX
 		case QPB_SOLVER_CPLEX:
 			status = qpbsvm_cplex(result, Nabla, &t, &History, verb );
 #else
@@ -647,7 +647,7 @@ int32_t CQPBSVMLib::qpbsvm_gradient_descent(float64_t *x,
 	return 0;
 }
 
-#ifdef USE_CPLEX
+#ifdef SHOGUN_USE_CPLEX
 /* --------------------------------------------------------------
 
 Usage: exitflag = qpbsvm_prloqo(m_UB, m_dim, m_tmax,

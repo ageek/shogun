@@ -12,7 +12,7 @@
 #include <structure/Factor.h>
 #include <features/FactorGraphFeatures.h>
 
-#ifdef HAVE_STD_UNORDERED_MAP
+#ifdef SHOGUN_HAVE_STD_UNORDERED_MAP
 	#include <unordered_map>
 	typedef std::unordered_map<int32_t, int32_t> factor_counts_type;
 #else

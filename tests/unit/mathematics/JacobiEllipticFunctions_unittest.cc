@@ -11,10 +11,10 @@
 #include <mathematics/JacobiEllipticFunctions.h>
 #include <gtest/gtest.h>
 
-#ifdef HAVE_ARPREC
+#ifdef SHOGUN_HAVE_ARPREC
 #include <arprec/mp_real.h>
 #include <arprec/mp_complex.h>
-#endif //HAVE_ARPREC
+#endif //SHOGUN_HAVE_ARPREC
 
 using namespace shogun;
 
@@ -24,7 +24,7 @@ typedef complex128_t Complex;
 TEST(JacobiEllipticFunctions, ellipKKp)
 {
 	Real K, Kp;
-#ifdef HAVE_ARPREC
+#ifdef SHOGUN_HAVE_ARPREC
 	CJacobiEllipticFunctions::ellipKKp(0.9999999999, K, Kp);
 	EXPECT_NEAR(K, 1.57153044117197637775, 1E-19);
 	EXPECT_NEAR(Kp, 4.52953569660335286784, 1E-19);
@@ -56,13 +56,13 @@ TEST(JacobiEllipticFunctions, ellipKKp)
 	CJacobiEllipticFunctions::ellipKKp(0.0, K, Kp);
 	EXPECT_EQ(K, std::numeric_limits<Real>::max());
 	EXPECT_NEAR(Kp, 1.5707963267948965580, 1E-15);
-#endif //HAVE_ARPREC
+#endif //SHOGUN_HAVE_ARPREC
 }
 
 TEST(JacobiEllipticFunctions, ellipJC)
 {
 	Complex sn, cn, dn;
-#ifdef HAVE_ARPREC
+#ifdef SHOGUN_HAVE_ARPREC
 	CJacobiEllipticFunctions::ellipJC(Complex(0.5,0.0), 0.0, sn, cn, dn);
 	EXPECT_NEAR(sn.real(), 0.47942553860420300538, 1E-19);
 	EXPECT_NEAR(cn.real(), 0.87758256189037275874, 1E-19);
@@ -162,5 +162,5 @@ TEST(JacobiEllipticFunctions, ellipJC)
 	EXPECT_NEAR(sn.imag(), 0.40389645531602574868, 1E-15);
 	EXPECT_NEAR(cn.imag(), -0.23982763093808803778, 1E-15);
 	EXPECT_NEAR(dn.imag(), -0.23982763093808801003, 1E-15);
-#endif //HAVE_ARPREC
+#endif //SHOGUN_HAVE_ARPREC
 }
