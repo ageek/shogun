@@ -15,6 +15,13 @@
 #   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
+#####  Add current dir to Shogun's include-dirs  #####
+SET( ${PROJECT_VAR_PREFIX}INCLUDE_DIRS
+     ${${PROJECT_VAR_PREFIX}INCLUDE_DIRS}
+     "${CMAKE_CURRENT_SOURCE_DIR}" "${CMAKE_CURRENT_BINARY_DIR}"
+     CACHE INTERNAL "Internal include directories" )
+     
+
 #####  Include subdirs for processing  #####
 GET_CMAKE_SUBDIRS( _SUBDIRS ${CMAKE_CURRENT_SOURCE_DIR} )
 
