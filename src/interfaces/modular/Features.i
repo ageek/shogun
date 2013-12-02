@@ -88,20 +88,20 @@ PROTOCOLS_DENSELABELS(CRegressionLabels, RegressionLabels, float64_t, "d\0", NPY
 %rename(LatentFeatures) CLatentFeatures;
 
 /* Include Class Headers to make them visible from within the target language */
-%include <shogun/features/FeatureTypes.h>
-%include <shogun/features/Alphabet.h>
-%include <shogun/lib/Compressor.h>
-%include <shogun/features/Features.h>
-%include <shogun/features/DotFeatures.h>
-%include <shogun/features/DirectorDotFeatures.h>
-%include <shogun/features/BinnedDotFeatures.h>
-%include <shogun/features/streaming/StreamingFeatures.h>
-%include <shogun/features/streaming/StreamingDotFeatures.h>
-%include <shogun/features/streaming/StreamingVwFeatures.h>
-%include <shogun/features/DataGenerator.h>
+%include <features/FeatureTypes.h>
+%include <features/Alphabet.h>
+%include <lib/Compressor.h>
+%include <features/Features.h>
+%include <features/DotFeatures.h>
+%include <features/DirectorDotFeatures.h>
+%include <features/BinnedDotFeatures.h>
+%include <features/streaming/StreamingFeatures.h>
+%include <features/streaming/StreamingDotFeatures.h>
+%include <features/streaming/StreamingVwFeatures.h>
+%include <features/DataGenerator.h>
 
 /* Templated Class StringFeatures */
-%include <shogun/features/StringFeatures.h>
+%include <features/StringFeatures.h>
 namespace shogun
 {
 #ifdef USE_BOOL
@@ -143,7 +143,7 @@ namespace shogun
 }
 
 /* Templated Class StreamingStringFeatures */
-%include <shogun/features/streaming/StreamingStringFeatures.h>
+%include <features/streaming/StreamingStringFeatures.h>
 namespace shogun
 {
 #ifdef USE_BOOL
@@ -185,7 +185,7 @@ namespace shogun
 }
 
 /* Templated Class StringFileFeatures */
-%include <shogun/features/StringFileFeatures.h>
+%include <features/StringFileFeatures.h>
 namespace shogun
 {
 #ifdef USE_BOOL
@@ -227,7 +227,7 @@ namespace shogun
 }
 
 /* Templated Class SparseFeatures */
-%include <shogun/features/SparseFeatures.h>
+%include <features/SparseFeatures.h>
 namespace shogun
 {
 #ifdef USE_BOOL
@@ -269,7 +269,7 @@ namespace shogun
 }
 
 /* Templated Class StreamingSparseFeatures */
-%include <shogun/features/streaming/StreamingSparseFeatures.h>
+%include <features/streaming/StreamingSparseFeatures.h>
 namespace shogun
 {
 #ifdef USE_BOOL
@@ -311,7 +311,7 @@ namespace shogun
 }
 
 /* Templated Class DenseFeatures */
-%include <shogun/features/DenseFeatures.h>
+%include <features/DenseFeatures.h>
 namespace shogun
 {
 #ifdef USE_BOOL
@@ -387,7 +387,7 @@ namespace shogun
 }
 
 /* Templated Class StreamingDenseFeatures */
-%include <shogun/features/streaming/StreamingDenseFeatures.h>
+%include <features/streaming/StreamingDenseFeatures.h>
 namespace shogun
  {
 #ifdef USE_BOOL
@@ -430,13 +430,13 @@ namespace shogun
 
 /* these classes need the above typed CFeature definitions */
 %rename(MeanShiftDataGenerator) CMeanShiftDataGenerator;
-%include <shogun/features/streaming/generators/MeanShiftDataGenerator.h>
+%include <features/streaming/generators/MeanShiftDataGenerator.h>
 
 %rename(GaussianBlobsDataGenerator) CGaussianBlobsDataGenerator;
-%include <shogun/features/streaming/generators/GaussianBlobsDataGenerator.h>
+%include <features/streaming/generators/GaussianBlobsDataGenerator.h>
 
 /* Templated Class DenseSubsetFeatures */
-%include <shogun/features/DenseSubsetFeatures.h>
+%include <features/DenseSubsetFeatures.h>
 namespace shogun
 {
 #ifdef USE_BOOL
@@ -477,42 +477,42 @@ namespace shogun
 #endif
 }
 
-%include <shogun/features/DummyFeatures.h>
-%include <shogun/features/AttributeFeatures.h>
-%include <shogun/features/CombinedFeatures.h>
-%include <shogun/features/CombinedDotFeatures.h>
-%include <shogun/features/HashedDocDotFeatures.h>
-%include <shogun/features/streaming/StreamingHashedDocDotFeatures.h>
-%include <shogun/features/RandomKitchenSinksDotFeatures.h>
-%include <shogun/features/RandomFourierDotFeatures.h>
+%include <features/DummyFeatures.h>
+%include <features/AttributeFeatures.h>
+%include <features/CombinedFeatures.h>
+%include <features/CombinedDotFeatures.h>
+%include <features/HashedDocDotFeatures.h>
+%include <features/streaming/StreamingHashedDocDotFeatures.h>
+%include <features/RandomKitchenSinksDotFeatures.h>
+%include <features/RandomFourierDotFeatures.h>
 
-%include <shogun/labels/Labels.h>
-%include <shogun/labels/LabelsFactory.h>
-%include <shogun/labels/DenseLabels.h>
-%include <shogun/labels/BinaryLabels.h>
-%include <shogun/labels/LatentLabels.h>
-%include <shogun/labels/MulticlassLabels.h>
-%include <shogun/labels/RegressionLabels.h>
-%include <shogun/labels/StructuredLabels.h>
-%include <shogun/labels/MulticlassMultipleOutputLabels.h>
+%include <labels/Labels.h>
+%include <labels/LabelsFactory.h>
+%include <labels/DenseLabels.h>
+%include <labels/BinaryLabels.h>
+%include <labels/LatentLabels.h>
+%include <labels/MulticlassLabels.h>
+%include <labels/RegressionLabels.h>
+%include <labels/StructuredLabels.h>
+%include <labels/MulticlassMultipleOutputLabels.h>
 
-%include <shogun/features/RealFileFeatures.h>
-%include <shogun/features/FKFeatures.h>
-%include <shogun/features/TOPFeatures.h>
-%include <shogun/features/SNPFeatures.h>
-%include <shogun/features/WDFeatures.h>
-%include <shogun/features/HashedWDFeatures.h>
-%include <shogun/features/HashedWDFeaturesTransposed.h>
-%include <shogun/features/PolyFeatures.h>
-%include <shogun/features/SparsePolyFeatures.h>
-%include <shogun/features/LBPPyrDotFeatures.h>
-%include <shogun/features/ExplicitSpecFeatures.h>
-%include <shogun/features/ImplicitWeightedSpecFeatures.h>
-%include <shogun/features/LatentFeatures.h>
-%include <shogun/features/MatrixFeatures.h>
+%include <features/RealFileFeatures.h>
+%include <features/FKFeatures.h>
+%include <features/TOPFeatures.h>
+%include <features/SNPFeatures.h>
+%include <features/WDFeatures.h>
+%include <features/HashedWDFeatures.h>
+%include <features/HashedWDFeaturesTransposed.h>
+%include <features/PolyFeatures.h>
+%include <features/SparsePolyFeatures.h>
+%include <features/LBPPyrDotFeatures.h>
+%include <features/ExplicitSpecFeatures.h>
+%include <features/ImplicitWeightedSpecFeatures.h>
+%include <features/LatentFeatures.h>
+%include <features/MatrixFeatures.h>
 
 /* Templated Class MatrixFeatures */
-%include <shogun/features/MatrixFeatures.h>
+%include <features/MatrixFeatures.h>
 namespace shogun
 {
 #ifdef USE_BOOL

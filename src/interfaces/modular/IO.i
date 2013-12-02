@@ -30,12 +30,12 @@
 %rename(MemoryMappedFile) CMemoryMappedFile;
 %rename(VwParser) CVwParser;
 
-%include <shogun/io/File.h>
-%include <shogun/io/streaming/StreamingFile.h>
-%include <shogun/io/streaming/StreamingFileFromFeatures.h>
+%include <io/File.h>
+%include <io/streaming/StreamingFile.h>
+%include <io/streaming/StreamingFileFromFeatures.h>
 
 /* Template Class StreamingFileFromSparseFeatures */
-%include <shogun/io/streaming/StreamingFileFromSparseFeatures.h>
+%include <io/streaming/StreamingFileFromSparseFeatures.h>
 namespace shogun
 {
 #ifdef USE_BOOL
@@ -77,7 +77,7 @@ namespace shogun
 }
 
 /* Template Class StreamingFileFromDenseFeatures */
-%include <shogun/io/streaming/StreamingFileFromDenseFeatures.h>
+%include <io/streaming/StreamingFileFromDenseFeatures.h>
 namespace shogun
 {
 #ifdef USE_BOOL
@@ -118,19 +118,19 @@ namespace shogun
 #endif
 }
 
-%include <shogun/io/CSVFile.h>
-%include <shogun/io/LibSVMFile.h>
-%include <shogun/io/streaming/StreamingAsciiFile.h>
-%include <shogun/classifier/vw/VwParser.h>
-%include <shogun/io/streaming/StreamingVwFile.h>
-%include <shogun/io/streaming/StreamingVwCacheFile.h>
-%include <shogun/io/BinaryFile.h>
-%include <shogun/io/HDF5File.h>
-%include <shogun/io/SerializableFile.h>
-%include <shogun/io/SerializableAsciiFile.h>
-%include <shogun/io/SerializableHdf5File.h>
-%include <shogun/io/SerializableJsonFile.h>
-%include <shogun/io/SerializableXmlFile.h>
+%include <io/CSVFile.h>
+%include <io/LibSVMFile.h>
+%include <io/streaming/StreamingAsciiFile.h>
+%include <classifier/vw/VwParser.h>
+%include <io/streaming/StreamingVwFile.h>
+%include <io/streaming/StreamingVwCacheFile.h>
+%include <io/BinaryFile.h>
+%include <io/HDF5File.h>
+%include <io/SerializableFile.h>
+%include <io/SerializableAsciiFile.h>
+%include <io/SerializableHdf5File.h>
+%include <io/SerializableJsonFile.h>
+%include <io/SerializableXmlFile.h>
 
-%include <shogun/io/SimpleFile.h>
-%include <shogun/io/MemoryMappedFile.h>
+%include <io/SimpleFile.h>
+%include <io/MemoryMappedFile.h>

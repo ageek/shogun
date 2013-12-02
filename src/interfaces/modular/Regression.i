@@ -26,15 +26,15 @@
 
 
 /* Include Class Headers to make them visible from within the target language */
-%include <shogun/regression/Regression.h>
-%include <shogun/regression/KernelRidgeRegression.h>
-%include <shogun/regression/LinearRidgeRegression.h>
-%include <shogun/regression/LeastSquaresRegression.h>
-%include <shogun/regression/LeastAngleRegression.h>
-%include <shogun/regression/svr/LibSVR.h>
-%include <shogun/regression/svr/LibLinearRegression.h>
-%include <shogun/classifier/mkl/MKL.h>
-%include <shogun/regression/svr/MKLRegression.h>
+%include <regression/Regression.h>
+%include <regression/KernelRidgeRegression.h>
+%include <regression/LinearRidgeRegression.h>
+%include <regression/LeastSquaresRegression.h>
+%include <regression/LeastAngleRegression.h>
+%include <regression/svr/LibSVR.h>
+%include <regression/svr/LibLinearRegression.h>
+%include <classifier/mkl/MKL.h>
+%include <regression/svr/MKLRegression.h>
 #ifdef USE_SVMLIGHT
-%include <shogun/regression/svr/SVRLight.h>
+%include <regression/svr/SVRLight.h>
 #endif //USE_SVMLIGHT

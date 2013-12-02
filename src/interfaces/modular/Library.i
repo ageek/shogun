@@ -42,15 +42,15 @@
 %ignore NO_CHILD;
 
 /* Templated Datatype Classes */
-%include <shogun/lib/DataType.h>
-%include <shogun/lib/SGReferencedData.h>
-%include <shogun/lib/SGVector.h>
-%include <shogun/lib/SGMatrix.h>
-%include <shogun/lib/SGSparseVector.h>
-%include <shogun/lib/SGSparseMatrix.h>
-%include <shogun/lib/SGString.h>
-%include <shogun/lib/SGStringList.h>
-%include <shogun/lib/SGNDArray.h>
+%include <lib/DataType.h>
+%include <lib/SGReferencedData.h>
+%include <lib/SGVector.h>
+%include <lib/SGMatrix.h>
+%include <lib/SGSparseVector.h>
+%include <lib/SGSparseMatrix.h>
+%include <lib/SGString.h>
+%include <lib/SGStringList.h>
+%include <lib/SGNDArray.h>
 namespace shogun
 {
 #ifdef USE_BOOL
@@ -340,8 +340,8 @@ namespace shogun
 
 /* Include Class Headers to make them visible from within the target language */
 /* Template Class DynamicArray */
-%include <shogun/lib/DynamicArray.h>
-%include <shogun/base/DynArray.h>
+%include <lib/DynamicArray.h>
+%include <base/DynArray.h>
 namespace shogun
 {
 #ifdef USE_CHAR
@@ -377,32 +377,32 @@ namespace shogun
         %template(DynamicPlifArray) DynArray<shogun::CPlifBase*>;
 }
 /* Template Class GCArray */
-%include <shogun/lib/GCArray.h>
+%include <lib/GCArray.h>
 namespace shogun
 {
         %template(PlifGCArray) CGCArray<shogun::CPlifBase*>;
 }
 
 /* Hash */
-%include <shogun/lib/Hash.h>
+%include <lib/Hash.h>
 
-%include <shogun/lib/Tokenizer.h>
-%include <shogun/lib/DelimiterTokenizer.h>
-%include <shogun/lib/NGramTokenizer.h>
-%include <shogun/lib/Cache.h>
-%include <shogun/lib/List.h>
-%include <shogun/lib/Signal.h>
-%include <shogun/lib/Time.h>
-%include <shogun/lib/Trie.h>
-%include <shogun/lib/Compressor.h>
-%include <shogun/lib/StructuredDataTypes.h>
-%include <shogun/lib/StructuredData.h>
-%include <shogun/lib/DynamicObjectArray.h>
-%include <shogun/lib/IndexBlock.h>
-%include <shogun/lib/IndexBlockRelation.h>
-%include <shogun/lib/IndexBlockGroup.h>
-%include <shogun/lib/IndexBlockTree.h>
-%include <shogun/lib/Data.h>
+%include <lib/Tokenizer.h>
+%include <lib/DelimiterTokenizer.h>
+%include <lib/NGramTokenizer.h>
+%include <lib/Cache.h>
+%include <lib/List.h>
+%include <lib/Signal.h>
+%include <lib/Time.h>
+%include <lib/Trie.h>
+%include <lib/Compressor.h>
+%include <lib/StructuredDataTypes.h>
+%include <lib/StructuredData.h>
+%include <lib/DynamicObjectArray.h>
+%include <lib/IndexBlock.h>
+%include <lib/IndexBlockRelation.h>
+%include <lib/IndexBlockGroup.h>
+%include <lib/IndexBlockTree.h>
+%include <lib/Data.h>
 
 /* Computation framework */
 
@@ -410,17 +410,17 @@ namespace shogun
 %rename (IndependentComputationEngine) CIndependentComputationEngine;
 %rename (SerialComputationEngine) CSerialComputationEngine;
 
-%include <shogun/lib/computation/engine/IndependentComputationEngine.h>
-%include <shogun/lib/computation/engine/SerialComputationEngine.h>
+%include <lib/computation/engine/IndependentComputationEngine.h>
+%include <lib/computation/engine/SerialComputationEngine.h>
 
 /* Independent compution-job */
 %rename (IndependentJob) CIndepenentJob;
-%include <shogun/lib/computation/job/IndependentJob.h>
+%include <lib/computation/job/IndependentJob.h>
 
 /* Independent computation-job results */
 %rename (JobResult) CJobResult;
-%include <shogun/lib/computation/jobresult/JobResult.h>
-%include <shogun/lib/computation/jobresult/ScalarResult.h>
+%include <lib/computation/jobresult/JobResult.h>
+%include <lib/computation/jobresult/ScalarResult.h>
 namespace shogun
 {
 #ifdef USE_CHAR
@@ -458,7 +458,7 @@ namespace shogun
 #endif
 }
 
-%include <shogun/lib/computation/jobresult/VectorResult.h>
+%include <lib/computation/jobresult/VectorResult.h>
 namespace shogun
 {
 #ifdef USE_CHAR

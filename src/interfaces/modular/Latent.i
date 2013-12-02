@@ -23,10 +23,10 @@
 
 
 /* Include Class Headers to make them visible from within the target language */
-%include <shogun/latent/LatentModel.h>
+%include <latent/LatentModel.h>
 
-%include <shogun/latent/DirectorLatentModel.h>
+%include <latent/DirectorLatentModel.h>
 
-%include <shogun/machine/LinearLatentMachine.h>
+%include <machine/LinearLatentMachine.h>
 
-%include <shogun/latent/LatentSVM.h>
+%include <latent/LatentSVM.h>

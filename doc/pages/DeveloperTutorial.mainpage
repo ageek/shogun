@@ -167,7 +167,7 @@ wrappers)
 
 \verbatim
 %{
-#include <shogun/kernel/ReverseLinearKernel.h>
+#include <kernel/ReverseLinearKernel.h>
 %}
 \endverbatim
 
@@ -180,7 +180,7 @@ then remove the C prefix (if you had one)
 and finally tell swig to wrap all functions found in the header
 
 \verbatim
-%include <shogun/kernel/ReverseLinearKernel.h>
+%include <kernel/ReverseLinearKernel.h>
 \endverbatim
 
 In case you got your object working we will happily integrate it into shogun

@@ -22,8 +22,8 @@
 %rename(GMM) CGMM;
 
 /* Include Class Headers to make them visible from within the target language */
-%include <shogun/machine/Machine.h>
-%include <shogun/machine/DistanceMachine.h>
-%include <shogun/clustering/KMeans.h>
-%include <shogun/clustering/Hierarchical.h>
-%include <shogun/clustering/GMM.h>
+%include <machine/Machine.h>
+%include <machine/DistanceMachine.h>
+%include <clustering/KMeans.h>
+%include <clustering/Hierarchical.h>
+%include <clustering/GMM.h>

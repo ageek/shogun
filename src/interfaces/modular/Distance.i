@@ -46,12 +46,12 @@
 %rename(CustomMahalanobisDistance) CCustomMahalanobisDistance;
 
 /* Include Class Headers to make them visible from within the target language */
-%include <shogun/distance/Distance.h>
-%include <shogun/distance/CustomDistance.h>
-%include <shogun/distance/KernelDistance.h>
+%include <distance/Distance.h>
+%include <distance/CustomDistance.h>
+%include <distance/KernelDistance.h>
 
 /* Templates Class DenseDistance*/
-%include <shogun/distance/DenseDistance.h>
+%include <distance/DenseDistance.h>
 namespace shogun
 {
 #ifdef USE_CHAR
@@ -70,7 +70,7 @@ namespace shogun
 }
 
 /* Templates Class SparseDistance*/
-%include <shogun/distance/SparseDistance.h>
+%include <distance/SparseDistance.h>
 namespace shogun
 {
 #ifdef USE_CHAR
@@ -88,7 +88,7 @@ namespace shogun
 }
 
 /* Templates Class StringDistance*/
-%include <shogun/distance/StringDistance.h>
+%include <distance/StringDistance.h>
 namespace shogun
 {
 #ifdef USE_CHAR
@@ -108,22 +108,22 @@ namespace shogun
 #endif
 }
 
-%include <shogun/distance/RealDistance.h>
-%include <shogun/distance/CanberraMetric.h>
-%include <shogun/distance/ChebyshewMetric.h>
-%include <shogun/distance/GeodesicMetric.h>
-%include <shogun/distance/JensenMetric.h>
-%include <shogun/distance/ManhattanMetric.h>
-%include <shogun/distance/MinkowskiMetric.h>
-%include <shogun/distance/HammingWordDistance.h>
-%include <shogun/distance/ManhattanWordDistance.h>
-%include <shogun/distance/CanberraWordDistance.h>
-%include <shogun/distance/EuclideanDistance.h>
-%include <shogun/distance/SparseEuclideanDistance.h>
-%include <shogun/distance/BrayCurtisDistance.h>
-%include <shogun/distance/ChiSquareDistance.h>
-%include <shogun/distance/CosineDistance.h>
-%include <shogun/distance/TanimotoDistance.h>
-%include <shogun/distance/MahalanobisDistance.h>
-%include <shogun/distance/DirectorDistance.h>
-%include <shogun/distance/CustomMahalanobisDistance.h>
+%include <distance/RealDistance.h>
+%include <distance/CanberraMetric.h>
+%include <distance/ChebyshewMetric.h>
+%include <distance/GeodesicMetric.h>
+%include <distance/JensenMetric.h>
+%include <distance/ManhattanMetric.h>
+%include <distance/MinkowskiMetric.h>
+%include <distance/HammingWordDistance.h>
+%include <distance/ManhattanWordDistance.h>
+%include <distance/CanberraWordDistance.h>
+%include <distance/EuclideanDistance.h>
+%include <distance/SparseEuclideanDistance.h>
+%include <distance/BrayCurtisDistance.h>
+%include <distance/ChiSquareDistance.h>
+%include <distance/CosineDistance.h>
+%include <distance/TanimotoDistance.h>
+%include <distance/MahalanobisDistance.h>
+%include <distance/DirectorDistance.h>
+%include <distance/CustomMahalanobisDistance.h>

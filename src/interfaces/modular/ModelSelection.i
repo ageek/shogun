@@ -25,9 +25,9 @@
 %rename(ModelSelectionParameters) CModelSelectionParameters;
 %rename(ParameterCombination) CParameterCombination;
 
-%include <shogun/modelselection/ModelSelection.h>
-%include <shogun/modelselection/GridSearchModelSelection.h>
-%include <shogun/modelselection/RandomSearchModelSelection.h>
-%include <shogun/modelselection/ParameterCombination.h>
-%include <shogun/modelselection/ModelSelectionParameters.h>
-%include <shogun/modelselection/GradientModelSelection.h>
+%include <modelselection/ModelSelection.h>
+%include <modelselection/GridSearchModelSelection.h>
+%include <modelselection/RandomSearchModelSelection.h>
+%include <modelselection/ParameterCombination.h>
+%include <modelselection/ModelSelectionParameters.h>
+%include <modelselection/GradientModelSelection.h>

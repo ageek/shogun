@@ -19,10 +19,10 @@
 
 
 /* Include Class Headers to make them visible from within the target language */
-%include <shogun/ensemble/CombinationRule.h>
+%include <ensemble/CombinationRule.h>
 
-%include <shogun/ensemble/WeightedMajorityVote.h>
+%include <ensemble/WeightedMajorityVote.h>
 
-%include <shogun/ensemble/MajorityVote.h>
+%include <ensemble/MajorityVote.h>
 
-%include <shogun/ensemble/MeanRule.h>
+%include <ensemble/MeanRule.h>

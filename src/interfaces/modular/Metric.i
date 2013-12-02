@@ -13,4 +13,4 @@
 %rename(LMNN) CLMNN;
 
 /* Include Class Headers to make them visible from within the target language */
-%include <shogun/metric/LMNN.h>
+%include <metric/LMNN.h>

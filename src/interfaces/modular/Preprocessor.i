@@ -30,11 +30,11 @@
 %newobject shogun::CKernelPCA::apply_to_string_features;
 
 /* Include Class Headers to make them visible from within the target language */
-%include <shogun/lib/Compressor.h>
-%include <shogun/preprocessor/Preprocessor.h>
+%include <lib/Compressor.h>
+%include <preprocessor/Preprocessor.h>
 
 /* Templates Class DensePreprocessor*/
-%include <shogun/preprocessor/DensePreprocessor.h>
+%include <preprocessor/DensePreprocessor.h>
 namespace shogun
 {
 #ifdef USE_FLOAT64
@@ -58,10 +58,10 @@ namespace shogun
 }
 
 /* Templates Class DimensionReductionPreprocessor */
-%include <shogun/preprocessor/DimensionReductionPreprocessor.h>
+%include <preprocessor/DimensionReductionPreprocessor.h>
 
 /* Templates Class StringPreprocessor*/
-%include <shogun/preprocessor/StringPreprocessor.h>
+%include <preprocessor/StringPreprocessor.h>
 namespace shogun
 {
 #ifdef USE_UINT64
@@ -79,7 +79,7 @@ namespace shogun
 }
 
 /* Templates Class DecompressString*/
-%include <shogun/preprocessor/DecompressString.h>
+%include <preprocessor/DecompressString.h>
 namespace shogun
 {
 #ifdef USE_UINT64
@@ -95,19 +95,19 @@ namespace shogun
     %template(DecompressCharString) CDecompressString<char>;
 #endif
 }
-%include <shogun/preprocessor/SparsePreprocessor.h>
-%include <shogun/preprocessor/NormOne.h>
-%include <shogun/preprocessor/SumOne.h>
-%include <shogun/preprocessor/LogPlusOne.h>
-%include <shogun/preprocessor/PruneVarSubMean.h>
-%include <shogun/preprocessor/RandomFourierGaussPreproc.h>
-%include <shogun/preprocessor/HomogeneousKernelMap.h>
-%include <shogun/preprocessor/PNorm.h>
-%include <shogun/preprocessor/RescaleFeatures.h>
+%include <preprocessor/SparsePreprocessor.h>
+%include <preprocessor/NormOne.h>
+%include <preprocessor/SumOne.h>
+%include <preprocessor/LogPlusOne.h>
+%include <preprocessor/PruneVarSubMean.h>
+%include <preprocessor/RandomFourierGaussPreproc.h>
+%include <preprocessor/HomogeneousKernelMap.h>
+%include <preprocessor/PNorm.h>
+%include <preprocessor/RescaleFeatures.h>
 
-%include <shogun/preprocessor/PCA.h>
-%include <shogun/preprocessor/KernelPCA.h>
+%include <preprocessor/PCA.h>
+%include <preprocessor/KernelPCA.h>
 
-%include <shogun/preprocessor/SortUlongString.h>
-%include <shogun/preprocessor/SortWordString.h>
+%include <preprocessor/SortUlongString.h>
+%include <preprocessor/SortWordString.h>
 

@@ -7,7 +7,7 @@
  * Copyright (c) 2012-2013 Sergey Lisitsyn
  */
 
-#include <shogun/lib/tapkee/tapkee_shogun.hpp>
+#include <lib/tapkee/tapkee_shogun.hpp>
 
 #ifdef HAVE_EIGEN3
 
