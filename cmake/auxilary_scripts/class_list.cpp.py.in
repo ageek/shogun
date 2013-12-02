@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 3 of the License, or
@@ -11,9 +9,11 @@
 class_str='class'
 types=["BOOL", "CHAR", "INT8", "UINT8", "INT16", "UINT16", "INT32", "UINT32",
 		"INT64", "UINT64", "FLOAT32", "FLOAT64", "FLOATMAX", "COMPLEX128"]
-config_tests=["HAVE_HDF5", "HAVE_JSON", "HAVE_XML", "HAVE_LAPACK", "USE_CPLEX",
-	"USE_SVMLIGHT", "USE_GLPK", "USE_LZO", "USE_GZIP", "USE_BZIP2", "USE_LZMA",
-	"USE_MOSEK", "HAVE_EIGEN3", "HAVE_COLPACK", "HAVE_NLOPT", "HAVE_PROTOBUF"]
+config_tests=["SHOGUN_HAVE_HDF5", "SHOGUN_HAVE_JSON", "SHOGUN_HAVE_XML",
+	"SHOGUN_HAVE_LAPACK", "SHOGUN_USE_CPLEX", "SHOGUN_USE_SVMLIGHT",
+	"SHOGUN_USE_GLPK", "SHOGUN_USE_LZO", "SHOGUN_USE_GZIP", "SHOGUN_USE_BZIP2",
+	"SHOGUN_USE_LZMA", "SHOGUN_USE_MOSEK", "SHOGUN_HAVE_EIGEN3",
+	"SHOGUN_HAVE_COLPACK", "SHOGUN_HAVE_NLOPT", "SHOGUN_HAVE_PROTOBUF"]
 
 SHOGUN_TEMPLATE_CLASS = "SHOGUN_TEMPLATE_CLASS"
 SHOGUN_BASIC_CLASS = "SHOGUN_BASIC_CLASS"
