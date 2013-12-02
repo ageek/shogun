@@ -15,8 +15,7 @@
 #   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #####  Define Shogun's object-targets  #####
-SET( ${PROJECT_VAR_PREFIX}OBJECT_TARGETS "" )
-
+SET( ${PROJECT_VAR_PREFIX}OBJECT_TARGETS CACHE INTERNAL "Tracking-var for object targets" FORCE )
 
 #####  Define Shogun's C[XX]FLAGS  #####
 SET( ${PROJECT_VAR_PREFIX}CFLAGS "-std=c++11 -Wall -Wno-unused-parameter -Wformat" )
@@ -35,4 +34,4 @@ SET( SHOGUN_LDFLAGS "" )
 
 
 #####  Define Shogun's include-dirs  #####
-SET( SHOGUN_INCLUDE_DIRS "" )
+SET( SHOGUN_INCLUDE_DIRS "" CACHE INTERNAL "Internal include directories" FORCE )
