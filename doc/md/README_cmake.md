@@ -66,7 +66,7 @@ $ CC=/path/to/gcc CXX=/path/to/g++ cmake ..
 ```
 
 * Under OS X one often has the same Python major versions installed in `/usr` and `/usr/local` via brew etc,
-so one might observe crashes if the wrong Python version is linked against. To use a custom Python installation 
+so one might observe crashes if the wrong Python version is linked against. To use a custom Python installation
 for Python bindings one would under brew use:
 
 ```

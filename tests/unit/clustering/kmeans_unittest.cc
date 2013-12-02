@@ -27,9 +27,9 @@ TEST(KMeans, manual_center_initialization_test)
 	rect(1,1) = 10;
 	rect(1,2) = 0;
 	rect(1,3) = 10;
-	
+
 	/*choose local minima points (0,5) (2,5) as initial centers*/
-	float64_t vec[4] = {0,5,2,5};	
+	float64_t vec[4] = {0,5,2,5};
 	SGVector<float64_t> initial_centers(vec,4,false);
 
 	CDenseFeatures<float64_t>* features = new CDenseFeatures<float64_t>(rect);
@@ -46,16 +46,16 @@ TEST(KMeans, manual_center_initialization_test)
 		EXPECT_EQ(0.000000, result->get_label(1));
 		EXPECT_EQ(1.000000, result->get_label(2));
 		EXPECT_EQ(1.000000, result->get_label(3));
-	
+
 		CDenseFeatures<float64_t>* learnt_centers= (CDenseFeatures<float64_t>*) distance->get_lhs();
 
 		SGMatrix<float64_t> learnt_centers_matrix= learnt_centers->get_feature_matrix();
-	
+
 		EXPECT_EQ(0, learnt_centers_matrix(0,0));
 		EXPECT_EQ(2, learnt_centers_matrix(0,1));
 		EXPECT_EQ(5, learnt_centers_matrix(1,0));
 		EXPECT_EQ(5, learnt_centers_matrix(1,1));
-		
+
 		SG_UNREF(learnt_centers);
 		SG_UNREF(result);
 	}

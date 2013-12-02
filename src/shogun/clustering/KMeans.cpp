@@ -58,7 +58,7 @@ bool CKMeans::set_initial_centers(SGVector<float64_t> centers)
 	dimensions = ((CDenseFeatures<float64_t>*) distance->get_lhs())->get_num_features();
 	REQUIRE(centers.vlen == k*dimensions, "Vector dimension of initial cluster centers supplied does not match expectation");
 	mus_initial = centers;
-	return true;	
+	return true;
 }
 
 bool CKMeans::train_machine(CFeatures* data)
@@ -80,9 +80,9 @@ bool CKMeans::train_machine(CFeatures* data)
 	for (int32_t i=0; i<num; i++)
 		Weights.vector[i]=1.0;
 
-	if (mus_initial.vlen>0) 
+	if (mus_initial.vlen>0)
 		clustknb(true, mus_initial);
-	else 
+	else
 		clustknb(false, NULL);
 
 	return true;
@@ -263,7 +263,7 @@ void CKMeans::clustknb(bool use_old_mus, float64_t *mus_start)
 
 		/// set rhs to mus_start
 		rhs_mus->copy_feature_matrix(SGMatrix<float64_t>(mus_start,dimensions,k,false));
-		
+
 		for(int32_t idx=0;idx<XSize;idx++)
 		{
 			for(int32_t m=0;m<k;m++)
