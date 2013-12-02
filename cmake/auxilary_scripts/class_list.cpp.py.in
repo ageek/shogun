@@ -249,7 +249,7 @@ def write_templated_file(fname, substitutes):
 
 def read_config():
 	config=dict()
-	for line in open('lib/config.h').readlines():
+	for line in open('@CMAKE_BINARY_DIR@/include/shogun/lib/config.h').readlines():
 		if line=='\n':
 			continue
 		l=[l.strip() for l in line.split()]
