@@ -16,8 +16,10 @@
 
 
 #####  Add current dir to Shogun's include-dirs  #####
-LIST( APPEND ${PROJECT_VAR_PREFIX}_INCLUDE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}" )
-LIST( APPEND ${PROJECT_VAR_PREFIX}_INCLUDE_DIRS "${CMAKE_CURRENT_BINARY_DIR}" )
+SET( ${PROJECT_VAR_PREFIX}INCLUDE_DIRS
+     ${${PROJECT_VAR_PREFIX}INCLUDE_DIRS}
+     "${CMAKE_CURRENT_SOURCE_DIR}" "${CMAKE_CURRENT_BINARY_DIR}"
+     CACHE INTERNAL "Internal include directories" )
 
 
 #####  Include subdirs for processing  #####
