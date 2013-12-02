@@ -13,3 +13,22 @@
 #
 #   You should have received a copy of the GNU General Public License
 #   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+#####  Generate auto-sources  #####
+#FILE( GLOB _AUTOSOURCES )
+
+
+#####  Set needed include directories  #####
+INCLUDE_DIRECTORIES( ${${PROJECT_VAR_PREFIX}INCLUDE_DIRS} )
+
+
+#####  Create object-target  #####
+STRING( REGEX REPLACE "^.*shogun/" "" _TARGET "${CMAKE_CURRENT_SOURCE_DIR}" )
+SET( _TARGET "${PROJECT_NAME}-${_TARGET}" )
+#LIST( APPEND ${PROJECT_VAR_PREFIX}OBJECT_TARGETS "$<TARGET_OBJECTS:${_TARGET}>" )
+SET( ${PROJECT_VAR_PREFIX}OBJECT_TARGETS
+     ${${PROJECT_VAR_PREFIX}OBJECT_TARGETS} "$<TARGET_OBJECTS:${_TARGET}>"
+     CACHE INTERNAL "Tracking-var for object targets" )
+FILE( GLOB _SOURCES "*.c" "*.cpp" )
+ADD_LIBRARY( ${_TARGET} OBJECT ${_SOURCES} )
