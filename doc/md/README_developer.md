@@ -14,7 +14,7 @@ This can be easily done as a number of examples in examples/libshogun document.
 The simplest libshogun based program would be
 
 ```
-#include <shogun/base/init.h>
+#include <base/init.h>
 
 int main(int argc, char** argv)
 {
@@ -57,13 +57,13 @@ e.g. we create some features and a gaussian kernel
 
 
 ```
-#include <shogun/labels/Labels.h>
-#include <shogun/features/DenseFeatures.h>
-#include <shogun/kernel/GaussianKernel.h>
-#include <shogun/classifier/svm/LibSVM.h>
-#include <shogun/base/init.h>
-#include <shogun/lib/common.h>
-#include <shogun/io/SGIO.h>
+#include <labels/Labels.h>
+#include <features/DenseFeatures.h>
+#include <kernel/GaussianKernel.h>
+#include <classifier/svm/LibSVM.h>
+#include <base/init.h>
+#include <lib/common.h>
+#include <io/SGIO.h>
 
 using namespace shogun;
 
