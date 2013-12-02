@@ -13,3 +13,16 @@
 #
 #   You should have received a copy of the GNU General Public License
 #   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+#####  Autogenerate headers  #####
+FILE( GLOB _AUTOGEN_FILES "*.in" )
+
+FOREACH( _AUTOGEN ${_AUTOGEN_FILES} )
+  STRING( REGEX REPLACE "^${CMAKE_CURRENT_SOURCE_DIR}/" "" _AUTOGEN "${_AUTOGEN}")
+  STRING( REGEX REPLACE ".in$" "" _AUTOGEN "${_AUTOGEN}")
+  CONFIGURE_FILE(
+    ${CMAKE_CURRENT_SOURCE_DIR}/${_AUTOGEN}.in
+    ${CMAKE_CURRENT_BINARY_DIR}/${_AUTOGEN}
+    @ONLY )
+ENDFOREACH( _AUTOGEN ${_AUTOGEN_FILES} )
