@@ -1,0 +1,51 @@
+#   CMake-Config file for SHOGUN Machine Learning Toolbox
+#   Copyright (C) 2013  Björn Esser  <besser82@fedoraproject.org>
+#
+#   This program is free software: you can redistribute it and/or modify
+#   it under the terms of the GNU General Public License as published by
+#   the Free Software Foundation, either version 3 of the License, or
+#   (at your option) any later version.
+#
+#   This program is distributed in the hope that it will be useful,
+#   but WITHOUT ANY WARRANTY; without even the implied warranty of
+#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#   GNU General Public License for more details.
+#
+#   You should have received a copy of the GNU General Public License
+#   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+#
+# It defines the following variables
+# @PROJECT_NAME_UPPER@_INCLUDE_DIRS	- include directories for lib@PROJECT_NAME@
+# @PROJECT_NAME_UPPER@_LIBRARIES	- libraries to link against
+# @PROJECT_NAME_UPPER@_LIBRARIES_DIR	- installation directory of lib@PROJECT_NAME@.so
+# @PROJECT_NAME_UPPER@_CXXFLAGS		- flags to pass to the C-compiler
+# @PROJECT_NAME_UPPER@_CXXFLAGS		- flags to pass to the C++-compiler
+# @PROJECT_NAME_UPPER@_LDFLAGS		- flags to pass to the linker
+
+#####  Compute paths  #####
+GET_FILENAME_COMPONENT( @PROJECT_NAME_UPPER@_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH )
+IF( EXISTS "${@PROJECT_NAME_UPPER@_CMAKE_DIR}/CMakeCache.txt" )
+  INCLUDE( "${@PROJECT_NAME_UPPER@_CMAKE_DIR}/configs/@PROJECT_NAME_CAPITAL@BuildTreeSettings.cmake" )
+ELSE()
+  SET( @PROJECT_NAME_UPPER@_INCLUDE_DIRS "@INCLUDE_INSTALL_DIR@/@PROJECT_NAME@" )
+ENDIF()
+
+
+#####  Our library dependencies (contains definitions for IMPORTED targets)  #####
+INCLUDE( "${@PROJECT_NAME_UPPER@_CMAKE_DIR}/@PROJECT_NAME_CAPITAL@LibraryDepends.cmake" )
+
+
+#####  These are IMPORTED targets created by @PROJECT_NAME_CAPITAL@LibraryDepends.cmake  #####
+SET( @PROJECT_NAME_UPPER@_LIBRARIES "@PROJECT_NAME@" )
+SET( @PROJECT_NAME_UPPER@_LIBRARIES_DIR "@LIB_INSTALL_DIR@" )
+
+
+#####  These are the flags for compiler and linker  #####
+SET( @PROJECT_NAME_UPPER@_CFLAGS "-I\"${@PROJECT_NAME_UPPER@_INCLUDE_DIRS}\"" )
+SET( @PROJECT_NAME_UPPER@_CXXFLAGS "${@PROJECT_NAME_UPPER@_CFLAGS}" )
+SET( @PROJECT_NAME_UPPER@_LDFLAGS "-L\"${@PROJECT_NAME_UPPER@_LIBRARIES_DIR}\" -l${@PROJECT_NAME_UPPER@_LIBRARIES}" )
+
+
+#####  Give a reply about @PROJECT_NAME_UPPER@ has been found  #####
+MESSAGE( STATUS "Found @PROJECT_NAME_CAPITAL@: ${IMPORTED_LOCATION_RELEASE} (Version: \"@VERSION_EXPORT@\")" )
