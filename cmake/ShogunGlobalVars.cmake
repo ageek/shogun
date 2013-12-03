@@ -17,16 +17,21 @@
 #####  Define Shogun's object-targets  #####
 SET( ${PROJECT_VAR_PREFIX}OBJECT_TARGETS CACHE INTERNAL "Tracking-var for object targets" FORCE )
 
+#####  Define Shogun's internal object-targets  #####
+SET( ${PROJECT_VAR_PREFIX}OBJECT_TARGETS_INTERNAL CACHE INTERNAL "Tracking-var for internal object targets" FORCE )
+
 #####  Define Shogun's C[XX]FLAGS  #####
-SET( ${PROJECT_VAR_PREFIX}CFLAGS "-std=c++11 -Wall -Wno-unused-parameter -Wformat" )
-SET( ${PROJECT_VAR_PREFIX}CFLAGS "${${PROJECT_VAR_PREFIX}CFLAGS} -Wformat-security -Wparentheses" )
-SET( ${PROJECT_VAR_PREFIX}CFLAGS "${${PROJECT_VAR_PREFIX}CFLAGS} -Wshadow -Wno-unknown-pragmas" )
-SET( ${PROJECT_VAR_PREFIX}CFLAGS "${${PROJECT_VAR_PREFIX}CFLAGS} -Wno-deprecated -fexpensive-optimizations" )
-SET( ${PROJECT_VAR_PREFIX}CFLAGS "${${PROJECT_VAR_PREFIX}CFLAGS} -frerun-cse-after-loop -fcse-follow-jumps" )
-SET( ${PROJECT_VAR_PREFIX}CFLAGS "${${PROJECT_VAR_PREFIX}CFLAGS} -finline-functions -fschedule-insns2" )
-SET( ${PROJECT_VAR_PREFIX}CFLAGS "${${PROJECT_VAR_PREFIX}CFLAGS} -fthread-jumps -fforce-addr" )
-SET( ${PROJECT_VAR_PREFIX}CFLAGS "${${PROJECT_VAR_PREFIX}CFLAGS} -fstrength-reduce -funroll-loops" )
-SET( ${PROJECT_VAR_PREFIX}CXXFLAGS "${${PROJECT_VAR_PREFIX}CFLAGS}" )
+
+#####  These control the warning-verbosity of the compiler
+SET( ${PROJECT_VAR_PREFIX}CFLAGS "-Wall -Wextra" )
+SET( ${PROJECT_VAR_PREFIX}CFLAGS "${${PROJECT_VAR_PREFIX}CFLAGS} -Wformat-security" )
+SET( ${PROJECT_VAR_PREFIX}CFLAGS "${${PROJECT_VAR_PREFIX}CFLAGS} -Wshadow" )
+
+#####  These control the code-optimization
+SET( ${PROJECT_VAR_PREFIX}CFLAGS "${${PROJECT_VAR_PREFIX}CFLAGS} -fstrength-reduce" )
+
+#####  This is sets the C++-std to be used
+SET( ${PROJECT_VAR_PREFIX}CXXFLAGS "-std=c++11 ${${PROJECT_VAR_PREFIX}CFLAGS}" )
 
 
 #####  Define Shogun's LDFLAGS  #####
