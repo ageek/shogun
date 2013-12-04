@@ -15,16 +15,20 @@
 #   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
-#####  Give a message about the process  #####
-STRING( REGEX REPLACE ".*/" "" _EXAMPLE "${CMAKE_CURRENT_SOURCE_DIR}" )
-MESSAGE( STATUS "Generating documented examples for ${_EXAMPLE}")
+#####  Initialize vars  #####
+SET( _EXAMPLE "" )
+SET( _EXAMPLE_TYPE "" )
+SET( _EXAMPLES "" )
 
 
-#####  Determine static or modular type  #####
-SET( _EXAMPLE_TYPE "modular" )
-IF( "${CMAKE_CURRENT_SOURCE_DIR}" MATCHES ".*static$" )
-  SET( _EXAMPLE_TYPE "static" )
-ENDIF( "${CMAKE_CURRENT_SOURCE_DIR}" MATCHES ".*static$" )
+#####  Determine static or modular type and give a message about the process  #####
+FOREACH( _MATCH "modular" "static" )
+  IF( "${CMAKE_CURRENT_SOURCE_DIR}" MATCHES ".*${_MATCH}$" )
+    SET( _EXAMPLE_TYPE "${_MATCH}" )
+    STRING( REGEX REPLACE ".*/" "" _CURDIR "${CMAKE_CURRENT_SOURCE_DIR}" )
+    MESSAGE( STATUS "Generating documented examples for ${_CURDIR}")
+  ENDIF( "${CMAKE_CURRENT_SOURCE_DIR}" MATCHES ".*${_MATCH}$" )
+ENDFOREACH( _MATCH "modular" "static" )
 
 
 #####  Create a list with all examples in current dir  #####
@@ -78,3 +82,11 @@ FOREACH( _EXAMPLE ${_EXAMPLES} )
   ENDIF( NOT EXISTS "${CMAKE_CURRENT_BINARY_DIR}/${_EXAMPLE}" )
 
 ENDFOREACH( _EXAMPLE ${_EXAMPLES} )
+
+
+#####  Include subdirs for processing  #####
+GET_CMAKE_SUBDIRS( _SUBDIRS "${CMAKE_CURRENT_SOURCE_DIR}" )
+
+FOREACH( _SUBDIR ${_SUBDIRS} )
+  ADD_SUBDIRECTORY( ${_SUBDIR} )
+ENDFOREACH( _SUBDIR ${_SUBDIRS} )
