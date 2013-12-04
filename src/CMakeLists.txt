@@ -17,5 +17,4 @@
 
 #####  Include subdirs for processing  #####
 ADD_SUBDIRECTORY( shogun )
-
-#ADD_SUBDIRECTORY( interfaces )
+ADD_SUBDIRECTORY( interfaces )
