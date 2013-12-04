@@ -13,3 +13,26 @@
 #
 #   You should have received a copy of the GNU General Public License
 #   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+#####  Define comment strings  #####
+SET( CS_COMMENT   "// " )
+SET( JAVA_COMMENT "// " )
+SET( LUA_COMMENT  "-- " )
+SET( M_COMMENT    "% "  )
+SET( PY_COMMENT   "# "  )
+SET( R_COMMENT    "# "  )
+SET( RB_COMMENT   "# "  )
+SET( SG_COMMENT   "% "  )
+
+
+#####  Define descriptions dir  #####
+SET( ${PROJECT_VAR_PREFIX}DESC_DIR "${CMAKE_CURRENT_SOURCE_DIR}/descriptions" )
+
+
+#####  Include subdirs for processing  #####
+GET_CMAKE_SUBDIRS( _SUBDIRS "${CMAKE_CURRENT_SOURCE_DIR}" )
+
+FOREACH( _SUBDIR ${_SUBDIRS} )
+  ADD_SUBDIRECTORY( "${_SUBDIR}" )
+ENDFOREACH( _SUBDIR ${_SUBDIRS} )
