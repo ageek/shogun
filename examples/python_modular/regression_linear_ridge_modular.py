@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 #!/usr/bin/env python
 ###########################################################################
 # linear ridge regression

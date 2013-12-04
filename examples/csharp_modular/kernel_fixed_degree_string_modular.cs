@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 using System;
 
 public class kernel_fixed_degree_string_modular {

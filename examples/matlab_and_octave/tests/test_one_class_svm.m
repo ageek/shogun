@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 %rand('state',sum(100*clock));
 rand('state',123455);
 %sg('loglevel', 'ALL');

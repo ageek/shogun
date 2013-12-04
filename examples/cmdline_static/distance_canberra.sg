@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 % Canberra Metric
 print CanberraMetric
 set_distance CANBERRA REAL

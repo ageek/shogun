@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 function main()
 
 r=10*rand(5)

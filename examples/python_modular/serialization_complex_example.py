@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 #!/usr/bin/env python
 parameter_list=[[10,0.3,2, 1.0, 0.1]]
 

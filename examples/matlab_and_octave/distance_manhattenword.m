@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 addpath('tools');
 fm_train_dna=load_matrix('../data/fm_train_dna.dat');
 fm_test_dna=load_matrix('../data/fm_test_dna.dat');

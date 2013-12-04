@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 library("sg")
 
 fm_train <- t(as.matrix(read.table('../data/fm_train_real.dat')))

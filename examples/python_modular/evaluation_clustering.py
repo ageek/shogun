@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 #!/usr/bin/env python
 def get_dataset():
 	from os.path import exists

@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 library(shogun)
 
 size_cache=as.integer(0)

@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 from tools.load import LoadMatrix
 from sg import sg
 from numpy import *

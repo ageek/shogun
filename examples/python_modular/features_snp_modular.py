@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 #!/usr/bin/env python
 parameter_list=[['../data/snps.dat']]
 

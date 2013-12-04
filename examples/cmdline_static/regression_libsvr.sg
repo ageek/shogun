@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 % LibSVR
 print LibSVR
 set_kernel GAUSSIAN REAL 10 2.1

@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 addpath('tools');
 label_train_twoclass=load_matrix('../data/label_train_twoclass.dat');
 fm_train_real=load_matrix('../data/fm_train_real.dat');

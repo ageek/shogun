@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 % Jensen Metric
 print JensenMetric
 set_distance JENSEN REAL

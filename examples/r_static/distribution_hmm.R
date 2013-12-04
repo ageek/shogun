@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 library("sg")
 
 order <- 3

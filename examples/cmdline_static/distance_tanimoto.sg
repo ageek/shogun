@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 % Tanimoto Distance
 print TanimotoDistance
 set_distance TANIMOTO REAL

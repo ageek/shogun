@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 library(sg)
 
 traindat = c("AGTAA", "CGCCC", "GGCGG", "TGTCT")

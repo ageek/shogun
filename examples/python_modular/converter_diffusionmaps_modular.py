@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 #!/usr/bin/env python
 data = '../data/fm_train_real.dat'
 parameter_list = [[data,10],[data,20]]

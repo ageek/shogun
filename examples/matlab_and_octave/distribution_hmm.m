@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 leng=50;
 rep=5;
 weight=1;

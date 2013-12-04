@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 using System;
 
 public class distribution_linearhmm_modular {

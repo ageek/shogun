@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 #!/usr/bin/env python
 
 strings=['example document 1','example document 2','example document 3','example document 4']

@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 % ManhattanWord Distance
 print ManhattanWordDistance
 

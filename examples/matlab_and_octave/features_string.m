@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 acgt='ACGT';
 dat={acgt([1*ones(1,10) 2*ones(1,10) 3*ones(1,10) 4*ones(1,10) 1])};
 

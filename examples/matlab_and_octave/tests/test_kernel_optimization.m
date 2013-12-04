@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 alphab=[ 'A', 'C', 'G', 'T' ];
 for i=1:100
 rand('state',sum(100*clock));

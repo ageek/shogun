@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 using System;
 
 public class converter_locallylinearembedding_modular {

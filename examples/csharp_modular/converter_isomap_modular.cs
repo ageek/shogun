@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 using System;
 
 public class converter_classicisomap_modular {

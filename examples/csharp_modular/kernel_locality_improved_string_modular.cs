@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 using System;
 
 public class kernel_locality_improved_string_modular {

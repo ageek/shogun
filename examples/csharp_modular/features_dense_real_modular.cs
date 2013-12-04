@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 using System;
 
 public class features_dense_real_modular {

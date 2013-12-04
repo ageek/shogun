@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 % Geodesic Metric
 print GeodesicMetric
 set_distance GEODESIC REAL

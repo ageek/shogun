@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 % GaussianShift
 print GaussianShift
 set_kernel GAUSSIANSHIFT REAL 10 1.4 2 1

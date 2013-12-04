@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 using System;
 
 public class evaluation_contingencytableevaluation_modular {

@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 % Linear String
 print LinearString
 set_kernel LINEAR CHAR 10

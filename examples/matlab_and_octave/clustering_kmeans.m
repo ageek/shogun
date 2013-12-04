@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 addpath('tools');
 fm_train=load_matrix('../data/fm_train_real.dat');
 

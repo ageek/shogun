@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 library("sg")
 
 size_cache <- 10

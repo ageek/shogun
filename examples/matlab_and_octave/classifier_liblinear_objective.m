@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 C=0.1;
 epsilon=1e-3;
 

@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 C=1.2;
 use_bias=false;
 epsilon=1e-5;

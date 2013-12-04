@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 using System;
 
 public class features_string_char_modular {

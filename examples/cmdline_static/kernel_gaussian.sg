@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 % Gaussian
 print Gaussian
 set_kernel GAUSSIAN REAL 10 1.4

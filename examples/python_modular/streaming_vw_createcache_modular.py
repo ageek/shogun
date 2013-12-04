@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 #!/usr/bin/env python
 from modshogun import StreamingVwFile
 from modshogun import StreamingVwCacheFile

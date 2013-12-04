@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 rand('state',0);
 A=rand(3,5);
 A(A<0.7)=0;

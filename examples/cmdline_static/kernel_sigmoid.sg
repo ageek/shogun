@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 % sigmoid
 print Sigmoid
 set_kernel SIGMOID REAL 10 1.2 1.3

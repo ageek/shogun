@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 using System;
 using System.IO;
 

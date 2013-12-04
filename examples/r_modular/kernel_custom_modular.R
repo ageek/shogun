@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 library(shogun)
 
 ## custom

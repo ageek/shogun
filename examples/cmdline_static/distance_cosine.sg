@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 % Cosine Distance
 print CosineDistance
 set_distance COSINE REAL

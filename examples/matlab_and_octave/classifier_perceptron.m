@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 addpath('tools');
 
 % Perceptron

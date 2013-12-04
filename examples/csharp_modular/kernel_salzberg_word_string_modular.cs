@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 using System;
 
 public class kernel_salzberg_word_string_modular {

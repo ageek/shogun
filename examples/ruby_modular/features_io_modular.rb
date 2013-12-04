@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 require 'load'
 require 'modshogun'
 require 'pp'

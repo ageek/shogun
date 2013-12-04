@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 % initialize modular shogun interface
 modshogun
 

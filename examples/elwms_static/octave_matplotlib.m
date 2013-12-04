@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 % uses matplotlib to plot a figure from within octave
 
 A=[[1,2,3];[4,5,6]];

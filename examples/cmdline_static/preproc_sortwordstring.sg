@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 % SortWordString
 print CommWordString
 add_preproc SORTWORDSTRING

@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 % Sparse Linear
 print SparseLinear
 set_kernel LINEAR SPARSEREAL 10 1.3

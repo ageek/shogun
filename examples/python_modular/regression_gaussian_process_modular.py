@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 #!/usr/bin/env python
 from numpy import random,array,sin,round#,sqrt
 #from pylab import plot, show, legend, fill_between

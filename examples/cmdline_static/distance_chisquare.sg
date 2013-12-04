@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 % ChiSquare Distance
 print ChiSquareDistance
 set_distance CHISQUARE REAL

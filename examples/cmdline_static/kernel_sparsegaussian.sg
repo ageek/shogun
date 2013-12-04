@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 % Sparse Gaussian
 print SparseGaussian
 set_kernel GAUSSIAN SPARSEREAL 10 1.4

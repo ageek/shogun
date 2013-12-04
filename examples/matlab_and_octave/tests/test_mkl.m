@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 cache_size=50;
 C=0.000001;
 numtrain=1000;

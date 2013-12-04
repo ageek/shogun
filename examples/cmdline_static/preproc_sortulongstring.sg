@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 % SortUlongString
 print CommUlongString
 add_preproc SORTULONGSTRING

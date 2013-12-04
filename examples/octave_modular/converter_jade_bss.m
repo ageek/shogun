@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 % Blind Source Separation using the Jade Algorithm with Shogun
 %
 % Based on the example from scikit-learn

@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 C=10;
 
 rand('state',17);

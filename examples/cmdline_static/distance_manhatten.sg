@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 % Manhattan Metric
 print ManhattanMetric
 set_distance MANHATTAN REAL

@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 seqlen=100;
 numseq=50000;
 order=2; %max 8, markov chain has in fact of order-1

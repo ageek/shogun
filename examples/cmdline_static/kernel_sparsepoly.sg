@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 % Sparse Poly
 print SparsePoly
 set_kernel POLY SPARSEREAL 10 3 1 1

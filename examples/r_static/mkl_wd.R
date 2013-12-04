@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 library(sg)
 
 acgt <- c("A","C","G","T")

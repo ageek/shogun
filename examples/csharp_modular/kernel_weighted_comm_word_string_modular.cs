@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 using System;
 
 public class kernel_weighted_comm_word_string_modular {

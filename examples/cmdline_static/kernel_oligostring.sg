@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 % Oligo String
 print Oligo
 set_kernel OLIGO CHAR 10 3 1.2

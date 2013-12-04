@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 %demonstrates how to exec python from inside octave in the
 %eierlegendewollmilchsau shogun interface
 

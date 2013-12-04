@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 #!/usr/bin/env python
 traindna = '../data/fm_train_dna.dat'
 testdna = '../data/fm_test_dna.dat'

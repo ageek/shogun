@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 #!/usr/bin/env python
 from modshogun import LongIntFeatures
 from numpy import array, int64, all

@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 % Explicit examples on how to use distributions
 
 leng=50;

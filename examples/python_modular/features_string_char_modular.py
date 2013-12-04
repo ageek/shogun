@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 #!/usr/bin/env python
 strings=['hey','guys','i','am','a','string']
 

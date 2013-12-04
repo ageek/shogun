@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 #!/usr/bin/env python
 testdat = '../data/fm_train_real.dat'
 traindat = '../data/fm_test_real.dat'

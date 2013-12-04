@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 % Chebyshew Metric
 print ChebyshewMetric
 set_distance CHEBYSHEW REAL

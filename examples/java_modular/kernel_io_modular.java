@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 import org.shogun.*;
 import org.jblas.*;
 

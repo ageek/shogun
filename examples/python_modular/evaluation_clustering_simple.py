@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 #!/usr/bin/env python
 parameter_list = [[1000,2,8],[1000,4,8]]
 

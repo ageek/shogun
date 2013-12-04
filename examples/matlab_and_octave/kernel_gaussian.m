@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 size_cache=10;
 width=2.1;
 

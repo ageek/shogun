@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 modshogun
 
 addpath('tools');

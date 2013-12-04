@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 % Weighted Degree String
 print WeightedDegreeString
 set_kernel WEIGHTEDDEGREE CHAR 10 20

@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 rand('seed',17);
 
 %sequence lengths, number of sequences

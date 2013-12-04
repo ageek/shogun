@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 num=1000;
 dim=100;
 

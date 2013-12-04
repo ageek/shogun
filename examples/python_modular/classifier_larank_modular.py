@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 #!/usr/bin/env python
 from numpy import *
 parameter_list = [[10,3,15,0.9,1,2000,1],[20,4,15,0.9,1,5000,2]]

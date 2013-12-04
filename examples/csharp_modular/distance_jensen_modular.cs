@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 using System;
 
 public class distance_jensen_modular {

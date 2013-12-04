@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 C=1;
 degree=20;
 numtrain=100;

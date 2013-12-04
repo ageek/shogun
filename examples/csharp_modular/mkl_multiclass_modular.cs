@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 using System;
 
 public class mkl_multiclass_modular {

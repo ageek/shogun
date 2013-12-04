@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 % BrayCurtis Distance
 print BrayCurtis Distance
 set_distance BRAYCURTIS REAL

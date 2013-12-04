@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 modshogun
 
 % Explicit examples on how to use the different classifiers

@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 % Minkowski Metric
 print MinkowskiMetric
 set_distance MINKOWSKI REAL 3

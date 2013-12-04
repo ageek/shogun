@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 % Distance
 print Distance
 set_distance EUCLIDEAN REAL

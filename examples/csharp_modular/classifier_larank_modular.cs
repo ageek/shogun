@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 using System;
 
 public class classifier_larank_modular {

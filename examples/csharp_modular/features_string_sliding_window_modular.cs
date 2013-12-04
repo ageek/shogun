@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 using System;
 
 public class features_string_sliding_window_modular {

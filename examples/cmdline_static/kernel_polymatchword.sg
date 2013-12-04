@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 % Poly Match Word
 %print PolyMatchWord
 %set_kernel POLYMATCH WORD 10 2 1 1

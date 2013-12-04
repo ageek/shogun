@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 using System;
 
 public class distribution_histogram_modular {

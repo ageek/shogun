@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 using System;
 
 public class classifier_gpbtsvm_modular {

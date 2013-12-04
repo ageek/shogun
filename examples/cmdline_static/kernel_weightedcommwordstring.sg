@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 % Weighted Comm Word String
 print WeightedCommWordString
 add_preproc SORTWORDSTRING

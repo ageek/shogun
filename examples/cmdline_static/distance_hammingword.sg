@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 % HammingWord Distance
 print HammingWordDistance
 

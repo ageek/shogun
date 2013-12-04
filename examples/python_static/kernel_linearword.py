@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 from tools.load import LoadMatrix
 from numpy import ushort
 from sg import sg

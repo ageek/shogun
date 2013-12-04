@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 truth = sign(2*rand(1,60) - 1);
 km=rand(length(truth));
 km=km+km';

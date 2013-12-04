@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 acgt='ACGT';
 rand('state',17')
 

@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 % PruneVarSubMean
 print PruneVarSubMean
 add_preproc PRUNEVARSUBMEAN 1

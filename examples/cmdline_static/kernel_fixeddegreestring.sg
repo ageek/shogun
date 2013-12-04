@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 % Fixed Degree String
 print FixedDegreeString
 set_kernel FIXEDDEGREE CHAR 10 3

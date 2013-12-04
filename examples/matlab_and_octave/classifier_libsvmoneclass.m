@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 % Explicit examples on how to use the different classifiers
 
 size_cache=10;

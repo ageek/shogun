@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 library("sg")
 
 fm_train_dna <- as.matrix(read.table('../data/fm_train_dna.dat'))

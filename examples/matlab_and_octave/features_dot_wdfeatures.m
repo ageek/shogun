@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 C=1;
 order=6;
 degree=order;

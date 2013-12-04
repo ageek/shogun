@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 % Poly
 print Poly
 set_kernel POLY REAL 10 4 0 1

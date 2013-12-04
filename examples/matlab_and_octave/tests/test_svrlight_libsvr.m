@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 %rand('state',sum(100*clock));
 rand('state',12345);
 for i=1:1000,

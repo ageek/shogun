@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 % This script should enable you to rerun the experiment in the
 % paper that we labeled "mixture linear and sine ".
 %

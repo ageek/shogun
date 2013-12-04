@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 cache_size=50;
 C=1;
 svm_eps=1e-5;

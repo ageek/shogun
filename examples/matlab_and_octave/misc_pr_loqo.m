@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 c=ones(10,1);
 H=eye(10);
 A=zeros(10);

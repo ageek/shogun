@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 XT1=rand(120,1000);
 XT2=rand(10,1000);
 XT3=rand(5,1000);

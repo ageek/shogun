@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 modshogun;
 
 label_train_fname='../data/label_train_multiclass.dat';

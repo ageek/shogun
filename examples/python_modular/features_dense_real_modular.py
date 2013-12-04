@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 #!/usr/bin/env python
 from modshogun import RealFeatures
 from numpy import array, float64, all

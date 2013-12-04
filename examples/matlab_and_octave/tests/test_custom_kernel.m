@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 C=1;
 sep=0.5;
 numtrain=5;

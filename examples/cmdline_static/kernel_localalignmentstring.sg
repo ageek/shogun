@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 % Local Alignment String
 %print LocalAlignmentString
 %set_kernel LOACALALIGNMENT CHAR 10

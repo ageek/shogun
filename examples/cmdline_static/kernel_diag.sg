@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 % Diag
 print Diag
 set_kernel DIAG REAL 10 23.

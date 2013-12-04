@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 % NormOne
 print NormOne
 add_preproc NORMONE

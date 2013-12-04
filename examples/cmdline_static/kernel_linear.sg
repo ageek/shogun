@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 % Linear
 print Linear
 set_kernel LINEAR REAL 10 1.2

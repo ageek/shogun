@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 degree = 2;
 traindat = [rand(10,50)-1 2+rand(10,50)+1];
 testdat = [rand(10,50)-1 2+rand(10,50)+1];

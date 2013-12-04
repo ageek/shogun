@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 % Simple Locality Improved String
 print SimpleLocalityImprovedString
 set_kernel SLIK CHAR 10 5 5 7

@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 C=1
 degree=1;
 epsilon=1e-5;

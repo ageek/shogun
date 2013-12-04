@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 #!/usr/bin/env python
 traindat = '../data/fm_train_real.dat'
 label_traindat = '../data/label_train_twoclass.dat'

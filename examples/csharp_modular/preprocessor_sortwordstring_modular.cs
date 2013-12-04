@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 using System;
 
 public class preprocessor_sortwordstring_modular {

@@ -1,3 +1,4 @@
+@_DOCUMENTATION@
 #!/usr/bin/env python
 from modshogun import CombinedFeatures, RealFeatures, BinaryLabels
 from modshogun import CombinedKernel, PolyKernel, CustomKernel
