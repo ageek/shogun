@@ -30,6 +30,11 @@ SET( SG_COMMENT   "% "  )
 SET( ${PROJECT_VAR_PREFIX}DESC_DIR "${CMAKE_CURRENT_SOURCE_DIR}/descriptions" )
 
 
+#####  Define examples extensions  #####
+SET ( ${PROJECT_VAR_PREFIX}EXAMPLES_EXT
+  "cs" "java" "lua" "m" "py" "R" "rb" "sg" )
+
+
 #####  Include subdirs for processing  #####
 GET_CMAKE_SUBDIRS( _SUBDIRS "${CMAKE_CURRENT_SOURCE_DIR}" )
 
