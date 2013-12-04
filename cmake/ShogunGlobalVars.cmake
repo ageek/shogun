@@ -16,9 +16,12 @@
 
 #####  Define Shogun's object-targets  #####
 SET( ${PROJECT_VAR_PREFIX}OBJECT_TARGETS CACHE INTERNAL "Tracking-var for object targets" FORCE )
+SET( ${PROJECT_VAR_PREFIX}PROTOBUF_TARGETS CACHE INTERNAL "Tracking-var for protobuf targets" FORCE )
+
 
 #####  Define Shogun's internal object-targets  #####
 SET( ${PROJECT_VAR_PREFIX}OBJECT_TARGETS_INTERNAL CACHE INTERNAL "Tracking-var for internal object targets" FORCE )
+
 
 #####  Define Shogun's C[XX]FLAGS  #####
 
@@ -27,8 +30,10 @@ SET( ${PROJECT_VAR_PREFIX}CFLAGS "-Wall -Wextra" )
 SET( ${PROJECT_VAR_PREFIX}CFLAGS "${${PROJECT_VAR_PREFIX}CFLAGS} -Wformat-security" )
 SET( ${PROJECT_VAR_PREFIX}CFLAGS "${${PROJECT_VAR_PREFIX}CFLAGS} -Wshadow" )
 
+
 #####  These control the code-optimization
 SET( ${PROJECT_VAR_PREFIX}CFLAGS "${${PROJECT_VAR_PREFIX}CFLAGS} -fstrength-reduce" )
+
 
 #####  This is sets the C++-std to be used
 SET( ${PROJECT_VAR_PREFIX}CXXFLAGS "-std=c++11 ${${PROJECT_VAR_PREFIX}CFLAGS}" )
