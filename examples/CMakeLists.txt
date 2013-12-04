@@ -35,6 +35,10 @@ SET ( ${PROJECT_VAR_PREFIX}EXAMPLES_EXT
   "cpp" "cs" "java" "lua" "m" "py" "R" "rb" "sg" )
 
 
+#####  Create a symlink to data/toy  #####
+EXECUTE_PROCESS( COMMAND ${CMAKE_COMMAND} -E create_symlink
+  "${CMAKE_SOURCE_DIR}/data/toy" "${CMAKE_CURRENT_BINARY_DIR}/data" )
+
 #####  Include subdirs for processing  #####
 GET_CMAKE_SUBDIRS( _SUBDIRS "${CMAKE_CURRENT_SOURCE_DIR}" )
 
