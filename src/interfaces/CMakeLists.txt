@@ -15,6 +15,10 @@
 #   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
+#####  Include external CMake-scripts  #####
+INCLUDE( UseSWIG )
+
+
 #####  Include subdirs for processing  #####
 GET_CMAKE_SUBDIRS( _SUBDIRS ${CMAKE_CURRENT_SOURCE_DIR} )
 
