@@ -22,13 +22,13 @@ SET( _EXAMPLES "" )
 
 
 #####  Determine static or modular type and give a message about the process  #####
-FOREACH( _MATCH "modular" "static" )
+FOREACH( _MATCH "lib${PROJECT_NAME}" "modular" "static" )
   IF( "${CMAKE_CURRENT_SOURCE_DIR}" MATCHES ".*${_MATCH}$" )
     SET( _EXAMPLE_TYPE "${_MATCH}" )
     STRING( REGEX REPLACE ".*/" "" _CURDIR "${CMAKE_CURRENT_SOURCE_DIR}" )
     MESSAGE( STATUS "Generating documented examples for ${_CURDIR}")
   ENDIF( "${CMAKE_CURRENT_SOURCE_DIR}" MATCHES ".*${_MATCH}$" )
-ENDFOREACH( _MATCH "modular" "static" )
+ENDFOREACH( _MATCH "lib${PROJECT_NAME}" "modular" "static" )
 
 
 #####  Create a list with all examples in current dir  #####
