@@ -15,6 +15,7 @@
  * http://www.gnu.org/software/octave/
  */
 
+#include <lib/config.h>
 #include <mathematics/Integration.h>
 
 #ifdef SHOGUN_HAVE_EIGEN3

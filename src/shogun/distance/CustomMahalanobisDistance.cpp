@@ -8,6 +8,8 @@
  * Copyright (C) 2013 Fernando J. Iglesias Garcia
  */
 
+#include <lib/config.h>
+
 #ifdef SHOGUN_HAVE_EIGEN3
 
 #include <distance/CustomMahalanobisDistance.h>

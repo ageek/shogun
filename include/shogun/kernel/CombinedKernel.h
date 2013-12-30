@@ -12,6 +12,7 @@
 #ifndef _COMBINEDKERNEL_H___
 #define _COMBINEDKERNEL_H___
 
+#include <lib/config.h>
 #include <lib/List.h>
 #include <lib/DynamicObjectArray.h>
 #include <io/SGIO.h>

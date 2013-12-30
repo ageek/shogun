@@ -11,6 +11,7 @@
 #ifndef _HASHED_SPARSEFEATURES_H__
 #define _HASHED_SPARSEFEATURES_H__
 
+#include <lib/config.h>
 #include <features/SparseFeatures.h>
 #include <features/DotFeatures.h>
 #include <lib/SGSparseVector.h>

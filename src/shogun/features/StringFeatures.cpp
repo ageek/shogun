@@ -6,6 +6,7 @@
 #include <mathematics/Math.h>
 #include <base/Parameter.h>
 #include <lib/SGStringList.h>
+#include <lib/config.h>
 
 #include <sys/types.h>
 #include <sys/stat.h>

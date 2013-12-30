@@ -30,12 +30,13 @@
  * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-#ifndef DOXYGEN_SHOULD_SKIP_THIS
 
 #ifndef _LIBLINEAR_H
 #define _LIBLINEAR_H
 
 #include <lib/config.h>
+
+#ifndef DOXYGEN_SHOULD_SKIP_THIS
 
 #include <optimization/liblinear/tron.h>
 #include <features/DotFeatures.h>

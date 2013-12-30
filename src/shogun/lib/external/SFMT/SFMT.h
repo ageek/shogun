@@ -34,6 +34,7 @@
 
 #ifndef SFMTST_H
 #define SFMTST_H
+#include <lib/config.h>
 #ifndef DOXYGEN_SHOULD_SKIP_THIS
 #if defined(__cplusplus)
 extern "C" {

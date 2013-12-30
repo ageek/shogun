@@ -10,6 +10,8 @@
 
 #ifndef ECOCIHDDECODER_H__
 #define ECOCIHDDECODER_H__
+
+#include <lib/config.h>
 #ifdef SHOGUN_HAVE_LAPACK
 
 #include <multiclass/ecoc/ECOCDecoder.h>

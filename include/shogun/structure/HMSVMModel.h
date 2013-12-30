@@ -11,6 +11,7 @@
 #ifndef _HMSVM_MODEL__H__
 #define _HMSVM_MODEL__H__
 
+#include <lib/config.h>
 #include <structure/StructuredModel.h>
 #include <structure/SequenceLabels.h>
 #include <structure/StateModelTypes.h>

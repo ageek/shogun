@@ -8,6 +8,7 @@
  * Copyright (C) 2011-2013 Berlin Institute of Technology and Max-Planck-Society
  */
 
+#include <lib/config.h>
 #include <converter/MultidimensionalScaling.h>
 #ifdef SHOGUN_HAVE_EIGEN3
 #include <converter/EmbeddingConverter.h>

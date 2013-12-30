@@ -10,6 +10,7 @@
  * (few parts rewritten and adjusted for shogun)
  */
 
+#include <lib/config.h>
 #include <mathematics/Math.h>
 #include <mathematics/JacobiEllipticFunctions.h>
 

@@ -12,6 +12,7 @@
 #include <io/SGIO.h>
 #include <lib/Signal.h>
 #include <base/Parallel.h>
+#include <lib/config.h>
 
 #ifdef SHOGUN_HAVE_PTHREAD
 #include <pthread.h>

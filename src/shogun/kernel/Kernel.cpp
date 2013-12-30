@@ -25,8 +25,8 @@
 #include <kernel/normalizer/IdentityKernelNormalizer.h>
 #include <features/Features.h>
 #include <base/Parameter.h>
-
 #include <classifier/svm/SVM.h>
+#include <lib/config.h>
 
 #include <string.h>
 #include <unistd.h>

@@ -11,6 +11,7 @@
 #ifndef _SQRTDIAGKERNELNORMALIZER_H___
 #define _SQRTDIAGKERNELNORMALIZER_H___
 
+#include <lib/config.h>
 #include <kernel/normalizer/KernelNormalizer.h>
 #include <kernel/string/CommWordStringKernel.h>
 

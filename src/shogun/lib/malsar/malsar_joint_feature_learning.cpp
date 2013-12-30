@@ -8,6 +8,7 @@
  * Copyright (C) 2012 Jiayu Zhou and Jieping Ye
  */
 
+#include <lib/config.h>
 #include <lib/malsar/malsar_joint_feature_learning.h>
 #ifdef SHOGUN_HAVE_EIGEN3
 #include <lib/Signal.h>

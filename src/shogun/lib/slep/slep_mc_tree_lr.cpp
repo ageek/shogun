@@ -8,6 +8,7 @@
  * Copyright (C) 2010-2012 Jun Liu, Jieping Ye
  */
 
+#include <lib/config.h>
 #include <lib/slep/slep_mc_tree_lr.h>
 #ifdef SHOGUN_HAVE_EIGEN3
 #include <lib/slep/tree/general_altra.h>

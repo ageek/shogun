@@ -11,6 +11,7 @@
 #ifndef _HASHED_DENSEFEATURES_H__
 #define _HASHED_DENSEFEATURES_H__
 
+#include <lib/config.h>
 #include <features/DenseFeatures.h>
 #include <features/DotFeatures.h>
 

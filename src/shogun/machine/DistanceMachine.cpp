@@ -10,6 +10,7 @@
 
 #include <machine/DistanceMachine.h>
 #include <base/Parameter.h>
+#include <lib/config.h>
 
 using namespace shogun;
 

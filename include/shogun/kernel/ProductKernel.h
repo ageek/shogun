@@ -12,6 +12,7 @@
 #ifndef _PRODUCTKERNEL_H___
 #define _PRODUCTKERNEL_H___
 
+#include <lib/config.h>
 #include <lib/DynamicObjectArray.h>
 #include <io/SGIO.h>
 #include <kernel/Kernel.h>

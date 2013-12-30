@@ -8,6 +8,7 @@
  * Copyright (C) 2012 Jacob Walker
  */
 
+#include <lib/config.h>
 #include <modelselection/GradientModelSelection.h>
 
 #ifdef SHOGUN_HAVE_NLOPT

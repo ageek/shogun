@@ -9,6 +9,7 @@
 
 #include <stdlib.h>
 #include <io/Parser.h>
+#include <lib/config.h>
 
 using namespace shogun;
 

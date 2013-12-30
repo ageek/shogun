@@ -1,12 +1,12 @@
-#ifdef SHOGUN_HAVE_CXX11_ATOMIC
-#include <atomic>
-#endif
+#ifndef _REFCOUNT__H__
+#define _REFCOUNT__H__
 
 #include <lib/common.h>
 #include <lib/Lock.h>
 
-#ifndef _REFCOUNT__H__
-#define _REFCOUNT__H__
+#ifdef SHOGUN_HAVE_CXX11_ATOMIC
+#include <atomic>
+#endif
 
 namespace shogun
 {

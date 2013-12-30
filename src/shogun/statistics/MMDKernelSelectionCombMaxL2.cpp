@@ -7,6 +7,7 @@
  * Written (W) 2013 Heiko Strathmann
  */
 
+#include <lib/config.h>
 #include <statistics/MMDKernelSelectionCombMaxL2.h>
 #include <statistics/LinearTimeMMD.h>
 #include <kernel/CombinedKernel.h>

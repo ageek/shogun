@@ -1,6 +1,7 @@
 #ifndef DSFMT_PARAMS_H
 #define DSFMT_PARAMS_H
 
+#include <lib/config.h>
 #include <lib/external/dSFMT/dSFMT.h>
 
 /*----------------------

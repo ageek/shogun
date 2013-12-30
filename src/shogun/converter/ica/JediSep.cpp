@@ -8,8 +8,8 @@
  */
 
 #include <converter/ica/JediSep.h>
-
 #include <features/DenseFeatures.h>
+#include <lib/config.h>
 
 #ifdef SHOGUN_HAVE_EIGEN3
 

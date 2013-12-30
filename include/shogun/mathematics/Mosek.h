@@ -11,6 +11,8 @@
 #ifndef _CMOSEK__H__
 #define _CMOSEK__H__
 
+#include <lib/config.h>
+
 #ifdef SHOGUN_USE_MOSEK
 
 #include <base/SGObject.h>

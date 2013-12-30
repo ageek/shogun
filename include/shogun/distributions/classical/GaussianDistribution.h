@@ -6,6 +6,9 @@
  *
  * Written (W) 2013 Heiko Strathmann
  */
+
+#include <lib/config.h>
+
 #ifdef SHOGUN_HAVE_EIGEN3
 
 #ifndef GAUSSIANDISTRIBUTION_H

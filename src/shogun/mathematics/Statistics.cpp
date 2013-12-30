@@ -15,6 +15,7 @@
 
 #include <mathematics/Statistics.h>
 #include <mathematics/Math.h>
+#include <lib/config.h>
 #include <lib/SGMatrix.h>
 #include <lib/SGVector.h>
 #include <lib/SGSparseMatrix.h>

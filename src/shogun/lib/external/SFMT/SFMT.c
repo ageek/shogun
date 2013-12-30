@@ -15,6 +15,8 @@
  * LICENSE.txt
  */
 
+#include <lib/config.h>
+
 #if defined(__cplusplus)
 extern "C" {
 #endif

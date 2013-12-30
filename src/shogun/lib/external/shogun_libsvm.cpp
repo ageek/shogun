@@ -33,6 +33,8 @@
  * Shogun specific adjustments (w) 2006-2009 Soeren Sonnenburg
  */
 
+#include <lib/config.h>
+
 #ifndef DOXYGEN_SHOULD_SKIP_THIS
 
 #include <lib/external/shogun_libsvm.h>

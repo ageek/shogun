@@ -8,6 +8,7 @@
  * Copyright (C) 2012 Jiayu Zhou and Jieping Ye
  */
 
+#include <lib/config.h>
 #include <lib/malsar/malsar_clustered.h>
 #ifdef SHOGUN_HAVE_EIGEN3
 #ifndef SHOGUN_HAVE_CXX11

@@ -6,6 +6,9 @@
  *
  * Written (W) 2013 Evgeniy Andreev (gsomix)
  */
+
+#include <lib/config.h>
+
 #ifdef SHOGUN_HAVE_PROTOBUF
 
 #include <io/ProtobufFile.h>

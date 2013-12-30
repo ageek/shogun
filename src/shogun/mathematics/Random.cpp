@@ -10,6 +10,7 @@
 
 #include <mathematics/Random.h>
 #include <base/Parameter.h>
+#include <lib/config.h>
 #include <lib/external/SFMT/SFMT.h>
 #include <lib/external/dSFMT/dSFMT.h>
 #include <lib/Time.h>

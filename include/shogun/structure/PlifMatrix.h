@@ -11,6 +11,7 @@
 #ifndef _PLIFMATRIX_H_
 #define _PLIFMATRIX_H_
 
+#include <lib/config.h>
 #include <lib/DataType.h>
 #include <lib/SGNDArray.h>
 #include <lib/SGMatrix.h>

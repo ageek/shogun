@@ -11,6 +11,8 @@
 #ifndef CUSTOM_MAHALANOBIS_DISTANCE_
 #define CUSTOM_MAHALANOBIS_DISTANCE_
 
+#include <lib/config.h>
+
 #ifdef SHOGUN_HAVE_EIGEN3
 
 #include <distance/RealDistance.h>

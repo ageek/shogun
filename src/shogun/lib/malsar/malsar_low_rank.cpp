@@ -8,6 +8,7 @@
  * Copyright (C) 2012 Jiayu Zhou and Jieping Ye
  */
 
+#include <lib/config.h>
 #include <lib/malsar/malsar_low_rank.h>
 #ifdef SHOGUN_HAVE_EIGEN3
 #include <mathematics/eigen3.h>

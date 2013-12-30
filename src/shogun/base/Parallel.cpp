@@ -9,6 +9,7 @@
  */
 
 #include <base/Parallel.h>
+#include <lib/config.h>
 #include <lib/RefCount.h>
 
 #if defined(LINUX) && defined(_SC_NPROCESSORS_ONLN)

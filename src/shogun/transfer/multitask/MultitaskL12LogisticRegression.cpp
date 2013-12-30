@@ -7,6 +7,7 @@
  * Copyright (C) 2012 Sergey Lisitsyn
  */
 
+#include <lib/config.h>
 #include <transfer/multitask/MultitaskL12LogisticRegression.h>
 #include <lib/malsar/malsar_joint_feature_learning.h>
 #include <lib/malsar/malsar_options.h>

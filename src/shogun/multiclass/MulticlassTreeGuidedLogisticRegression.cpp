@@ -8,6 +8,7 @@
  * Copyright (C) 2012 Sergey Lisitsyn
  */
 
+#include <lib/config.h>
 #include <multiclass/MulticlassTreeGuidedLogisticRegression.h>
 #ifdef SHOGUN_HAVE_EIGEN3
 #include <multiclass/MulticlassOneVsRestStrategy.h>

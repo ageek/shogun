@@ -11,6 +11,7 @@
 #ifndef _STREAMING_HASHED_DENSEFEATURES__H__
 #define _STREAMING_HASHED_DENSEFEATURES__H__
 
+#include <lib/config.h>
 #include <features/DenseFeatures.h>
 #include <features/streaming/StreamingDotFeatures.h>
 #include <io/streaming/InputParser.h>

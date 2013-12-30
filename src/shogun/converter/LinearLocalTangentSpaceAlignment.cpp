@@ -8,6 +8,7 @@
  * Copyright (C) 2011-2013 Sergey Lisitsyn
  */
 
+#include <lib/config.h>
 #include <converter/LinearLocalTangentSpaceAlignment.h>
 #ifdef SHOGUN_HAVE_EIGEN3
 #include <io/SGIO.h>

@@ -14,6 +14,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <lib/config.h>
 #include <lib/external/dSFMT/dSFMT-params.h>
 #include <lib/external/dSFMT/dSFMT-common.h>
 

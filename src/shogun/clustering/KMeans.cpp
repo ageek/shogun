@@ -15,6 +15,7 @@
 #include <features/DenseFeatures.h>
 #include <mathematics/Math.h>
 #include <base/Parallel.h>
+#include <lib/config.h>
 
 #ifdef SHOGUN_HAVE_PTHREAD
 #include <pthread.h>

@@ -1,3 +1,4 @@
+#include <lib/config.h>
 #include <lib/SGMatrix.h>
 
 #ifdef SHOGUN_HAVE_EIGEN3

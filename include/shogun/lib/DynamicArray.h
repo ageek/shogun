@@ -11,6 +11,7 @@
 #ifndef _DYNAMIC_ARRAY_H_
 #define _DYNAMIC_ARRAY_H_
 
+#include <lib/config.h>
 #include <base/SGObject.h>
 #include <base/DynArray.h>
 #include <base/Parameter.h>

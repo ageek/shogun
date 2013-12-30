@@ -1,3 +1,4 @@
+#include <lib/config.h>
 #include <lib/RefCount.h>
 
 using namespace shogun;

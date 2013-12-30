@@ -7,6 +7,7 @@
  * Written (W) 2013 Roman Votyakov
  */
 
+#include <lib/config.h>
 #include <machine/gp/LogitLikelihood.h>
 
 #ifdef SHOGUN_HAVE_EIGEN3

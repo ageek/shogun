@@ -8,6 +8,7 @@
  * Copyright (C) 2011-2013 Vladyslav S. Gorbatiuk
  */
 
+#include <lib/config.h>
 #include <converter/ManifoldSculpting.h>
 #ifdef SHOGUN_HAVE_EIGEN3
 #include <lib/tapkee/tapkee_shogun.hpp>

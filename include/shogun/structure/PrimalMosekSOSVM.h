@@ -11,6 +11,8 @@
 #ifndef _PRIMAL_MOSEK_SOSVM__H__
 #define _PRIMAL_MOSEK_SOSVM__H__
 
+#include <lib/config.h>
+
 #ifdef SHOGUN_USE_MOSEK
 
 #include <machine/LinearStructuredOutputMachine.h>

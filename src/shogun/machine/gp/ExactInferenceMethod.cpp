@@ -12,6 +12,7 @@
  * http://www.gaussianprocess.org/gpml/code/matlab/doc/
  */
 
+#include <lib/config.h>
 #include <machine/gp/ExactInferenceMethod.h>
 
 #ifdef SHOGUN_HAVE_EIGEN3

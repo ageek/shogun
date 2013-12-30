@@ -13,6 +13,7 @@
  * This code specifically adapted from infLaplace.m
  */
 
+#include <lib/config.h>
 #include <machine/gp/LaplacianInferenceMethod.h>
 
 #ifdef SHOGUN_HAVE_EIGEN3

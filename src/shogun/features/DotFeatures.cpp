@@ -10,6 +10,7 @@
 
 #include <features/DotFeatures.h>
 #include <io/SGIO.h>
+#include <lib/config.h>
 #include <lib/Signal.h>
 #include <lib/Time.h>
 #include <mathematics/Math.h>

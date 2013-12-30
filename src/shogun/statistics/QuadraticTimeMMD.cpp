@@ -7,6 +7,7 @@
  * Written (W) 2012-2013 Heiko Strathmann
  */
 
+#include <lib/config.h>
 #include <statistics/QuadraticTimeMMD.h>
 #include <features/Features.h>
 #include <mathematics/Statistics.h>

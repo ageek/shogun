@@ -10,6 +10,7 @@
 #ifndef __QUADRACTIMEMMD_H_
 #define __QUADRACTIMEMMD_H_
 
+#include <lib/config.h>
 #include <statistics/KernelTwoSampleTestStatistic.h>
 
 namespace shogun

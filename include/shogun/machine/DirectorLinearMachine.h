@@ -10,8 +10,8 @@
 #ifndef _DIRECTORLINEARMACHINE_H___
 #define _DIRECTORLINEARMACHINE_H___
 
-#ifdef SHOGUN_USE_SWIG_DIRECTORS
 #include <lib/common.h>
+#ifdef SHOGUN_USE_SWIG_DIRECTORS
 #include <lib/DataType.h>
 #include <machine/Machine.h>
 #include <machine/LinearMachine.h>

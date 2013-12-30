@@ -9,6 +9,8 @@
  * Copyright (C) 1999-2009 Fraunhofer Institute FIRST and Max-Planck-Society
  * Copyright (C) 2011 Berlin Institute of Technology
  */
+
+#include <lib/config.h>
 #include <preprocessor/PCA.h>
 #ifdef SHOGUN_HAVE_LAPACK
 #include <mathematics/lapack.h>

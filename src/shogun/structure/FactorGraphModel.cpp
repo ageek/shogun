@@ -8,6 +8,7 @@
  * Copyright (C) 2013 Shell Hu
  */
 
+#include <lib/config.h>
 #include <structure/FactorGraphModel.h>
 #include <structure/Factor.h>
 #include <features/FactorGraphFeatures.h>

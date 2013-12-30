@@ -7,6 +7,7 @@
  * Copyright (C) 2012 Sergey Lisitsyn
  */
 
+#include <lib/config.h>
 #include <transfer/multitask/MultitaskClusteredLogisticRegression.h>
 #include <lib/malsar/malsar_clustered.h>
 #include <lib/malsar/malsar_options.h>

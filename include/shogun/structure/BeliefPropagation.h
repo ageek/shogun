@@ -11,6 +11,7 @@
 #ifndef __BELIEF_PROPAGATION_H__
 #define __BELIEF_PROPAGATION_H__
 
+#include <lib/config.h>
 #include <lib/SGVector.h>
 #include <structure/FactorGraph.h>
 #include <structure/MAPInference.h>

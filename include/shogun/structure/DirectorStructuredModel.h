@@ -10,9 +10,11 @@
 #ifndef DIRECTOR_STRUCTURED_MODEL_H_
 #define DIRECTOR_STRUCTURED_MODEL_H_
 
+#include <lib/config.h>
+
 #ifdef SHOGUN_USE_SWIG_DIRECTORS
 #include <structure/StructuredModel.h>
-#include <lib/config.h>
+
 namespace shogun
 {
 

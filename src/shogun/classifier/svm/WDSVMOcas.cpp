@@ -11,6 +11,7 @@
 
 #include <labels/Labels.h>
 #include <mathematics/Math.h>
+#include <lib/config.h>
 #include <lib/DynamicArray.h>
 #include <lib/Time.h>
 #include <base/Parallel.h>

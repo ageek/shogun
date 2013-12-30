@@ -9,6 +9,7 @@
  * Copyright (C) 2013 Roman Votyakov
  */
 
+#include <lib/config.h>
 #include <machine/gp/GaussianLikelihood.h>
 
 #ifdef SHOGUN_HAVE_EIGEN3

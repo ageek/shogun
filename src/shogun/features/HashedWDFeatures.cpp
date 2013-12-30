@@ -10,6 +10,7 @@
 
 #include <features/HashedWDFeatures.h>
 #include <io/SGIO.h>
+#include <lib/config.h>
 
 using namespace shogun;
 

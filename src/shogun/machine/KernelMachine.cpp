@@ -14,6 +14,7 @@
 #include <labels/RegressionLabels.h>
 #include <base/Parameter.h>
 #include <base/ParameterMap.h>
+#include <lib/config.h>
 
 using namespace shogun;
 

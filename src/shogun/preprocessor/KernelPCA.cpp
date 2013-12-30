@@ -8,6 +8,7 @@
  * Copyright (C) 2011 Berlin Institute of Technology
  */
 
+#include <lib/config.h>
 #include <preprocessor/KernelPCA.h>
 #ifdef SHOGUN_HAVE_LAPACK
 #include <lib/config.h>

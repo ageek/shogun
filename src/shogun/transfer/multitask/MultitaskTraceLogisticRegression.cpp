@@ -7,6 +7,7 @@
  * Copyright (C) 2012 Sergey Lisitsyn
  */
 
+#include <lib/config.h>
 #include <transfer/multitask/MultitaskTraceLogisticRegression.h>
 #include <lib/malsar/malsar_low_rank.h>
 #include <lib/malsar/malsar_options.h>

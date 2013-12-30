@@ -8,6 +8,7 @@
  * Copyright (C) 2012 Viktor Gal
  */
 
+#include <lib/config.h>
 #include <preprocessor/PNorm.h>
 #include <preprocessor/DensePreprocessor.h>
 #include <mathematics/Math.h>

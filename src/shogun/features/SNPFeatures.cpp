@@ -12,6 +12,7 @@
 #include <io/SGIO.h>
 #include <features/Alphabet.h>
 #include <lib/memory.h>
+#include <lib/config.h>
 
 using namespace shogun;
 

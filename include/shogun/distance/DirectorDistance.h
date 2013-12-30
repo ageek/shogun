@@ -10,8 +10,8 @@
 #ifndef _DIRECTORDISTANCE_H___
 #define _DIRECTORDISTANCE_H___
 
-#ifdef SHOGUN_USE_SWIG_DIRECTORS
 #include <lib/common.h>
+#ifdef SHOGUN_USE_SWIG_DIRECTORS
 #include <lib/DataType.h>
 #include <distance/Distance.h>
 

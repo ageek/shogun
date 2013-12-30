@@ -1,4 +1,5 @@
 #include <evaluation/ica/PermutationMatrix.h>
+#include <lib/config.h>
 
 #ifdef SHOGUN_HAVE_EIGEN3
 
