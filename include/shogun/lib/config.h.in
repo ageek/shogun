@@ -102,3 +102,19 @@
 /* random related defines */
 #cmakedefine SHOGUN_HAVE_ARC4RANDOM 1
 #cmakedefine SHOGUN_DEV_RANDOM "@SHOGUN_DEV_RANDOM@"
+
+/* used datatypes */
+#cmakedefine SHOGUN_USE_BOOL 1
+#cmakedefine SHOGUN_USE_CHAR 1
+#cmakedefine SHOGUN_USE_UINT8 1
+#cmakedefine SHOGUN_USE_UINT16 1
+#cmakedefine SHOGUN_USE_UINT32 1
+#cmakedefine SHOGUN_USE_UINT64 1
+#cmakedefine SHOGUN_USE_INT8 1
+#cmakedefine SHOGUN_USE_INT16 1
+#cmakedefine SHOGUN_USE_INT32 1
+#cmakedefine SHOGUN_USE_INT64 1
+#cmakedefine SHOGUN_USE_FLOAT32 1
+#cmakedefine SHOGUN_USE_FLOAT64 1
+#cmakedefine SHOGUN_USE_COMPLEX128 1
+#cmakedefine SHOGUN_USE_FLOATMAX 1
