@@ -40,7 +40,7 @@ SET( ${PROJECT_VAR_PREFIX}CFLAGS
 
 #####  This is sets the C++-std to be used
 SET( ${PROJECT_VAR_PREFIX}CXXFLAGS
-  "-std=c++11 ${${PROJECT_VAR_PREFIX}CFLAGS}" )
+  "${${PROJECT_VAR_PREFIX}CFLAGS}" )
 
 
 #####  Define Shogun's LDFLAGS  #####
