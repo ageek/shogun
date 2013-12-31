@@ -15,7 +15,7 @@
 #define CUSTOM_UNIFORM_RANDOM_INDEX_FUNCTION shogun::CMath::random()
 #define CUSTOM_UNIFORM_RANDOM_FUNCTION shogun::CMath::random(static_cast<tapkee::ScalarType>(0),static_cast<tapkee::ScalarType>(1))
 #define CUSTOM_GAUSSIAN_RANDOM_FUNCTION shogun::CMath::normal_random(static_cast<tapkee::ScalarType>(0),static_cast<tapkee::ScalarType>(1))
-#define TAPKEE_EIGEN_INCLUDE_FILE <shogun/mathematics/eigen3.h>
+#define TAPKEE_EIGEN_INCLUDE_FILE <mathematics/eigen3.h>
 
 #ifdef SHOGUN_HAVE_ARPACK
 	#define TAPKEE_WITH_ARPACK
