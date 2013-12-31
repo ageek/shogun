@@ -29,8 +29,10 @@ SET( ${PROJECT_VAR_PREFIX}OBJECT_TARGETS_INTERNAL CACHE INTERNAL
 #####  Define Shogun's C[XX]FLAGS  #####
 
 #####  These control the warning-verbosity of the compiler
+#SET( ${PROJECT_VAR_PREFIX}CFLAGS
+#  "-Wall -Wextra -Wformat-security -Wshadow" )
 SET( ${PROJECT_VAR_PREFIX}CFLAGS
-  "-Wall -Wextra -Wformat-security -Wshadow" )
+  "-Wall" )
 
 
 #####  These control the code-optimization
